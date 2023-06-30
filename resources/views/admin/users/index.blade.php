@@ -11,7 +11,7 @@
     </style>
 @endsection
 @section("content")
-
+@php( $users = \App\Models\User::all())  
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -47,25 +47,27 @@
                         </thead>
                         <?php $counter =1; ?>
                         <tbody>
-                            {{-- @foreach($admins as $admin) --}}
+                      
+                            @foreach($users as $user) 
                                 <tr> 
+
                                     <td>
-                                        محمد
+                                    {{$user->fname}} {{$user->lname}}
                                     </td> 
                                     <th>
-                                        <a class="btn btn-dark col-sm-12" onclick="modelDes('1','1.jpg')" data-toggle="modal" data-target="#image1">عرض</a><br>
+                                        <a class="btn btn-dark col-sm-12" onclick="modelDes('1','{{$user->img}}')" data-toggle="modal" data-target="#image1">عرض</a><br>
                                     </th>
                                     <td>
-                                        اريحا
+                                    {{$user->city}}
                                     </td> 
                                     <td>
-                                        عنوان - عنوان
+                                    {{$user->address}}
                                     </td> 
                                     <td>
-                                        9999999
+                                    {{$user->phone}}
                                     </td> 
                                     <td>
-                                        test@gmail.com
+                                    {{$user->email}}
                                     </td> 
 
                                     <td>
@@ -77,19 +79,20 @@
                                                         التحكم
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                                        <a class="btn btn-dark col-sm-12"  href="{{route('admin.users.edit',['user'=>1])}}">تعديل</a>
-                                                        <form method="post" action="{{route('admin.users.destroy',['user'=>1])}}">
+                                                        <a class="btn btn-dark col-sm-12"  href="{{route('admin.users.edit',['user'=>$user->id])}}">تعديل </a>
+                                                        <form method="post" action="{{route('admin.users.change.state',['action'=>$user->state == 'blocked' ? 'allowed' : 'blocked','user'=>$user->id])}}">
                                                             @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-dark col-sm-12" >حظر</button>
+                                                            <button type="submit" class="btn btn-dark col-sm-12" >{{$user->state == 'blocked' ? 'تفعيل' : 'حظر'}}</button>
                                                         </form>
+                                                       
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
                                         </center>
                                     </td>
                                 </tr>
-                            {{-- @endforeach --}}
+                            @endforeach
                         </tbody>
                     </table>
 
@@ -117,7 +120,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="group-img-container text-center post-modal">
-                                <img  src="{{asset('assets/images/users/`+ y +`')}}" alt="" class="group-img img-fluid" style="width:400px; hieght:400px" ><br>
+                                <img  src="{{asset('assets/site/images/users/`+ y +`')}}" alt="" class="group-img img-fluid" style="width:400px; hieght:400px" ><br>
                             </div>
                         </div>
                         <div class="modal-footer">

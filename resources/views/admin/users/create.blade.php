@@ -5,6 +5,7 @@
     <link href="{{asset("assets/admin/libs/summernote/summernote-bs4.min.css")}}" rel="stylesheet" type="text/css"/>
 @endsection
 @section("content")
+
 <div class="row">
         <div class="col-12">
             <div class="card">
@@ -26,9 +27,16 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="example-text-input" class="col-sm-2 col-form-label"> الاسم </label>
+                            <label for="example-text-input" class="col-sm-2 col-form-label">الاول الاسم </label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="text" id="example-text-input" name="name" required>
+                                <input class="form-control" type="text" id="example-text-input" value="" name="fname" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="example-text-input" class="col-sm-2 col-form-label"> الاسم الثاني</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" type="text" id="example-text-input" name="lname" required>
                             </div>
                         </div>
                         
@@ -54,7 +62,7 @@
                         <div class="form-group row">
                             <label for="example-text-input" class="col-sm-2 col-form-label"> المدينه </label>
                             <div class="col-sm-10">
-                                <select class="form-control">
+                                <select class="form-control" name="city">
                                     <option>اريحا</option>
                                     <option>اريحا</option>
                                 </select>
@@ -64,7 +72,7 @@
                         <div class="form-group row">
                             <label for="example-text-input" class="col-sm-2 col-form-label"> العنوان </label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="text" id="example-text-input" name="phone" required>
+                                <input class="form-control" type="text" id="example-text-input" name="address" required>
                             </div>
                         </div>
 
@@ -78,7 +86,7 @@
                         <div class="form-group row">
                             <label for="example-text-input" class="col-sm-2 col-form-label"> صورة </label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="file" id="example-text-input" name="phone" required>
+                                <input class="form-control" type="file" id="example-text-input" name="img" required>
                             </div>
                         </div>
 

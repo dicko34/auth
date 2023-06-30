@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Admin;
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
@@ -40,15 +39,15 @@ class AdminRegisterController extends Controller
         $imageName = $request->img->getClientOriginalExtension();
         $request->img->move(public_path('assets/site/images/admin'), $imageName);
 
-        DB::table('admins')->insert([
-            [
-                'fname' => $request->fname,
+        
+        Admin::create([
+            'fname' => $request->fname,
                 'lname' => $request->lname,
                 'email' => $request->email,
                 'password' => $request->password,
-                'phone' => $request->email,
+                'phone' => $request->phone,
                 'img' => $request->img,      
-        ]]);
+        ]);
 
         return redirect()->intended(route('admin.dashboard'));
     }

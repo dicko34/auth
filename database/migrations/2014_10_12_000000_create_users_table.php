@@ -18,8 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('fname');
             $table->string('lname');
             $table->string('email')->unique();
+            $table->string('city');
+            $table->string('address');
             $table->string('phone');
-            $table->enum('state',['allowed','blocked']);
+            $table->enum('state',['pinned','allowed','blocked']);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('img');

@@ -56,7 +56,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'img'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        //return('validator');
+        return('validator');
     }
 
     /**
@@ -77,6 +77,8 @@ class RegisterController extends Controller
              'fname' => $data['fname'],
              'email' => $data['email'],
              'password' => Hash::make($data['password']),
+             'city' => 'null',
+             'address' => 'null',
              'lname' => $data['lname'],
              'phone' => $data['phone'],
              'img' => $imageName,

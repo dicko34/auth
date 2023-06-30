@@ -4,6 +4,7 @@
     <link href="{{asset("assets/admin/libs/c3/c3.min.css")}}" id="bootstrap-style" rel="stylesheet" type="text/css"/>
 @endsection
 @section("content")
+
     <div class="row">
         <div class="col-md-6 col-lg-6 col-xl-3">
             <div class="card">
@@ -41,7 +42,7 @@
                     <div class="mini-stat clearfix">
                         <span class="font-size-40 text-primary mr-0 float-right"><i class="fas fa-users"></i></span>
                         <div class="mini-stat-info">
-                            <h3 class="counter font-weight-normal mt-0">777</h3>
+                            <h3 class="counter font-weight-normal mt-0">{{\App\Models\User::all()->count()}}</h3>
                         </div>
                         <div class="clearfix"></div>
                         <p class=" mb-0 mt-2 text-muted">عدد المستخدمين<span class="float-right"></span></p>
