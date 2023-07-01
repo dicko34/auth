@@ -38,6 +38,11 @@
         }
 
     </style>
+@php
+    $id = Request::route('car');
+    $car = \App\Models\Cars::find($id);
+    $extras = explode(",",$car->extras); 
+@endphp
     <div class="row mt-4 mb-5">
         <div class="col-lg-12 col-12">
             <div class="row text-center w-100">
@@ -49,12 +54,12 @@
                                     <div class="mt-5 m-1">
                                         <div class="mb-3">
                                             <h2>
-                                                هونداي اكسنت
+                                                {{$car->model}}
                                             </h2>
                                             <h5 class="smallColor mt-3">
-                                                موديل سنة 2007
+                                               {{$car->company}}
                                             </h5>
-                                            <h5 class="maincolor">1800 شيكل</h5>
+                                            <h5 class="maincolor">{{$car->price}} شيكل</h5>
                                         </div>
                                         <div>
                                             <div class="apsc-icons-wrapper clearfix apsc-theme-4">
@@ -66,35 +71,11 @@
 
                                         <div class="row m-2">
                                             <div class="col-4">
-                                                <a href="{{ asset('assets/admin/images/car.jpeg') }}"
+                                                <a href="{{ asset('assets/site/images/cars/'.$car->img) }}"
                                                     class="gallery-popup" style="height: 100px; width:100%">
                                                     <div class="project-item">
                                                         <div class="overlay-container">
-                                                            <img src="{{ asset('assets/admin/images/car.jpeg') }}"
-                                                                alt="img" class="gallery-thumb-img m-0"
-                                                                style="height: 100px; width:100%">
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col-4">
-                                                <a href="{{ asset('assets/admin/images/car.jpeg') }}"
-                                                    class="gallery-popup" style="height: 100px; width:100%">
-                                                    <div class="project-item">
-                                                        <div class="overlay-container">
-                                                            <img src="{{ asset('assets/admin/images/car.jpeg') }}"
-                                                                alt="img" class="gallery-thumb-img m-0"
-                                                                style="height: 100px; width:100%">
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col-4">
-                                                <a href="{{ asset('assets/admin/images/car.jpeg') }}"
-                                                    class="gallery-popup" style="height: 100px; width:100%">
-                                                    <div class="project-item">
-                                                        <div class="overlay-container">
-                                                            <img src="{{ asset('assets/admin/images/car.jpeg') }}"
+                                                            <img src="{{ asset('assets/site/images/cars/'.$car->img) }}"
                                                                 alt="img" class="gallery-thumb-img m-0"
                                                                 style="height: 100px; width:100%">
                                                         </div>
@@ -122,75 +103,58 @@
                     <tbody>
                         <tr>
                             <td class="">اللون</td>
-                            <td class=""> أخضر </td>
+                            <td class=""> {{$car->car_color}} </td>
                         </tr>
                         <tr>
                             <td class="">أصل السيارة</td>
-                            <td class=""> خصوصي </td>
+                            <td class=""> {{$car->origin}} </td>
                         </tr>
                         <tr>
                             <td class="">رخصة السيارة</td>
-                            <td class=""> فلسطينية </td>
+                            <td class=""> {{$car->driving_license}} </td>
                         </tr>
                         <tr>
                             <td class="">نوع الوقود</td>
-                            <td class=""> ديزل </td>
+                            <td class="">{{$car->fuel_type}}</td>
                         </tr>
                         <tr>
                             <td class="">نوع الجير</td>
-                            <td class=""> اوتوماتيك </td>
+                            <td class="">{{$car->lime_type}}</td>
                         </tr>
                         <tr>
                             <td class="">قوة الماتور</td>
-                            <td class=""> 2200 </td>
+                            <td class="">{{$car->power}}</td>
                         </tr>
                         <tr>
                             <td class="">الزجاج</td>
-                            <td class=""> الكتروني </td>
+                            <td class="">{{$car->glass}}</td>
                         </tr>
                         <tr>
                             <td class="">عدد الركاب</td>
-                            <td class=""> 6 </td>
+                            <td class="">{{$car->passengers}}</td>
                         </tr>
                         <tr>
                             <td class="">معروضة</td>
-                            <td class=""> للبيع </td>
+                            <td class="">{{$car->shown}}</td>
                         </tr>
                         <tr>
                             <td class="">وسيلة الدفع</td>
-                            <td class=""> إمكانية التقسيط </td>
+                            <td class=""> {{$car->pay_method}}</td>
                         </tr>
                         <tr>
                             <td class="">إضافات</td>
                             <td class="">
+                                @if(count($extras) > 0)
                                 <ul class="list-unstyled m-3 text-left">
                                     <li>
+                                        @foreach($extras as $ext)
                                         <ul>
-                                            <li class="m-2">مُكيّف</li>
-                                            <li class="m-2">إغلاق مركزي</li>
-                                            <li class="m-2">جهاز إنذار </li>
-                                            <li class="m-2">مسجل CD</li>
-                                            <li class="m-2">جنطات مغنيسيوم</li>
-                                            <li class="m-2">فرش جلد</li>
+                                            <li class="m-2">{{$ext}}</li>
                                         </ul>
+                                            @endforeach
                                     </li>
                                 </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="" colspan="2">
-                                <ul class="list-unstyled m-3 text-left">
-                                    <li>
-                                        <ul>
-                                            <li class="m-2">مُكيّف</li>
-                                            <li class="m-2">إغلاق مركزي</li>
-                                            <li class="m-2">جهاز إنذار </li>
-                                            <li class="m-2">مسجل CD</li>
-                                            <li class="m-2">جنطات مغنيسيوم</li>
-                                            <li class="m-2">فرش جلد</li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                @endif
                             </td>
                         </tr>
 
@@ -207,27 +171,27 @@
                     <tbody>
                         <tr>
                             <td class="">إسم المعلن</td>
-                            <td class=""> مارتينا جرجس </td>
+                            <td class=""> {{$car->advertiser_name}}</td>
                         </tr>
                         <tr>
                             <td class="">العنوان</td>
-                            <td class=""> الخليل - شارع السلام </td>
+                            <td class="">{{$car->address}}</td>
                         </tr>
                         <tr>
                             <td class="">رقم الهاتف</td>
-                            <td class=""> 12345678 </td>
+                            <td class="">{{$car->phone_number}}</td>
                         </tr>
                         <tr>
                             <td class="">موبايل</td>
-                            <td class=""> 1234567 </td>
+                            <td class="">{{$car->mobile}}</td>
                         </tr>
                         <tr>
                             <td class="">البريد الالكتروني</td>
-                            <td class=""> 1123@nnn.com </td>
+                            <td class=""> {{$car->email}}</td>
                         </tr>
                         <tr>
                             <td class=""> تاريخ نشر الاعلان</td>
-                            <td class=""> 11-11-2022 </td>
+                            <td class=""> {{$car->created_at}}</td>
                         </tr>
                         <tr>
                             <td class="">تاريخ انتهاء الاعلان</td>
