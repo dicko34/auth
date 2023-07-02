@@ -168,7 +168,7 @@
                                                 <input type="radio" id="switch7" value="فلسطينية" name="driving_license" />
                                                 <label for="switch7">فلسطينية</label>
 
-                                                <input type="radio" value="نمرة صفراء" id="switch8" name=" driving_license" />
+                                                <input type="radio" value="نمرة الصفراء" id="switch8" name="driving_license" />
                                                 <label for="switch8">نمرة صفراء</label>
 
 
@@ -192,11 +192,10 @@
                                             <td class="">
                                                 <input type="radio" value="عادي" id="switch11" name=" lime_type" />
                                                 <label for="switch11">عادي</label>
-
-                                                <input type="radio" value="اوتوماتيك" id="switch12" name=" lime_type" />
+                                                <input type="radio" value="اوتوماتيكي" id="switch12" name="lime_type" />
                                                 <label for="switch12">اوتوماتيك</label>
 
-                                                <input type="radio" value="نصف اوتوماتيك" id="switch13" name=" lime_type" />
+                                                <input type="radio" value="نصف اوتوماتيكي" id="switch13" name=" lime_type" />
                                                 <label for="switch13">نصف اوتوماتيك</label>
                                             </td>
                                         </tr>

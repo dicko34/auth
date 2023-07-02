@@ -20,9 +20,7 @@ class RedirectIfAuthenticated
     {
         if ($guard == "admin" && Auth::guard($guard)->check()) {
             return redirect()->route('admin.vendor');
-
         }
-
         if ($guard == "vendor" && Auth::guard($guard)->check()) {
             return redirect()->route('vendor.dashboard');
         }

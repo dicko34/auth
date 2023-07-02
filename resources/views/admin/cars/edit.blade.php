@@ -47,6 +47,11 @@ $car = \App\Models\Cars::find($id);
                     <form method="post" action="{{route('admin.cars.update',['car'=>$id])}}" enctype="multipart/form-data">
                         @csrf
                         @method('put')
+                        @if ($errors->any())
+     @foreach ($errors->all() as $error)
+         <div>{{$error}}</div>
+     @endforeach
+ @endif
                         <div class="row m-0 ">
                             <table class="table table-striped table-bordered mb-0 text-center h5">
                                 <thead>
@@ -173,7 +178,7 @@ $car = \App\Models\Cars::find($id);
                                     <tr>
                                         <td class="">عداد السيارة</td>
                                         <td class="">
-                                            <input value="{{$car->speedmotors}}" type="text" id="speedmotors" placeholder="75000 كيلومتر">
+                                            <input value="{{$car->speedmotors}}" type="text" id="speedmotors" name="speedmotors" placeholder="75000 كيلومتر">
                                             @error('speedmotors')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                             {{$message}}
@@ -225,13 +230,11 @@ $car = \App\Models\Cars::find($id);
                                     <tr>
                                         <td class="">رخصة السيارة</td>
                                         <td class="" id="driving_license">
-                                            <input type="radio" id="switch7" name="driving_license" />
-                                            <label for="switch7">فلسطينية</label>
+                                        <input type="radio" id="switch7" value="فلسطينية" name="driving_license" />
+                                                <label for="switch7">فلسطينية</label>
 
-                                            <input type="radio" id="switch8" name="driving_license" />
-                                            <label for="switch8">نمرة صفراء</label>
-
-
+                                                <input type="radio" value="نمرة الصفراء" id="switch8" name="driving_license" />
+                                                <label for="switch8">نمرة صفراء</label>
                                         </td>
                                         @error('driving_license')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
@@ -242,14 +245,14 @@ $car = \App\Models\Cars::find($id);
                                     <tr>
                                         <td class="">نوع الوقود</td>
                                         <td class="" id="fuel_type">
-                                            <input type="radio" id="switch1" name="fuel_type" />
-                                            <label for="switch1">ديزل</label>
+                                        <input type="radio" value="ديزل" id="switch1" name="fuel_type" />
+                                                <label for="switch1">ديزل</label>
 
-                                            <input type="radio" id="switch2" name="fuel_type" />
-                                            <label for="switch2">بنزين</label>
+                                                <input type="radio" value="بنزين" id="switch2" name="fuel_type" />
+                                                <label for="switch2">بنزين</label>
 
-                                            <input type="radio" id="switch3" name="fuel_type" />
-                                            <label for="switch3">هايبرد</label>
+                                                <input type="radio" value="هايبرد" id="switch3" name="fuel_type" />
+                                                <label for="switch3">هايبرد</label>
                                             @error('fuel_type')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                             {{$message}}
@@ -261,14 +264,13 @@ $car = \App\Models\Cars::find($id);
                                     <tr>
                                         <td class="">نوع الجير</td>
                                         <td class="" id="lime_type">
-                                            <input type="radio" id="switch11" name="lime_type" />
-                                            <label for="switch11">عادي</label>
+                                        <input type="radio" value="عادي" id="switch11" name=" lime_type" />
+                                                <label for="switch11">عادي</label>
+                                                <input type="radio" value="اوتوماتيكي" id="switch12" name="lime_type" />
+                                                <label for="switch12">اوتوماتيك</label>
 
-                                            <input type="radio" id="switch12" name="lime_type" />
-                                            <label for="switch12">اوتوماتيك</label>
-
-                                            <input type="radio" id="switch13" name="lime_type" />
-                                            <label for="switch13">نصف اوتوماتيك</label>
+                                                <input type="radio" value="نصف اوتوماتيكي" id="switch13" name=" lime_type" />
+                                                <label for="switch13">نصف اوتوماتيك</label>
                                             @error('lime_type')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                             {{$message}}
@@ -279,11 +281,11 @@ $car = \App\Models\Cars::find($id);
                                     <tr>
                                         <td class="">الزجاج</td>
                                         <td class="" id="glass">
-                                            <input type="radio" id="switch14" name="glass" />
-                                            <label for="switch14">يدوي</label>
+                                        <input type="radio" value="يدوي" id="switch14" name="glass" />
+                                                <label for="switch14">يدوي</label>
 
-                                            <input type="radio" id="switch15" name="glass" />
-                                            <label for="switch15">الكتروني</label>
+                                                <input type="radio" value="الكتروني" id="switch15" name="glass" />
+                                                <label for="switch15">الكتروني</label>
                                             @error('glass')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                             {{$message}}
@@ -294,14 +296,14 @@ $car = \App\Models\Cars::find($id);
                                     <tr>
                                         <td class="">معروضة</td>
                                         <td class="" id="shown">
-                                            <input type="radio" id="switch16" name="shown" />
-                                            <label for="switch16">للبيع فقط</label>
+                                        <input type="radio" value="للبيع فقط" id="switch16" name="shown" />
+                                                <label for="switch16">للبيع فقط</label>
 
-                                            <input type="radio" id="switch17" name="shown" />
-                                            <label for="switch17">للتبديل فقط</label>
+                                                <input type="radio" value="للتبديل فقط" id="switch17" name="shown" />
+                                                <label for="switch17">للتبديل فقط</label>
 
-                                            <input type="radio" id="switch18" name="shown" />
-                                            <label for="switch18">للبيع أو التبديل</label>
+                                                <input type="radio" value="للبيع أو التبديل" id="switch18" name="shown" />
+                                                <label for="switch18">للبيع أو التبديل</label>
                                             @error('shown')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                             {{$message}}
@@ -312,11 +314,11 @@ $car = \App\Models\Cars::find($id);
                                     <tr>
                                         <td class="">وسيلة الدفع</td>
                                         <td class="" id="pay_method">
-                                            <input type="radio" id="switch19" name="pay_method" />
-                                            <label for="switch19">نقدا فقط</label>
+                                        <input type="radio" value="نقدا فقط" id="switch19" name="pay_method" />
+                                                <label for="switch19">نقدا فقط</label>
 
-                                            <input type="radio" id="switch20" name="pay_method" />
-                                            <label for="switch20">إمكانية التقسيط</label>
+                                                <input type="radio" value="إمكانية التقسيط" id="switch20" name="pay_method" />
+                                                <label for="switch20">إمكانية التقسيط</label>
                                             @error('pay_method')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                             {{$message}}
@@ -327,29 +329,30 @@ $car = \App\Models\Cars::find($id);
                                     <tr>
                                         <td class="">إضافات</td>
                                         <td class="" id="extras">
-                                            <input type="checkbox" id="switch21" name="extras" />
-                                            <label for="switch21">جهاز إنذار</label>
+                                        <input type="hidden" id="extras_h" name="extras">
+                                                <input type="checkbox" value="جهاز إنذار" id="switch21"   onclick="checkedIf(event)"/>
+                                                <label for="switch21">جهاز إنذار</label>
 
-                                            <input type="checkbox" id="switch22" name="extras" />
-                                            <label for="switch22">مُكيّف</label>
+                                                <input type="checkbox" value="مُكيّف" id="switch22"   onclick="checkedIf(event)"/>
+                                                <label for="switch22">مُكيّف</label>
 
-                                            <input type="checkbox" id="switch23" name="extras" />
-                                            <label for="switch23">مسجل CD</label>
+                                                <input type="checkbox" value="مسجل CD" id="switch23"   onclick="checkedIf(event)"/>
+                                                <label for="switch23">مسجل CD</label>
 
-                                            <input type="checkbox" id="switch24" name="extras" />
-                                            <label for="switch24">فتحة سقف</label>
+                                                <input type="checkbox" value="فتحة سقف" id="switch24"   onclick="checkedIf(event)" />
+                                                <label for="switch24">فتحة سقف</label>
 
-                                            <input type="checkbox" id="switch25" name="extras" />
-                                            <label for="switch25">فرش جلد</label>
+                                                <input type="checkbox" value="فرش جلد" id="switch25"  onclick="checkedIf(event)" />
+                                                <label for="switch25">فرش جلد</label>
 
-                                            <input type="checkbox" id="switch26" name="extras" />
-                                            <label for="switch26">إغلاق مركزي</label>
+                                                <input type="checkbox" value="إغلاق مركزي" id="switch26"   onclick="checkedIf(event)"/>
+                                                <label for="switch26">إغلاق مركزي</label>
 
-                                            <input type="checkbox" id="switch27" name="extras" />
-                                            <label for="switch27">جنطات مغنيسيوم</label>
+                                                <input type="checkbox" value="جنطات مغنيسيوم" id="switch27"   onclick="checkedIf(event)"/>
+                                                <label for="switch27">جنطات مغنيسيوم</label>
 
-                                            <input type="checkbox" id="switch28" name="extras" />
-                                            <label for="switch28">وسادة حماية هوائية</label>
+                                                <input type="checkbox" value="وسادة حماية هوائية" id="switch28"  onclick="checkedIf(event)" />
+                                                <label for="switch28">وسادة حماية هوائية</label>
                                             @error('extras')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                             {{$message}}
@@ -465,7 +468,7 @@ $car = \App\Models\Cars::find($id);
                         </div>
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <button class="btn btn-primary w-md waves-effect waves-light" type="submit">أضف
+                                <button class="btn btn-primary w-md waves-effect waves-light" type="submit"  onclick="setExetras()">أضف
                                     الأعلان</button>
                             </div>
                         </div>
@@ -493,6 +496,18 @@ $car = \App\Models\Cars::find($id);
             await  (el.innerHTML == j) ? el.control.checked = true: '';
         }
     }
+    let checkedEl = [...vars['extras'].split(',')];
+        let setExetras =  () => {
+            document.getElementById('extras_h').value = checkedEl;
+        }
+        let checkedIf  = (e) => {
+            if(checkedEl.includes(e.target.value)) {
+                checkedEl.splice(checkedEl.indexOf(e.target.value),1)
+            } else {
+                checkedEl.push(e.target.value)
+            }
+            
+        }
     selectTarget('company')
     selectTarget('model')
     selectTarget('model_year')

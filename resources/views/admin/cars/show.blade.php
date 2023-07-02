@@ -205,10 +205,10 @@
             </div>
             <div class="row mt-3">
                 <div class="col-12 text-center">
-                    <button class="btn btn-primary w-md waves-effect waves-light" type="submit">قبول
-                        الأعلان</button>
-                        <button class="btn btn-primary w-md waves-effect waves-light" type="submit">رفض
-                            الأعلان</button>
+                <form method="post" action="{{route('admin.cars.change.state',['action'=>$car->state == 'refused' ? 'allowed' : 'refused','car'=>$car->id])}}">
+                    @csrf
+                  <button type="submit" class="btn btn-primary w-md waves-effect waves-light" >{{$car->state == 'refused' ? 'قبول الاعلان' :  'رفض الاعلان'}}</button>                                            
+                </form>    
                 </div>
             </div>
         </div>

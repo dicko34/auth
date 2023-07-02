@@ -11,7 +11,7 @@
     </style>
 @endsection
 @section("content")
-
+@php( $cars = \App\Models\Cars::all())  
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -42,18 +42,17 @@
                             <th>التحكم</th>
                         </tr>
                         </thead>
-                        <?php $counter =1; ?>
                         <tbody>
-                            {{-- @foreach($admins as $admin) --}}
+                            @foreach($cars as $car) 
                                 <tr> 
                                     <td>
                                         سياره للبيع
                                     </td>
                                     <td>
-                                        محمد
+                                        {{$car->advertiser_name}}
                                     </td>
                                     <td>
-                                        9999999
+                                        {{$car->phone_number}}
                                     </td>
                                     <td>
                                         <center>
@@ -64,17 +63,19 @@
                                                         التحكم
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                                        <a class="btn btn-dark col-sm-12"  href="{{route('admin.cars.show',['car'=>1])}}">عرض</a><br>
-                                                        <a class="btn btn-dark col-sm-12"  href="{{route('admin.cars.edit',['car'=>1])}}">تعديل</a><br>
-                                                        <a class="btn btn-dark col-sm-12"  href="">قبول</a><br>
-                                                        <a class="btn btn-dark col-sm-12"  href="">رفض</a><br>
+                                                        <a class="btn btn-dark col-sm-12"  href="{{route('admin.cars.show',['car'=>$car->id])}}">عرض</a><br>
+                                                        <a class="btn btn-dark col-sm-12"  href="{{route('admin.cars.edit',['car'=>$car->id])}}">تعديل</a><br>
+                                                        <form method="post" action="{{route('admin.cars.change.state',['action'=>$car->state == 'refused' ? 'allowed' : 'refused','car'=>$car->id])}}">
+                                                            @csrf
+                                                            <button type="submit" class="btn btn-dark col-sm-12" >{{$car->state == 'refused' ? 'قبول' : 'رفض'}}</button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
                                         </center>
                                     </td>
                                 </tr>
-                            {{-- @endforeach --}}
+                            @endforeach 
                         </tbody>
                     </table>
 

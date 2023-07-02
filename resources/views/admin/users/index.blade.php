@@ -45,7 +45,6 @@
                             <th>التحكم</th>
                         </tr>
                         </thead>
-                        <?php $counter =1; ?>
                         <tbody>
                       
                             @foreach($users as $user) 
