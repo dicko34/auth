@@ -59,7 +59,7 @@
 
             <div class="d-flex">
                 <div class="dropdown d-inline-block">
-                    <form action="{{route('logout')}}" method="post">
+                    <form action="{{route('admin.logout')}}" method="post">
                         @csrf
                         <input type="submit" value="تسجيل خروج" class="btn btn-danger bx bx-power-off font-size-16 align-middle mr-1">
                     </form>
