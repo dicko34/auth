@@ -136,7 +136,8 @@ class CarController extends Controller
             'lime_type' => 'required|max:30',
             'extras' =>  'required|max:200',
             'description' =>  'required|max:500',
-            'img'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'img'=> 'required',
+            'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'advertiser_name' => 'required|max:30',
             'phone_number' =>  'required|max:20',
             'mobile' => 'required|max:20',
@@ -144,13 +145,21 @@ class CarController extends Controller
             'city' =>  'required|max:20',
             'address' => 'required|max:100'
         ]);
-        $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$request->file('img')->getClientOriginalName();
-        $image_path = public_path('assets/site/images/cars').'/'.$car->img;
-        $validate["password"] =  Hash::make($request->password);
-        $validate['img']->move(public_path('assets/site/images/cars'), $imageName); // move the new img 
-        $validate['img']=$imageName; // store image name to db
+        if( $validate['img'] != "") {
+            foreach(explode(',',$car->img) as $img_path ) {
+                \unlink(public_path('assets/site/images/cars').'/'.$img_path); 
+            }
+            foreach($request->file('img') as $file_image ) {
+                $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
+                $file_image->move(public_path('assets/site/images/cars'), $imageName); // move the new img 
+                array_push($validate['img'],$imageName); // store image name to db
+            }
+            $validate['img'] = implode(',',$validate['img']);
+        } else {
+            $validate['img'] = $car->img;
+        }
         $car->update($validate );
-        \unlink($image_path); // remove the old img from db
+        $validate["password"] =  Hash::make($request->password);
        return  redirect()->route('admin.cars.index',['data' => "user $request->name updated successfully"]);
     }
 
