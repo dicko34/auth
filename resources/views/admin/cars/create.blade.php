@@ -190,7 +190,7 @@
                                         <tr>
                                             <td class="">نوع الجير</td>
                                             <td class="">
-                                                <input type="radio" value="عادي" id="switch11" name=" lime_type" />
+                                                <input type="radio" value="عادي" id="switch11" name="lime_type" />
                                                 <label for="switch11">عادي</label>
                                                 <input type="radio" value="اوتوماتيكي" id="switch12" name="lime_type" />
                                                 <label for="switch12">اوتوماتيك</label>

@@ -22,7 +22,9 @@ class CarController extends Controller
 
     public function new()
     {
-        return view('admin.cars.new');
+        $date = Carbon::today()->subDays(30);
+        $cars = Cars::where('created_at','>=',$date)->get();
+        return view('admin.cars.new')->with('cars',$cars);
     }
 
     /**
@@ -68,7 +70,7 @@ class CarController extends Controller
             'advertiser_name' => 'required|max:30',
             'phone_number' =>  'required|max:20',
             'mobile' => 'required|max:20',
-            'email' =>  'required|email|unique:cars',
+            'email' =>  'required|email',
             'city' =>  'required|max:20',
             'address' => 'required|max:100'
         ]);
@@ -76,8 +78,9 @@ class CarController extends Controller
         $validate['password'] =  Hash::make($request->password);
         $validate['img']->move(public_path('assets/site/images/cars'), $imageName); // move the new img 
         $validate['img']=$imageName; // store image name to db
+        
         Cars::create($validate);
-       return redirect()->route('admin.cars.index',['data' => "user $request->company created successfully"]);
+        return redirect()->route('admin.cars.index');
     }
 
     /**
@@ -148,7 +151,6 @@ class CarController extends Controller
         $validate['img']=$imageName; // store image name to db
         $car->update($validate );
         \unlink($image_path); // remove the old img from db
-      // return $request->only('email', 'password');
        return  redirect()->route('admin.cars.index',['data' => "user $request->name updated successfully"]);
     }
 

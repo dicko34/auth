@@ -33,7 +33,7 @@ Route::prefix('vendor')->group(function(){
 
 //Auth::routes();
 Route::get('/login', function () {
-    return view('vendor.logina');
+    return view('vendor.login');
 })->name('login');
 
 Route::get('/register', function () {
@@ -86,5 +86,3 @@ Route::get('/test', function () {
     return view('vendor.mobilesnew.add');
 });
 Auth::routes();
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

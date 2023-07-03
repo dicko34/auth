@@ -27,6 +27,7 @@ Route::prefix('admin')->group(function(){
         'namespace' => 'Admin',
         'middleware' => 'auth:admin'
     ], function(){
+
         Route::post('users/{user}','userController@changeState')->name('users.change.state');
         Route::resource('users', 'userController');
         Route::post('cars/{car}','CarController@changeState')->name('cars.change.state');
