@@ -181,7 +181,7 @@ class HomeController extends Controller
         $action = $request->query("action");
         $home->update(['state' =>$action] );
     
-        return   dd($home);
+        return  redirect()->route('admin.homes.index');
         
     }
 }

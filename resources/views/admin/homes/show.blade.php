@@ -7,6 +7,7 @@
         async="async"></script>
 @endsection
 @section('content')
+@php($extras = explode(',',$home->extras))
     <style>
         .nav-link {
             display: block;
@@ -65,42 +66,20 @@
                                         </div>
 
                                         <div class="row m-2">
+                                            @foreach(explode(',',$home->img) as $img)
                                             <div class="col-4">
-                                                <a href="{{ asset('assets/admin/images/home.jpg') }}"
+                                                <a href="{{ asset('assets/site/images/homes/'.$img) }}"
                                                     class="gallery-popup" style="height: 100px; width:100%">
                                                     <div class="project-item">
                                                         <div class="overlay-container">
-                                                            <img src="{{ asset('assets/admin/images/home.jpg') }}"
+                                                            <img src="{{ asset('assets/site/images/homes/'.$img) }}"
                                                                 alt="img" class="gallery-thumb-img m-0"
                                                                 style="height: 100px; width:100%">
                                                         </div>
                                                     </div>
                                                 </a>
                                             </div>
-                                            <div class="col-4">
-                                                <a href="{{ asset('assets/admin/images/home.jpg') }}"
-                                                    class="gallery-popup" style="height: 100px; width:100%">
-                                                    <div class="project-item">
-                                                        <div class="overlay-container">
-                                                            <img src="{{ asset('assets/admin/images/home.jpg') }}"
-                                                                alt="img" class="gallery-thumb-img m-0"
-                                                                style="height: 100px; width:100%">
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col-4">
-                                                <a href="{{ asset('assets/admin/images/home.jpg') }}"
-                                                    class="gallery-popup" style="height: 100px; width:100%">
-                                                    <div class="project-item">
-                                                        <div class="overlay-container">
-                                                            <img src="{{ asset('assets/admin/images/home.jpg') }}"
-                                                                alt="img" class="gallery-thumb-img m-0"
-                                                                style="height: 100px; width:100%">
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
+                                            @endforeach
                                         </div>
                                     </div>
 
@@ -123,36 +102,36 @@
                     <tbody>
                         <tr>
                             <td class="">العرض</td>
-                            <td class=""> للبيع </td>
+                            <td class=""> {{$home->show}} </td>
                         </tr>
                         <tr>
                             <td class="">نوع المنزل</td>
-                            <td class=""> شقة </td>
+                            <td class=""> {{$home->home_type}} </td>
                         </tr>
                         <tr>
                             <td class="">السعر</td>
-                            <td class=""> 1000 شيكل </td>
+                            <td class=""> {{$home->price}}</td>
                         </tr>
                         <tr>
                             <td class="">المساحة</td>
-                            <td class=""> 124 متر مربع </td>
+                            <td class=""> {{$home->area}}</td>
                         </tr>
                         <tr>
                             <td class="">مساحة الارض</td>
-                            <td class="">  124 متر مربع  </td>
+                            <td class=""> {{$home->land_area}}</td>
                         </tr>
                         <tr>
                             <td class="">عدد الغرف</td>
-                            <td class=""> ثلاث غرف </td>
+                            <td class=""> {{$home->rooms_number}}</td>
                         </tr>
                         <tr>
                             <td class="">الحالة</td>
-                            <td class=""> عظم </td>
+                            <td class="">  {{$home->status}} </td>
                         </tr>
                         <tr>
                         <tr>
                             <td class="">الصالة</td>
-                            <td class=""> صالة كبيرة </td>
+                            <td class=""> {{$home->loung}}</td>
                         </tr>
                         <tr>
                             <td class="">عدد البرندات</td>
@@ -160,30 +139,40 @@
                         </tr>
                         <tr>
                             <td class="">عدد الحمامات</td>
-                            <td class=""> 6 </td>
+                            <td class="">  {{$home->bathrooms_number}} </td>
                         </tr>
                         <tr>
                             <td class="">عدد المطابخ</td>
-                            <td class=""> 6 </td>
+                            <td class=""> {{$home->kitchen_number}} </td>
                         </tr>
                         <tr>
                             <td class=""> يوجد موقف سيارات خاص </td>
-                            <td class=""> نعم </td>
+                            <td class=""> 
+                            @foreach($extras as $ext)
+                                @if($ext == 'يوجد موقف سيارات خاص')
+                                نعم
+                                @break;
+                                @else 
+                                    لا
+                                @endif
+                                
+                            @endforeach
+                            </td>
                         </tr> 
                         <tr>
                             <td class="">إضافات</td>
                             <td class="">
+                                @if(count($extras) > 0)
                                 <ul class="list-unstyled m-3 text-left">
                                     <li>
+                                        @foreach($extras as $ext)
                                         <ul>
-                                            <li class="m-2">ترخيص تامين لشهر 3/2022</li>
-                                            <li class="m-2">ماطور جير 100‎%‎</li>
-                                            <li class="m-2">شاشه مع حساسات</li>
-                                            <li class="m-2">جنط 15 مسجل</li>
-                                            <li class="m-2">غرفه نضيفه</li>
+                                            <li class="m-2">{{$ext}}</li>
                                         </ul>
+                                            @endforeach
                                     </li>
                                 </ul>
+                                @endif
                             </td>
                         </tr> 
 
@@ -200,27 +189,27 @@
                     <tbody>
                         <tr>
                             <td class="">إسم المعلن</td>
-                            <td class=""> مارتينا جرجس </td>
+                            <td class=""> {{$home->advertiser_name}}</td>
                         </tr>
                         <tr>
                             <td class="">العنوان</td>
-                            <td class=""> الخليل - شارع السلام </td>
+                            <td class="">{{$home->address}}</td>
                         </tr>
                         <tr>
                             <td class="">رقم الهاتف</td>
-                            <td class=""> 12345678 </td>
+                            <td class="">{{$home->phone_number}}</td>
                         </tr>
                         <tr>
                             <td class="">موبايل</td>
-                            <td class=""> 1234567 </td>
+                            <td class="">{{$home->mobile}}</td>
                         </tr>
                         <tr>
                             <td class="">البريد الالكتروني</td>
-                            <td class=""> 1123@nnn.com </td>
+                            <td class=""> {{$home->email}}</td>
                         </tr>
                         <tr>
                             <td class=""> تاريخ نشر الاعلان</td>
-                            <td class=""> 11-11-2022 </td>
+                            <td class=""> {{$home->created_at}}</td>
                         </tr>
                         <tr>
                             <td class="">تاريخ انتهاء الاعلان</td>
@@ -229,12 +218,13 @@
                     </tbody>
                 </table>
             </div>
+            
             <div class="row mt-3">
                 <div class="col-12 text-center">
-                    <button class="btn btn-primary w-md waves-effect waves-light" type="submit">قبول
-                        الأعلان</button>
-                        <button class="btn btn-primary w-md waves-effect waves-light" type="submit">رفض
-                            الأعلان</button>
+                <form method="post" action="{{route('admin.homes.change.state',['action'=>$home->state == 'refused' ? 'allowed' : 'refused','home'=>$home->id])}}">
+                    @csrf
+                  <button type="submit" class="btn btn-primary w-md waves-effect waves-light" >{{$home->state == 'refused' ? 'قبول الاعلان' :  'رفض الاعلان'}}</button>                                            
+                </form>    
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-body">
+                                        <div class="card-body">
                     @if ($message = Session::get('success'))
                     <div class="alert alert-success alert-block">
                         <button type="button" class="close" data-dismiss="alert">×</button>
@@ -28,7 +28,7 @@
                         <strong>{{ $message }}</strong>
                     </div>
                     @endif
-                            <h4 class="">اعلانات الشقق الجديدة</h4>
+                            <h4 class="">كل اعلانات الشقق الجديدة</h4>
 
                         <hr>
 
@@ -42,18 +42,17 @@
                             <th>التحكم</th>
                         </tr>
                         </thead>
-                        <?php $counter =1; ?>
                         <tbody>
-                            {{-- @foreach($admins as $admin) --}}
+                            @foreach($homes as $home) 
                                 <tr> 
                                     <td>
                                         شقة للبيع
                                     </td>
                                     <td>
-                                        محمد
+                                        {{$home->advertiser_name}}
                                     </td>
                                     <td>
-                                        9999999
+                                        {{$home->phone_number}}
                                     </td>
                                     <td>
                                         <center>
@@ -64,19 +63,24 @@
                                                         التحكم
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                                        <a class="btn btn-dark col-sm-12"  href="{{route('admin.homes.show',['home'=>1])}}">عرض</a><br>
-                                                        <a class="btn btn-dark col-sm-12"  href="{{route('admin.homes.edit',['home'=>1])}}">تعديل</a><br>
-                                                        <a class="btn btn-dark col-sm-12"  href="">قبول</a><br>
-                                                        <a class="btn btn-dark col-sm-12"  href="">رفض</a><br>
+                                                        <a class="btn btn-dark col-sm-12"  href="{{route('admin.homes.show',['home'=>$home->id])}}">عرض</a><br>
+                                                        <a class="btn btn-dark col-sm-12"  href="{{route('admin.homes.edit',['home'=>$home->id])}}">تعديل</a><br>
+                                                        <form method="post" action="{{route('admin.homes.change.state',['action'=>$home->state == 'refused' ? 'allowed' : 'refused','home'=>$home->id])}}">
+                                                            @csrf
+                                                            <button type="submit" class="btn btn-dark col-sm-12" >{{$home->state == 'refused' ? 'قبول' : 'رفض'}}</button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
                                         </center>
                                     </td>
                                 </tr>
-                            {{-- @endforeach --}}
+                            @endforeach 
                         </tbody>
                     </table>
+
+                </div>                     
+              </tr>
 
                 </div>
             </div>
