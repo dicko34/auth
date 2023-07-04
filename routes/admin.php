@@ -33,7 +33,7 @@ Route::prefix('admin')->group(function(){
         Route::post('cars/{car}','CarController@changeState')->name('cars.change.state');
         Route::resource('cars', 'CarController');
         Route::get('car/new', 'CarController@new')->name('cars.new');
-
+        Route::post('homes/{home}','HomeController@changeState')->name('homes.change.state');
         Route::resource('homes', 'HomeController');
         Route::get('home/new', 'HomeController@new')->name('homes.new');
 
