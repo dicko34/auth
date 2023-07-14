@@ -5,6 +5,7 @@ use App\Models\Cars;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 
@@ -17,7 +18,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        return view('admin.cars.index');
+        return view('admin.cars.index')->with("cars", Cars::all());
     }
 
     public function new()
@@ -74,13 +75,18 @@ class CarController extends Controller
             'city' =>  'required|max:20',
             'address' => 'required|max:100'
         ]);
-        $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$request->file('img')->getClientOriginalName();
-        $validate['password'] =  Hash::make($request->password);
-        $validate['img']->move(public_path('assets/site/images/cars'), $imageName); // move the new img 
-        $validate['img']=$imageName; // store image name to db
-        
+
+        $validate['img'] = [];
+        foreach($request->file('img') as $file_image ) {
+            $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
+            $file_image->move(public_path('assets/site/images/cars'), $imageName); // move the new img 
+            array_push($validate['img'],$imageName); // store image name to db
+        }
+        $validate['img'] = implode(',',$validate['img']);
+        $validate['state'] = 'pinned';
         Cars::create($validate);
-        return redirect()->route('admin.cars.index');
+       
+        //return redirect()->route('admin.cars.index');
     }
 
     /**
@@ -91,7 +97,8 @@ class CarController extends Controller
      */
     public function show($id)
     {
-        return view('admin.cars.show');
+        $car = Cars::find($id);
+        return view('admin.cars.show')->with('car',$car);
     }
 
     /**
@@ -102,7 +109,7 @@ class CarController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.cars.edit');
+        return view('admin.cars.edit')->with("car",Cars::find($id));
     }
 
     /**
@@ -114,6 +121,7 @@ class CarController extends Controller
      */
     public function update(Request $request, Cars $car )
     {
+        $uploaded_imgs = explode(',',$car->img);
         $validate = $request->validate([
             'model' =>  'required|max:30',
             'company' =>  'required|max:30',
@@ -136,7 +144,7 @@ class CarController extends Controller
             'lime_type' => 'required|max:30',
             'extras' =>  'required|max:200',
             'description' =>  'required|max:500',
-            'img'=> 'required',
+            'img'=> '',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'advertiser_name' => 'required|max:30',
             'phone_number' =>  'required|max:20',
@@ -145,22 +153,27 @@ class CarController extends Controller
             'city' =>  'required|max:20',
             'address' => 'required|max:100'
         ]);
-        if( $validate['img'] != "") {
-            foreach(explode(',',$car->img) as $img_path ) {
+        if(isset($validate['img']) && !empty( $validate['img'])) {
+            $imgs = $request->file('img');
+            $validate['img'] = [];
+            foreach($uploaded_imgs as $img_path ) {
                 \unlink(public_path('assets/site/images/cars').'/'.$img_path); 
             }
-            foreach($request->file('img') as $file_image ) {
+            foreach($imgs as $file_image ) {
                 $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
                 $file_image->move(public_path('assets/site/images/cars'), $imageName); // move the new img 
                 array_push($validate['img'],$imageName); // store image name to db
+               // dd($imageName);
             }
             $validate['img'] = implode(',',$validate['img']);
+    
         } else {
-            $validate['img'] = $car->img;
+            $validate['img'] = implode(',',$uploaded_imgs);
         }
+        
         $car->update($validate );
         $validate["password"] =  Hash::make($request->password);
-       return  redirect()->route('admin.cars.index',['data' => "user $request->name updated successfully"]);
+        return  redirect()->route('admin.cars.index',['data' => "user $request->name updated successfully"]);
     }
 
     /**

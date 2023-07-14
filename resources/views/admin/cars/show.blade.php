@@ -39,8 +39,6 @@
 
     </style>
 @php
-    $id = Request::route('car');
-    $car = \App\Models\Cars::find($id);
     $extras = explode(",",$car->extras); 
 @endphp
     <div class="row mt-4 mb-5">
@@ -207,7 +205,14 @@
                 <div class="col-12 text-center">
                 <form method="post" action="{{route('admin.cars.change.state',['action'=>$car->state == 'refused' ? 'allowed' : 'refused','car'=>$car->id])}}">
                     @csrf
-                  <button type="submit" class="btn btn-primary w-md waves-effect waves-light" >{{$car->state == 'refused' ? 'قبول الاعلان' :  'رفض الاعلان'}}</button>                                            
+                    @if($car->state == 'pinned')
+                                                                <button type="submit" value="allowed" class="btn btn-primary w-md waves-effect waves-light d-block" >تفعيل</button>
+                                                                <button type="submit" value="blocked" class="btn btn-primary w-md waves-effect waves-light d-block" >حظر</button>
+                                                                @else 
+                                                                <button type="submit" value="{{$car->state == 'blocked'? 'allowed':'blocked' }}" class="btn btn-primary w-md waves-effect waves-light" >{{$car->state == 'blocked' ? 'قبول' : 'رفض'}}</button>
+
+
+                                                            @endif                              
                 </form>    
                 </div>
             </div>

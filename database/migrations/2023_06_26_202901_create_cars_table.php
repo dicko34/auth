@@ -41,7 +41,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('city');
             $table->string('address');
-            $table->enum('state',['refused','allowed']);
+            $table->enum('state',['pinned','refused','allowed']);
             $table->timestamps();
         });
     }

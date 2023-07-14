@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','HomeController@index')->name('home');
 
 // Vendor routes
+
 Route::prefix('vendor')->group(function(){
     Route::get('/', 'Users\Vendor\VendorController@index')->name('vendor.dashboard');
     Route::any('/gallery/{id}', 'Users\Vendor\VendorController@gallery')->name('vendor.gallery');
@@ -28,6 +29,39 @@ Route::prefix('vendor')->group(function(){
     Route::post('/login', 'Auth\VendorLoginController@login')->name('vendor.login.submit');
     Route::get('/register', 'Auth\VendorRegisterController@showRegisterForm')->name('vendor.register');
     Route::post('/register', 'Auth\VendorRegisterController@register')->name('vendor.register.submit');
+
+    Route::group([
+        'as' => 'vendor.',
+        'namespace' => 'Vendor',
+    ], function(){
+
+        Route::post('cars/{car}','CarController@store')->name('cars.store');
+        Route::put('cars','CarController@search')->name('cars.search');
+        
+        Route::post('homes/{home}','HomeController@store')->name('homes.store');
+        Route::put('homes','HomeController@search')->name('homes.search');
+
+        Route::post('lands/{land}','LandController@store')->name('lands.store');
+        Route::put('lands','LandController@search')->name('lands.search');
+
+        Route::post('shops/{shop}','ShopController@changeState')->name('shops.change.state');
+        Route::resource('shops', 'ShopController');
+
+        Route::post('lands/{land}','LandController@changeState')->name('lands.change.state');
+        Route::resource('lands', 'LandController');
+        
+        Route::post('jobs/{job}','jobController@changeState')->name('jobs.change.state');
+        Route::resource('jobs', 'JobController');
+
+        Route::post('mobiles/{mobile}','MobileController@changeState')->name('mobiles.change.state');
+        Route::resource('mobiles', 'MobileController');
+
+        Route::post('generals/{general}','GeneralController@changeState')->name('generals.change.state');
+        Route::resource('generals', 'GeneralController');
+
+        Route::resource('contacts', 'ContactController');
+
+    });
 
 });
 

@@ -41,18 +41,29 @@
                         <div class="row m-5">
                             <h3 class="m-5 m-auto"><i class="mdi mdi-car-side mr-2"></i>  أضافة إعلان جهاز ذكي جديد </h3>
                         </div>
-                        <form>
-                            <div class="row m-3">
+                        <form method="POST" action="{{route('admin.mobiles.store')}}" enctype="multipart/form-data">
+                        @csrf
+                        @if ($errors->any())
+     @foreach ($errors->all() as $error)
+         <div>{{$error}}</div>
+     @endforeach
+ @endif
+                        <div class="row m-3">
                                 <div class="col-sm-4">
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">حالة الجهاز</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control">
+                                            <select name="device_status" class="form-control">
                                                 <option>جديد</option>
                                                 <option>الكل</option>
                                                 <option>Large select</option>
                                                 <option>Small select</option>
                                             </select>
+                                            @error('device_status')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -61,12 +72,17 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">الشركة </label>
                                         <div class="col-sm-8">
-                                            <select class="form-control">
+                                            <select name="company" class="form-control">
                                                 <option>جديد</option>
                                                 <option>الكل</option>
                                                 <option>Large select</option>
                                                 <option>Small select</option>
                                             </select>
+                                            @error('company')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -75,12 +91,17 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">موديل</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control">
+                                            <select name="model" class="form-control">
                                                 <option>موديل</option>
                                                 <option>الكل</option>
                                                 <option>Large select</option>
                                                 <option>Small select</option>
                                             </select>
+                                            @error('model')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
+                                            @enderror
                                         </div>
                                         <p style="color: red" class="ml-4 mt-2">
                                             *في حالة عدم وجود الموديل قم بإدخاله في باقي الموديل
@@ -92,7 +113,12 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">باقي الموديل</label>
                                         <div class="col-sm-8">
-                                            <input value="" type="text" class="form-control">
+                                            <input name="reset_model"   type="text" class="form-control">
+                                            @error('reset_model')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -101,11 +127,16 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">موديل سنة</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control">
+                                            <select name="model_year" class="form-control">
                                                 <option>2020</option>
                                                 <option>Large select</option>
                                                 <option>Small select</option>
                                             </select>
+                                            @error('model_year')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -114,11 +145,16 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">عدد الشرائح</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control">
+                                            <select name="slides_number" class="form-control">
                                                 <option>اسود</option>
                                                 <option>Large select</option>
                                                 <option>Small select</option>
                                             </select>
+                                            @error('slides_number')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -127,7 +163,12 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">حجم الشاشة</label>
                                         <div class="col-sm-8">
-                                            <input value="" type="text" class="form-control" placeholder="مثال 5 بوصة">
+                                            <input name="screen_size"  type="text" class="form-control" placeholder="مثال 5 بوصة">
+                                            @error('screen_size')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -136,7 +177,12 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label"> الكاميرات</label>
                                         <div class="col-sm-8">
-                                            <input value="" type="text" class="form-control" placeholder="مثال 18 ميجا خلفية">
+                                            <input name="cameras"   type="text" class="form-control" placeholder="مثال 18 ميجا خلفية">
+                                            @error('cameras')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -145,7 +191,12 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label"> الذاكرة</label>
                                         <div class="col-sm-8">
-                                            <input value="" type="text" class="form-control" placeholder="مثال 8">
+                                            <input name="memory"  value="" type="text" class="form-control" placeholder="مثال 8">
+                                            @error('memory')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -154,7 +205,12 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label"> سعة التخزين</label>
                                         <div class="col-sm-8">
-                                            <input value="" type="text" class="form-control" placeholder="مثال 16">
+                                            <input name="storage"  value="" type="text" class="form-control" placeholder="مثال 16">
+                                            @error('storage')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>  
@@ -163,7 +219,12 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">السعر</label>
                                         <div class="col-sm-8">
-                                            <input value="" type="text" class="form-control" placeholder="75000">
+                                            <input name="price"  value="" type="text" class="form-control" placeholder="75000">
+                                            @error('price')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -172,11 +233,16 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">مدة الاعلان باليوم</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control">
+                                            <select name="ad_duration_per_day" class="form-control">
                                                 <option>30</option>
                                                 <option>Large select</option>
                                                 <option>Small select</option>
                                             </select>
+                                            @error('ad_duration_per_day')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -185,7 +251,12 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">معلومات إضافية</label>
                                         <div class="col-sm-10">
-                                            <textarea rows="8" type="text" class="form-control" placeholder="المزيد من المواصفات كل معلومة بسطر"></textarea>
+                                            <textarea rows="8" name="description" type="text" class="form-control" placeholder="المزيد من المواصفات كل معلومة بسطر"></textarea>
+                                            @error('description')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -194,7 +265,12 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">الصور</label>
                                         <div class="col-sm-10">
-                                            <input value="" type="file" class="form-control" multiple>
+                                            <input name="img[]" type="file" class="form-control" multiple>
+                                            @error('img')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -207,7 +283,12 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">الاسم</label>
                                         <div class="col-sm-8">
-                                            <input value="" type="text" class="form-control" placeholder="الاسم الحقيقي">
+                                        <input name="advertiser_name" type="text" class="form-control" placeholder="الاسم الحقيقي">
+                                            @error('advertiser_name')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -216,20 +297,39 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">رقم الهاتف</label>
                                         <div class="col-sm-8">
-                                            <input value="" type="text" class="form-control" placeholder="رقم الهاتف مع المقدمة">
+                                        <input name="phone_number"  type="text" class="form-control" placeholder="رقم الهاتف مع المقدمة">
+                                            @error('phone_number')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
         
                                 <div class="col-sm-12">
                                     <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">البريد الالكتروني</label>
+                                        <div class="col-sm-8">
+                                        <input name="email" type="text" class="form-control" placeholder="البريد الالكتروني">
+                                            @error('email')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
+                                            @enderror
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">المدينة</label>
                                         <div class="col-sm-8">
-                                            <select class="form-control">
+                                            <select name="advertiser_city" class="form-control">
                                                 <option>خصوصي</option>
                                                 <option>Large select</option>
                                                 <option>Small select</option>
                                             </select>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -238,8 +338,12 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">العنوان</label>
                                         <div class="col-sm-8">
-                                            <input value="" type="text" class="form-control" placeholder="اسم الشارع او المنطقة">
-                                        </div>
+                                        <input name="advertiser_address"  type="text" class="form-control" placeholder="اسم الشارع او المنطقة">
+                                            @error('advertiser_address')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
+                                            @enderror
                                     </div>
                                 </div>
                             </div>

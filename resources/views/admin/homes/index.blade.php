@@ -1,9 +1,9 @@
 @extends("layouts.admin")
 @section("pageTitle", "Ejada")
 @section("style")
-    <link href="{{asset("assets/admin/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css")}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset("assets/admin/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css")}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset("assets/admin/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css")}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset("admin/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css")}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset("admin/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css")}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset("admin/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css")}}" rel="stylesheet" type="text/css"/>
     <style>
         .star-fill{
             color:gold
@@ -68,7 +68,14 @@
                                                         <a class="btn btn-dark col-sm-12"  href="{{route('admin.homes.edit',['home'=>$home->id])}}">تعديل</a><br>
                                                         <form method="post" action="{{route('admin.homes.change.state',['action'=>$home->state == 'refused' ? 'allowed' : 'refused','home'=>$home->id])}}">
                                                             @csrf
-                                                            <button type="submit" class="btn btn-dark col-sm-12" >{{$home->state == 'refused' ? 'قبول' : 'رفض'}}</button>
+                                                            @if($home->state == 'pinned')
+                                                                <button type="submit" value="allowed" class="btn btn-dark col-sm-12 d-block" >تفعيل</button>
+                                                                <button type="submit" value="blocked" class="btn btn-dark col-sm-12 d-block" >حظر</button>
+                                                                @else 
+                                                                <button type="submit" value="{{$home->state == 'blocked'? 'allowed':'refused' }}" class="btn btn-dark col-sm-12" >{{$home->state == 'refused' ? 'قبول' : 'رفض'}}</button>
+
+
+                                                            @endif
                                                         </form>
                                                     </div>
                                                 </div>
@@ -90,17 +97,17 @@
 @endsection
 
 @section("script")
-<script src="{{asset("assets/admin/libs/datatables.net/js/jquery.dataTables.min.js")}}"></script>
-<script src="{{asset("assets/admin/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js")}}"></script>
-<script src="{{asset("assets/admin/libs/datatables.net-buttons/js/dataTables.buttons.min.js")}}"></script>
-<script src="{{asset("assets/admin/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js")}}"></script>
-<script src="{{asset("assets/admin/libs/jszip/jszip.min.js")}}"></script>
-<script src="{{asset("assets/admin/libs/pdfmake/build/pdfmake.min.js")}}"></script>
-<script src="{{asset("assets/admin/libs/pdfmake/build/vfs_fonts.js")}}"></script>
-<script src="{{asset("assets/admin/libs/datatables.net-buttons/js/buttons.html5.min.js")}}"></script>
-<script src="{{asset("assets/admin/libs/datatables.net-buttons/js/buttons.print.min.js")}}"></script>
-<script src="{{asset("assets/admin/libs/datatables.net-buttons/js/buttons.colVis.min.j")}}"></script>
-<script src="{{asset("assets/admin/libs/datatables.net-responsive/js/dataTables.responsive.min.js")}}"></script>
-<script src="{{asset("assets/admin/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js")}}"></script>
-<script src="{{asset("assets/admin/js/pages/datatables.init.js")}}"></script>
+<script src="{{asset("admin/libs/datatables.net/js/jquery.dataTables.min.js")}}"></script>
+<script src="{{asset("admin/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js")}}"></script>
+<script src="{{asset("admin/libs/datatables.net-buttons/js/dataTables.buttons.min.js")}}"></script>
+<script src="{{asset("admin/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js")}}"></script>
+<script src="{{asset("admin/libs/jszip/jszip.min.js")}}"></script>
+<script src="{{asset("admin/libs/pdfmake/build/pdfmake.min.js")}}"></script>
+<script src="{{asset("admin/libs/pdfmake/build/vfs_fonts.js")}}"></script>
+<script src="{{asset("admin/libs/datatables.net-buttons/js/buttons.html5.min.js")}}"></script>
+<script src="{{asset("admin/libs/datatables.net-buttons/js/buttons.print.min.js")}}"></script>
+<script src="{{asset("admin/libs/datatables.net-buttons/js/buttons.colVis.min.j")}}"></script>
+<script src="{{asset("admin/libs/datatables.net-responsive/js/dataTables.responsive.min.js")}}"></script>
+<script src="{{asset("admin/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js")}}"></script>
+<script src="{{asset("admin/js/pages/datatables.init.js")}}"></script>
 @endsection

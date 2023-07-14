@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,17 +18,14 @@ class userController extends Controller
      */
     public function index()
     {
-        return view('admin.users.index');
+        return view('admin.users.index')->with("users",User::all());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function new()
     {
-        return view('admin.users.create');
+        $date = Carbon::today()->subDays(30);
+        $users = User::where('created_at','>=',$date)->get();
+        return view('admin.users.new')->with('users',$users);
     }
 
     /**
@@ -37,23 +36,25 @@ class userController extends Controller
      */
     public function store(Request $request)
     {
-        $validate = $request->validate([
-            'fname' =>  'required|max:50',
-            'lname' =>  'required|max:50',
-            'email' =>  'required|email',
-            'city' =>  'required|max:50',
-            'address' =>  'required|max:200',
-            'phone' =>  'required|max:30|min:10',
-            'password' => 'min:8',
-            'img'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-        $imageName = $request->file('img')->getClientOriginalName();
-        $validate['password'] =  Hash::make($request->password);
-        $validate['img']->move(public_path('assets/site/images/users'), $imageName); // move the new img 
-        $validate['img']=$imageName; // store image name to db
-        $validate['state']='pinned'; // store image name to db
-        user::create($validate );
-        return  redirect()->route('admin.users.index',['data' => "user $request->name create successfully"]);
+         $validate = $request->validate([
+             'fname' =>  'required|max:50',
+             'lname' =>  'required|max:50',
+             'email' =>  'required|email',
+             'city' =>  'required|max:50',
+             'address' =>  'required|max:200',
+             'phone' =>  'required|max:30|min:10',
+             'password' => 'min:8',
+             'img'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
+         ]);
+         $file_image =  $request->file('img');
+         $imageName =  Str::of(Carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
+             $file_image->move(public_path('assets/site/images/users'), $imageName); 
+             $validate['img'] = $imageName;
+         $validate['password'] =  Hash::make($request->password);
+
+         $validate['state'] = 'pinned';
+         user::create($validate );
+        return  redirect()->route('admin.users.index',['data' => "user $request->name update successfully"]);
     }
 
     /**
@@ -64,7 +65,8 @@ class userController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        return view('admin.users.show')->with('user',$user);
     }
 
     /**
@@ -75,7 +77,12 @@ class userController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.users.edit');
+        return view('admin.users.edit')->with("user",User::find($id));;
+    }
+
+    public function create()
+    {
+        return view('admin.users.create');
     }
 
     /**
@@ -95,17 +102,22 @@ class userController extends Controller
              'address' =>  'required|max:200',
              'phone' =>  'required|max:30|min:10',
              'password' => 'min:8',
-             'img'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
+             'img'=> 'nullable',
+
          ]);
-         $imageName = $request->file('img')->getClientOriginalName();
-         $image_path = public_path('assets/site/images/users').'/'.$user->img;
-         \unlink($image_path); // remove the old img from db
+
+         if(isset($validate['img']) && !empty( $validate['img'])) {
+            $img = $request->file('img');
+                \unlink(public_path('assets/site/images/users').'/'.$user->img); 
+                $imageName =  Str::of(Carbon::now()->millisecond().$request->id)->pipe('md5').$img->getClientOriginalName();
+                $img->move(public_path('assets/site/images/users'), $imageName);
+    
+        } else {
+            $validate['img'] = $user->img;
+        }
          $validate["password"] =  Hash::make($request->password);
-         $validate['img']->move(public_path('assets/site/images/users'), $imageName); // move the new img 
-         $validate['img']=$imageName; // store image name to db
         $user->update($validate );
-       // return $request->only('email', 'password');
-        return  redirect()->route('admin.users.index',['data' => "user $request->name update successfully"]);
+        return  redirect()->route('admin.users.index',['data' => "user $request->name updatedd successfully"]);
     }
 
     /**
@@ -116,6 +128,9 @@ class userController extends Controller
      */
     public function destroy(User $user)
     {
+        foreach(explode(',',$user->img) as $img_path ) {
+            \unlink(public_path('assets/site/images/users').'/'.$img_path); 
+        }
         return $user->delete();
     }
     public function changeState(Request $request,User $user)
@@ -123,8 +138,6 @@ class userController extends Controller
         $action = $request->query("action");
             
             $user->update(['state' =>"$action"] );
-        
-        
         return  redirect()->route('admin.users.index');
         
     }

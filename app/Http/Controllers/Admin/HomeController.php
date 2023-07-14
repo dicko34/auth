@@ -73,15 +73,14 @@ class HomeController extends Controller
             'advertiser_city' =>  'required|max:20',
             'advertiser_address' => 'required|max:100'
         ]);
-        //
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
             $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
             $file_image->move(public_path('assets/site/images/homes'), $imageName); // move the new img 
             array_push($validate['img'],$imageName); // store image name to db
         }
-        $validate['password'] =  Hash::make($request->password);
         $validate['img'] = implode(',',$validate['img']);
+        $validate['state'] = 'pinned';
         Home::create($validate);
         return redirect()->route('admin.homes.index');
     }
@@ -118,6 +117,7 @@ class HomeController extends Controller
      */
     public function update(Request $request, Home $home )
     {
+        $uploaded_imgs = explode(',',$home->img);
         $validate = $request->validate([
             'show' =>  'required|max:30',
             'home_type' =>  'required|max:30',
@@ -136,7 +136,7 @@ class HomeController extends Controller
             'ad_durtion_per_day' =>  'required|max:20',
             'extras' =>  'required|max:200',
             'description' =>  'required|max:500',
-            'img'=> 'max:200',
+            'img'=> 'nullable',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'advertiser_name' => 'required|max:30',
             'phone_number' =>  'required|max:20',
@@ -145,25 +145,27 @@ class HomeController extends Controller
             'advertiser_city' =>  'required|max:20',
             'advertiser_address' => 'required|max:100'
         ]);
-        if( $validate['img'] != "") {
+        
+        if(isset($validate['img']) && !empty( $validate['img'])) {
+            $imgs = $request->file('img');
             $validate['img'] = [];
-            foreach(explode(',',$home->img) as $img_path ) {
+            foreach($uploaded_imgs as $img_path ) {
                 \unlink(public_path('assets/site/images/homes').'/'.$img_path); 
             }
-            foreach($request->file('img') as $file_image ) {
+            foreach($imgs as $file_image ) {
                 $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
                 $file_image->move(public_path('assets/site/images/homes'), $imageName); // move the new img 
                 array_push($validate['img'],$imageName); // store image name to db
+               // dd($imageName);
             }
             $validate['img'] = implode(',',$validate['img']);
+    
         } else {
-            $validate['img'] = implode(',',$home->img);
+            $validate['img'] = implode(',',$uploaded_imgs);
         }
         
-        $validate["password"] =  Hash::make($request->password);
         $home->update($validate );
-            return dd($validate);
-       //return  redirect()->route('admin.homes.index',['data' => "user $request->name updated successfully"]);
+       return  redirect()->route('admin.homes.index',['data' => "homes $request->advertiser_name updated successfully"]);
     }
 
     /**

@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Http\Controllers\Site;
-
+use App\Models\Cars;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class CarController extends Controller
 {
     public function index()
     {
-        return view('vendor.cars.index');
+        $cars = Cars::all();
+        return view('vendor.cars.index',compact('cars'));
     }
 
     public function search()

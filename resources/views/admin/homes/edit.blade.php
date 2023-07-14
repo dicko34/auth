@@ -407,8 +407,10 @@
     </div>
     <script>
     var vars = {{Illuminate\Support\Js::from($home)}};
+    console.log(vars);
     let selectTarget = (id) => {
-        let com = document.getElementsByName(`${id}`);
+        let com = document.querySelectorAll(`select[name="${id}"] option`);
+
         for (const el of com) {
             (el.innerHTML == vars[id]) ? el.selected = true: '';
         }

@@ -223,7 +223,14 @@
                 <div class="col-12 text-center">
                 <form method="post" action="{{route('admin.homes.change.state',['action'=>$home->state == 'refused' ? 'allowed' : 'refused','home'=>$home->id])}}">
                     @csrf
-                  <button type="submit" class="btn btn-primary w-md waves-effect waves-light" >{{$home->state == 'refused' ? 'قبول الاعلان' :  'رفض الاعلان'}}</button>                                            
+                    @if($home->state == 'pinned')
+                                                                <button type="submit" value="allowed" class="btn btn-primary w-md waves-effect waves-light d-block" >تفعيل</button>
+                                                                <button type="submit" value="blocked" class="btn btn-primary w-md waves-effect waves-light d-block" >حظر</button>
+                                                                @else 
+                                                                <button type="submit" value="{{$home->state == 'blocked'? 'allowed':'blocked' }}" class="btn btn-primary w-md waves-effect waves-light" >{{$home->state == 'blocked' ? 'قبول' : 'رفض'}}</button>
+
+
+                                                            @endif                                            
                 </form>    
                 </div>
             </div>
