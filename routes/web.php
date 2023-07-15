@@ -49,8 +49,8 @@ Route::prefix('vendor')->group(function(){
         Route::post('jobs/{job}','jobController@changeState')->name('jobs.change.state');
         Route::resource('jobs', 'JobController');
 
-        Route::post('mobiles/{mobile}','MobileController@changeState')->name('mobiles.change.state');
-        Route::resource('mobiles', 'MobileController');
+        Route::post('mobiles','MobileController@store')->name('mobiles.store');
+        Route::put('mobiles','MobileController@search')->name('mobiles.search');
 
         Route::post('generals/{general}','GeneralController@changeState')->name('generals.change.state');
         Route::resource('generals', 'GeneralController');
@@ -77,7 +77,7 @@ Route::get('/contact', function () {
 
 Route::any('/cars', 'Site\CarController@index')->name('car.index');
 Route::any('/cars/search', 'Site\CarController@search')->name('car.search');
-Route::any('/cars/product', 'Site\CarController@product')->name('car.product');
+Route::any('/car/product/{car}', 'Site\CarController@product')->name('car.product');
 Route::any('/cars/add', 'Site\CarController@add')->name('car.add');
 
 Route::any('/choseAdd', 'Site\CarController@choseAdd')->name('choseAdd');

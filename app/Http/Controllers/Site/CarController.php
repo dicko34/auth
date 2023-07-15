@@ -17,9 +17,9 @@ class CarController extends Controller
         return view('vendor.cars.search');
     }
 
-    public function product()
+    public function product(Cars $car)
     {
-        return view('vendor.cars.details');
+       return view('vendor.cars.details',compact('car'));
     }
 
     public function add()
