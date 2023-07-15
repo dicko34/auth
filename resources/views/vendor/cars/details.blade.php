@@ -203,30 +203,33 @@ $extras = explode(",",$car->extras);
                     </div>
                     <div class="row m-2 mb-2">
 
-                        @for ($i = 0; $i < 4; $i++) <div class="col-12 p-0 bordertoty">
+                    @foreach($cars as $car)
+                        <div class="col-12 p-0 bordertoty">
                             <div class="cardtoty m-sm-1 m-0 p-1">
-                                <a href="{{ asset('assets/admin/images/car.jpeg') }}" class="gallery-popup" style="height: 130px; width:100%">
+                                <a href="{{asset('assets/site/images/cars/'.$car->img)}}" class="gallery-popup"
+                                    style="height: 130px; width:100%">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="img" class="gallery-thumb-img m-0" style="height: 130px; width:100%">
+                                            <img src="{{asset('assets/site/images/cars/'.$car->img)}}" alt="img"
+                                                class="gallery-thumb-img m-0" style="height: 130px; width:100%">
                                             <div class="project-item-overlay text-right">
-                                                <h4>عقارات</h4>
+                                                <h4>السيارات</h4>
                                                 <p>
-                                                    <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="user" class="avatar-xs rounded-circle">
-                                                    <span class="ml-2">مارتينا جرجس</span>
+                                                    <img src="{{asset('assets/site/images/cars/'.$car->img)}}" alt="user"
+                                                        class="avatar-xs rounded-circle">
+                                                    <span class="ml-2">{{$car->advertiser_name}}</span>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
                                 <div class="mt-2 mb-2">
-                                    <h4 class="" style="color:#820120">شقق</h4>
-                                    <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م
-                                        وسط الخليل على بعد 570 متري</p>
+                                    <h4 class="" style="color:#820120">سيارة</h4>
+                                    <p class="card-text">{{$car->city}} {{$car->address}} للبيع في  {{$car->model}} سيارة</p>
                                 </div>
                             </div>
-                    </div>
-                    @endfor
+                        </div>
+                    @endforeach
 
                 </div>
             </div>
