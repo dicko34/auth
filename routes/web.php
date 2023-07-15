@@ -25,20 +25,16 @@ Route::prefix('vendor')->group(function(){
     Route::get('/', 'Users\Vendor\VendorController@index')->name('vendor.dashboard');
     Route::any('/gallery/{id}', 'Users\Vendor\VendorController@gallery')->name('vendor.gallery');
 
-    Route::get('/login', 'Auth\VendorLoginController@showLoginForm')->name('vendor.login');
-    Route::post('/login', 'Auth\VendorLoginController@login')->name('vendor.login.submit');
-    Route::get('/register', 'Auth\VendorRegisterController@showRegisterForm')->name('vendor.register');
-    Route::post('/register', 'Auth\VendorRegisterController@register')->name('vendor.register.submit');
 
     Route::group([
         'as' => 'vendor.',
         'namespace' => 'Vendor',
     ], function(){
 
-        Route::post('cars/{car}','CarController@store')->name('cars.store');
+        Route::post('cars','CarController@store')->name('cars.store');
         Route::put('cars','CarController@search')->name('cars.search');
         
-        Route::post('homes/{home}','HomeController@store')->name('homes.store');
+        Route::post('homes','HomeController@store')->name('homes.store');
         Route::put('homes','HomeController@search')->name('homes.search');
 
         Route::post('lands/{land}','LandController@store')->name('lands.store');

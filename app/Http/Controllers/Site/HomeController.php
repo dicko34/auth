@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Models\Home;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('vendor.homes.index');
+        $homes = Home::all();
+        return view('vendor.homes.index',compact('homes'));
     }
 
     public function search()

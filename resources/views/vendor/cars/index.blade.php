@@ -21,10 +21,10 @@
                     @method('put')
                     @csrf
                     @if ($errors->any())
-     @foreach ($errors->all() as $error)
-         <div>{{$error}}</div>
-     @endforeach
- @endif
+                        @foreach ($errors->all() as $error)
+                            <div>{{$error}}</div>
+                        @endforeach
+                    @endif
                     <div class="row m-1">
                                 <div class="col-4">
                                     <div class="form-group row">
@@ -115,7 +115,7 @@
                                         <div class="col-12 m-0 p-0">
                                         <select name="fuel_type" class="form-control">
                                         <option value="الكل">الكل</option>
-                                        @foreach($cars->unique('feul_type') as $car)
+                                        @foreach($cars->unique('fuel_type') as $car)
                                                     <option value="{{$car->fuel_type}}">{{$car->fuel_type}}</option>
                                                 @endforeach
                                             </select>
