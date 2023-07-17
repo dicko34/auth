@@ -84,12 +84,12 @@ Route::any('/choseAdd', 'Site\CarController@choseAdd')->name('choseAdd');
 
 Route::any('/homes', 'Site\HomeController@index')->name('homes.index');
 Route::any('/homes/search', 'Site\HomeController@search')->name('homes.search');
-Route::any('/homes/product', 'Site\HomeController@product')->name('homes.product');
+Route::any('/home/product/{home}', 'Site\HomeController@product')->name('homes.product');
 Route::any('/homes/add', 'Site\HomeController@add')->name('homes.add');
 
 Route::any('/shops', 'Site\ShopController@index')->name('shops.index');
 Route::any('/shops/search', 'Site\ShopController@search')->name('shops.search');
-Route::any('/shops/product', 'Site\ShopController@product')->name('shops.product');
+Route::any('/shops/product/{shop}', 'Site\ShopController@product')->name('shops.product');
 Route::any('/shops/add', 'Site\ShopController@add')->name('shops.add');
 
 Route::any('/lands', 'Site\LandsController@index')->name('lands.index');

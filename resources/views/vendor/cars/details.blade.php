@@ -31,7 +31,9 @@
     }
 </style>
 @php
+$car = $cars[request()->car -1];
 $extras = explode(",",$car->extras);
+
 @endphp
 <div class="row">
     <div class="col-lg-9 col-12">

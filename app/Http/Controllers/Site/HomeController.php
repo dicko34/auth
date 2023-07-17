@@ -20,7 +20,8 @@ class HomeController extends Controller
 
     public function product()
     {
-        return view('vendor.homes.details');
+        $homes = Home::all();
+        return view('vendor.homes.details',\compact('homes'));
     }
 
     public function add()

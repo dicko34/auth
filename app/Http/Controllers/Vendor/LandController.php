@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 
-class CarController extends Controller
+class LandController extends Controller
 {
 
     /**

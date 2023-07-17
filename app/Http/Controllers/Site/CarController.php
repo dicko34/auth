@@ -17,14 +17,16 @@ class CarController extends Controller
         return view('vendor.cars.search');
     }
 
-    public function product(Cars $car)
+    public function product()
     {
-       return view('vendor.cars.details',compact('car'));
+        $cars = Cars::all();
+       return view('vendor.cars.details',compact('cars'));
     }
 
     public function add()
     {
-        return view('vendor.cars.add');
+        $cars = Cars::all();
+        return view('vendor.cars.add',compact('cars'));
     }
 
     public function choseAdd()

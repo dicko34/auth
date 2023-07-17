@@ -342,7 +342,7 @@
             <div class="card w-100">
                 <div class="body-card m-3">
                     <div class="row">
-                        <h3 class="mb-4 col-6 btn btn-primary w-md waves-effect waves-light"><i class="mdi mdi-car-side mr-2"></i>800 سيارة</h3>
+                        <h3 class="mb-4 col-6 btn btn-primary w-md waves-effect waves-light"><i class="mdi mdi-car-side mr-2"></i>{{count($cars)}} سيارة</h3>
                         <div class="col-6 text-right">
                             <a class="btn btn-primary w-md waves-effect waves-light w-100" href="{{ route('car.add') }}">أضافة أعلان هنا</a>
                         </div>

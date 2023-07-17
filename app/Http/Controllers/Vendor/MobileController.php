@@ -7,7 +7,6 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
 
 class MobileController extends Controller
 {
@@ -18,26 +17,10 @@ class MobileController extends Controller
      */
     public function index()
     {
-        
         return view('vendor.mobiles.index')->with("mobiles",Mobile::all());
     }
 
-    public function new()
-    {
-        $date = Carbon::today()->subDays(30);
-        $mobiles = Mobile::where('created_at','>=',$date)->get();
-        return view('vendor.mobiles.new')->with('mobiles',$mobiles);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('vendor.mobiles.create');
-    }
+   
 
     /**
      * Store a newly created resource in storage.
@@ -78,102 +61,21 @@ class MobileController extends Controller
         $validate['img'] = implode(',',$validate['img']);
         $validate['state'] = 'pinned';
         Mobile::create($validate);
-        return redirect()->route('vendor.mobiles.index');
+        return redirect()->route('admin.mobiles.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $mobile = Mobile::find($id);
-        return view('vendor.mobiles.show')->with('mobile',$mobile);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        return view('vendor.mobiles.edit')->with("mobile",Mobile::find($id));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Mobile $mobile )
-    {
-        $uploaded_imgs = explode(',',$mobile->img);
-        $validate = $request->validate([
-            'device_status' =>  'required|max:30',
-            'company' =>  'required|max:30',
-            'model' =>  'required|max:20',
-            'model_year' =>  'required|integer',
-            'reset_model' =>  'required|max:30',
-            'slides_number' =>  'required|max:20',
-            'screen_size' =>  'required|max:30',
-            'cameras' =>  'required|max:30',
-            'memory' =>  'required|max:20',
-            'storage' =>  'required|max:30',
-            'price' =>  'required|max:30',
-            'description' =>  'required|max:500',
-            'img'=> 'nullable',
-            'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'ad_duration_per_day' =>  'required|max:20',
-            'advertiser_name' => 'required|max:30',
-            'phone_number' =>  'required|max:20',
-            'email' =>  'required|email',
-            'advertiser_city' =>  'required|max:20',
-            'advertiser_address' => 'required|max:100'
-        ]);
-        if(isset($validate['img']) && !empty( $validate['img'])) {
-            $imgs = $request->file('img');
-            $validate['img'] = [];
-            foreach($uploaded_imgs as $img_path ) {
-                \unlink(public_path('assets/site/images/mobiles').'/'.$img_path); 
-            }
-            foreach($imgs as $file_image ) {
-                $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
-                $file_image->move(public_path('assets/site/images/mobiles'), $imageName); // move the new img 
-                array_push($validate['img'],$imageName); // store image name to db
-               // dd($imageName);
-            }
-            $validate['img'] = implode(',',$validate['img']);
-    
-        } else {
-            $validate['img'] = implode(',',$uploaded_imgs);
-        }
-        
-        $mobile->update($validate );
-       return  redirect()->route('vendor.mobiles.index',['data' => "mobiles $request->advertiser_name updated successfully"]);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-    public function changeState(Request $request,Mobile $mobile)
-    {
-        $action = $request->query("action");
-        $mobile->update(['state' =>$action] );
-    
-        return  redirect()->route('vendor.mobiles.index');
-        
-    }
+    public function search(Request $request)
+     {
+        $mobiles = Mobile::all();
+         $mobiles_show = Mobile::where(
+            [['city',$request->city == 'الكل'? '!=': '='  ,$request->city == 'الكل' ? null : $request->city ],
+            ['address',$request->address == 'الكل'? '!=': '='  ,$request->address == 'الكل' ? null : $request->address ],
+            ['street',$request->street == 'الكل'? '!=': '='  ,$request->street == 'الكل' ? null : $request->street ],
+            ['home_type',$request->home_type == 'الكل'? '!=': '='  ,$request->home_type == 'الكل' ? null : $request->home_type ],
+            ['rooms_number',$request->rooms_number == 'الكل'? '!=': '='  ,$request->rooms_number == 'الكل' ? null : $request->rooms_number ],
+            ['status',$request->status == 'الكل'? '!=': '='  ,$request->status == 'الكل' ? null : $request->status ],
+            ['show',$request->show == 'الكل'? '!=': '='  ,$request->show == 'الكل' ? null : $request->show ],]
+        )->get();
+        return view('vendor.mobiles.index',compact('mobiles_show','mobiles'));
+     }
 }

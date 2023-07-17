@@ -53,9 +53,9 @@
                                                 شقة للبيع
                                             </h2>
                                             <h5 class="smallColor mt-3">
-                                                200 شيكل 
+                                            {{$car->price}} شيكل
                                             </h5>
-                                            <h5 class="maincolor">رام الله والبيرة - مدينة رام الله - بير نبالا</h5>
+                                            <h5 class="maincolor">{{$land->address}} - {{$land->street}} - {{$land->gov}}  </h5>
                                         </div>
                                         <div>
                                             <div class="apsc-icons-wrapper clearfix apsc-theme-4">
