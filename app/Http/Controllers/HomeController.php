@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cars;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('vendor.home');
+        $cars = DB::table('cars')->take(6)->get();
+        $generals = DB::table('generals')->take(6)->get();
+        $homes = DB::table('homes')->take(6)->get();
+        $jobs = DB::table('jobs')->take(6)->get();
+        $lands = DB::table('lands')->take(6)->get();
+        $mobiles = DB::table('mobiles')->take(6)->get();
+        $shops = DB::table('shops')->take(6)->get();
+        //return dd($cars);
+       return view('vendor.home',\compact('cars','generals','homes','jobs','lands','mobiles','shops'));
     }
 }

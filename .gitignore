@@ -5,7 +5,10 @@
 /public/storage
 /public/assets/site/images
 /storage/*.key
+/storage
 /vendor
+/bootstrap/app.php
+/config
 .env
 .env.backup
 .env.production

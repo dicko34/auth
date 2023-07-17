@@ -242,6 +242,6 @@
 <script src="{{asset("assets/admin/js/pages/gallery.init.js")}}"></script>
 
 <script src="{{asset("assets/admin/js/app.js")}}"></script>
-
+<script src="{{asset("js/action.js")}}"></script>
 </body>
 </html>

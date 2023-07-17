@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Users\Vendor;
 
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\Models\Cars;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -16,8 +17,9 @@ class VendorController extends Controller
 
     public function index()
     {
+        return dd(Cars::all()->get(1));
         $categories = Category::get();
-        return view('vendor', compact('categories'));
+        //return view('vendor', compact('categories'));
     }
 
     public function gallery($id)

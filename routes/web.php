@@ -20,14 +20,44 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','HomeController@index')->name('home');
 
 // Vendor routes
+
 Route::prefix('vendor')->group(function(){
     Route::get('/', 'Users\Vendor\VendorController@index')->name('vendor.dashboard');
     Route::any('/gallery/{id}', 'Users\Vendor\VendorController@gallery')->name('vendor.gallery');
 
-    Route::get('/login', 'Auth\VendorLoginController@showLoginForm')->name('vendor.login');
-    Route::post('/login', 'Auth\VendorLoginController@login')->name('vendor.login.submit');
-    Route::get('/register', 'Auth\VendorRegisterController@showRegisterForm')->name('vendor.register');
-    Route::post('/register', 'Auth\VendorRegisterController@register')->name('vendor.register.submit');
+
+    Route::group([
+        'as' => 'vendor.',
+        'namespace' => 'Vendor',
+    ], function(){
+
+        Route::post('cars','CarController@store')->name('cars.store');
+        Route::put('cars','CarController@search')->name('cars.search');
+        
+        Route::post('homes','HomeController@store')->name('homes.store');
+        Route::put('homes','HomeController@search')->name('homes.search');
+
+        Route::post('lands/{land}','LandController@store')->name('lands.store');
+        Route::put('lands','LandController@search')->name('lands.search');
+
+        Route::post('shops/{shop}','ShopController@changeState')->name('shops.change.state');
+        Route::resource('shops', 'ShopController');
+
+        Route::post('lands/{land}','LandController@changeState')->name('lands.change.state');
+        Route::resource('lands', 'LandController');
+        
+        Route::post('jobs/{job}','jobController@changeState')->name('jobs.change.state');
+        Route::resource('jobs', 'JobController');
+
+        Route::post('mobiles','MobileController@store')->name('mobiles.store');
+        Route::put('mobiles','MobileController@search')->name('mobiles.search');
+
+        Route::post('generals/{general}','GeneralController@changeState')->name('generals.change.state');
+        Route::resource('generals', 'GeneralController');
+
+        Route::resource('contacts', 'ContactController');
+
+    });
 
 });
 
@@ -47,19 +77,19 @@ Route::get('/contact', function () {
 
 Route::any('/cars', 'Site\CarController@index')->name('car.index');
 Route::any('/cars/search', 'Site\CarController@search')->name('car.search');
-Route::any('/cars/product', 'Site\CarController@product')->name('car.product');
+Route::any('/car/product/{car}', 'Site\CarController@product')->name('car.product');
 Route::any('/cars/add', 'Site\CarController@add')->name('car.add');
 
 Route::any('/choseAdd', 'Site\CarController@choseAdd')->name('choseAdd');
 
 Route::any('/homes', 'Site\HomeController@index')->name('homes.index');
 Route::any('/homes/search', 'Site\HomeController@search')->name('homes.search');
-Route::any('/homes/product', 'Site\HomeController@product')->name('homes.product');
+Route::any('/home/product/{home}', 'Site\HomeController@product')->name('homes.product');
 Route::any('/homes/add', 'Site\HomeController@add')->name('homes.add');
 
 Route::any('/shops', 'Site\ShopController@index')->name('shops.index');
 Route::any('/shops/search', 'Site\ShopController@search')->name('shops.search');
-Route::any('/shops/product', 'Site\ShopController@product')->name('shops.product');
+Route::any('/shops/product/{shop}', 'Site\ShopController@product')->name('shops.product');
 Route::any('/shops/add', 'Site\ShopController@add')->name('shops.add');
 
 Route::any('/lands', 'Site\LandsController@index')->name('lands.index');

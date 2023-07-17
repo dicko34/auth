@@ -38,6 +38,7 @@
         }
 
     </style>
+    @php($features = explode(',',$land->features))
     <div class="row mt-4 mb-5">
         <div class="col-lg-12 col-12">
             <div class="row text-center w-100">
@@ -49,12 +50,12 @@
                                     <div class="mt-5 m-1">
                                         <div class="mb-3">
                                             <h2>
-                                                ارض زتون 18 دونم في رام الله
+                                                {{$land->brief}}
                                             </h2>
                                             <h5 class="smallColor mt-3">
-                                                200 شيكل 
+                                                {{$land->price}} شيكل 
                                             </h5>
-                                            <h5 class="maincolor">رام الله والبيرة - مدينة رام الله - بير نبالا</h5>
+                                            <h5 class="maincolor">{{$land->address}} - {{$land->street}} - {{$land->gov}}  </h5>
                                         </div>
                                         <div>
                                             <div class="apsc-icons-wrapper clearfix apsc-theme-4">
@@ -65,42 +66,20 @@
                                         </div>
 
                                         <div class="row m-2">
+                                        @foreach(explode(',',$land->img) as $img)
                                             <div class="col-4">
-                                                <a href="{{ asset('assets/admin/images/land.jpg') }}"
+                                                <a href="{{ asset('assets/site/images/lands/'.$img) }}"
                                                     class="gallery-popup" style="height: 100px; width:100%">
                                                     <div class="project-item">
                                                         <div class="overlay-container">
-                                                            <img src="{{ asset('assets/admin/images/land.jpg') }}"
+                                                            <img src="{{ asset('assets/site/images/lands/'.$img) }}"
                                                                 alt="img" class="gallery-thumb-img m-0"
                                                                 style="height: 100px; width:100%">
                                                         </div>
                                                     </div>
                                                 </a>
                                             </div>
-                                            <div class="col-4">
-                                                <a href="{{ asset('assets/admin/images/land.jpg') }}"
-                                                    class="gallery-popup" style="height: 100px; width:100%">
-                                                    <div class="project-item">
-                                                        <div class="overlay-container">
-                                                            <img src="{{ asset('assets/admin/images/land.jpg') }}"
-                                                                alt="img" class="gallery-thumb-img m-0"
-                                                                style="height: 100px; width:100%">
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col-4">
-                                                <a href="{{ asset('assets/admin/images/land.jpg') }}"
-                                                    class="gallery-popup" style="height: 100px; width:100%">
-                                                    <div class="project-item">
-                                                        <div class="overlay-container">
-                                                            <img src="{{ asset('assets/admin/images/land.jpg') }}"
-                                                                alt="img" class="gallery-thumb-img m-0"
-                                                                style="height: 100px; width:100%">
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
+                                            @endforeach
                                         </div>
                                     </div>
 
@@ -123,47 +102,44 @@
                     <tbody>
                         <tr>
                             <td class="">نبذة</td>
-                            <td class=""> ارض زتون 18 دونم في رام الله </td>
+                            <td class=""> {{$land->brief}}</td>
                         </tr>
                         <tr>
                             <td class="">السعر</td>
-                            <td class=""> حسب الاتفاق </td>
+                            <td class=""> {{$land->price}}</td>
                         </tr>
                         <tr>
                             <td class="">تقع علي</td>
-                            <td class="">شارع رئيسي </td>
+                            <td class="">{{$land->located_on}}</td>
                         </tr>
                         <tr>
                             <td class="">المساحة</td>
-                            <td class=""> 124 متر مربع </td>
+                            <td class=""> {{$land->area}}</td>
                         </tr>
                         <tr>
                             <td class="">محاطة ب</td>
-                            <td class="">  سور إسمنت </td>
+                            <td class=""> {{$land->surrounded_by}}</td>
                         </tr>
                         <tr>
                             <td class="">إضافات</td>
                             <td class="">
+                            @if(count($features) > 0)
                                 <ul class="list-unstyled m-3 text-left">
-                                    <li class="m-2">تصلها الكهرباء</li>
-                                    <li class="m-2">ماطور جير تصلها المياه</li> 
+                                    <li>
+                                        @foreach($features as $ext)
+                                        <ul>
+                                            <li class="m-2">{{$ext}}</li>
+                                        </ul>
+                                            @endforeach
+                                    </li>
                                 </ul>
+                                @endif
                             </td>
                         </tr> 
                         <tr>
                             <td class="">معلومات إضافية</td>
                             <td class="">
-                                <ul class="list-unstyled m-3 text-left">
-                                    <li>
-                                        <ul>
-                                            <li class="m-2">ترخيص تامين لشهر 3/2022</li>
-                                            <li class="m-2">ماطور جير 100‎%‎</li>
-                                            <li class="m-2">شاشه مع حساسات</li>
-                                            <li class="m-2">جنط 15 مسجل</li>
-                                            <li class="m-2">غرفه نضيفه</li>
-                                        </ul>
-                                    </li>
-                                </ul>
+    {{$land->description}}
                             </td>
                         </tr> 
 
@@ -180,27 +156,27 @@
                     <tbody>
                         <tr>
                             <td class="">إسم المعلن</td>
-                            <td class=""> مارتينا جرجس </td>
+                            <td class=""> {{$land->advertiser_name}}</td>
                         </tr>
                         <tr>
                             <td class="">العنوان</td>
-                            <td class=""> الخليل - شارع السلام </td>
+                            <td class="">{{$land->address}}</td>
                         </tr>
                         <tr>
                             <td class="">رقم الهاتف</td>
-                            <td class=""> 12345678 </td>
+                            <td class="">{{$land->phone_number}}</td>
                         </tr>
                         <tr>
                             <td class="">موبايل</td>
-                            <td class=""> 1234567 </td>
+                            <td class="">{{$land->mobile}}</td>
                         </tr>
                         <tr>
                             <td class="">البريد الالكتروني</td>
-                            <td class=""> 1123@nnn.com </td>
+                            <td class=""> {{$land->email}}</td>
                         </tr>
                         <tr>
                             <td class=""> تاريخ نشر الاعلان</td>
-                            <td class=""> 11-11-2022 </td>
+                            <td class=""> {{$land->created_at}}</td>
                         </tr>
                         <tr>
                             <td class="">تاريخ انتهاء الاعلان</td>
@@ -211,10 +187,17 @@
             </div>
             <div class="row mt-3">
                 <div class="col-12 text-center">
-                    <button class="btn btn-primary w-md waves-effect waves-light" type="submit">قبول
-                        الأعلان</button>
-                        <button class="btn btn-primary w-md waves-effect waves-light" type="submit">رفض
-                            الأعلان</button>
+                <form method="post" action="{{route('admin.lands.change.state',['action'=>$land->state == 'refused' ? 'allowed' : 'refused','land'=>$land->id])}}">
+                    @csrf
+                    @if($land->state == 'pinned')
+                                                                <button type="submit" value="allowed" class="btn btn-primary w-md waves-effect waves-light d-block" >تفعيل</button>
+                                                                <button type="submit" value="blocked" class="btn btn-primary w-md waves-effect waves-light d-block" >حظر</button>
+                                                                @else 
+                                                                <button type="submit" value="{{$land->state == 'blocked'? 'allowed':'blocked' }}" class="btn btn-primary w-md waves-effect waves-light" >{{$land->state == 'blocked' ? 'قبول' : 'رفض'}}</button>
+
+
+                                                            @endif                                          
+                </form>    
                 </div>
             </div>
         </div>

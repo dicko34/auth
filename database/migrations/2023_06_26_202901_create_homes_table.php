@@ -37,7 +37,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('advertiser_city');
             $table->string('advertiser_address');
-            $table->enum('state',['refused','allowed']);
+            $table->enum('state',['pinned','refused','allowed']);
             $table->timestamps();
         });
     }
