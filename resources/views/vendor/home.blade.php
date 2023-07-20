@@ -371,9 +371,19 @@
         }
 
         .main-section {
-            margin:10px 5px 10px 5px;
+            margin:10px 0px 10px 0px;
             box-shadow:0px 0px 1px 0px;
             background:#fff;
+        }
+
+        @media (max-width:560px)  {
+            .dropdown a {
+                font-size:12px !important;
+            }
+
+            .card-body p {
+                display:none;
+            }
         }
 
 
