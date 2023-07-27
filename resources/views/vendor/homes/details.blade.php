@@ -61,7 +61,7 @@ $extras = explode(',',$home->extras)
                                     </div>
 
                                     <div class="row m-2">
-                                        @foreach(explode(',',$home->img) as $img)
+                                        @foreach(explode(',',explode(',',$home->img)[0]) as $img)
                                         <div class="col-4">
                                             <a href="{{ asset('assets/site/images/homes/'.$img) }}" class="gallery-popup" style="height: 100px; width:100%">
                                                 <div class="project-item">
@@ -223,14 +223,14 @@ $extras = explode(',',$home->extras)
                         @foreach($homes as $home)
                         <div class="col-12 p-0 bordertoty">
                             <div class="cardtoty m-sm-1 m-0 p-1">
-                                <a href="{{asset('assets/site/images/homes/'.$home->img)}}" class="gallery-popup" style="height: 130px; width:100%">
+                                <a href="{{asset('assets/site/images/homes/'.explode(',',$home->img)[0])}}" class="gallery-popup" style="height: 130px; width:100%">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="{{asset('assets/site/images/homes/'.$home->img)}}" alt="img" class="gallery-thumb-img m-0" style="height: 130px; width:100%">
+                                            <img src="{{asset('assets/site/images/homes/'.explode(',',$home->img)[0])}}" alt="img" class="gallery-thumb-img m-0" style="height: 130px; width:100%">
                                             <div class="project-item-overlay text-right">
                                                 <h4>السيارات</h4>
                                                 <p>
-                                                    <img src="{{asset('assets/site/images/homes/'.$home->img)}}" alt="user" class="avatar-xs rounded-circle">
+                                                    <img src="{{asset('assets/site/images/homes/'.explode(',',$home->img)[0])}}" alt="user" class="avatar-xs rounded-circle">
                                                     <span class="ml-2">{{$home->advertiser_name}}</span>
                                                 </p>
                                             </div>

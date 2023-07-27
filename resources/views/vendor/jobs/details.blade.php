@@ -33,6 +33,10 @@
         }
 
     </style>
+    @php
+    $job = $jobs[request()->job -1];
+    
+    @endphp
     <div class="row">
         <div class="col-lg-9 col-12">
             <div class="row text-center w-100">
@@ -44,7 +48,7 @@
                                     <div class="mt-5 m-1">
                                         <div class="mb-3">
                                             <h2>
-                                                مطلوب عدة تخصصات سكرتيره و مديره مبيعات و محاسبة
+                                              {{$job->specialization}}  مطلوب 
                                             </h2>
                                             <h5 class="smallColor mt-3">
                                                 شركة ايفال للخدمات والدعايةوالتسويق
@@ -60,37 +64,10 @@
 
                                         <div class="row m-2">
                                             <div class="col-4">
-                                                <a href="{{ asset('assets/admin/images/job.jpg') }}"
-                                                    class="gallery-popup" style="height: 100px; width:100%">
+                                                <a href="{{ asset('assets/site/images/jobs/'.explode(',',$job->img)[0]) }}" class="gallery-popup" style="height: 100px; width:100%">
                                                     <div class="project-item">
                                                         <div class="overlay-container">
-                                                            <img src="{{ asset('assets/admin/images/job.jpg') }}"
-                                                                alt="img" class="gallery-thumb-img m-0"
-                                                                style="height: 100px; width:100%">
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col-4">
-                                                <a href="{{ asset('assets/admin/images/job.jpg') }}"
-                                                    class="gallery-popup" style="height: 100px; width:100%">
-                                                    <div class="project-item">
-                                                        <div class="overlay-container">
-                                                            <img src="{{ asset('assets/admin/images/job.jpg') }}"
-                                                                alt="img" class="gallery-thumb-img m-0"
-                                                                style="height: 100px; width:100%">
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col-4">
-                                                <a href="{{ asset('assets/admin/images/job.jpg') }}"
-                                                    class="gallery-popup" style="height: 100px; width:100%">
-                                                    <div class="project-item">
-                                                        <div class="overlay-container">
-                                                            <img src="{{ asset('assets/admin/images/job.jpg') }}"
-                                                                alt="img" class="gallery-thumb-img m-0"
-                                                                style="height: 100px; width:100%">
+                                                            <img src="{{ asset('assets/site/images/jobs/'.explode(',',$job->img)[0]) }}" alt="img" class="gallery-thumb-img m-0" style="height: 100px; width:100%">
                                                         </div>
                                                     </div>
                                                 </a>
@@ -116,7 +93,7 @@
                     <tbody>
                         <tr>
                             <td class="">مكان العمل	</td>
-                            <td class=""> الخليل </td>
+                            <td class=""> {{$job->workplace}} </td>
                         </tr>
                         <tr>
                             <td class="">آخر موعد للتقديم</td>
@@ -124,15 +101,15 @@
                         </tr>
                         <tr>
                             <td class="">التخصص</td>
-                            <td class=""> برمجة </td>
+                            <td class=""> {{$job->specialization}} </td>
                         </tr>
                         <tr>
                             <td class="">الدوام</td>
-                            <td class="">  دوام كامل </td>
+                            <td class=""> {{$job->permanence}}</td>
                         </tr>
                         <tr>
                             <td class="">عمل ليلي</td>
-                            <td class=""> لا يوجد </td>
+                            <td class=""> {{$job->night_work}}</td>
                         </tr>
                         
                         <tr>
@@ -140,12 +117,7 @@
                                 <ul class="list-unstyled m-3 text-left">
                                     <li>
                                         <ul>
-                                            <li class="m-2">تفاصيل العمل</li>
-                                            <li class="m-2">تفاصيل العمل</li>
-                                            <li class="m-2">تفاصيل العمل</li>
-                                            <li class="m-2">تفاصيل العمل</li>
-                                            <li class="m-2">تفاصيل العمل</li>
-                                            <li class="m-2">تفاصيل العمل</li>
+                                            {{$job->description}}
                                         </ul>
                                     </li>
                                 </ul>
@@ -165,27 +137,27 @@
                     <tbody>
                         <tr>
                             <td class="">إسم المعلن</td>
-                            <td class=""> مارتينا جرجس </td>
+                            <td class=""> {{$job->advertiser_name}}</td>
                         </tr>
                         <tr>
                             <td class="">العنوان</td>
-                            <td class=""> الخليل - شارع السلام </td>
+                            <td class="">{{$job->advertiser_address}}</td>
                         </tr>
                         <tr>
                             <td class="">رقم الهاتف</td>
-                            <td class=""> 12345678 </td>
+                            <td class="">{{$job->phone_number}}</td>
                         </tr>
                         <tr>
                             <td class="">موبايل</td>
-                            <td class=""> 1234567 </td>
+                            <td class="">{{$job->mobile}}</td>
                         </tr>
                         <tr>
                             <td class="">البريد الالكتروني</td>
-                            <td class=""> 1123@nnn.com </td>
+                            <td class=""> {{$job->email}}</td>
                         </tr>
                         <tr>
                             <td class=""> تاريخ نشر الاعلان</td>
-                            <td class=""> 11-11-2022 </td>
+                            <td class=""> {{$job->created_at}}</td>
                         </tr>
                         <tr>
                             <td class="">تاريخ انتهاء الاعلان</td>
@@ -204,34 +176,33 @@
                         </div>
                         <div class="row m-2 mb-2">
 
-                            @for ($i = 0; $i < 4; $i++)
-                                <div class="col-12 p-0 bordertoty">
-                                    <div class="cardtoty m-sm-1 m-0 p-1">
-                                        <a href="{{ asset('assets/admin/images/car.jpeg') }}" class="gallery-popup"
-                                            style="height: 130px; width:100%">
-                                            <div class="project-item">
-                                                <div class="overlay-container">
-                                                    <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="img"
-                                                        class="gallery-thumb-img m-0" style="height: 130px; width:100%">
-                                                    <div class="project-item-overlay text-right">
-                                                        <h4>عقارات</h4>
-                                                        <p>
-                                                            <img src="{{ asset('assets/admin/images/car.jpeg') }}"
-                                                                alt="user" class="avatar-xs rounded-circle">
-                                                            <span class="ml-2">مارتينا جرجس</span>
-                                                        </p>
-                                                    </div>
+                            @foreach($jobs as $job)
+                            <div class="col-12 p-0 bordertoty">
+                                <div class="cardtoty m-sm-1 m-0 p-1">
+                                    <a href="{{asset('assets/site/images/jobs/'.explode(',',$job->img)[0])}}" class="gallery-popup"
+                                        style="height: 130px; width:100%">
+                                        <div class="project-item">
+                                            <div class="overlay-container">
+                                                <img src="{{asset('assets/site/images/jobs/'.explode(',',$job->img)[0])}}" alt="img"
+                                                    class="gallery-thumb-img m-0" style="height: 130px; width:100%">
+                                                <div class="project-item-overlay text-right">
+                                                    <h4>السيارات</h4>
+                                                    <p>
+                                                        <img src="{{asset('assets/site/images/jobs/'.explode(',',$job->img)[0])}}" alt="user"
+                                                            class="avatar-xs rounded-circle">
+                                                        <span class="ml-2">{{$job->advertiser_name}}</span>
+                                                    </p>
                                                 </div>
                                             </div>
-                                        </a>
-                                        <div class="mt-2 mb-2">
-                                            <h4 class="" style="color:#820120">شقق</h4>
-                                            <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م
-                                                وسط الخليل على بعد 570 متري</p>
                                         </div>
+                                    </a>
+                                    <div class="mt-2 mb-2">
+                                        <h4 class="" style="color:#820120">سيارة</h4>
+                                        <p class="card-text">{{$job->city}} {{$job->address}} للبيع في  {{$job->model}} سيارة</p>
                                     </div>
                                 </div>
-                            @endfor
+                            </div>
+                        @endforeach
 
                         </div>
                     </div>

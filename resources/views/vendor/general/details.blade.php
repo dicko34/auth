@@ -7,6 +7,10 @@
         async="async"></script>
 @endsection
 @section('content')
+@php
+$general = $generals[request()->general -1];
+
+@endphp
     <div class="row">
         <div class="card w-100">
             <div class="body-card m-3">
@@ -27,14 +31,12 @@
                                                 width: 9px;"></li>
                                     </ol>
                                     <div class="carousel-inner w-100 m-auto">
-                                        <div class="carousel-item active">
-                                            <img src="{{ asset('assets/admin/images/martina.jpg') }}" height="350"
-                                                class="d-block w-100" alt="...">
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="{{ asset('assets/admin/images/car.jpeg') }}" height="350"
-                                                class="d-block w-100" alt="...">
-                                        </div>
+                                    @foreach(explode(',',$general->img) as $key => $img)
+                                            <div class="carousel-item {{$key == 0 ? 'active' : ''}}">
+                                                <img src="{{ asset('assets/site/images/general/'.$img) }}" height="350"
+                                                    class="d-block w-100" alt="...">
+                                            </div>
+                                            @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -43,13 +45,13 @@
                                 <div class="m-5">
                                     <div class="mb-3">
                                         <h2>
-                                            كرسي مكتب صحي
+                                        {{$general->address}}
                                         </h2>
-                                        <h5 class="maincolor">$100</h5> 
+                                        <h5 class="maincolor">{{$general->price}}</h5> 
                                     </div>
 
                                     <h3 class="mt-5 mb-4">
-                                        شارك علي
+                                    {{$general->advertiser_name}}
                                     </h3>
                                     <div>
                                         <div class="apsc-icons-wrapper clearfix apsc-theme-4">
@@ -87,13 +89,13 @@
                                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                     <div class="m-lg-4 row">
                                         <div class="col-sm-6 m-2">
-                                            <div class="smallColor">العنوان : كرسي مكتب صحي</div>
+                                            <div class="smallColor">العنوان :{{$general->address}}</div>
                                         </div>  
                                         <div class="col-sm-6 m-2">
-                                            <div class="smallColor">الصنف : كرسي</div>
+                                            <div class="smallColor">الصنف : {{$general->category}}</div>
                                         </div>
                                         <div class="col-sm-6  m-2">
-                                            <div class="smallColor"> السعر : 150</div>
+                                            <div class="smallColor"> السعر : {{$general->price}}</div>
                                         </div> 
                                     </div>
                                 </div>
@@ -117,19 +119,19 @@
                                 <div class="tab-pane fade" id="seller" role="tabpanel" aria-labelledby="seller-tab">
                                     <div class="m-lg-4 row">
                                         <div class="col-sm-12 col-lg-4 col-md-3 m-2">
-                                            <div class="smallColor"> اسم المُعلن : مارتينا جرجس</div>
+                                            <div class="smallColor"> اسم المُعلن : {{$general->advertiser_name}}</div>
                                         </div>
                                         <div class="col-sm-12 col-lg-4 col-md-3 m-2">
-                                            <div class="smallColor"> العنوان : طولكرم - عنبتا شارع السكه</div>
+                                            <div class="smallColor"> العنوان : {{$general->advertiser_address}} - {{$general->advertiser_city}}</div>
                                         </div>
                                         <div class="col-sm-12 col-lg-4 col-md-3 m-2">
-                                            <div class="smallColor"> رقم الهاتف	 : خصوصي</div>
+                                            <div class="smallColor"> رقم الهاتف	 : {{$general->phone_number}}</div>
                                         </div>
                                         <div class="col-sm-12 col-lg-4 col-md-3 m-2">
-                                            <div class="smallColor"> رقم الموبايل : 77778787</div>
+                                            <div class="smallColor"> رقم الموبايل : {{$general->mobile}}</div>
                                         </div>
                                         <div class="col-sm-12 col-lg-4 col-md-3 m-2">
-                                            <div class="smallColor"> تاريخ نشر الإعلان : 2021-11-07
+                                            <div class="smallColor"> تاريخ نشر الإعلان : {{$general->created_at}}
                                             </div>
                                         </div>
                                         <div class="col-sm-12 col-lg-4 col-md-3 m-2">
@@ -196,25 +198,24 @@
             <div class="body-card m-3">
 
                 <div class="row">
-                    <h3 class="mb-4 col-6"><i class="fas fa-address-book mr-2"></i> اعلانات عامة </h3>
+                    <h3 class="mb-4 col-6"><i class="fas fa-address-book mr-2"></i> {{count($generals)}}اعلانات عامة </h3>
                     <div class="col-6 text-right">
                         <a class="btn btn-primary w-md waves-effect waves-light" href="{{ route("general.add") }}">أضافة أعلان هنا</a>
                     </div> 
                 </div>
                 <div class="row">
-
-                    @for ($i=0; $i < 8; $i++)
+                @foreach($generals as $general)
                     <div class="col-6 col-xl-2 p-1">
                         <div class="card">
-                            <a href="{{ asset('assets/admin/images/general.jpg') }}" class="gallery-popup" style="height: 160px; width:100%">
+                            <a href="{{asset('assets/site/images/general/'.explode(',',$general->img)[0])}}" class="gallery-popup" style="height: 160px; width:100%">
                                 <div class="project-item">
                                     <div class="overlay-container">
-                                        <img src="{{ asset('assets/admin/images/general.jpg') }}" alt="img" class="gallery-thumb-img m-0" style="height: 160px; width:100%">
+                                        <img src="{{asset('assets/site/images/general/'.explode(',',$general->img)[0])}}" alt="img" class="gallery-thumb-img m-0" style="height: 160px; width:100%">
                                         <div class="project-item-overlay text-right">
                                             <h4>الإعلانات العامة</h4>
                                             <p>
-                                                <img src="{{ asset('assets/admin/images/general.jpg') }}" alt="user" class="avatar-xs rounded-circle">
-                                                <span class="ml-2">مارتينا جرجس</span>
+                                                <img src="{{asset('assets/site/images/general/'.explode(',',$general->img)[0])}}" alt="user" class="avatar-xs rounded-circle">
+                                                <span class="ml-2">{{$general->advertiser_name}}</span>
                                             </p>
                                         </div>
                                     </div>
@@ -222,12 +223,11 @@
                             </a>
                             <div class="card-body">
                                 <h4 class="card-title">الإعلانات العامة</h4>
-                                <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م - فيصل بريك 0562700836
-                                    وسط الخليل على بعد 570 متر من مستشفى الأهلي</p>
+                                <p class="card-text">{{$general->city}} {{$general->address}} للبيع في {{$general->model}} اعلان</p>
                             </div>
                         </div> 
                     </div>
-                    @endfor
+                    @endforeach
                 
                 </div>
                 <nav aria-label="..." class="">

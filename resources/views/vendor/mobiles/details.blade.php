@@ -37,17 +37,17 @@
                             <div class="m-5">
                                 <div class="mb-3">
                                     <h2>
-                                        سامسونج M62 - مستعمل
+                                        {{$mobile->company}} - {{$mobile->devicce_status}}
                                     </h2>
-                                    <h5 class="maincolor">1100 شيكل
+                                    <h5 class="maincolor">{{$mobile->price}} شيكل
                                     </h5>
                                     <h5 class="smallColor mt-3">
-                                        موديل سنة 2007
+                                       {{$mobile->model_year}} موديل سنة 
                                     </h5>
                                 </div>
 
                                 <h3 class="mt-5 mb-4">
-                                    شارك علي
+                                    {{$mobile->advertiser_name}}
                                 </h3>
                                 <div>
                                     <div class="apsc-icons-wrapper clearfix apsc-theme-4">
@@ -78,78 +78,70 @@
                         </ul>
                     </div>
                     <div class="col-12 mt-4">
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="mobile" role="tabpanel" aria-labelledby="mobile-tab">
-                                <div class="m-lg-4 row">
-                                    <div class="col-sm-4 col-lg-2 col-md-3 m-2">
-                                        <div class="smallColor">اسم الشركة : Apple</div>
-                                    </div>
-                                    <div class="col-sm-4 col-lg-2 col-md-3 m-2">
-                                        <div class="smallColor">الموديل : ايباد 2</div>
-                                    </div>
-                                    <div class="col-sm-4 col-lg-2 col-md-3 m-2">
-                                        <div class="smallColor">حالة الجهاز : جديد</div>
-                                    </div>
-                                    <div class="col-sm-4 col-lg-2 col-md-3 m-2">
-                                        <div class="smallColor">عدد الشرائح : شريحتين</div>
-                                    </div>
-                                    <div class="col-sm-4 col-lg-2 col-md-3 m-2">
-                                        <div class="smallColor">حجم الشاشة : 5 بوصة</div>
-                                    </div>
-                                    <div class="col-sm-4 col-lg-2 col-md-3 m-2">
-                                        <div class="smallColor">الكاميرات : كاميرار خلفية</div>
-                                    </div>
-
-                                    <div class="col-sm-4 col-lg-2 col-md-3 m-2">
-                                        <div class="smallColor">الذاكرة : 64 جيجا</div>
-                                    </div>
-                                    <div class="col-sm-4 col-lg-2 col-md-3 m-2">
-                                        <div class="smallColor">سعة التخزين : 32 جيجا</div>
-                                    </div>
-                                    <div class="col-sm-4 col-lg-2 col-md-3 m-2">
-                                        <div class="smallColor">السعر : 1200</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                                <div class="m-4">
-                                    <ul class="list-unstyled m-3">
-                                        <li>
-                                            <ul>
-                                                <li class="m-2">ترخيص تامين لشهر 3/2022</li>
-                                                <li class="m-2">ماطور جير 100‎%‎</li>
-                                                <li class="m-2">شاشه مع حساسات</li>
-                                                <li class="m-2">جنط 15 مسجل</li>
-                                                <li class="m-2">غرفه نضيفه</li>
+                    <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="m-lg-4 row">
+                                            <div class="col-sm-4 col-lg-2 col-md-3 m-2">
+                                                <div class="smallColor">اسم الشركة : {{$mobile->company}}</div>
+                                            </div>
+                                            <div class="col-sm-4 col-lg-2 col-md-3 m-2">
+                                                <div class="smallColor">{{$mobile->model}} : ايباد 2</div>
+                                            </div>
+                                            <div class="col-sm-4 col-lg-2 col-md-3 m-2">
+                                                <div class="smallColor">حالة الجهاز : {{$mobile->device_status}}</div>
+                                            </div>
+                                            <div class="col-sm-4 col-lg-2 col-md-3 m-2">
+                                                <div class="smallColor">عدد الشرائح : {{$mobile->slides_number}}</div>
+                                            </div>
+                                            <div class="col-sm-4 col-lg-2 col-md-3 m-2">
+                                                <div class="smallColor">حجم الشاشة : {{$mobile->screen_size}}</div>
+                                            </div>
+                                            <div class="col-sm-4 col-lg-2 col-md-3 m-2">
+                                                <div class="smallColor">الكاميرات : {{$mobile->screen_size}}</div>
+                                            </div>
+    
+                                            <div class="col-sm-4 col-lg-2 col-md-3 m-2">
+                                                <div class="smallColor">الذاكرة : {{$mobile->screen_size}}</div>
+                                            </div>
+                                            <div class="col-sm-4 col-lg-2 col-md-3 m-2">
+                                                <div class="smallColor">سعة التخزين : {{$mobile->screen_size}}</div>
+                                            </div>
+                                            <div class="col-sm-4 col-lg-2 col-md-3 m-2">
+                                                <div class="smallColor">السعر : {{$mobile->price}}</div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                        <div class="m-4">
+                                            <ul class="list-unstyled m-3">
+                                            {{$mobile->description}}
                                             </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="tab-pane fade" id="seller" role="tabpanel" aria-labelledby="seller-tab">
-                                <div class="m-lg-4 row">
-                                    <div class="col-sm-12 col-lg-4 col-md-3 m-2">
-                                        <div class="smallColor"> اسم المُعلن : مارتينا جرجس</div>
-                                    </div>
-                                    <div class="col-sm-12 col-lg-4 col-md-3 m-2">
-                                        <div class="smallColor"> العنوان : طولكرم - عنبتا شارع السكه</div>
-                                    </div>
-                                    <div class="col-sm-12 col-lg-4 col-md-3 m-2">
-                                        <div class="smallColor"> رقم الهاتف : خصوصي</div>
-                                    </div>
-                                    <div class="col-sm-12 col-lg-4 col-md-3 m-2">
-                                        <div class="smallColor"> تاريخ نشر الإعلان : 2021-11-07
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-lg-4 col-md-3 m-2">
-                                        <div class="smallColor"> تاريخ إنتهاء الإعلان : 2021-11-22
+    
+                                    <div class="tab-pane fade" id="seller" role="tabpanel" aria-labelledby="seller-tab">
+                                        <div class="m-lg-4 row">
+                                            <div class="col-sm-12 col-lg-4 col-md-3 m-2">
+                                                <div class="smallColor"> اسم المُعلن : {{$mobile->advertiser_name}}</div>
+                                            </div>
+                                            <div class="col-sm-12 col-lg-4 col-md-3 m-2">
+                                                <div class="smallColor"> العنوان : {{$mobile->advertiser_address}}</div>
+                                            </div>
+                                            <div class="col-sm-12 col-lg-4 col-md-3 m-2">
+                                                <div class="smallColor"> رقم الهاتف	 : {{$mobile->phone_number}}</div>
+                                            </div>
+                                            <div class="col-sm-12 col-lg-4 col-md-3 m-2">
+                                                <div class="smallColor"> تاريخ نشر الإعلان : {{$mobile->created_at}}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-lg-4 col-md-3 m-2">
+                                                <div class="smallColor"> تاريخ إنتهاء الإعلان : 2021-11-22
+                                                </div>
+                                            </div>
+                                            
                                         </div>
                                     </div>
-
                                 </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
         </div>
@@ -170,14 +162,14 @@
                 @foreach($mobiles as $mobile)
                 <div class="col-12 p-0 bordertoty">
                     <div class="cardtoty m-sm-1 m-0 p-1">
-                        <a href="{{asset('assets/site/images/mobiles/'.$mobile->img)}}" class="gallery-popup" style="height: 130px; width:100%">
+                        <a href="{{asset('assets/site/images/mobiles/'.explode(',',$mobile->img)[0])}}" class="gallery-popup" style="height: 130px; width:100%">
                             <div class="project-item">
                                 <div class="overlay-container">
-                                    <img src="{{asset('assets/site/images/mobiles/'.$mobile->img)}}" alt="img" class="gallery-thumb-img m-0" style="height: 130px; width:100%">
+                                    <img src="{{asset('assets/site/images/mobiles/'.explode(',',$mobile->img)[0])}}" alt="img" class="gallery-thumb-img m-0" style="height: 130px; width:100%">
                                     <div class="project-item-overlay text-right">
                                         <h4>السيارات</h4>
                                         <p>
-                                            <img src="{{asset('assets/site/images/mobiles/'.$mobile->img)}}" alt="user" class="avatar-xs rounded-circle">
+                                            <img src="{{asset('assets/site/images/mobiles/'.explode(',',$mobile->img)[0])}}" alt="user" class="avatar-xs rounded-circle">
                                             <span class="ml-2">{{$mobile->advertiser_name}}</span>
                                         </p>
                                     </div>

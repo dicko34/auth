@@ -406,7 +406,7 @@
                     <div class="body-card m-3">
                         <div class="row">
                             <h3 class="mb-4 col-6 btn btn-primary w-md waves-effect waves-light"><i
-                                    class="mdi mdi-car-side mr-2"></i>{{count($cars)}} شقة</h3>
+                                    class="mdi mdi-car-side mr-2"></i>{{count($homes)}} شقة</h3>
                             <div class="col-6 text-right">
                                 <a class="btn btn-primary w-md waves-effect waves-light w-100"
                                     href="{{ route('home.add') }}">أضافة أعلان هنا</a>
@@ -417,14 +417,14 @@
                         @foreach($homes as $home)
                         <div class="col-12 p-0 bordertoty">
                             <div class="cardtoty m-sm-1 m-0 p-1">
-                                <a href="{{asset('assets/site/images/homes/'.$home->img)}}" class="gallery-popup" style="height: 130px; width:100%">
+                                <a href="{{asset('assets/site/images/homes/'.explode(',',$home->img)[0])}}" class="gallery-popup" style="height: 130px; width:100%">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="{{asset('assets/site/images/homes/'.$home->img)}}" alt="img" class="gallery-thumb-img m-0" style="height: 130px; width:100%">
+                                            <img src="{{asset('assets/site/images/homes/'.explode(',',$home->img)[0])}}" alt="img" class="gallery-thumb-img m-0" style="height: 130px; width:100%">
                                             <div class="project-item-overlay text-right">
                                                 <h4>السيارات</h4>
                                                 <p>
-                                                    <img src="{{asset('assets/site/images/homes/'.$home->img)}}" alt="user" class="avatar-xs rounded-circle">
+                                                    <img src="{{asset('assets/site/images/homes/'.explode(',',$home->img)[0])}}" alt="user" class="avatar-xs rounded-circle">
                                                     <span class="ml-2">{{$home->advertiser_name}}</span>
                                                 </p>
                                             </div>
@@ -471,14 +471,14 @@
                         @foreach($homes as $home)
                         <div class="col-12 p-0 bordertoty">
                             <div class="cardtoty m-sm-1 m-0 p-1">
-                                <a href="{{asset('assets/site/images/homes/'.$home->img)}}" class="gallery-popup" style="height: 130px; width:100%">
+                                <a href="{{asset('assets/site/images/homes/'.explode(',',$home->img)[0])}}" class="gallery-popup" style="height: 130px; width:100%">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="{{asset('assets/site/images/homes/'.$home->img)}}" alt="img" class="gallery-thumb-img m-0" style="height: 130px; width:100%">
+                                            <img src="{{asset('assets/site/images/homes/'.explode(',',$home->img)[0])}}" alt="img" class="gallery-thumb-img m-0" style="height: 130px; width:100%">
                                             <div class="project-item-overlay text-right">
                                                 <h4>السيارات</h4>
                                                 <p>
-                                                    <img src="{{asset('assets/site/images/homes/'.$home->img)}}" alt="user" class="avatar-xs rounded-circle">
+                                                    <img src="{{asset('assets/site/images/homes/'.explode(',',$home->img)[0])}}" alt="user" class="avatar-xs rounded-circle">
                                                     <span class="ml-2">{{$home->advertiser_name}}</span>
                                                 </p>
                                             </div>

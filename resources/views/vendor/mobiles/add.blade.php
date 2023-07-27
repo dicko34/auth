@@ -339,14 +339,14 @@
                 @foreach($mobiles as $mobile)
                 <div class="col-12 p-0 bordertoty">
                     <div class="cardtoty m-sm-1 m-0 p-1">
-                        <a href="{{asset('assets/site/images/mobiles/'.$mobile->img)}}" class="gallery-popup" style="height: 130px; width:100%">
+                        <a href="{{asset('assets/site/images/mobiles/'.explode(',',$mobile->img)[0])}}" class="gallery-popup" style="height: 130px; width:100%">
                             <div class="project-item">
                                 <div class="overlay-container">
-                                    <img src="{{asset('assets/site/images/mobiles/'.$mobile->img)}}" alt="img" class="gallery-thumb-img m-0" style="height: 130px; width:100%">
+                                    <img src="{{asset('assets/site/images/mobiles/'.explode(',',$mobile->img)[0])}}" alt="img" class="gallery-thumb-img m-0" style="height: 130px; width:100%">
                                     <div class="project-item-overlay text-right">
                                         <h4>السيارات</h4>
                                         <p>
-                                            <img src="{{asset('assets/site/images/mobiles/'.$mobile->img)}}" alt="user" class="avatar-xs rounded-circle">
+                                            <img src="{{asset('assets/site/images/mobiles/'.explode(',',$mobile->img)[0])}}" alt="user" class="avatar-xs rounded-circle">
                                             <span class="ml-2">{{$mobile->advertiser_name}}</span>
                                         </p>
                                     </div>

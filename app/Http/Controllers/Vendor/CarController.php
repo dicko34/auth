@@ -58,27 +58,7 @@ class CarController extends Controller
         $validate['state'] = 'pinned';
         Cars::create($validate);
        
-        return redirect()->route('vendor.cars.index');
+        return redirect()->route('car.index');
     }
 
-    /**
-     * Display the searched resource from storage .
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-
-     public function search(Request $request)
-     {
-        $cars = Cars::all();
-         $cars_show = Cars::where(
-            [['company',$request->company == 'الكل'? '!=': '='  ,$request->company == 'الكل' ? null : $request->company ],
-            ['model',$request->model == 'الكل'? '!=': '='  ,$request->model == 'الكل' ? null : $request->model ],
-            ['city',$request->city == 'الكل'? '!=': '='  ,$request->city == 'الكل' ? null : $request->city ],
-            ['fuel_type',$request->fuel_type == 'الكل'? '!=': '='  ,$request->fuel_type == 'الكل' ? null : $request->fuel_type ],
-            ['lime_type',$request->lime_type == 'الكل'? '!=': '='  ,$request->lime_type == 'الكل' ? null : $request->lime_type ],
-            ['driving_license',$request->driving_license == 'الكل'? '!=': '='  ,$request->driving_license == 'الكل' ? null : $request->driving_license ],]
-        )->whereBetween('price',[$request->price_min,$request->price_max])->get();
-        return view('vendor.cars.index',compact('cars_show','cars'));
-     }
 }

@@ -2,28 +2,40 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Http\Controllers\Controller;
+use App\Models\Job;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class JobsController extends Controller
 {
     public function index()
     {
-        return view('vendor.jobs.index');
+        $jobs = Job::all();
+        return view('vendor.jobs.index', compact('jobs'));
     }
 
-    public function search()
+    public function search(Request $request)
     {
-        return view('vendor.jobs.search');
+        $jobs = Job::all();
+        $jobs_show = Job::where(
+            [
+                ['workplace', $request->workplace == 'الكل' ? '!=' : '=', $request->workplace == 'الكل' ? null : $request->workplace],
+                ['specialization', $request->specialization == 'الكل' ? '!=' : '=', $request->specialization == 'الكل' ? null : $request->specialization],
+                ['permanence', $request->permanence == 'الكل' || $request->permanence == '' ? '!=' : '=', $request->permanence == 'الكل' ? null : $request->permanence],
+            ]
+        )->get();
+        return view('vendor.jobs.search', compact('jobs_show', 'jobs'));
     }
 
     public function product()
     {
-        return view('vendor.jobs.details');
+        $jobs = Job::all();
+        return view('vendor.jobs.details', compact('jobs'));
     }
 
     public function add()
     {
-        return view('vendor.jobs.add');
+        $jobs = Job::all();
+        return view('vendor.jobs.add', compact('jobs'));
     }
 }

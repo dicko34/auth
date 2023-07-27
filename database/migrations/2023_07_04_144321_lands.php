@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('ad_durtion_per_day');
             $table->string('advertiser_name');
-            $table->bigInteger('phone_number');
+             $table->string('phone_number');
             $table->string('mobile');
             $table->string('email');
             $table->string('advertiser_city');

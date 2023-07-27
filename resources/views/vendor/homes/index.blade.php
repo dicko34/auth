@@ -17,14 +17,8 @@
                 <div class="row">
                     <h3 class="mb-4 m-auto"><i class="mdi mdi-home mr-2"></i> اعلانات الشقق و المنازل </h3>
                 </div>
-                <form method="POST" action="{{ route("vendor.homes.search") }}">
-                    @method('put')
+                <form method="POST" action="{{ route("homes.search") }}">
                     @csrf
-                    @if ($errors->any())
-                        @foreach ($errors->all() as $error)
-                            <div>{{$error}}</div>
-                        @endforeach
-                    @endif
                     <div class="row m-1">
                                 <div class="col-4">
                                     <div class="form-group row">
@@ -140,24 +134,24 @@
                 <div class="row">
                     <h3 class="mb-4 col-6 btn btn-primary w-md waves-effect waves-light"><i class="mdi mdi-home mr-2"></i>800 شقة</h3>
                     <div class="col-6 text-right">
-                        <a class="btn btn-primary w-md waves-effect waves-light w-100" href="{{ route("homes.add") }}">أضافة أعلان هنا</a>
+                        <a class="btn btn-primary w-md waves-effect waves-light w-100" href="{{ route("home.add") }}">أضافة أعلان هنا</a>
                     </div>
                 </div>
                 <div class="row mt-2 mb-2">
 
-                @foreach(isset($homes_show) ? $homes_show : $homes  as $home)
+                @foreach($homes as $home)
                         <div class="col-6 col-xl-4  p-0 bordertoty">
                             <div class="cardtoty m-sm-1 m-0 p-1">
-                                <a href="{{ asset('assets/site/images/homes/'.$home->img) }}" class="gallery-popup"
+                                <a href="{{ asset('assets/site/images/homes/'.explode(',',$home->img)[0]) }}" class="gallery-popup"
                                     style="height: 130px; width:100%">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="{{ asset('assets/site/images/homes/'.$home->img) }}" alt="img"
+                                            <img src="{{ asset('assets/site/images/homes/'.explode(',',$home->img)[0]) }}" alt="img"
                                                 class="gallery-thumb-img m-0" style="height: 130px; width:100%">
                                             <div class="project-item-overlay text-right">
                                                 <h4>عقارات</h4>
                                                 <p>
-                                                    <img src="{{ asset('assets/site/images/homes/'.$home->img) }}" alt="user"
+                                                    <img src="{{ asset('assets/site/images/homes/'.explode(',',$home->img)[0]) }}" alt="user"
                                                         class="avatar-xs rounded-circle">
                                                     <span class="ml-2">{{$home->advertiser_name}}</span>
                                                 </p>
@@ -208,16 +202,16 @@
                 @foreach($homes as $home)
                         <div class="col-12 p-0 bordertoty">
                             <div class="cardtoty m-sm-1 m-0 p-1">
-                                <a href="{{asset('assets/site/images/homes/'.$home->img)}}" class="gallery-popup"
+                                <a href="{{asset('assets/site/images/homes/'.explode(',',$home->img)[0])}}" class="gallery-popup"
                                     style="height: 130px; width:100%">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="{{asset('assets/site/images/homes/'.$home->img)}}" alt="img"
+                                            <img src="{{asset('assets/site/images/homes/'.explode(',',$home->img)[0])}}" alt="img"
                                                 class="gallery-thumb-img m-0" style="height: 130px; width:100%">
                                             <div class="project-item-overlay text-right">
                                                 <h4>السيارات</h4>
                                                 <p>
-                                                    <img src="{{asset('assets/site/images/homes/'.$home->img)}}" alt="user"
+                                                    <img src="{{asset('assets/site/images/homes/'.explode(',',$home->img)[0])}}" alt="user"
                                                         class="avatar-xs rounded-circle">
                                                     <span class="ml-2">{{$home->advertiser_name}}</span>
                                                 </p>

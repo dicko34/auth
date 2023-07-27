@@ -17,14 +17,9 @@
                     <div class="row">
                         <h3 class="mb-4 m-auto"><i class="mdi mdi-car-side mr-2"></i> السيارات </h3>
                     </div>
-                    <form method="POST" action="{{ route("vendor.cars.search") }}">
-                        @method('put')
+                    <form method="POST" action="{{ route("cars.search") }}">
                         @csrf
-                        @if ($errors->any())
-                        @foreach ($errors->all() as $error)
-                        <div>{{$error}}</div>
-                        @endforeach
-                        @endif
+                       
                         <div class="row m-1">
                             <div class="col-4">
                                 <div class="form-group row">
@@ -181,7 +176,7 @@
                                 <button class="btn btn-primary w-md waves-effect waves-light" type="submit">بحث الان</button>
                             </div>
                         </div>
-                    </form>
+</form>
                 </div>
             </div>
         </div>
@@ -196,17 +191,17 @@
                         </div>
                     </div>
                     <div class="row mt-2 mb-2">
-                        @foreach(isset($cars_show) ? $cars_show : $cars as $car)
+                        @foreach($cars as $car)
                         <div class="col-6 col-xl-4  p-0 bordertoty">
                             <div class="cardtoty m-sm-1 m-0 p-1">
-                                <a href="{{ asset('assets/site/images/cars/'.$car->img) }}" class="gallery-popup" style="height: 130px; width:100%">
+                                <a href="{{ asset('assets/site/images/cars/'.explode(',',$car->img)[0]) }}" class="gallery-popup" style="height: 130px; width:100%">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="{{ asset('assets/site/images/cars/'.$car->img) }}" alt="img" class="gallery-thumb-img m-0" style="height: 130px; width:100%">
+                                            <img src="{{ asset('assets/site/images/cars/'.explode(',',$car->img)[0]) }}" alt="img" class="gallery-thumb-img m-0" style="height: 130px; width:100%">
                                             <div class="project-item-overlay text-right">
                                                 <h4>عقارات</h4>
                                                 <p>
-                                                    <img src="{{ asset('assets/site/images/cars/'.$car->img) }}" alt="user" class="avatar-xs rounded-circle">
+                                                    <img src="{{ asset('assets/site/images/cars/'.explode(',',$car->img)[0]) }}" alt="user" class="avatar-xs rounded-circle">
                                                     <span class="ml-2">{{$car->advertiser_name}}</span>
                                                 </p>
                                             </div>
@@ -256,14 +251,14 @@
                         @foreach($cars as $car)
                         <div class="col-12 p-0 bordertoty">
                             <div class="cardtoty m-sm-1 m-0 p-1">
-                                <a href="{{asset('assets/site/images/cars/'.$car->img)}}" class="gallery-popup" style="height: 130px; width:100%">
+                                <a href="{{asset('assets/site/images/cars/'.explode(',',$car->img)[0])}}" class="gallery-popup" style="height: 130px; width:100%">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="{{asset('assets/site/images/cars/'.$car->img)}}" alt="img" class="gallery-thumb-img m-0" style="height: 130px; width:100%">
+                                            <img src="{{asset('assets/site/images/cars/'.explode(',',$car->img)[0])}}" alt="img" class="gallery-thumb-img m-0" style="height: 130px; width:100%">
                                             <div class="project-item-overlay text-right">
                                                 <h4>السيارات</h4>
                                                 <p>
-                                                    <img src="{{asset('assets/site/images/cars/'.$car->img)}}" alt="user" class="avatar-xs rounded-circle">
+                                                    <img src="{{asset('assets/site/images/cars/'.explode(',',$car->img)[0])}}" alt="user" class="avatar-xs rounded-circle">
                                                     <span class="ml-2">{{$car->advertiser_name}}</span>
                                                 </p>
                                             </div>

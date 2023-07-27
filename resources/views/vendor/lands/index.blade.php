@@ -18,16 +18,19 @@
                     <h3 class="mb-4 m-auto"><i class="mdi mdi-view-dashboard  mr-2"></i> اعلانات الاراضي  </h3>
                 </div>
                 <form method="POST" action="{{ route("lands.search") }}">
-                    @csrf 
+                    @csrf
                     <div class="row m-3">
                         <div class="col-4">
                             <div class="form-group row">
                                 <div class="col-12  m-0 p-0">
-                                    <select class="form-control">
-                                        <option>المحافظة</option>
-                                        <option>Large select</option>
-                                        <option>Small select</option>
-                                    </select>
+                                    <option></option>
+                                    <label class="col-sm-4 col-form-label">المحافظة</label>
+                                    <select name="gov" class="form-control">
+                                        <option value="الكل">الكل</option>
+                                        @foreach($lands->unique('gov') as $land)
+                                                    <option value="{{$land->gov}}">{{$land->gov}}</option>
+                                        @endforeach
+                                            </select>
                                 </div>
                             </div>
                         </div>
@@ -35,11 +38,13 @@
                         <div class="col-4">
                             <div class="form-group row">
                                 <div class="col-sm-12  m-0 p-0">
-                                    <select class="form-control">
-                                        <option>المنطقة</option>
-                                        <option>Large select</option>
-                                        <option>Small select</option>
-                                    </select>
+                                    <label class="col-sm-4 col-form-label">المنطقة</label>
+                                    <select name="city" class="form-control">
+                                        <option value="الكل">الكل</option>
+                                        @foreach($lands->unique('city') as $land)
+                                                    <option value="{{$land->city}}">{{$land->city}}</option>
+                                        @endforeach
+                                            </select>
                                 </div>
                             </div>
                         </div>
@@ -58,41 +63,33 @@
         <div class="card w-100">
             <div class="body-card m-3">
                 <div class="row">
-                    <h3 class="mb-4 col-6 btn btn-primary w-md waves-effect waves-light"><i class="mdi mdi-home mr-2"></i>800 اعلان ارض</h3>
+                    <h3 class="mb-4 col-6 btn btn-primary w-md waves-effect waves-light"><i class="mdi mdi-home mr-2"></i>{{count($lands)}} اعلان ارض</h3>
                     <div class="col-6 text-right">
                         <a class="btn btn-primary w-md waves-effect waves-light w-100" href="{{ route("lands.add") }}">أضافة أعلان هنا</a>
                     </div>
                 </div>
                 <div class="row mt-2 mb-2">
 
-                    @for ($i = 0; $i < 12; $i++)
-                        <div class="col-6 col-xl-4  p-0 bordertoty">
-                            <div class="cardtoty m-sm-1 m-0 p-1">
-                                <a href="{{ asset('assets/admin/images/land.jpg') }}" class="gallery-popup"
-                                    style="height: 130px; width:100%">
-                                    <div class="project-item">
-                                        <div class="overlay-container">
-                                            <img src="{{ asset('assets/admin/images/land.jpg') }}" alt="img"
-                                                class="gallery-thumb-img m-0" style="height: 130px; width:100%">
-                                            <div class="project-item-overlay text-right">
-                                                <h4>عقارات</h4>
-                                                <p>
-                                                    <img src="{{ asset('assets/admin/images/land.jpg') }}" alt="user"
-                                                        class="avatar-xs rounded-circle">
-                                                    <span class="ml-2">مارتينا جرجس</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="mt-2 mb-2">
-                                    <h4 class="" style="color:#820120">شقق</h4>
-                                    <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م
-                                    وسط الخليل على بعد 570 متري</p>
-                                </div>
-                            </div>
-                        </div>
-                    @endfor
+                    @foreach ($lands as $land)
+                                    <tr>
+                                        <td>
+                                            <a href="{{ ('land/product/'.$land->id) }}">
+                                                <img src="{{ asset('assets/site/images/lands/'.explode(',',$land->img)[0]) }}" alt="img"
+                                                class="gallery-thumb-img m-0" style="height: 100px; width:100px">
+                                            </a>
+                                        </td>
+                                        <th>
+                                            <a href="{{ ('land/product/'.$land->id) }}">
+                                                مطلوب عدة تخصصات سكرتيره و مديره مبيعات و محاسبة
+                                            </a>
+                                        </th>
+                                        <td>
+                                            {{$land->advertiser_address}}
+                                            <br>
+                                            {{$land->created_at}}
+                                        </td>
+                                    </tr>
+                                @endforeach
 
                 </div>
                 <nav aria-label="..." class="">
@@ -123,34 +120,30 @@
                 </div>
                 <div class="row m-2 mb-2">
 
-                    @for ($i = 0; $i < 4; $i++)
-                        <div class="col-12 p-0 bordertoty">
-                            <div class="cardtoty m-sm-1 m-0 p-1">
-                                <a href="{{ asset('assets/admin/images/car.jpeg') }}" class="gallery-popup"
-                                    style="height: 130px; width:100%">
-                                    <div class="project-item">
-                                        <div class="overlay-container">
-                                            <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="img"
-                                                class="gallery-thumb-img m-0" style="height: 130px; width:100%">
-                                            <div class="project-item-overlay text-right">
-                                                <h4>عقارات</h4>
-                                                <p>
-                                                    <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="user"
-                                                        class="avatar-xs rounded-circle">
-                                                    <span class="ml-2">مارتينا جرجس</span>
-                                                </p>
-                                            </div>
+                    @foreach($lands as $land)
+                    <div class="col-12 p-0 bordertoty">
+                        <div class="cardtoty m-sm-1 m-0 p-1">
+                            <a href="{{asset('assets/site/images/lands/'.explode(',',$land->img)[0])}}" class="gallery-popup" style="height: 130px; width:100%">
+                                <div class="project-item">
+                                    <div class="overlay-container">
+                                        <img src="{{asset('assets/site/images/lands/'.explode(',',$land->img)[0])}}" alt="img" class="gallery-thumb-img m-0" style="height: 130px; width:100%">
+                                        <div class="project-item-overlay text-right">
+                                            <h4>السيارات</h4>
+                                            <p>
+                                                <img src="{{asset('assets/site/images/lands/'.explode(',',$land->img)[0])}}" alt="user" class="avatar-xs rounded-circle">
+                                                <span class="ml-2">{{$land->advertiser_name}}</span>
+                                            </p>
                                         </div>
                                     </div>
-                                </a>
-                                <div class="mt-2 mb-2">
-                                    <h4 class="" style="color:#820120">شقق</h4>
-                                    <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م
-                                    وسط الخليل على بعد 570 متري</p>
                                 </div>
+                            </a>
+                            <div class="mt-2 mb-2">
+                                <h4 class="" style="color:#820120">ارض</h4>
+                                <p class="card-text">{{$land->city}} {{$land->address}} للبيع في {{$land->model}} ارض</p>
                             </div>
                         </div>
-                    @endfor
+                    </div>
+                    @endforeach
 
                 </div> 
             </div>

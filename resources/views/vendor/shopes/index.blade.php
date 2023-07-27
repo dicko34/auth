@@ -17,7 +17,7 @@
                 <div class="row">
                     <h3 class="mb-4 m-auto"><i class="fas fa-star mr-2"></i> اعلانات المحلات و المخازن </h3>
                 </div>
-                <form method="POST" action="{{ route("lands.search") }}">
+                <form method="POST" action="{{ route("land.search") }}">
                     @csrf 
                     <div class="row m-3">
                         <div class="col-4">
@@ -84,7 +84,7 @@
                 <div class="row">
                     <h3 class="mb-4 col-6 btn btn-primary w-md waves-effect waves-light"><i class="fas fa-star mr-2"></i>800 اعلان محل و مخزن</h3>
                     <div class="col-6 text-right">
-                        <a class="btn btn-primary w-md waves-effect waves-light w-100" href="{{ route("shops.add") }}">أضافة أعلان هنا</a>
+                        <a class="btn btn-primary w-md waves-effect waves-light w-100" href="{{ route("shop.add") }}">أضافة أعلان هنا</a>
                     </div>
                 </div>
                 <div class="row mt-2 mb-2">
