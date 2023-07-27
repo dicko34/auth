@@ -9,7 +9,7 @@
      margin-bottom: 0rem; 
 }
 </style>
-<div class="row "style="margin-top:50px;">
+<div class="row">
 <div class="col-lg-9 col-12"> 
     <div class="row">
         <div class="card w-100">

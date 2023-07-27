@@ -26,23 +26,17 @@
                         <div class="row">
                             <h3 class="mb-4 m-auto"><i class="mdi mdi-car-side mr-2"></i> السيارات </h3>
                         </div>
-                        <form method="POST" action="{{ route('vendor.cars.search') }}">
+                        <form method="POST" action="{{ route('car.search') }}">
                             @csrf
-                            @method('put')
-                            @if ($errors->any())
-     @foreach ($errors->all() as $error)
-         <div>{{$error}}</div>
-     @endforeach
- @endif
                             <div class="row m-1">
                                 <div class="col-4">
                                     <div class="form-group row">
                                         <!--<label class="col-sm-4 col-form-label">جميع الشركات</label>-->
                                         <div class="col-12 m-0 p-0">
-                                            <select name="company" class="form-control">
-                                                @foreach($car_data->company as $company)
-                                                    <option value="{{$company}}">{{$company}}</option>
-                                                @endforeach
+                                            <select class="form-control">
+                                                <option> الشركات</option>
+                                                <option>Large select</option>
+                                                <option>Small select</option>
                                             </select>
                                         </div>
                                     </div>
@@ -52,10 +46,10 @@
                                     <div class="form-group row">
                                         <!--<label class="col-sm-4 col-form-label">الموديل</label>-->
                                         <div class="col-12 m-0 p-0">
-                                        <select name="model" class="form-control">
-                                                @foreach($car_data->model as $model)
-                                                    <option value="{{$model}}">{{$model}}</option>
-                                                @endforeach
+                                            <select class="form-control">
+                                                <option>الموديل</option>
+                                                <option>Large select</option>
+                                                <option>Small select</option>
                                             </select>
                                         </div>
                                     </div>
@@ -65,10 +59,10 @@
                                     <div class="form-group row">
                                         <!--<label class="col-sm-4 col-form-label">المحافظة</label>-->
                                         <div class="col-12 m-0 p-0">
-                                        <select name="city" class="form-control">
-                                                @foreach($car_data->city as $city)
-                                                    <option value="{{$city}}">{{$city}}</option>
-                                                @endforeach
+                                            <select class="form-control">
+                                                <option>المحافظة</option>
+                                                <option>Large select</option>
+                                                <option>Small select</option>
                                             </select>
                                         </div>
                                     </div>
@@ -78,10 +72,10 @@
                                     <div class="form-group row">
                                         <!--<label class="col-sm-4 col-form-label">من سنة</label>-->
                                         <div class="col-12 m-0 p-0">
-                                            <select name="company" class="form-control">
-                                                @foreach($car_data->company as $company)
-                                                    <option value="{{$company}}">{{$company}}</option>
-                                                @endforeach
+                                            <select class="form-control">
+                                                <option>من سنة</option>
+                                                <option>Large select</option>
+                                                <option>Small select</option>
                                             </select>
                                         </div>
                                     </div>
@@ -104,10 +98,10 @@
                                     <div class="form-group row">
                                         <!--<label class="col-sm-4 col-form-label">نوع الجير</label>-->
                                         <div class="col-12 m-0 p-0">
-                                        <select name="lime_type" class="form-control">
-                                                @foreach($car_data->lime_type as $lime_type)
-                                                    <option value="{{$lime_type}}">{{$lime_type}}</option>
-                                                @endforeach
+                                            <select class="form-control">
+                                                <option>نوع الجير</option>
+                                                <option>Large select</option>
+                                                <option>Small select</option>
                                             </select>
                                         </div>
                                     </div>
@@ -117,10 +111,10 @@
                                     <div class="form-group row">
                                         <!--<label class="col-sm-4 col-form-label">نوع الوقود</label>-->
                                         <div class="col-12 m-0 p-0">
-                                        <select name="fuel_type" class="form-control">
-                                                @foreach($car_data->fuel_type as $fuel_type)
-                                                    <option value="{{$fuel_type}}">{{$fuel_type}}</option>
-                                                @endforeach
+                                            <select class="form-control">
+                                                <option>نوع الوقود</option>
+                                                <option>Large select</option>
+                                                <option>Small select</option>
                                             </select>
                                         </div>
                                     </div>
@@ -130,10 +124,10 @@
                                     <div class="form-group row">
                                         <!--<label class="col-sm-4 col-form-label">رخصة السيارة</label>-->
                                         <div class="col-12 m-0 p-0">
-                                            <select name="driving_license" class="form-control">
-                                                @foreach($car_data->driving_license as $driving_license)
-                                                    <option value="{{$driving_license}}">{{$driving_license}}</option>
-                                                @endforeach
+                                            <select class="form-control">
+                                                <option>الرخصة </option>
+                                                <option>Large select</option>
+                                                <option>Small select</option>
                                             </select>
                                         </div>
                                     </div>
@@ -143,10 +137,10 @@
                                     <div class="form-group row">
                                         <!--<label class="col-sm-4 col-form-label">السعر من</label>-->
                                         <div class="col-12 m-0 p-0">
-                                            <select name="price" class="form-control">
-                                                @foreach($car_data->price as $price_max)
-                                                    <option value="{{$price_max}}">{{$price_max}}</option>
-                                                @endforeach
+                                            <select class="form-control">
+                                                <option>السعر من</option>
+                                                <option>Large select</option>
+                                                <option>Small select</option>
                                             </select>
                                         </div>
                                     </div>
@@ -156,12 +150,10 @@
                                     <div class="form-group row">
                                         <!--<label class="col-sm-4 col-form-label">السعر الي</label>-->
                                         <div class="col-12 m-0 p-0">
-                                            <select name="driving_license" class="form-control">
-                                                @foreach($car_data->price as $price_max)
-                                                    @if($price_max < $price_max[0])
-                                                        <option value="{{$price_max }}">{{$price_max}}</option>
-                                                    @endif
-                                                @endforeach
+                                            <select class="form-control">
+                                                <option>السعر الي</option>
+                                                <option>Large select</option>
+                                                <option>Small select</option>
                                             </select>
                                         </div>
                                     </div>

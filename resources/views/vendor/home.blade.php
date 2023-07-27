@@ -45,9 +45,26 @@
 
     <div class="row main-section">
         <div class="w-100">
-            <div class="body-card m-3">
+            <div class="card-header m-0 p-0 w-100 d-inline-flex"style="height:60px;background:#262726 ;">
+                
+                <div class="h-100 w-75 text-white px-2">
+                    <a href="/general"class="text-white">
+                        <h3 class="mb-4"><i class="mdi mdi-view-module mr-2"></i> الإعلانات العامة </h3>
+                    </a>
+                </div>
+                
 
-                <h3 class="mb-4"><i class="mdi mdi-view-module mr-2"></i> الإعلانات العامة </h3>
+                <div class="h-100 w-25 pt-1">
+                    <button class="btn mt-2 pt-1 px-2 btn-primary text-white"
+                     style="height:38px;font-size: 13px;">
+
+                        <i class="fa fa-plus-circle "></i>اضف 
+                    
+                    </button>
+                </div>
+            </div>
+
+            <div class="body-card m-3">
                 <div class="row">
 
                     @for ($i=0; $i < 6; $i++)
@@ -83,9 +100,27 @@
 
     <div class="row main-section">
         <div class="w-100">
+            <div class="card-header m-0 p-0 w-100 d-inline-flex"style="height:60px;background:#262726 ;">
+                
+                <div class="h-100 w-75 text-white px-2">
+                    <a href="/general"class="text-white">
+                    <h3><i class="mdi mdi-car-side mr-2"></i> سيارات </h3>
+                    </a>
+                </div>
+                
+
+                <div class="h-100 w-25 pt-1">
+                    <button class="btn mt-2 pt-1 px-2 btn-primary text-white"
+                     style="height:38px;font-size: 13px;">
+
+                        <i class="fa fa-plus-circle "></i>اضف 
+                    
+                    </button>
+                </div>
+            </div>
             <div class="body-card m-3">
 
-                <h3 class="mb-4"><i class="mdi mdi-car-side mr-2"></i> سيارات </h3>
+                
                 
                 <div class="row">
 
@@ -123,12 +158,31 @@
 
     <div class="row main-section">
         <div class="w-100">
+            <div class="card-header m-0 p-0 w-100 d-inline-flex"style="height:60px;background:#262726 ;">
+                
+                <div class="h-100 w-75 text-white px-2">
+                    <a href="/homes"class="text-white">
+                    <h3><i class="mdi mdi-home mr-2"></i> شقق </h3>
+                    </a>
+                </div>
+                
+
+                <div class="h-100 w-25 pt-1">
+                    <button class="btn mt-2 pt-1 px-2 btn-primary text-white"
+                     style="height:38px;font-size: 13px;">
+
+                        <i class="fa fa-plus-circle "></i>اضف 
+                    
+                    </button>
+                </div>
+            </div>
             <div class="body-card m-3">
 
-                <h3 class="mb-4"><i class="mdi mdi-home mr-2"></i> شقق </h3>
+                <h3 class="mb-4">
                 <div class="row">
 
                     @for ($i=0; $i < 6; $i++)
+                
                     <div class="col-6 col-xl-2 p-1">
                         <div class="annonce-item"style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
                             <a href="{{ asset('assets/admin/images/home.jpg') }}" class="gallery-popup" style="height: 160px; width:100%">
@@ -147,8 +201,12 @@
                             </a>
                             <div class="card-body">
                                 <h4 class="card-title">شقق</h4>
-                                <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م - فيصل بريك 0562700836
-                                    وسط الخليل على بعد 570 متر من مستشفى الأهلي</p>
+                                <p class="card-text">
+                                شقة عظم للبيع في الخليل ١٣٦ م - فيصل بريك 
+
+                                    0562700836
+                                    وسط الخليل على بعد 570 متر من مستشفى الأهلي
+                                </p>
                             </div>
                         </div> 
                     </div>
@@ -161,9 +219,27 @@
 
     <div class="row main-section">
         <div class="w-100">
+            <div class="card-header m-0 p-0 w-100 d-inline-flex"style="height:60px;background:#262726 ;">
+                
+                <div class="h-100 w-75 text-white px-2">
+                    <a href="/homes"class="text-white">
+                    <h3><i class=" mdi mdi-shopping-search mr-2"></i> محلات و مكاتب  </h3>
+                    </a>
+                </div>
+                
+
+                <div class="h-100 w-25 pt-1">
+                    <button class="btn mt-2 pt-1 px-2 btn-primary text-white"
+                     style="height:38px;font-size: 13px;">
+
+                        <i class="fa fa-plus-circle "></i>اضف 
+                    
+                    </button>
+                </div>
+            </div>
             <div class="body-card m-3">
 
-                <h3 class="mb-4"><i class=" mdi mdi-shopping-search mr-2"></i> محلات و مكاتب  </h3>
+                <h3 class="mb-4"></h3>
                 <div class="row">
 
                     @for ($i=0; $i < 6; $i++)
@@ -199,9 +275,27 @@
 
     <div class="row main-section">
         <div class="w-100">
+            <div class="card-header m-0 p-0 w-100 d-inline-flex"style="height:60px;background:#262726 ;">
+                
+                <div class="h-100 w-75 text-white px-2">
+                    <a href="/homes"class="text-white">
+                    <h3><i class="mdi mdi-view-dashboard mr-2"></i> اراضي </h3>
+                    </a>
+                </div>
+                
+
+                <div class="h-100 w-25 pt-1">
+                    <button class="btn mt-2 pt-1 px-2 btn-primary text-white"
+                     style="height:38px;font-size: 13px;">
+
+                        <i class="fa fa-plus-circle "></i>اضف 
+                    
+                    </button>
+                </div>
+            </div>
             <div class="body-card m-3">
 
-                <h3 class="mb-4"><i class="mdi mdi-view-dashboard mr-2"></i> اراضي </h3>
+                <h3 class="mb-4"></h3>
                 <div class="row">
 
                     @for ($i=0; $i < 6; $i++)
@@ -224,7 +318,8 @@
                             <div class="card-body">
                                 <h4 class="card-title">شقق</h4>
                                 <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م - فيصل بريك 0562700836
-                                    وسط الخليل على بعد 570 متر من مستشفى الأهلي</p>
+                                    وسط الخليل على بعد 570 متر من مستشفى الأهلي
+                                </p>
                             </div>
                         </div> 
                     </div>
@@ -237,9 +332,27 @@
 
     <div class="row main-section">
         <div class="w-100">
+            <div class="card-header m-0 p-0 w-100 d-inline-flex"style="height:60px;background:#262726 ;">
+                
+                <div class="h-100 w-75 text-white px-2">
+                    <a href="/homes"class="text-white">
+                    <h3><i class=" fas fa-user-friends mr-2"></i> توظيف </h3>
+                    </a>
+                </div>
+                
+
+                <div class="h-100 w-25 pt-1">
+                    <button class="btn mt-2 pt-1 px-2 btn-primary text-white"
+                     style="height:38px;font-size: 13px;">
+
+                        <i class="fa fa-plus-circle "></i>اضف 
+                    
+                    </button>
+                </div>
+            </div>
             <div class="body-card m-3">
 
-                <h3 class="mb-4"><i class=" fas fa-user-friends mr-2"></i> توظيف </h3>
+                
                 <div class="row">
 
                     @for ($i=0; $i < 6; $i++)
@@ -313,9 +426,26 @@
 
     <div class="row main-section">
         <div class="w-100">
-            <div class="body-card m-3">
+            <div class="card-header m-0 p-0 w-100 d-inline-flex"style="height:60px;background:#262726 ;">
+                
+                <div class="h-100 w-75 text-white px-2">
+                    <a href="/homes"class="text-white">
+                    <h3><i class="mbri-mobile2 mr-2"></i> الاجهزة الذكية </h3>
+                    </a>
+                </div>
+                
 
-                <h3 class="mb-4"><i class="mbri-mobile2 mr-2"></i> الاجهزة الذكية </h3>
+                <div class="h-100 w-25 pt-1">
+                    <button class="btn mt-2 pt-1 px-2 btn-primary text-white"
+                     style="height:38px;font-size: 13px;">
+
+                        <i class="fa fa-plus-circle "></i>اضف 
+                    
+                    </button>
+                </div>
+            </div>
+            <div class="body-card m-3">
+                
                 <div class="row">
 
                     @for ($i=0; $i < 6; $i++)
@@ -356,8 +486,9 @@
             font-family:'Tajawal';
         }
         h3 {
-            font-size:xx-large !important;
+            font-size:large !important;
             font-weight:bolder;
+            line-height:60px;
         }
         h4 {
             font-family:'Tajawal';
@@ -374,6 +505,9 @@
             margin:10px 0px 10px 0px;
             box-shadow:0px 0px 1px 0px;
             background:#fff;
+        }
+        p {
+            font-weight:normal !important;
         }
 
         @media (max-width:560px)  {

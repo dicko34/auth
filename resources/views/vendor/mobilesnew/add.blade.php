@@ -1,4 +1,4 @@
-@extends("layouts.admin")
+@extends("layouts.vendor")
 @section('pageTitle', 'Koala Web Libraries')
 @section('styleChart')
     <link href="{{ asset('assets/admin/libs/c3/c3.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -34,12 +34,12 @@
 
     </style>
     <div class="row">
-        <div class="col-lg-12 col-12">
+        <div class="col-lg-9 col-12">
             <div class="row">
                 <div class="card w-100">
                     <div class="body-card m-1">
                         <div class="row m-2">
-                            <h3 class="m-2 m-auto"><i class="fas fa-address-book mr-2"></i> تعديل إعلان وظيفة  </h3>
+                            <h3 class="m-2 m-auto"><i class="mbri-mobile2 mr-2"></i> إعلان جهاز ذكي جديد</h3>
                         </div>
                         <form>
                             <div class="row m-0 ">
@@ -50,47 +50,100 @@
                                             <th class="btn-primary"> الوصف</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-left">
+                                    <tbody class="text-left"> 
                                         <tr>
-                                            <td class="">التخصص</td>
+                                            <td class="">حالة الجهاز</td>
                                             <td class="">
                                                 <select class="">
-                                                    <option>برمجة</option>
-                                                    <option>الكل</option>
-                                                    <option>Large select</option>
-                                                    <option>Small select</option>
-                                                </select> 
-                                            </td>
-                                        </tr> 
-                                        <tr>
-                                            <td class="">مكان العمل</td>
-                                            <td class="">
-                                                <select class="">
-                                                    <option>اريحا</option>
+                                                    <option>جديد</option>
                                                     <option>Large select</option>
                                                     <option>Small select</option>
                                                 </select>
                                             </td>
                                         </tr> 
                                         <tr>
-                                            <td class="">عمل ليلي</td>
+                                            <td class="">الشركة</td>
                                             <td class="">
-                                                <input value="" type="text" class="form-control" placeholder=" معلومات عن العمل بالليل او المناوبة">
-                                            </td>
-                                        </tr>  
-                                        <tr>
-                                            <td class="">الدوام</td>
-                                            <td class="">
-                                                <input type="radio" id="switch1" name="bb" />
-                                                <label for="switch1">دوام كامل</label>
-
-                                                <input type="radio" id="switch2" name="bb" />
-                                                <label for="switch2">دوام جزئي</label>
-
-                                                <input type="radio" id="switch3" name="bb" />
-                                                <label for="switch3">العمل من المنزل</label>
+                                                <select class="">
+                                                    <option>اسود</option>
+                                                    <option>Large select</option>
+                                                    <option>Small select</option>
+                                                </select>
+                                                <select class="">
+                                                    <option>الموديل</option>
+                                                    <option>Large select</option>
+                                                    <option>Small select</option>
+                                                </select>
+                                                <p style="color: red" class="ml-4 mt-2">
+                                                    *في حالة عدم وجود الموديل قم بإدخاله في باقي الموديل
+                                                </p>
                                             </td>
                                         </tr> 
+                                        <tr>
+                                            <td class="">موديل سنة</td>
+                                            <td class="">
+                                                <select class="">
+                                                    <option>2020</option>
+                                                    <option>Large select</option>
+                                                    <option>Small select</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="">عدد الشرائح</td>
+                                            <td class="">
+                                                <select class="">
+                                                    <option>2020</option>
+                                                    <option>Large select</option>
+                                                    <option>Small select</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="">حجم الشاشة</td>
+                                            <td class="">
+                                                <input value="" type="text" class=""
+                                                    placeholder="مثال 5 بوصة">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="">الكاميرات</td>
+                                            <td class="">
+                                                <input value="" type="text" class=""
+                                                    placeholder="مثال 18 ميجا خلفية">
+                                            </td>
+                                        </tr> 
+                                        <tr>
+                                            <td class="">الذاكرة</td>
+                                            <td class="">
+                                                <input value="" type="text" class="" placeholder="مثال 8">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="">سعة التخزين</td>
+                                            <td class="">
+                                                <input value="" type="text" class=""
+                                                    placeholder="مثال 16">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="">السعر</td>
+                                            <td class="">
+                                                <input value="" type="text" class=""
+                                                    placeholder="75000">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="">مدة الاعلان باليوم</td>
+                                            <td class="">
+                                                <select class="">
+                                                    <option>30</option>
+                                                    <option>Large select</option>
+                                                    <option>Small select</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        
                                         <tr>
                                             <td class="">معلومات إضافية</td>
                                             <td class="">
@@ -174,7 +227,50 @@
                 </div>
             </div>
 
+          
         </div>
-        
+        <div class="col-00 col-lg-3">
+            <div class="row m-1">
+                <div class="card w-100">
+                    <div class="body-card m-3">
+                        <div class="row">
+                            <h3 class="mb-4 col-6 ">اعلانات</h3>
+                        </div>
+                        <div class="row m-2 mb-2">
+
+                            @for ($i = 0; $i < 4; $i++)
+                                <div class="col-12 p-0 bordertoty">
+                                    <div class="cardtoty m-sm-1 m-0 p-1">
+                                        <a href="{{ asset('assets/admin/images/car.jpeg') }}" class="gallery-popup"
+                                            style="height: 130px; width:100%">
+                                            <div class="project-item">
+                                                <div class="overlay-container">
+                                                    <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="img"
+                                                        class="gallery-thumb-img m-0" style="height: 130px; width:100%">
+                                                    <div class="project-item-overlay text-right">
+                                                        <h4>عقارات</h4>
+                                                        <p>
+                                                            <img src="{{ asset('assets/admin/images/car.jpeg') }}"
+                                                                alt="user" class="avatar-xs rounded-circle">
+                                                            <span class="ml-2">مارتينا جرجس</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="mt-2 mb-2">
+                                            <h4 class="" style="color:#820120">شقق</h4>
+                                            <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م
+                                                وسط الخليل على بعد 570 متري</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endfor
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
