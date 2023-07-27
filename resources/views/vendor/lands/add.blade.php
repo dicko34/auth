@@ -1,9 +1,10 @@
 @extends("layouts.vendor")
 @section('pageTitle', 'Koala Web Libraries')
 @section('styleChart')
-    <link href="{{ asset('assets/admin/libs/c3/c3.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/admin/libs/c3/c3.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
+{{-- 
     <style>
         .table-striped tbody tr:nth-of-type(odd) {
             background-color: rgba(0, 0, 0, .05);
@@ -246,101 +247,461 @@
                             <div class="col-6 text-right">
                                 <a class="btn btn-primary w-md waves-effect waves-light w-100"
                                     href="{{ route('lands.add') }}">أضافة أعلان هنا</a>
-                            </div>
-                        </div>
-                        <div class="row mt-2 mb-2">
+</div>
+</div>
+<div class="row mt-2 mb-2">
 
-                            @for ($i = 0; $i < 12; $i++)
-                                <div class="col-6 col-xl-4  p-0 bordertoty">
-                                    <div class="cardtoty m-sm-1 m-0 p-1">
-                                        <a href="{{ asset('assets/admin/images/land.jpg') }}" class="gallery-popup"
-                                            style="height: 130px; width:100%">
-                                            <div class="project-item">
-                                                <div class="overlay-container">
-                                                    <img src="{{ asset('assets/admin/images/land.jpg') }}" alt="img"
-                                                        class="gallery-thumb-img m-0" style="height: 130px; width:100%">
-                                                    <div class="project-item-overlay text-right">
-                                                        <h4>عقارات</h4>
-                                                        <p>
-                                                            <img src="{{ asset('assets/admin/images/land.jpg') }}"
-                                                                alt="user" class="avatar-xs rounded-circle">
-                                                            <span class="ml-2">مارتينا جرجس</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <div class="mt-2 mb-2">
-                                            <h4 class="" style="color:#820120">شقق</h4>
-                                            <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م
-                                                وسط الخليل على بعد 570 متري</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endfor
-
+    @for ($i = 0; $i < 12; $i++) <div class="col-6 col-xl-4  p-0 bordertoty">
+        <div class="cardtoty m-sm-1 m-0 p-1">
+            <a href="{{ asset('assets/admin/images/land.jpg') }}" class="gallery-popup"
+                style="height: 130px; width:100%">
+                <div class="project-item">
+                    <div class="overlay-container">
+                        <img src="{{ asset('assets/admin/images/land.jpg') }}" alt="img" class="gallery-thumb-img m-0"
+                            style="height: 130px; width:100%">
+                        <div class="project-item-overlay text-right">
+                            <h4>عقارات</h4>
+                            <p>
+                                <img src="{{ asset('assets/admin/images/land.jpg') }}" alt="user"
+                                    class="avatar-xs rounded-circle">
+                                <span class="ml-2">مارتينا جرجس</span>
+                            </p>
                         </div>
-                        <nav aria-label="..." class="">
-                            <ul class="pagination">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
+            </a>
+            <div class="mt-2 mb-2">
+                <h4 class="" style="color:#820120">شقق</h4>
+                <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م
+                    وسط الخليل على بعد 570 متري</p>
             </div>
         </div>
-        <div class="col-00 col-lg-3">
-            <div class="row m-1">
-                <div class="card w-100">
-                    <div class="body-card m-3">
-                        <div class="row">
-                            <h3 class="mb-4 col-6 ">اعلانات</h3>
-                        </div>
-                        <div class="row m-2 mb-2">
+</div>
+@endfor
 
-                            @for ($i = 0; $i < 4; $i++)
-                                <div class="col-12 p-0 bordertoty">
-                                    <div class="cardtoty m-sm-1 m-0 p-1">
-                                        <a href="{{ asset('assets/admin/images/car.jpeg') }}" class="gallery-popup"
-                                            style="height: 130px; width:100%">
-                                            <div class="project-item">
-                                                <div class="overlay-container">
-                                                    <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="img"
-                                                        class="gallery-thumb-img m-0" style="height: 130px; width:100%">
-                                                    <div class="project-item-overlay text-right">
-                                                        <h4>عقارات</h4>
-                                                        <p>
-                                                            <img src="{{ asset('assets/admin/images/car.jpeg') }}"
-                                                                alt="user" class="avatar-xs rounded-circle">
-                                                            <span class="ml-2">مارتينا جرجس</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <div class="mt-2 mb-2">
-                                            <h4 class="" style="color:#820120">شقق</h4>
-                                            <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م
-                                                وسط الخليل على بعد 570 متري</p>
+</div>
+<nav aria-label="..." class="">
+    <ul class="pagination">
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active">
+            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div class="col-00 col-lg-3">
+    <div class="row m-1">
+        <div class="card w-100">
+            <div class="body-card m-3">
+                <div class="row">
+                    <h3 class="mb-4 col-6 ">اعلانات</h3>
+                </div>
+                <div class="row m-2 mb-2">
+
+                    @for ($i = 0; $i < 4; $i++) <div class="col-12 p-0 bordertoty">
+                        <div class="cardtoty m-sm-1 m-0 p-1">
+                            <a href="{{ asset('assets/admin/images/car.jpeg') }}" class="gallery-popup"
+                                style="height: 130px; width:100%">
+                                <div class="project-item">
+                                    <div class="overlay-container">
+                                        <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="img"
+                                            class="gallery-thumb-img m-0" style="height: 130px; width:100%">
+                                        <div class="project-item-overlay text-right">
+                                            <h4>عقارات</h4>
+                                            <p>
+                                                <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="user"
+                                                    class="avatar-xs rounded-circle">
+                                                <span class="ml-2">مارتينا جرجس</span>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
-                            @endfor
-
+                            </a>
+                            <div class="mt-2 mb-2">
+                                <h4 class="" style="color:#820120">شقق</h4>
+                                <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م
+                                    وسط الخليل على بعد 570 متري</p>
+                            </div>
                         </div>
-                    </div>
                 </div>
+                @endfor
+
             </div>
         </div>
     </div>
+</div>
+</div>
+</div>
+
+--}}
+
+<div class="add-section w-75 mx-auto bg-white">
+    <div class="add-section-title btn w-100 bg-primary p-1 px-3 mb-3">
+        <h4 class="text-white ml-2 font-weight-bold text-left">اضافة أرض جديدة</h4>
+    </div>
+    <table class="table table-bordered table-striped mb-0">
+        <tbody>
+            <tr>
+                <td>نُبذة <span class="text-danger" style="font-weight: 700;">*</span> </td>
+                <td>
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control " name="title" placeholder="نبذه عن الارض"
+                            aria-label="نبذه عن الارض" aria-describedby="basic-addon2">
+                        <span class="input-group-text d-none d-lg-block w-100" id="basic-addon2">مثال : ارض 5 دونم صالحة
+                            للبناء</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>مساحة <span class="text-danger" style="font-weight: 700;">*</span> </td>
+                <td>
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control " name="space"
+                            placeholder="مساحة المحل , مثال  : 400 متر" aria-label="مساحة المحل , مثال  : 400 متر"
+                            aria-describedby="basic-addon2">
+                        <span class="input-group-text" id="basic-addon2">متر مربع</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>السعر </td>
+                <td>
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control " name="price" placeholder="سعر الارض"
+                            aria-label="سعر الارض " aria-describedby="basic-addon2">
+                        <select name="currency" class="form-select" style="max-width:110px;">
+                            <option value="دولار">دولار</option>
+                            <option value="شيكل"> شيكل </option>
+                            <option value="دينار">دينار</option>
+                            <option value="يورو">يورو</option>
+                        </select>
+                        <span class="input-group-text" id="basic-addon2">يجب وضع سعر حقيقي</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    تقع على
+                </td>
+                <td>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" required="" type="radio" name="location" id="offer_type_sell"
+                            value="شارع رئيسي">
+                        <label class="form-check-label" for="offer_type_sell">شارع رئيسي</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="location" id="offer_type_rent"
+                            value="شارع فرعي">
+                        <label class="form-check-label" for="offer_type_rent">شارع فرعي</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="location" id="offer_type_space"
+                            value="شارع رئيسي وفرعي">
+                        <label class="form-check-label" for="offer_type_space">شارع رئيسي وفرعي</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="location" id="offer_type_other"
+                            value="غير ذلك">
+                        <label class="form-check-label" for="offer_type_other">غير ذلك</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>محاطة ب </td>
+                <td>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" required="" type="radio" name="surrounded_by"
+                            id="stores_type_sell" value="غير محاطة">
+                        <label class="form-check-label" for="stores_type_sell">غير محاطة </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="surrounded_by" id="stores_type_rent"
+                            value="سور حجر">
+                        <label class="form-check-label" for="stores_type_rent">سور حجر </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="surrounded_by" id="stores_type_space"
+                            value="سور إسمنت">
+                        <label class="form-check-label" for="stores_type_space">سور إسمنت</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="surrounded_by" id="stores_type_street"
+                            value="سياج">
+                        <label class="form-check-label" for="stores_type_street">سياج</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="surrounded_by" id="stores_type_outher"
+                            value="غير ذلك">
+                        <label class="form-check-label" for="stores_type_outher">غير ذلك</label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>مميزات <span class="text-danger" style="font-weight: 700;">*</span></td>
+                <td>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-check">
+                            <input class="form-check-input" id="property[It_gets_electricity]" type="checkbox"
+                                name="property[It_gets_electricity]">
+                            <label class="form-check-label" for="property[It_gets_electricity]"> تصلها كهرباء</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-check">
+                            <input class="form-check-input" id="property[It_gets_water]" type="checkbox"
+                                name="property[It_gets_water]">
+                            <label class="form-check-label" for="property[It_gets_water]"> تصلها مياه</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-check">
+                            <input class="form-check-input" id="property[arable]" type="checkbox"
+                                name="property[arable]">
+                            <label class="form-check-label" for="property[arable]"> صالحة للزراعة</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-check">
+                            <input class="form-check-input" id="property[commercial_construction]" type="checkbox"
+                                name="property[commercial_construction]">
+                            <label class="form-check-label" for="property[commercial_construction]"> صالحة للبناء
+                                التجاري</label>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-check">
+                            <input class="form-check-input" id="property[building_housing]" type="checkbox"
+                                name="property[building_housing]">
+                            <label class="form-check-label" for="property[building_housing]"> صالحة للبناء السكن</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>التفاصيل </td>
+                <td>
+                    <div class="form-group">
+                        <textarea name="description" class="form-control form-control-sm" id="description"
+                            placeholder="المزيد من المعلومات، كل معلومة بسطر." cols="30" rows="5"></textarea>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>الصور </td>
+                <td>
+                    <div class="form-group input-group-sm mb-2">
+                        <div class="custom-file">
+                            <input type="file" name="images[]" class="custom-file-input" id="inputGroupFile04"
+                                aria-describedby="inputGroupFileAddon04">
+                            <label class="custom-file-label" for="inputGroupFile04">اختر صورة</label>
+                        </div>
+                    </div>
+                    <div class="form-group input-group-sm mb-2">
+                        <div class="custom-file">
+                            <input type="file" name="images[]" class="custom-file-input" id="inputGroupFile04"
+                                aria-describedby="inputGroupFileAddon04">
+                            <label class="custom-file-label" for="inputGroupFile04">اختر صورة</label>
+                        </div>
+                    </div>
+                    <div class="form-group input-group-sm mb-2">
+                        <div class="custom-file">
+                            <input type="file" name="images[]" class="custom-file-input" id="inputGroupFile04"
+                                aria-describedby="inputGroupFileAddon04">
+                            <label class="custom-file-label" for="inputGroupFile04">اختر صورة</label>
+                        </div>
+                    </div>
+                    <div class="form-group input-group-sm mb-2">
+                        <div class="custom-file">
+                            <input type="file" name="images[]" class="custom-file-input" id="inputGroupFile04"
+                                aria-describedby="inputGroupFileAddon04">
+                            <label class="custom-file-label" for="inputGroupFile04">اختر صورة</label>
+                        </div>
+                    </div>
+                    <div class="form-group input-group-sm">
+                        <div class="custom-file">
+                            <input type="file" name="images[]" class="custom-file-input" id="inputGroupFile04"
+                                aria-describedby="inputGroupFileAddon04">
+                            <label class="custom-file-label" for="inputGroupFile04">اختر صورة</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>المدينه <span class="text-danger" style="font-weight: 700;">*</span> </td>
+                <td>
+                    <div class="form-group input-group-sm">
+                        <select name="city" class="form-select" required="">
+                            <option value="1">رام الله والبيرة </option>
+                            <option value="2">القدس </option>
+                            <option value="14">قطاع غزة </option>
+                            <option value="4">الخليل </option>
+                            <option value="5">بيت لحم </option>
+                            <option value="6">أريحا </option>
+                            <option value="7">سلفيت وبديا </option>
+                            <option value="13">روابي </option>
+                            <option value="12">طوباس </option>
+                            <option value="11">قلقيلية </option>
+                            <option value="10">طولكرم </option>
+                            <option value="9">جنين </option>
+                            <option value="8">نابلس </option>
+                            <option value="15">جميع الاماكن </option>
+                            <option value="16">مناطق الداخل </option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>العنوان <span class="text-danger" style="font-weight: 700;">*</span> </td>
+                <td>
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-sm" required="" name="address"
+                            placeholder="أسم المنطقة او الشارع" aria-label="أسم المنطقة او الشارع"
+                            aria-describedby="basic-addon2">
+                        <span class="input-group-text d-flex d-lg-none " data-bs-toggle="tooltip"
+                            data-bs-placement="left" title="" style="width:50px !important;" id="basic-addon2"
+                            data-original-title="ملاحظة: لن يتم قبول الإعلان بدون العنوان الكامل"><i
+                                class="fas fa-info-circle"></i></span>
+                        <span class="input-group-text d-none d-lg-block w-100" id="basic-addon2">ملاحظة: لن يتم قبول
+                            الإعلان بدون العنوان الكامل</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>مُدة الإعلان</td>
+                <td>
+                    <div class="input-group input-group-sm">
+                        <select required="" name="view_date" class="form-select">
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                            <option value="44">44</option>
+                            <option value="45">45</option>
+                            <option value="46">46</option>
+                            <option value="47">47</option>
+                            <option value="48">48</option>
+                            <option value="49">49</option>
+                            <option value="50">50</option>
+                            <option value="51">51</option>
+                            <option value="52">52</option>
+                            <option value="53">53</option>
+                            <option value="54">54</option>
+                            <option value="55">55</option>
+                            <option value="56">56</option>
+                            <option value="57">57</option>
+                            <option value="58">58</option>
+                            <option value="59">59</option>
+                            <option value="60">60</option>
+                        </select>
+                        <span class="input-group-text" id="basic-addon2">يوم</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="add-section w-75 mx-auto bg-white">
+    <div class="add-section-title btn w-100 bg-primary p-1 px-3 mb-3">
+        <h5 class="text-white ml-2 font-weight-bold text-left">معلومات المُعلن</h5>
+    </div>
+    <table class="table table-bordered table-striped mb-0 bg-white">
+    <tbody><tr>
+    <td>
+    اسم المُعلن <span class="text-danger" style="font-weight: 700;">*</span>
+    </td>
+    <td>
+    <div class="input-group">
+    <input type="text" class="form-control form-control-sm" required="" name="client_name" placeholder="الاسم الحقيقي" >
+    <span class="input-group-text d-flex d-lg-none " style="width:50px !important;"  ><i class="fas fa-info-circle"></i></span>
+    <span class="input-group-text d-none d-lg-block w-100" >ملاحظة: لن يتم قبول الإعلان من غير اسم حقيقي</span>
+    </div>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    رقم الهاتف
+    </td>
+    <td>
+    <div class="form-group">
+    <input type="text" class="form-control form-control-sm" name="telephone" placeholder="رقم الهاتف مع المقدمة" aria-label="رقم الهاتف مع المقدمة">
+    </div>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    موبايل <span class="text-danger" style="font-weight: 700;">*</span>
+    </td>
+    <td>
+    <div class="form-group">
+    <input type="text" class="form-control form-control-sm" required="" name="phone" placeholder="رقم الموبايل" aria-label="رقم الهاتف مع المقدمة">
+    </div>
+    </td>
+    </tr>
+    <tr>
+    <td colspan="100%" class="text-center">
+    <button type="submit" class="btn btn-secondary" id="submit-all">اضف الأعلان</button>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+<style>
+* {
+    font-family: 'Tajawal' !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fff !important; /* Color for even rows */
+  }
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #E8DFDE !important; /* Color for even rows */
+  }
+
+@media all and (max-width:950px) {
+    .add-section {
+        width: 99% !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+</style>
 @endsection

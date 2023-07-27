@@ -391,7 +391,7 @@ textarea {
     <div class="add-section-title btn w-100 bg-primary p-1 px-3 mb-3">
         <h4 class="text-white ml-2 font-weight-bold text-left">منزل أو شقة جديدة</h4>
     </div>
-    
+
     <table class="table table-bordered table-striped mb-0">
         <tbody>
             <tr>
@@ -711,59 +711,77 @@ textarea {
         <h5 class="text-white ml-2 font-weight-bold text-left">معلومات المُعلن</h5>
     </div>
     <table class="table table-bordered table-striped mb-0">
-    <tbody><tr>
-    <td>
-    اسم المُعلن <span class="text-danger" style="font-weight: 700;">*</span>
-    </td>
-    <td>
-    <div class="input-group">
-    <input type="text" class="form-control form-control-sm" required="" name="client_name" placeholder="الاسم الحقيقي" aria-label="الاسم الحقيقي" aria-describedby="basic-addon2" aria-invalid="false">
-    <span class="input-group-text d-flex d-lg-none " data-bs-toggle="tooltip" data-bs-placement="left" title="" style="width:50px !important;" id="basic-addon2" data-original-title="ملاحظة: لن يتم قبول الإعلان من غير اسم حقيقي مثل ابو محمد، ابو خليل، احمد"><i class="fas fa-info-circle"></i></span>
-    <span class="input-group-text d-none d-lg-block w-100" id="basic-addon2">ملاحظة: لن يتم قبول الإعلان من غير اسم حقيقي مثل ابو محمد، ابو خليل، احمد</span>
-    </div>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    رقم الهاتف
-    </td>
-    <td>
-    <div class="form-group">
-    <input type="text" class="form-control form-control-sm" name="telephone" placeholder="رقم الهاتف مع المقدمة" aria-label="رقم الهاتف مع المقدمة">
-    </div>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    موبايل <span class="text-danger" style="font-weight: 700;">*</span>
-    </td>
-    <td>
-    <div class="form-group">
-    <input type="text" class="form-control form-control-sm" required="" name="phone" placeholder="رقم الموبايل" aria-label="رقم الهاتف مع المقدمة">
-    </div>
-    </td>
-    </tr>
-    <tr>
-    <td colspan="100%" class="text-center">
-    <button type="submit" class="btn btn-secondary" id="submit-all">اضف الأعلان</button>
-    </td>
-    </tr>
-    </tbody></table>
+        <tbody>
+            <tr>
+                <td>
+                    اسم المُعلن <span class="text-danger" style="font-weight: 700;">*</span>
+                </td>
+                <td>
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-sm" required="" name="client_name"
+                            placeholder="الاسم الحقيقي">
+                        <span class="input-group-text d-flex d-lg-none " style="width:50px !important;"><i
+                                class="fas fa-info-circle"></i></span>
+                        <span class="input-group-text d-none d-lg-block w-100">ملاحظة: لن يتم قبول الإعلان من غير اسم
+                            حقيقي</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    رقم الهاتف
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-sm" name="telephone"
+                            placeholder="رقم الهاتف مع المقدمة" aria-label="رقم الهاتف مع المقدمة">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    موبايل <span class="text-danger" style="font-weight: 700;">*</span>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-sm" required="" name="phone"
+                            placeholder="رقم الموبايل" aria-label="رقم الهاتف مع المقدمة">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="100%" class="text-center">
+                    <button type="submit" class="btn btn-secondary" id="submit-all">اضف الأعلان</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 
 <style>
-    * {
-        font-family:'Tajawal' !important;
-    }
+* {
+    font-family: 'Tajawal' !important;
+}
 
-    @media all and (max-width:950px) {
-        .add-section {
-            width:99% !important;
-            margin-left:auto;
-            margin-right:auto;
-        }
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fff !important;
+    /* Color for even rows */
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #E8DFDE !important;
+    /* Color for even rows */
+}
+
+
+@media all and (max-width:950px) {
+    .add-section {
+        width: 99% !important;
+        margin-left: auto;
+        margin-right: auto;
     }
+}
 </style>
 
 @endsection
