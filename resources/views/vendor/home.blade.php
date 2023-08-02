@@ -1,7 +1,7 @@
-@extends("layouts.vendor")
+﻿@extends("layouts.vendor")
 @section('pageTitle', 'Koala Web Libraries')
 @section('styleChart')
-    <link href="{{ asset('assets/admin/libs/c3/c3.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/admin/libs/c3/c3.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -15,14 +15,14 @@
                     @for ($i=0; $i < 6; $i++)
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="card">
-                            <a href="{{ asset('assets/admin/images/martina.jpg') }}" class="gallery-popup" style="height: 230px; width:100%">
+                            <a href="{{ asset('/admin/images/martina.jpg') }}" class="gallery-popup" style="height: 230px; width:100%">
                                 <div class="project-item">
                                     <div class="overlay-container">
-                                        <img src="{{ asset('assets/admin/images/martina.jpg') }}" alt="img" class="" style="height: 230px; width:100%">
+                                        <img src="{{ asset('a/admin/images/martina.jpg') }}" alt="img" class="" style="height: 230px; width:100%">
                                         <div class="project-item-overlay text-right">
                                             <h4>عقارات</h4>
                                             <p>
-                                                <img src="{{ asset('assets/admin/images/martina.jpg') }}" alt="user" class="avatar-xs rounded-circle">
+                                                <img src="{{ asset('/admin/images/martina.jpg') }}" alt="user" class="avatar-xs rounded-circle">
                                                 <span class="ml-2">مارتينا جرجس</span>
                                             </p>
                                         </div>
@@ -43,22 +43,22 @@
         </div>
     </div> --}}
 
-    <div class="row main-section">
+   <div class="row main-section">
         <div class="w-100">
             <div class="card-header m-0 p-0 w-100 d-inline-flex"style="height:60px;background:#262726 ;">
                 
-                <div class="h-100 w-75 text-white px-2">
+                <div class="h-100 text-white px-2"style="width:65%">
                     <a href="/general"class="text-white">
                         <h3 class="mb-4"><i class="mdi mdi-view-module mr-2"></i> الإعلانات العامة </h3>
                     </a>
                 </div>
                 
 
-                <div class="h-100 w-25 pt-1">
-                    <button class="btn mt-2 pt-1 px-2 btn-primary text-white"
-                     style="height:38px;font-size: 13px;">
+                <div class="h-100 mr-1 pt-1"style="width:34%;">
+                    <button class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
+                     style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
 
-                        <i class="fa fa-plus-circle "></i>اضف 
+                        <i class="fa fa-plus-circle "></i>اضف اعلان جديد
                     
                     </button>
                 </div>
@@ -70,14 +70,14 @@
                     @for ($i=0; $i < 6; $i++)
                     <div class="col-6 col-xl-2 p-1">
                         <div class="card annonce-item"style="border: 1px solid;border-color: #0000002b;border-radius: 5px;"">
-                            <a href="{{ asset('assets/admin/images/general.jpg') }}" class="gallery-popup" style="height: 160px; width:100%">
+                            <a href="{{ asset('/admin/images/general.jpg') }}" class="gallery-popup" style="height: 160px; width:100%">
                                 <div class="project-item">
                                     <div class="overlay-container">
-                                        <img src="{{ asset('assets/admin/images/general.jpg') }}" alt="img" class="" style="height: 160px; width:100%">
+                                        <img src="{{ asset('/admin/images/general.jpg') }}" alt="img" class="" style="height: 160px; width:100%">
                                         <div class="project-item-overlay text-right">
                                             <h4>الإعلانات العامة</h4>
                                             <p>
-                                                <img src="{{ asset('assets/admin/images/general.jpg') }}" alt="user" class="avatar-xs rounded-circle">
+                                                <img src="{{ asset('/admin/images/general.jpg') }}" alt="user" class="avatar-xs rounded-circle">
                                                 <span class="ml-2">مارتينا جرجس</span>
                                             </p>
                                         </div>
@@ -92,7 +92,12 @@
                         </div> 
                     </div>
                     @endfor
-                
+                    <div class="mx-auto"style="width:150px;">
+                        <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
+                        style="height:33px;font-size: 11px;line-height:33px;">
+                            تصفح المزيد
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,18 +107,18 @@
         <div class="w-100">
             <div class="card-header m-0 p-0 w-100 d-inline-flex"style="height:60px;background:#262726 ;">
                 
-                <div class="h-100 w-75 text-white px-2">
+                <div class="h-100 text-white px-2"style="width:65%">
                     <a href="/general"class="text-white">
                     <h3><i class="mdi mdi-car-side mr-2"></i> سيارات </h3>
                     </a>
                 </div>
                 
 
-                <div class="h-100 w-25 pt-1">
-                    <button class="btn mt-2 pt-1 px-2 btn-primary text-white"
-                     style="height:38px;font-size: 13px;">
+                <div class="h-100 mr-1 pt-1"style="width:34%;">
+                    <button class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
+                     style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
 
-                        <i class="fa fa-plus-circle "></i>اضف 
+                        <i class="fa fa-plus-circle "></i>اضف اعلان جديد
                     
                     </button>
                 </div>
@@ -127,14 +132,14 @@
                     @for ($i=0; $i < 6; $i++)
                     <div class="col-6 col-xl-2 p-1 ">
                         <div class="annonce-item"style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
-                            <a href="{{  asset('assets/admin/images/car.jpeg')  }}" class="gallery-popup" style="height: 160px; width:100%">
+                            <a href="{{  asset('/admin/images/car.jpeg')  }}" class="gallery-popup" style="height: 160px; width:100%">
                                 <div class="project-item">
                                     <div class="overlay-container">
-                                        <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="img" style="height: 160px; width:100%">
+                                        <img src="{{ asset('/admin/images/car.jpeg') }}" alt="img" style="height: 160px; width:100%">
                                         <div class="project-item-overlay text-right">
                                             <h2>سيارات</h2>
                                             <p>
-                                                <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="user" class="avatar-xs rounded-circle">
+                                                <img src="{{ asset('/admin/images/car.jpeg') }}" alt="user" class="avatar-xs rounded-circle">
                                                 <span class="ml-2">مارتينا جرجس</span>
                                             </p>
                                         </div>
@@ -150,7 +155,12 @@
                         </div> 
                     </div>
                     @endfor
-                
+                    <div class="mx-auto"style="width:150px;">
+                        <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
+                        style="height:33px;font-size: 11px;line-height:33px;">
+                            تصفح المزيد
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -160,18 +170,18 @@
         <div class="w-100">
             <div class="card-header m-0 p-0 w-100 d-inline-flex"style="height:60px;background:#262726 ;">
                 
-                <div class="h-100 w-75 text-white px-2">
+                <div class="h-100 text-white px-2"style="width:65%">
                     <a href="/homes"class="text-white">
                     <h3><i class="mdi mdi-home mr-2"></i> شقق </h3>
                     </a>
                 </div>
                 
 
-                <div class="h-100 w-25 pt-1">
-                    <button class="btn mt-2 pt-1 px-2 btn-primary text-white"
-                     style="height:38px;font-size: 13px;">
+                <div class="h-100 mr-1 pt-1"style="width:34%;">
+                    <button class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
+                     style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
 
-                        <i class="fa fa-plus-circle "></i>اضف 
+                        <i class="fa fa-plus-circle "></i>اضف اعلان جديد
                     
                     </button>
                 </div>
@@ -185,14 +195,14 @@
                 
                     <div class="col-6 col-xl-2 p-1">
                         <div class="annonce-item"style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
-                            <a href="{{ asset('assets/admin/images/home.jpg') }}" class="gallery-popup" style="height: 160px; width:100%">
+                            <a href="{{ asset('/admin/images/home.jpg') }}" class="gallery-popup" style="height: 160px; width:100%">
                                 <div class="project-item">
                                     <div class="overlay-container">
-                                        <img src="{{ asset('assets/admin/images/home.jpg') }}" alt="img" class="" style="height: 160px; width:100%">
+                                        <img src="{{ asset('/admin/images/home.jpg') }}" alt="img" class="" style="height: 160px; width:100%">
                                         <div class="project-item-overlay text-right">
                                             <h4>عقارات</h4>
                                             <p>
-                                                <img src="{{ asset('assets/admin/images/home.jpg') }}" alt="user" class="avatar-xs rounded-circle">
+                                                <img src="{{ asset('/admin/images/home.jpg') }}" alt="user" class="avatar-xs rounded-circle">
                                                 <span class="ml-2">مارتينا جرجس</span>
                                             </p>
                                         </div>
@@ -211,7 +221,12 @@
                         </div> 
                     </div>
                     @endfor
-                
+                    <div class="mx-auto"style="width:150px;">
+                        <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
+                        style="height:33px;font-size: 11px;line-height:33px;">
+                            تصفح المزيد
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -221,18 +236,18 @@
         <div class="w-100">
             <div class="card-header m-0 p-0 w-100 d-inline-flex"style="height:60px;background:#262726 ;">
                 
-                <div class="h-100 w-75 text-white px-2">
+               <div class="h-100 text-white px-2"style="width:65%">
                     <a href="/homes"class="text-white">
                     <h3><i class=" mdi mdi-shopping-search mr-2"></i> محلات و مكاتب  </h3>
                     </a>
                 </div>
                 
 
-                <div class="h-100 w-25 pt-1">
-                    <button class="btn mt-2 pt-1 px-2 btn-primary text-white"
-                     style="height:38px;font-size: 13px;">
+               <div class="h-100 mr-1 pt-1"style="width:34%;">
+                    <button class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
+                     style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
 
-                        <i class="fa fa-plus-circle "></i>اضف 
+                        <i class="fa fa-plus-circle "></i>اضف اعلان جديد
                     
                     </button>
                 </div>
@@ -245,14 +260,14 @@
                     @for ($i=0; $i < 6; $i++)
                     <div class="col-6 col-xl-2 p-1">
                         <div class="annonce-item"style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
-                            <a href="{{ asset('assets/admin/images/shop.jpg') }}" class="gallery-popup" style="height: 160px; width:100%">
+                            <a href="{{ asset('/admin/images/shop.jpg') }}" class="gallery-popup" style="height: 160px; width:100%">
                                 <div class="project-item">
                                     <div class="overlay-container">
-                                        <img src="{{ asset('assets/admin/images/shop.jpg') }}" alt="img" class="" style="height: 160px; width:100%">
+                                        <img src="{{ asset('/admin/images/shop.jpg') }}" alt="img" class="" style="height: 160px; width:100%">
                                         <div class="project-item-overlay text-right">
                                             <h4>عقارات</h4>
                                             <p>
-                                                <img src="{{ asset('assets/admin/images/shop.jpg') }}" alt="user" class="avatar-xs rounded-circle">
+                                                <img src="{{ asset('/admin/images/shop.jpg') }}" alt="user" class="avatar-xs rounded-circle">
                                                 <span class="ml-2">مارتينا جرجس</span>
                                             </p>
                                         </div>
@@ -267,7 +282,12 @@
                         </div> 
                     </div>
                     @endfor
-                
+                    <div class="mx-auto"style="width:150px;">
+                        <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
+                        style="height:33px;font-size: 11px;line-height:33px;">
+                            تصفح المزيد
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -277,18 +297,18 @@
         <div class="w-100">
             <div class="card-header m-0 p-0 w-100 d-inline-flex"style="height:60px;background:#262726 ;">
                 
-                <div class="h-100 w-75 text-white px-2">
+                <div class="h-100 text-white px-2"style="width:65%">
                     <a href="/homes"class="text-white">
                     <h3><i class="mdi mdi-view-dashboard mr-2"></i> اراضي </h3>
                     </a>
                 </div>
                 
 
-                <div class="h-100 w-25 pt-1">
-                    <button class="btn mt-2 pt-1 px-2 btn-primary text-white"
-                     style="height:38px;font-size: 13px;">
+                <div class="h-100 mr-1 pt-1"style="width:34%;">
+                    <button class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
+                     style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
 
-                        <i class="fa fa-plus-circle "></i>اضف 
+                        <i class="fa fa-plus-circle "></i>اضف اعلان جديد
                     
                     </button>
                 </div>
@@ -301,14 +321,14 @@
                     @for ($i=0; $i < 6; $i++)
                     <div class="col-6 col-xl-2 p-1">
                         <div class="card annonce-item"style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
-                            <a href="{{ asset('assets/admin/images/land.jpg') }}" class="gallery-popup" style="height: 160px; width:100%">
+                            <a href="{{ asset('/admin/images/land.jpg') }}" class="gallery-popup" style="height: 160px; width:100%">
                                 <div class="project-item">
                                     <div class="overlay-container">
-                                        <img src="{{ asset('assets/admin/images/land.jpg') }}" alt="img" class="" style="height: 160px; width:100%">
+                                        <img src="{{ asset('/admin/images/land.jpg') }}" alt="img" class="" style="height: 160px; width:100%">
                                         <div class="project-item-overlay text-right">
                                             <h4>عقارات</h4>
                                             <p>
-                                                <img src="{{ asset('assets/admin/images/land.jpg') }}" alt="user" class="avatar-xs rounded-circle">
+                                                <img src="{{ asset('/admin/images/land.jpg') }}" alt="user" class="avatar-xs rounded-circle">
                                                 <span class="ml-2">مارتينا جرجس</span>
                                             </p>
                                         </div>
@@ -324,7 +344,12 @@
                         </div> 
                     </div>
                     @endfor
-                
+                    <div class="mx-auto"style="width:150px;">
+                        <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
+                        style="height:33px;font-size: 11px;line-height:33px;">
+                            تصفح المزيد
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -334,18 +359,18 @@
         <div class="w-100">
             <div class="card-header m-0 p-0 w-100 d-inline-flex"style="height:60px;background:#262726 ;">
                 
-                <div class="h-100 w-75 text-white px-2">
+                <div class="h-100 text-white px-2"style="width:65%">
                     <a href="/homes"class="text-white">
                     <h3><i class=" fas fa-user-friends mr-2"></i> توظيف </h3>
                     </a>
                 </div>
                 
 
-                <div class="h-100 w-25 pt-1">
-                    <button class="btn mt-2 pt-1 px-2 btn-primary text-white"
-                     style="height:38px;font-size: 13px;">
+                <div class="h-100 mr-1 pt-1"style="width:34%;">
+                    <button class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
+                     style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
 
-                        <i class="fa fa-plus-circle "></i>اضف 
+                        <i class="fa fa-plus-circle "></i>اضف اعلان جديد
                     
                     </button>
                 </div>
@@ -358,14 +383,14 @@
                     @for ($i=0; $i < 6; $i++)
                     <div class="col-6 col-xl-2 p-1">
                         <div class="card annonce-item"style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
-                            <a href="{{ asset('assets/admin/images/job.jpg') }}" class="gallery-popup" style="height: 160px; width:100%">
+                            <a href="{{ asset('/admin/images/job.jpg') }}" class="gallery-popup" style="height: 160px; width:100%">
                                 <div class="project-item">
                                     <div class="overlay-container">
-                                        <img src="{{ asset('assets/admin/images/job.jpg') }}" alt="img" class="" style="height: 160px; width:100%">
+                                        <img src="{{ asset('/admin/images/job.jpg') }}" alt="img" class="" style="height: 160px; width:100%">
                                         <div class="project-item-overlay text-right">
                                             <h4>توظيف</h4>
                                             <p>
-                                                <img src="{{ asset('assets/admin/images/job.jpg') }}" alt="user" class="avatar-xs rounded-circle">
+                                                <img src="{{ asset('/admin/images/job.jpg') }}" alt="user" class="avatar-xs rounded-circle">
                                                 <span class="ml-2">مارتينا جرجس</span>
                                             </p>
                                         </div>
@@ -380,7 +405,12 @@
                         </div> 
                     </div>
                     @endfor
-                
+                    <div class="mx-auto"style="width:150px;">
+                        <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
+                        style="height:33px;font-size: 11px;line-height:33px;">
+                            تصفح المزيد
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -396,14 +426,14 @@
                     @for ($i=0; $i < 8; $i++)
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="card annonce-item"style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
-                            <a href="{{ asset('assets/admin/images/job2.jpg') }}" class="gallery-popup" style="height: 230px; width:100%">
+                            <a href="{{ asset('/admin/images/job2.jpg') }}" class="gallery-popup" style="height: 230px; width:100%">
                                 <div class="project-item">
                                     <div class="overlay-container">
-                                        <img src="{{ asset('assets/admin/images/job2.jpg') }}" alt="img" class="" style="height: 230px; width:100%">
+                                        <img src="{{ asset('/admin/images/job2.jpg') }}" alt="img" class="" style="height: 230px; width:100%">
                                         <div class="project-item-overlay text-right">
                                             <h4>إعلانات الوظائف الشاغرة</h4>
                                             <p>
-                                                <img src="{{ asset('assets/admin/images/job2.jpg') }}" alt="user" class="avatar-xs rounded-circle">
+                                                <img src="{{ asset('/admin/images/job2.jpg') }}" alt="user" class="avatar-xs rounded-circle">
                                                 <span class="ml-2">مارتينا جرجس</span>
                                             </p>
                                         </div>
@@ -418,7 +448,12 @@
                         </div> 
                     </div>
                     @endfor
-                
+                    <div class="mx-auto"style="width:150px;">
+                        <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
+                        style="height:33px;font-size: 11px;line-height:33px;">
+                            تصفح المزيد
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -428,18 +463,18 @@
         <div class="w-100">
             <div class="card-header m-0 p-0 w-100 d-inline-flex"style="height:60px;background:#262726 ;">
                 
-                <div class="h-100 w-75 text-white px-2">
+                <div class="h-100 text-white px-2"style="width:65%">
                     <a href="/homes"class="text-white">
                     <h3><i class="mbri-mobile2 mr-2"></i> الاجهزة الذكية </h3>
                     </a>
                 </div>
                 
 
-                <div class="h-100 w-25 pt-1">
-                    <button class="btn mt-2 pt-1 px-2 btn-primary text-white"
-                     style="height:38px;font-size: 13px;">
+                <div class="h-100 mr-1 pt-1"style="width:34%;">
+                    <button class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
+                     style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
 
-                        <i class="fa fa-plus-circle "></i>اضف 
+                        <i class="fa fa-plus-circle "></i>اضف اعلان جديد
                     
                     </button>
                 </div>
@@ -451,14 +486,14 @@
                     @for ($i=0; $i < 6; $i++)
                     <div class="col-6 col-xl-2 p-1">
                         <div class="annonce-item"style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
-                            <a href="{{ asset('assets/admin/images/mobile.jpg') }}" class="gallery-popup" style="height: 160px; width:100%">
+                            <a href="{{ asset('/admin/images/mobile.jpg') }}" class="gallery-popup" style="height: 160px; width:100%">
                                 <div class="project-item">
                                     <div class="overlay-container">
-                                        <img src="{{ asset('assets/admin/images/mobile.jpg') }}" alt="img" class="" style="height: 160px; width:100%">
+                                        <img src="{{ asset('/admin/images/mobile.jpg') }}" alt="img" class="" style="height: 160px; width:100%">
                                         <div class="project-item-overlay text-right">
                                             <h4>الاجهزة الذكية</h4>
                                             <p>
-                                                <img src="{{ asset('assets/admin/images/mobile.jpg') }}" alt="user" class="avatar-xs rounded-circle">
+                                                <img src="{{ asset('/admin/images/mobile.jpg') }}" alt="user" class="avatar-xs rounded-circle">
                                                 <span class="ml-2">مارتينا جرجس</span>
                                             </p>
                                         </div>
@@ -473,7 +508,12 @@
                         </div> 
                     </div>
                     @endfor
-                
+                    <div class="mx-auto"style="width:150px;">
+                        <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
+                        style="height:33px;font-size: 11px;line-height:33px;">
+                            تصفح المزيد
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -8,18 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @yield('styleChart')
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset("assets/admin/images/icon.png")}}">
+    <link rel="shortcut icon" href="{{url("assets/admin/images/icon.png")}}">
     <!-- Bootstrap Css -->
-    <link href="{{asset("assets/admin/libs/magnific-popup/magnific-popup.css")}}" id="bootstrap-style" rel="stylesheet"
+    <link href="{{url("assets/admin/libs/magnific-popup/magnific-popup.css")}}" id="bootstrap-style" rel="stylesheet"
         type="text/css" />
-    <link href="{{asset("assets/admin/css/bootstrap.min.css")}}" id="bootstrap-style" rel="stylesheet"
+    <link href="{{url("assets/admin/css/bootstrap.min.css")}}" id="bootstrap-style" rel="stylesheet"
         type="text/css" />
     <!-- Icons Css -->
-    <link href="{{asset("assets/admin/css/icons.min.css")}}" rel="stylesheet" type="text/css" />
+    <link href="{{url("assets/admin/css/icons.min.css")}}" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     @yield("style")
-    <link href="{{asset("assets/admin/css/app-rtl.css")}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('css/app.scss') }}" rel="stylesheet">
+    <link href="{{url("assets/admin/css/app-rtl.css")}}" rel="stylesheet" type="text/css" />
+    <link href="{{ url('css/app.scss') }}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,7 +73,6 @@
     <div id="layout-wrapper">
 
         <header id="page-topbar" style="height: 60px !important;">
-        
             <div class="navbar-header">
                 <div class="d-flex">
                     <!-- LOGO -->
@@ -81,10 +80,10 @@
 
                         <a href="index.html" class="logo logo-light">
                             <span class="logo-sm">
-                                <img src="{{ asset("assets/admin/images/martina.jpeg") }}" alt="" height="22">
+                                <img src="{{ url("assets/admin/images/martina.jpeg") }}" alt="" height="22">
                             </span>
                             <span class="logo-lg">
-                                <img src="{{ asset("assets/admin/images/martina.jpeg") }}" alt="" height="22">
+                                <img src="{{ url("assets/admin/images/martina.jpeg") }}" alt="" height="22">
                             </span>
                         </a>
                     </div>
@@ -187,43 +186,43 @@
                     <div class="categories bg-white h-100 px-2 pt-1 pb-1 cat-itm mx-auto main-cat  main-section">
                         <div class="categories-cont d-inline-flex">
                             <a type=""href="/general" class="d-inline-block pt-1 w-100 h-100 text-center text-dark mx-1">
-                                <img src="{{ asset("assets/admin/images/general-ads.jpg") }}" alt="" width="100%"
+                                <img src="{{ url("assets/admin/images/general-ads.jpg") }}" alt="" width="100%"
                                     height="90%"><br>
                                 <span class="category-nm d-inline-block">عامة</span>
                             </a>
 
-                            <a type=""href="/general" class="d-inline-block pt-1 w-100 h-100 text-center text-dark mx-1">
-                                <img src="{{ asset("assets/admin/images/jobs.jpg") }}" alt="" width="100%"
+                            <a type=""href="/jobs" class="d-inline-block pt-1 w-100 h-100 text-center text-dark mx-1">
+                                <img src="{{ url("assets/admin/images/jobs.jpg") }}" alt="" width="100%"
                                     height="90%"><br>
                                 <span class="category-nm d-inline-block">وظائف</span>
                             </a>
 
                             <a type=""href="/lands" class="d-inline-block pt-1 w-100 h-100 text-center text-dark mx-1">
-                                <img src="{{ asset("assets/admin/images/lands.jpg") }}" alt="" width="100%"
+                                <img src="{{ url("assets/admin/images/lands.jpg") }}" alt="" width="100%"
                                     height="90%"><br>
                                 <span class="category-nm d-inline-block">الأراضي</span>
                             </a>
 
                             <a type=""href="/cars" class="d-inline-block pt-1 h-100 text-center text-dark mx-1">
-                                <img src="{{ asset("assets/admin/images/cars.jpg") }}" alt="" width="100%"
+                                <img src="{{ url("assets/admin/images/cars.jpg") }}" alt="" width="100%"
                                     height="90%"><br>
                                 <span class="category-nm d-inline-block">سيارات</span>
                             </a>
 
                             <a type="" href="/stores"class="d-inline-block pt-1 w-100 h-100 text-center text-dark mx-1">
-                                <img src="{{ asset("assets/admin/images/stores.jpg") }}" alt="" width="100%"
+                                <img src="{{ url("assets/admin/images/stores.jpg") }}" alt="" width="100%"
                                     height="90%"><br>
                                 <span class="category-nm d-inline-block">محلات</span>
                             </a>
 
                             <a type="" href="/homes"class="d-inline-block pt-1 w-100 h-100 text-center text-dark mx-1">
-                                <img src="{{ asset("assets/admin/images/estates.jpg") }}" alt="" width="100%"
+                                <img src="{{ url("assets/admin/images/estates.jpg") }}" alt="" width="100%"
                                     height="90%"><br>
                                 <span class="category-nm d-inline-block">شقق</span>
                             </a>
 
                             <a type="" href="/mobiles"class="d-inline-block pt-1 w-100 h-100 text-center text-dark mx-1">
-                                <img src="{{ asset("assets/admin/images/mobiles.jpg") }}" alt="" width="100%"
+                                <img src="{{ url("assets/admin/images/mobiles.jpg") }}" alt="" width="100%"
                                     height="90%"><br>
                                 <span class="category-nm d-inline-block">اجهزة</span>
                             </a>
@@ -309,14 +308,14 @@
                             <h6 class="text-light font-weight-bold">تابعنا علي مواقع التواصل</h6>
                             <div class="Download-Icons">
                                 <a href="https://vm.tiktok.com/ZMR5jhvbA/" class="h3 text-primary mr-1"><img
-                                        src="https://autobazar.souqeljuma.com/assets/site/images/tiktok.png" height="28"
+                                        src="https://autobazar.souqeljuma.com/site/images/tiktok.png" height="28"
                                         width="28" alt=""></a>
                                 <a href="https://twitter.com/ownk11?s=11" class="h3 text-success mr-1"><i
                                         class="fab fa-twitter"></i></a>
                                 <a href="https://www.snapchat.com/add/ownk11" class="h3 text-danger mr-1"><i
                                         class="fab fa-snapchat"></i></a>
                                 <a href="https://instagram.com/ownk11?utm_medium=copy_link" class="h1"><img
-                                        src="https://autobazar.souqeljuma.com/assets/site/images/instagram.png"
+                                        src="https://autobazar.souqeljuma.com/site/images/instagram.png"
                                         height="28" width="28" alt=""></a>
                             </div>
                         </div>
@@ -349,17 +348,17 @@
     <!-- END layout-wrapper -->
 
     <!-- JAVASCRIPT -->
-    <script src="{{asset("assets/admin/libs/jquery/jquery.min.js")}}"></script>
-    <script src="{{asset("assets/admin/libs/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
-    <script src="{{asset("assets/admin/libs/metismenu/metisMenu.min.js")}}"></script>
-    <script src="{{asset("assets/admin/libs/simplebar/simplebar.min.js")}}"></script>
-    <script src="{{asset("assets/admin/libs/node-waves/waves.min.js")}}"></script>
+    <script src="{{url("assets/admin/libs/jquery/jquery.min.js")}}"></script>
+    <script src="{{url("assets/admin/libs/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
+    <script src="{{url("assets/admin/libs/metismenu/metisMenu.min.js")}}"></script>
+    <script src="{{url("assets/admin/libs/simplebar/simplebar.min.js")}}"></script>
+    <script src="{{url("assets/admin/libs/node-waves/waves.min.js")}}"></script>
 
     @yield("script")
-    <script src="{{asset("assets/admin/libs/magnific-popup/jquery.magnific-popup.min.js")}}"></script>
-    <script src="{{asset("assets/admin/js/pages/gallery.init.js")}}"></script>
+    <script src="{{url("assets/admin/libs/magnific-popup/jquery.magnific-popup.min.js")}}"></script>
+    <script src="{{url("assets/admin/js/pages/gallery.init.js")}}"></script>
 
-    <script src="{{asset("assets/admin/js/app.js")}}"></script>
+    <script src="{{url("assets/admin/js/app.js")}}"></script>
 
 </body>
 
