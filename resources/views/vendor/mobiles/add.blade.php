@@ -585,8 +585,8 @@
 </div>
 
 <style>
-* {
-    font-family: 'Tajawal' !important;
+.add-section * {
+    font-family:'Tajawal' !important;
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
