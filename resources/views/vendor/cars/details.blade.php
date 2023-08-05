@@ -12,8 +12,15 @@
         list-style-type: none;
     }
 
-    body , h5 , h2 , p {
+    body , h5 , h2 , h4 , p {
         font-family: 'Tajawal' !important;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fff !important; /* Color for even rows */
+  }
+    .table-striped tbody tr:nth-of-type(even) {
+        background-color: #eee !important; /* Color for even rows */
     }
 </style>
 
@@ -46,7 +53,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-9" style="padding: 0;height: 110px;">
                         <div class="media h-100" style="width: 100%;">
                             <div style="position: relative" class="h-100">
-                                <img class="first-img img-fluid" src="https://www.wenak.ps/assets/_up/cars/197X110/135Wmv6dys2I-1691047362.webp" alt="سيات | SEAT ابيزا 2009" title="سيات | SEAT ابيزا 2009" style="max-width:150px;height:100%">
+                                <img class="first-img img-fluid" src="{{ url('assets/admin/images/car.jpeg') }}" alt="سيات | SEAT ابيزا 2009" title="سيات | SEAT ابيزا 2009" style="max-width:150px;height:100%">
                             </div>
                             <div class="media-body px-3 pt-1" style="">
                                 <span style="color: #ff9800;  font-size: 13px ;font-weight: 700"><i class="fas  fa-map-marker-alt" style="    font-size: small;"></i> رام الله
@@ -259,8 +266,8 @@
                             </ul>
                         </div>
                         <div class="d-block d-lg-none">
-                            <table class="table ">
-                                <tbody>
+                            <table class="table table-striped">
+                                <tbody style="font-weight:500;">
                                     <tr>
                                         <td>
                                             <li style="display: list-item !important; ">سيت ابيزا ٢٠٠٩ </li>
@@ -323,8 +330,8 @@
                     </div>
                     <h5>المركبه</h5>
                     <div class="d-block d-lg-none">
-                        <table class="table">
-                            <tbody>
+                        <table class="table table-striped">
+                            <tbody style="font-weight:500;">
                                 <tr>
                                     <td>الشركة</td>
                                     <td>سيات | SEAT</td>
@@ -357,8 +364,8 @@
                     <h5>خصائص المركبه</h5>
                     <br>
                     <div class="d-block d-lg-none">
-                        <table class="table ">
-                            <tbody>
+                        <table class="table table-striped">
+                            <tbody style="font-weight:500;">
                                 <tr>
                                     <td> عدد الركاب </td>
                                     <td>4+1</td>
@@ -427,8 +434,8 @@
                     <h5>عنوان المركبه</h5>
                     <br>
                     <div class="d-block d-lg-none">
-                        <table class="table  ">
-                            <tbody>
+                        <table class="table table-striped ">
+                            <tbody style="font-weight:500;">
                                 <tr>
                                     <td>العنوان</td>
                                     <td>رام الله والبيرة </td>
@@ -436,6 +443,7 @@
                             </tbody>
                         </table>
                     </div>
+                    
                     <div class="d-none d-lg-block">
                         <div class="row mb-20px" style="line-height: 28px;">
                             <div class="col-xl-6 col-md-6">
@@ -532,9 +540,6 @@
                     </a>
                     <div class="card-body">
                         <h4 class="card-title">سيارات</h4>
-                        <p class="card-text"> 
-                            تويوتا لاند كروزر موديل سنة 2019 فل الفل سبورت (قصير) بابين
-                        </p>
                     </div>
                 </div> 
             </div>

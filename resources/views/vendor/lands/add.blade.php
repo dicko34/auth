@@ -355,7 +355,7 @@
   }
 .table-striped tbody tr:nth-of-type(even) {
     background-color: #E8DFDE !important; /* Color for even rows */
-  }
+}
 
 @media all and (max-width:950px) {
     .add-section {
