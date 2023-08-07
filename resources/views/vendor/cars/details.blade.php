@@ -16,12 +16,10 @@
         font-family: 'Tajawal' !important;
     }
 
-    .table-striped tbody tr:nth-of-type(odd) {
-    background-color: #fff !important; /* Color for even rows */
-  }
-    .table-striped tbody tr:nth-of-type(even) {
-        background-color: #eee !important; /* Color for even rows */
+    ul , table li{
+        list-style-type: none !important;
     }
+
 </style>
 
 <div class="w-100 mx-auto bg-white" style="max-width:980px;">
@@ -56,9 +54,11 @@
                                 <img class="first-img img-fluid" src="{{ url('assets/admin/images/car.jpeg') }}" alt="سيات | SEAT ابيزا 2009" title="سيات | SEAT ابيزا 2009" style="max-width:150px;height:100%">
                             </div>
                             <div class="media-body px-3 pt-1" style="">
-                                <span style="color: #ff9800;  font-size: 13px ;font-weight: 700"><i class="fas  fa-map-marker-alt" style="    font-size: small;"></i> رام الله
+                                <span style="color: #ff9800;  font-size: 13px ;font-weight: 700">
+                                <i class="fas  fa-map-marker-alt" style="    font-size: small;"></i> 
+                                رام الله
                                     والبيرة </span>
-                                <h5 class="mt-2 title" style="    font-size: 1.1rem;font-family:Tajawal">سيات | SEAT
+                                <h5 class="mt-2 title " style="    font-size: 1.1rem;font-family:Tajawal">سيات | SEAT
                                     ابيزا 2009</h5>
                                 <li class="old-price not-cut d-block d-lg-none">سعر غير محدد</li>
                             </div>
@@ -94,7 +94,47 @@
                             </tbody>
                         </table>
                     </div>
-                    <h5 style="font-family:Tajawal">وصف المركبه</h5>
+
+                    <div class="w-100 px-2 bg-primary">
+                        <h5 class="text-white ml-2 font-weight-bold text-center" 
+                        style="font-family:Tajawal;line-height:48px;text-align:center;">المركبة</h5>
+                    </div>
+                    <div class="d-block d-lg-none">
+                        <table class="table ">
+                            <tbody style="font-weight:500;">
+                                <tr>
+                                    <td>الشركة</td>
+                                    <td>سيات | SEAT</td>
+                                </tr>
+                                <tr>
+                                    <td>الموديل \ اسم :</td>
+                                    <td> ابيزا </td>
+                                </tr>
+                                <tr>
+                                    <td> سنه الانتاج</td>
+                                    <td> 2009</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="d-none d-lg-block">
+                        <div class="row mb-20px " style="line-height: 28px">
+                            <div class="col-xl-4 col-md-12 ">
+                                <span><i class="fas fa-home"></i> الشركة :</span> سيات | SEAT
+                            </div>
+                            <div class="col-xl-4 col-md-12 ">
+                                <span><i class="fas fa-tag"></i> الموديل :</span> ابيزا
+                            </div>
+                            <div class="col-xl-4 col-md-12 ">
+                                <span><i class="fas fa-calendar"></i> سنه الانتاج :</span> 2009
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-100 px-2 bg-primary">
+                        <h5 class="text-white ml-2 font-weight-bold text-center" 
+                        style="font-family:Tajawal;line-height:48px;text-align:center;">وصف المركبة</h5>
+                    </div>
                     <br>
                     <div style="    padding: 20px;
                                                  all: none;
@@ -266,7 +306,7 @@
                             </ul>
                         </div>
                         <div class="d-block d-lg-none">
-                            <table class="table table-striped">
+                            <table class="table ">
                                 <tbody style="font-weight:500;">
                                     <tr>
                                         <td>
@@ -328,43 +368,14 @@
                             </table>
                         </div>
                     </div>
-                    <h5>المركبه</h5>
-                    <div class="d-block d-lg-none">
-                        <table class="table table-striped">
-                            <tbody style="font-weight:500;">
-                                <tr>
-                                    <td>الشركة</td>
-                                    <td>سيات | SEAT</td>
-                                </tr>
-                                <tr>
-                                    <td>الموديل \ اسم :</td>
-                                    <td> ابيزا </td>
-                                </tr>
-                                <tr>
-                                    <td> سنه الانتاج</td>
-                                    <td> 2009</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    
+                    <div class="w-100 px-2 bg-primary">
+                        <h5 class="text-white ml-2 font-weight-bold text-center" 
+                        style="font-family:Tajawal;line-height:48px;text-align:center;">بيانات المركبة</h5>
                     </div>
                     <br>
-                    <div class="d-none d-lg-block">
-                        <div class="row mb-20px " style="line-height: 28px">
-                            <div class="col-xl-4 col-md-12 ">
-                                <span><i class="fas fa-home"></i> الشركة :</span> سيات | SEAT
-                            </div>
-                            <div class="col-xl-4 col-md-12 ">
-                                <span><i class="fas fa-tag"></i> الموديل :</span> ابيزا
-                            </div>
-                            <div class="col-xl-4 col-md-12 ">
-                                <span><i class="fas fa-calendar"></i> سنه الانتاج :</span> 2009
-                            </div>
-                        </div>
-                    </div>
-                    <h5>خصائص المركبه</h5>
-                    <br>
                     <div class="d-block d-lg-none">
-                        <table class="table table-striped">
+                        <table class="table ">
                             <tbody style="font-weight:500;">
                                 <tr>
                                     <td> عدد الركاب </td>
@@ -398,6 +409,10 @@
                                     <td> الزجاج</td>
                                     <td> كهربائي</td>
                                 </tr>
+                                <tr>
+                                    <td>العنوان</td>
+                                    <td>رام الله والبيرة </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -427,37 +442,21 @@
                             <div class="col-xl-4 col-lg-6  col-md-6">
                                 <span><i class="fas fa-window-maximize"></i>الزجاج :</span> كهربائي
                             </div>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <h5>عنوان المركبه</h5>
-                    <br>
-                    <div class="d-block d-lg-none">
-                        <table class="table table-striped ">
-                            <tbody style="font-weight:500;">
-                                <tr>
-                                    <td>العنوان</td>
-                                    <td>رام الله والبيرة </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <div class="d-none d-lg-block">
-                        <div class="row mb-20px" style="line-height: 28px;">
-                            <div class="col-xl-6 col-md-6">
-                                <span><i class="fas fa-map-marker"></i> العنوان :</span> رام الله والبيرة
+                            <div class="col-xl-4 col-lg-6  col-md-6">
+                                <span>العنوان :</span> رام الله والبيرة 
                             </div>
                         </div>
                     </div>
+                    <br>
+                    <br>
+                    
                     <br>
                     <div class=" border-md-top border-right d-block d-lg-none d-xl-none pt-2">
                         <div class="row " style="min-height: 83px;margin-right: 0px;margin-left: 0px;">
                             <div class="col text-center">
                                 <h5>Anas Musa</h5>
                                 <hr>
-                                <table class="table table-striped table-sm">
+                                <table class="table table-sm">
                                     <tbody>
                                         <tr>
                                             <td colspan="100%" style="font-size: 20px;">رقم الموبايل</td>
@@ -494,7 +493,7 @@
                         <b style="color: #ff9800 ;font-size: 20px;" class="text-dark">Anas Musa</b>
                     </div>
                     <div class="col-md-12 text-center mt-3">
-                        <table class="table table-striped table-sm">
+                        <table class="table table-sm">
                             <tbody>
                                 <tr>
                                     <td colspan="100%" style="font-size: 20px;">رقم الموبايل</td>

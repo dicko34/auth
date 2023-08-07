@@ -90,8 +90,71 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="w-100 px-2"style="background:#eee">
-                        <h5 style="font-family:Tajawal;line-height:48px;">وصف العقار</h5>
+                    
+                    <div class="w-100 px-2 bg-primary">
+                        <h5 class="text-white ml-2 font-weight-bold text-center"style="font-family:Tajawal;line-height:48px;">بيانات العقار</h5>
+                    </div>
+                    <div class="d-block d-lg-none">
+                        <table class="table ">
+                            <tbody style="font-weight:500">
+                                <tr>
+                                    <td>تقع على:</td>
+                                    <td>عظم</td>
+                                </tr>
+                                <tr>
+                                    <td>محاطة بـ :</td>
+                                    <td>250 متر</td>
+                                </tr>
+                                <tr>
+                                    <td>مساحه العقار:</td>
+                                    <td>250 متر</td>
+                                </tr>
+                                <tr>
+                                    <td>العنوان</td>
+                                    <td>بيت لحم - جنوب بيت لحم </td>
+                                </tr>
+                                <tr>
+                                    <td>المميزات</td>
+                                    <td>يصلها الكهرباء </td>
+                                </tr>
+                                <tr>
+                                    <td>معلومات اضافية</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="d-none d-lg-block">
+                        <div class="row mb-20px">
+                            <div class="col-xl-4 col-md-6" style="    line-height: 28px;">
+                                <span><i class="fas fa-tags"></i> حاله العقار :</span> عظم
+                            </div>
+                            <div class="col-xl-4 col-md-6" style="    line-height: 28px;">
+                                <span><i class="fa-solid fa-location-dot"></i> تقع على:</span> عظم
+                            </div>
+                            <div class="col-xl-4 col-md-6" style="    line-height: 28px;">
+                                <span><i class="fa-solid fa-location-crosshairs"></i>محاطة بـ:</span> عظم
+                            </div>
+                            
+                            <div class="col-xl-4 col-md-6" style="    line-height: 28px;">
+                                <span><i class="fas fa-globe"></i> مساحه الارض :</span> 550 متر
+                            </div>
+
+                            <div class="col-xl-4 col-md-6" style="    line-height: 28px;">
+                                <span><i class="fa-solid fa-star"></i> مميزات:</span> يصلها الكهرباء
+                            </div>
+
+                            <div class="col-xl-12 col-md-12" style="line-height: 28px;">
+                                <span><i class="fas fa-compass"></i>العنوان :</span> بيت لحم - جنوب بيت لحم
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+
+                    <div class="w-100 px-2 bg-primary">
+                        <h5 class="text-white ml-2 font-weight-bold text-center"style="font-family:Tajawal;line-height:48px;">وصف العقار</h5>
                     </div>
                     
                     <br>
@@ -257,10 +320,6 @@
                                 <li style="line-height: 1.3rem !important;">تبعد عن حاجز مزموريا 15 دقيقة </li>
                                 <li style="line-height: 1.3rem !important;">المواصفات : </li>
                                 <li style="line-height: 1.3rem !important;"> مساحة الأرض 550 متر </li>
-                                <li style="line-height: 1.3rem !important;">مساحة البناء الكلي 250 متر </li>
-                                <li style="line-height: 1.3rem !important;"> الطابق الاول 135 متر </li>
-                                <li style="line-height: 1.3rem !important;"> الطابق الثاني 120 متر </li>
-                                <li style="line-height: 1.3rem !important;"> يوجد حديقة منفصلة عن المنزل </li>
                                 <li style="line-height: 1.3rem !important;">منطقة B طابو سلطة صادر </li>
                                 <li style="line-height: 1.3rem !important;">على قمة جبل . وعلى شارع مباشرة . إطلالة
                                     مميزة جدا وهادئة </li>
@@ -274,7 +333,7 @@
                             </ul>
                         </div>
                         <div class="d-block d-lg-none">
-                            <table class="table table-striped">
+                            <table class="table ">
                                 <tbody style="font-weight:500">
                                     <tr>
                                         <td>
@@ -306,27 +365,6 @@
                                     <tr>
                                         <td>
                                             <li style="display: list-item !important;"> مساحة الأرض 550 متر </li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li style="display: list-item !important;">مساحة البناء الكلي 250 متر </li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li style="display: list-item !important;"> الطابق الاول 135 متر </li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li style="display: list-item !important;"> الطابق الثاني 120 متر </li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li style="display: list-item !important;"> يوجد حديقة منفصلة عن المنزل
-                                            </li>
                                         </td>
                                     </tr>
                                     <tr>
@@ -371,70 +409,6 @@
                             </table>
                         </div>
                     </div>
-                    <div class="w-100 px-2"style="background:#eee">
-                        <h5 style="font-family:Tajawal;line-height:48px;">بيانات العقار</h5>
-                    </div>
-                    <div class="d-block d-lg-none">
-                        <table class="table table-striped">
-                            <tbody style="font-weight:500">
-                                <tr>
-                                    <td>حاله العقار</td>
-                                    <td>عظم</td>
-                                </tr>
-                                <tr>
-                                    <td>مساحه العقار</td>
-                                    <td>250 متر</td>
-                                </tr>
-                                <tr>
-                                    <td>مساحه الارض</td>
-                                    <td> 550 متر</td>
-                                </tr>
-                                <tr>
-                                    <td>العنوان</td>
-                                    <td>بيت لحم - جنوب بيت لحم </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <br>
-                    <div class="d-none d-lg-block">
-                        <div class="row mb-20px">
-                            <div class="col-xl-4 col-md-6" style="    line-height: 28px;">
-                                <span><i class="fas fa-tags"></i> حاله العقار :</span> عظم
-                            </div>
-                            <div class="col-xl-4 col-md-6" style="    line-height: 28px;">
-                                <span><i class="fas fa-globe"></i> مساحه العقار :</span> 250 متر
-                            </div>
-                            <div class="col-xl-4 col-md-6" style="    line-height: 28px;">
-                                <span><i class="fas fa-globe"></i> مساحه الارض :</span> 550 متر
-                            </div>
-                            <div class="col-xl-12 col-md-12" style="line-height: 28px;">
-                                <span><i class="fas fa-compass"></i>العنوان :</span> بيت لحم - جنوب بيت لحم
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-100 px-2"style="background:#eee">
-                        <h5 style="font-family:Tajawal;line-height:48px;">ماذا يوجد في العقار</h5>
-                    </div>
-                    <br>
-                    <div class="d-block d-lg-none">
-                        <table class="table table-striped">
-                            <tbody style="font-weight:500">
-                                <tr>
-                                    <td> عدد الغرف</td>
-                                    <td>3</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="d-none d-lg-block">
-                        <div class="row mb-20px">
-                            <div class="col-xl-4 col-md-6" style="    line-height: 28px;">
-                                <span><i class="fas fa-home"></i> عدد الغرف :</span> 3
-                            </div>
-                        </div>
-                    </div>
-                    <br>
                     <br>
                     <div class="d-none d-lg-block">
                         <div class="row mb-20px" style="line-height: 28px;">
@@ -449,7 +423,7 @@
                             <div class="col text-center">
                                 <h5>Anas Musa</h5>
                                 <hr>
-                                <table class="table table-striped table-sm">
+                                <table class="table table-sm">
                                     <tbody style="font-weight:500">
                                         <tr>
                                             <td colspan="100%" style="font-size: 20px;">رقم الموبايل</td>
@@ -487,7 +461,7 @@
                         <b style="color: #ff9800 ;font-size: 20px;" class="text-dark">Anas Musa</b>
                     </div>
                     <div class="col-md-12 text-center mt-3">
-                        <table class="table table-striped table-sm">
+                        <table class="table table-sm">
                             <tbody style="font-weight:500">
                                 <tr>
                                     <td colspan="100%" style="font-size: 20px;">رقم الموبايل</td>
@@ -542,10 +516,9 @@
     </div>
 </div>
 <style>
-ul {
-    list-style-type: none;
+ul , table li{
+    list-style-type: none !important;
 }
-
 body,
 h5,
 h2,
@@ -554,12 +527,7 @@ p {
     font-family: 'Tajawal' !important;
 }
 
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: #fff !important; /* Color for even rows */
-  }
-.table-striped tbody tr:nth-of-type(even) {
-    background-color: #eee !important; /* Color for even rows */
-}
+
 </style>
 <script>
 function CopyPageUrl() {

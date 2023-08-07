@@ -90,8 +90,53 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="w-100 px-2"style="background:#E8DFDE">
-                        <h5 style="font-family:Tajawal;line-height:48px;text-align:center;">وصف العقار</h5>
+                    
+                    <div class="w-100 px-2 bg-primary">
+                        <h5 class="text-white ml-2 font-weight-bold text-center" 
+                        style="font-family:Tajawal;line-height:48px;text-align:center;">بيانات المنزل</h5>
+                    </div>
+                    <div class="d-block d-lg-none">
+                        <table class="table ">
+                            <tbody style="font-weight:500">
+                                <tr>
+                                    <td>حاله المنزل</td>
+                                    <td>عظم</td>
+                                </tr>
+                                <tr>
+                                    <td>مساحه المنزل</td>
+                                    <td>250 متر</td>
+                                </tr>
+                                <tr>
+                                    <td>مساحه الارض</td>
+                                    <td> 550 متر</td>
+                                </tr>
+                                <tr>
+                                    <td>العنوان</td>
+                                    <td>بيت لحم - جنوب بيت لحم </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="d-none d-lg-block">
+                        <div class="row mb-20px">
+                            <div class="col-xl-4 col-md-6" style="    line-height: 28px;">
+                                <span><i class="fas fa-tags"></i> حاله المنزل :</span> عظم
+                            </div>
+                            <div class="col-xl-4 col-md-6" style="    line-height: 28px;">
+                                <span><i class="fas fa-globe"></i> مساحه المنزل :</span> 250 متر
+                            </div>
+                            <div class="col-xl-4 col-md-6" style="    line-height: 28px;">
+                                <span><i class="fas fa-globe"></i> مساحه الارض :</span> 550 متر
+                            </div>
+                            <div class="col-xl-12 col-md-12" style="line-height: 28px;">
+                                <span><i class="fas fa-compass"></i>العنوان :</span> بيت لحم - جنوب بيت لحم
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="w-100 px-2 bg-primary">
+                        <h5 class="text-white ml-2 font-weight-bold text-center"style="font-family:Tajawal;line-height:48px;text-align:center;">وصف المنزل</h5>
                     </div>
                     
                     <br>
@@ -371,50 +416,9 @@
                             </table>
                         </div>
                     </div>
-                    <div class="w-100 px-2"style="background:#E8DFDE">
-                        <h5 style="font-family:Tajawal;line-height:48px;text-align:center;">بيانات العقار</h5>
-                    </div>
-                    <div class="d-block d-lg-none">
-                        <table class="table ">
-                            <tbody style="font-weight:500">
-                                <tr>
-                                    <td>حاله العقار</td>
-                                    <td>عظم</td>
-                                </tr>
-                                <tr>
-                                    <td>مساحه العقار</td>
-                                    <td>250 متر</td>
-                                </tr>
-                                <tr>
-                                    <td>مساحه الارض</td>
-                                    <td> 550 متر</td>
-                                </tr>
-                                <tr>
-                                    <td>العنوان</td>
-                                    <td>بيت لحم - جنوب بيت لحم </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <br>
-                    <div class="d-none d-lg-block">
-                        <div class="row mb-20px">
-                            <div class="col-xl-4 col-md-6" style="    line-height: 28px;">
-                                <span><i class="fas fa-tags"></i> حاله العقار :</span> عظم
-                            </div>
-                            <div class="col-xl-4 col-md-6" style="    line-height: 28px;">
-                                <span><i class="fas fa-globe"></i> مساحه العقار :</span> 250 متر
-                            </div>
-                            <div class="col-xl-4 col-md-6" style="    line-height: 28px;">
-                                <span><i class="fas fa-globe"></i> مساحه الارض :</span> 550 متر
-                            </div>
-                            <div class="col-xl-12 col-md-12" style="line-height: 28px;">
-                                <span><i class="fas fa-compass"></i>العنوان :</span> بيت لحم - جنوب بيت لحم
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-100 px-2"style="background:#E8DFDE">
-                        <h5 style="font-family:Tajawal;line-height:48px;text-align:center;">ماذا يوجد في العقار</h5>
+                    <div class="w-100 px-2 bg-primary">
+                        <h5 class="text-white ml-2 font-weight-bold text-center" 
+                        style="font-family:Tajawal;line-height:48px;text-align:center;">ماذا يوجد في المنزل</h5>
                     </div>
                     <br>
                     <div class="d-block d-lg-none">
