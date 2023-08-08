@@ -454,6 +454,7 @@
                     <div class=" border-md-top border-right d-block d-lg-none d-xl-none pt-2">
                         <div class="row " style="min-height: 83px;margin-right: 0px;margin-left: 0px;">
                             <div class="col text-center">
+<<<<<<< Updated upstream
                                 <h5>Anas Musa</h5>
                                 <hr>
                                 <table class="table table-sm">
@@ -464,6 +465,28 @@
                                         <tr>
                                             <td><a dir="ltr" href="tel:0569838215" style="font-size: 20px;"> 0569838215
                                                 </a></td>
+=======
+                                <div class="w-100 px-2 bg-primary">
+                                <h5 class="text-white ml-2 font-weight-bold text-center"
+                                    style="font-family:Tajawal;line-height:48px;text-align:center;">معلومات المعلن</h5>
+                            </div>
+                                
+                                <table class="table table-sm">
+                                    <tbody>
+                                        <tr>
+                                            <td>اسم المعلن</td>
+                                            <td>محمد يوسف</td>
+                                        </tr>
+                                        <tr>
+                                            <td>رقم الموبايل</td>
+                                            <td><a class="text-dark" href="tel:0569838215"> 0569838215
+                                                </a></td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>البريد الالكتروني</td>
+                                            <td>ahmed@yahoo.com</td>
+>>>>>>> Stashed changes
                                         </tr>
                                     </tbody>
                                 </table>
