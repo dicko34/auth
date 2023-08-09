@@ -10,6 +10,7 @@
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         .col-4 {
             padding: 1px !important;
             margin: 0px !important;
@@ -92,6 +93,8 @@
 
                                 </div>
 =======
+=======
+>>>>>>> Stashed changes
 <div class="w-100 mx-auto bg-white" style="max-width:980px;">
     <div class="w-100">
         <div class="media-header">
@@ -120,6 +123,9 @@
                         </li>
                     </ul>
                 </div>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
                 <a href="#" class="btn btn-light btn-sm" style="line-height: 22px; font-size: 14px; margin: 5px;"
@@ -144,6 +150,7 @@
                             </div>
                         </div>
                     </div>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
                 </div>
             </div>
@@ -275,6 +282,17 @@
                                 </div>
                             @endfor
 
+=======
+                    <div class="col-xl-3 col-lg-4 border-right-dd border-right ">
+                        <div class="">
+
+                            <div class="">
+                                <ul>
+                                    <li class="old-price not-cut d-none d-lg-block" style="font-size: 20px;">سعر غير
+                                        محدد</li>
+                                </ul>
+                            </div>
+>>>>>>> Stashed changes
 =======
                     <div class="col-xl-3 col-lg-4 border-right-dd border-right ">
                         <div class="">

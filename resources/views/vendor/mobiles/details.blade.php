@@ -2,6 +2,7 @@
 @section('pageTitle', 'Koala Web Libraries')
 @section('styleChart')
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <link href="{{ asset('assets/admin/libs/c3/c3.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <script type="text/javascript"
         src="https://platform-api.sharethis.com/js/sharethis.js#property=6063a4476f7ab900129cec66&product=inline-share-buttons"
@@ -283,6 +284,83 @@
         </div>
     </div>
 
+=======
+<link href="{{ asset('assets/admin/libs/c3/c3.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+<script type="text/javascript"
+    src="https://platform-api.sharethis.com/js/sharethis.js#property=6063a4476f7ab900129cec66&product=inline-share-buttons"
+    async="async"></script>
+@endsection
+@section('content')
+
+
+<div class="w-100 mx-auto bg-white" style="max-width:980px;">
+    <div class="w-100">
+        <div class="media-header">
+            <div class="w-100 mt-0 card-header text-left d-flex justify-content-between align-items-center"
+                style="border: 1px solid #ccc; border-radius: 0px; border-bottom: 0px; padding: 0;">
+                <div class="float-left text-dark border-right px-2 py-1" style="font-size: 14px;">
+                    شارك الاعلان
+                    <ul class="d-inline-flex mb-0">
+                        <li class="f-right px-2 py-1" style="font-size: 14px;">
+                            <a onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://www.wenak.ps/car/61128.html&amp;src=sdkpreparse','newwindow','width=300,height=250'); return false;"
+                                style="color: #888"><i class="fab fa-facebook-square" style="font-size: 18px;"></i></a>
+                        </li>
+                        <li class="f-right px-2 py-1" style="font-size: 14px;">
+                            <a onclick="window.open('https://twitter.com/intent/tweet?text=https://www.wenak.ps/car/61128.html&amp;src=sdkpreparse','newwindow','width=300,height=250'); return false;"
+                                style="color: #888"><i class="fab fa-twitter" style="font-size: 18px;"></i></a>
+                        </li>
+                        <li class="f-right px-2 py-1" style="font-size: 14px;">
+                            <a onclick="window.open('https://api.whatsapp.com/send?text=https://www.wenak.ps/car/61128.html','newwindow','width=1200,height=450'); return false;"
+                                style="color: #888"><i class="fab fa-whatsapp" aria-hidden="true"
+                                    style="font-size: 18px;"></i></a>
+                        </li>
+                        <li class="f-right px-2 py-1" style="font-size: 14px;">
+                            <a onclick="window.open('https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=&amp;su=وينك من زمان - سيات | SEAT ابيزا 2009&amp;body=سيات | SEAT ابيزا 2009 https://www.wenak.ps/car/61128.html&amp;ui=2&amp;tf=1&amp;pli=','newwindow','width=1200,height=450'); return false;"
+                                style="color: #888"><i class="fas fa-envelope" aria-hidden="true"
+                                    style="font-size: 18px;"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <a href="#" class="btn btn-light btn-sm" style="line-height: 22px; font-size: 14px; margin: 5px;"
+                    onclick="CopyPageUrl()"><i class="fa-paperclip fas"></i></a>
+            </div>
+            <div class="col-md-12 padding-0px bg-white" style="   border: 1px solid #00000026; ">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-9" style="padding: 0;height: 110px;">
+                        <div class="media h-100" style="width: 100%;">
+                            <div style="position: relative" class="h-100">
+                                <img class="first-img img-fluid" src="{{ url('assets/admin/images/shopes.jpg') }}"
+                                    alt="سيات | SEAT ابيزا 2009" title="سيات | SEAT ابيزا 2009"
+                                    style="max-width:150px;height:100%">
+                            </div>
+                            <div class="media-body px-3 pt-1" style="">
+                                <span style="color: #ff9800;  font-size: 13px ;font-weight: 700"><i
+                                        class="fas  fa-map-marker-alt" style="    font-size: small;"></i> رام الله
+                                    والبيرة </span>
+                                <h5 class="mt-2 title" style="    font-size: 1.1rem;font-family:Tajawal">هاتف منفصل
+                                    للبيع</h5>
+                                <li class="old-price not-cut d-block d-lg-none">سعر غير محدد</li>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 border-right-dd border-right ">
+                        <div class="">
+
+                            <div class="">
+                                <ul>
+                                    <li class="old-price not-cut d-none d-lg-block" style="font-size: 20px;">سعر غير
+                                        محدد</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+>>>>>>> Stashed changes
     <div class="w-100">
         <div class="row list-product m-0px list-product-details" style="display: inline;">
             <div class="row details" style="padding: 0;margin-right: 0px;margin-left: 0px;">
@@ -809,14 +887,20 @@
                             <h4 class="card-title">شقق</h4>
                         </div>
                     </div>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             </div>
             @endfor
         </div>
     </div>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 @endsection
 =======
+=======
+>>>>>>> Stashed changes
     <style>
     ul,
     table li {
@@ -844,5 +928,9 @@
     }
     </script>
 
+<<<<<<< Updated upstream
+    @endsection
+>>>>>>> Stashed changes
+=======
     @endsection
 >>>>>>> Stashed changes

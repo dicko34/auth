@@ -8,6 +8,7 @@
 @endsection
 @section('content')
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <div class="row">
         <div class="card w-100">
             <div class="body-card m-3">
@@ -238,6 +239,10 @@
 =======
 
 
+=======
+
+
+>>>>>>> Stashed changes
 <div class="w-100 mx-auto bg-white" style="max-width:980px;">
     <div class="w-100">
         <div class="media-header">
@@ -249,6 +254,9 @@
                         <li class="f-right px-2 py-1" style="font-size: 14px;">
                             <a onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://www.wenak.ps/car/61128.html&amp;src=sdkpreparse','newwindow','width=300,height=250'); return false;"
                                 style="color: #888"><i class="fab fa-facebook-square" style="font-size: 18px;"></i></a>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                         </li>
                         <li class="f-right px-2 py-1" style="font-size: 14px;">
