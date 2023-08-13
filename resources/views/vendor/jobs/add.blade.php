@@ -45,20 +45,9 @@
                         <label class="form-check-label" for="license_1">دوام كلي</label>
                     </div>
                     <div class="form-check form-check-inline">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                        <input class="form-check-input" type="radio" name="license" id="license_2" value="دوام جزئي">
-                        <label class="form-check-label" for="license_2">نمرة صفراء</label>
-=======
                     <input required="" class="form-check-input" type="radio" name="license" id="license_1"
                             value="دوام كلي">
                         <label class="form-check-label" for="license_1">دوام جزئي</label>
->>>>>>> Stashed changes
-=======
-                    <input required="" class="form-check-input" type="radio" name="license" id="license_1"
-                            value="دوام كلي">
-                        <label class="form-check-label" for="license_1">دوام جزئي</label>
->>>>>>> Stashed changes
                     </div>
                 </td>
             </tr>

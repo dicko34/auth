@@ -421,21 +421,6 @@
                     <div class=" border-md-top border-right d-block d-lg-none d-xl-none pt-2">
                         <div class="row " style="min-height: 83px;margin-right: 0px;margin-left: 0px;">
                             <div class="col text-center">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                                <h5>Anas Musa</h5>
-                                <hr>
-                                <table class="table table-sm">
-                                    <tbody style="font-weight:500">
-                                        <tr>
-                                            <td colspan="100%" style="font-size: 20px;">رقم الموبايل</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a dir="ltr" href="tel:0569838215" style="font-size: 20px;"> 0569838215
-                                                </a></td>
-=======
-=======
->>>>>>> Stashed changes
                                 <div class="w-100 px-2 bg-primary">
                                 <h5 class="text-white ml-2 font-weight-bold text-center"
                                     style="font-family:Tajawal;line-height:48px;text-align:center;">معلومات المعلن</h5>
@@ -452,10 +437,6 @@
                                             <td><a class="text-dark" href="tel:0569838215"> 0569838215
                                                 </a></td>
                                             </td>
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
                                         </tr>
                                     </tbody>
                                 </table>
