@@ -1,13 +1,13 @@
 @extends("layouts.vendor")
 @section('pageTitle', 'Koala Web Libraries')
 @section('styleChart')
-    <link href="{{ asset('assets/admin/libs/c3/c3.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/admin/libs/c3/c3.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
 
 
 
-    <div class="add-section w-75 mx-auto bg-white">
+<div class="add-section w-75 mx-auto bg-white">
     <div class="add-section-title btn w-100 bg-primary p-1 px-3 mb-3">
         <h4 class="text-white ml-2 font-weight-bold text-left">إعلان عام جديد</h4>
     </div>
@@ -17,7 +17,55 @@
                 <td>العنوان<span class="text-danger" style="">*</span></td>
                 <td>
                     <div class="input-group input-group-sm">
-                        <input type="text" name="title" class="form-control form-control-sm" >
+                        <input type="text" name="title" class="form-control form-control-sm">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>التصنيف <span class="text-danger" style="font-weight: 700;">*</span></td>
+                <td>
+                    <div class="input-group input-group-sm">
+                        <select name="category" class="form-select ">
+                            <option value="1">اثاث منزلي و مكتبي</option>
+                            <option value="2">اجهزة الكترونية</option>
+                            <option value="3">اجهزة انذار ومراقبة</option>
+                            <option value="4">اجهزة طبية</option>
+                            <option value="5">اجهزة كهربائية</option>
+                            <option value="6">احذية</option>
+                            <option value="7">ادوات رياضية</option>
+                            <option value="8">ادوات صحية</option>
+                            <option value="9">ادوات منزلية</option>
+                            <option value="10">ازهار واشتال ونباتات</option>
+                            <option value="11">الات ومعدات</option>
+                            <option value="12">العاب</option>
+                            <option value="13">برامج كمبيوتر</option>
+                            <option value="14">تجهيزات مكتبية</option>
+                            <option value="15">تحف وهدايا</option>
+                            <option value="16">تكييف وتبريد</option>
+                            <option value="21">خلويات ولوازمها</option>
+                            <option value="25">ديكور</option>
+                            <option value="26">سجاد وموكيت</option>
+                            <option value="29">شحن وتخليص جمركي</option>
+                            <option value="30">شروات وصفقات تجارية</option>
+                            <option value="31">عطور</option>
+                            <option value="32">قرطاسية</option>
+                            <option value="34">كمبيوتر ومستلزماته</option>
+                            <option value="35">قطع سيارات</option>
+                            <option value="36">مجوهرات</option>
+                            <option value="37">معدات ثقيلة</option>
+                            <option value="38">مفروشات</option>
+                            <option value="39">ملابس</option>
+                            <option value="40">مواد تجميل</option>
+                            <option value="41">مواد غذائية</option>
+                            <option value="42">نظارات</option>
+                            <option value="43">آلات موسيقية</option>
+                            <option value="44">اتصالات</option>
+                            <option value="45">اكسسوارات ونثريات</option>
+                            <option value="46">دورات تعليمية</option>
+                            <option value="47">سيارات وتوابعها</option>
+                            <option value="49">حيوانات</option>
+                            <option value="48">خدمات عامة</option>
+                        </select>
                     </div>
                 </td>
             </tr>
@@ -28,8 +76,8 @@
                         <input type="text" name="title" class="form-control form-control-sm">
                     </div>
                 </td>
-            </tr> 
-    
+            </tr>
+
             <tr>
                 <td>معلومات اضافية</td>
                 <td>
@@ -168,57 +216,67 @@
         <h5 class="text-white ml-2 font-weight-bold text-left">معلومات المُعلن</h5>
     </div>
     <table class="table table-bordered table-striped mb-0 bg-white">
-    <tbody><tr>
-    <td>
-    اسم المُعلن <span class="text-danger" style="font-weight: 700;">*</span>
-    </td>
-    <td>
-    <div class="input-group">
-    <input type="text" class="form-control form-control-sm" required="" name="client_name" placeholder="الاسم الحقيقي" >
-    <span class="input-group-text d-flex d-lg-none " style="width:50px !important;"  ><i class="fas fa-info-circle"></i></span>
-    <span class="input-group-text d-none d-lg-block w-100" >ملاحظة: لن يتم قبول الإعلان من غير اسم حقيقي</span>
-    </div>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    رقم الهاتف
-    </td>
-    <td>
-    <div class="form-group">
-    <input type="text" class="form-control form-control-sm" name="telephone" placeholder="رقم الهاتف مع المقدمة" aria-label="رقم الهاتف مع المقدمة">
-    </div>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    موبايل <span class="text-danger" style="font-weight: 700;">*</span>
-    </td>
-    <td>
-    <div class="form-group">
-    <input type="text" class="form-control form-control-sm" required="" name="phone" placeholder="رقم الموبايل" aria-label="رقم الهاتف مع المقدمة">
-    </div>
-    </td>
-    </tr>
-    <tr>
-    <td colspan="100%" class="text-center">
-    <button type="submit" class="btn btn-secondary" id="submit-all">اضف الأعلان</button>
-    </td>
-    </tr>
-    </tbody></table>
+        <tbody>
+            <tr>
+                <td>
+                    اسم المُعلن <span class="text-danger" style="font-weight: 700;">*</span>
+                </td>
+                <td>
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-sm" required="" name="client_name"
+                            placeholder="الاسم الحقيقي">
+                        <span class="input-group-text d-flex d-lg-none " style="width:50px !important;"><i
+                                class="fas fa-info-circle"></i></span>
+                        <span class="input-group-text d-none d-lg-block w-100">ملاحظة: لن يتم قبول الإعلان من غير اسم
+                            حقيقي</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    رقم الهاتف
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-sm" name="telephone"
+                            placeholder="رقم الهاتف مع المقدمة" aria-label="رقم الهاتف مع المقدمة">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    موبايل <span class="text-danger" style="font-weight: 700;">*</span>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-sm" required="" name="phone"
+                            placeholder="رقم الموبايل" aria-label="رقم الهاتف مع المقدمة">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="100%" class="text-center">
+                    <button type="submit" class="btn btn-secondary" id="submit-all">اضف الأعلان</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 <style>
 .add-section * {
-    font-family:'Tajawal' !important;
+    font-family: 'Tajawal' !important;
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-    background-color: #fff !important; /* Color for even rows */
-  }
+    background-color: #fff !important;
+    /* Color for even rows */
+}
+
 .table-striped tbody tr:nth-of-type(even) {
-    background-color: #E8DFDE !important; /* Color for even rows */
-  }
+    background-color: #E8DFDE !important;
+    /* Color for even rows */
+}
 
 @media all and (max-width:950px) {
     .add-section {

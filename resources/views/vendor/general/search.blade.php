@@ -8,16 +8,17 @@
         <div class="card w-100">
             <div class="body-card m-3">
                 <div class="row">
-                    <h3 class="mb-4 m-auto"><i class="fab fa-telegram-plane mr-2"></i> الإعلانات العامة </h3>
+                    <h3 class="mb-4 m-auto">الإعلانات العامة </h3>
                 </div>
                 <form method="POST" action="{{ route("general.search") }}">
                     @csrf
                     <div class="row m-3"> 
                         <div class="col-sm-4">
                             <div class="form-group row">
-                                <label class="col-sm-4 col-form-label">المدينة</label>
+                                <label class="col-sm-4 col-form-label"></label>
                                 <div class="col-sm-8">
                                     <select class="form-control">
+                                        <option value="">المدينة</option>
                                         <option>الكل</option>
                                         <option>Large select</option>
                                         <option>Small select</option>
@@ -28,9 +29,10 @@
 
                         <div class="col-sm-4">
                             <div class="form-group row">
-                                <label class="col-sm-4 col-form-label"> الأصناف</label>
+                                <label class="col-sm-4 col-form-label"> </label>
                                 <div class="col-sm-8">
                                     <select class="form-control">
+                                        <option value="">الأصناف</option>
                                         <option>الكل</option>
                                         <option>Large select</option>
                                         <option>Small select</option>
@@ -159,5 +161,12 @@
             </div>
         </div>
     </div>
+
+    <style>
+        h1 , h2 , h3 , h4 , h5 , h6 , p , span , select option , label{
+            font-family:'Tajawal' !important;
+        }
+    </style>
+
 
 @endsection
