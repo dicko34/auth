@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 @extends("layouts.vendor")
 @section('pageTitle', 'Koala Web Libraries')
 @section('styleChart')
@@ -124,3 +125,4 @@
 
 
 @endsection
+
