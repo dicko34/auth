@@ -415,7 +415,7 @@
             } else {
                 checkedEl.push(e.target.value)
             }
-            cl
+            
             
         }
     

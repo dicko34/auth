@@ -4,7 +4,17 @@
 
             <div class="collapse navbar-collapse" id="topnav-menu-content">
                 <ul class="navbar-nav">
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route("home") }}">
+                            <i class="mdi mdi-home "></i> الرئيسية
+                        </a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route("general.index") }}">
+                            <i class="mdi mdi-view-module"></i> الإعلانات العامة
+                        </a> 
+                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route("car.index") }}">
                             <i class="mdi mdi-car-side mr-2"></i> سيارات
@@ -41,14 +51,31 @@
                         </a> 
                     </li>
                     
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route("general.index") }}">
-                            <i class="fab fa-telegram-plane mr-2"></i> الإعلانات العامة
-                        </a> 
-                    </li>
 
                 </ul>
             </div>
         </nav>
     </div>
 </div>
+
+<style>
+    @media (max-width:560px) {
+        .nav-link {
+            font-weight:bold;
+            color: #820120;
+            border-bottom:1px solid #820120;
+        }
+        .nav-link:hover , .nav-item .active {
+            background-color:#820120 !important;
+            color:#fff !important;
+        }
+
+    }
+
+    .nav-link:hover {
+        background-color:white;
+        color:black !important;
+    }
+</style>
+
+

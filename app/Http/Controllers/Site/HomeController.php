@@ -10,13 +10,13 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $homes = Home::all();
+        $homes = Home::paginate(2);
         return view('vendor.homes.index',compact('homes'));
     }
 
     public function search(Request $request)
     {
-        $homes = Home::all();
+        $homes = Home::all()->take(6);
          $homes_show = Home::where(
             [['city',$request->city == 'الكل'? '!=': '='  ,$request->city == 'الكل' ? null : $request->city ],
             ['address',$request->address == 'الكل'? '!=': '='  ,$request->address == 'الكل' ? null : $request->address ],

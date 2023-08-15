@@ -26,6 +26,7 @@ class CarController extends Controller
             'car_color' =>  'required|max:20',
             'power' => 'required|max:20',
             'passengers' =>  'required|max:20',
+            'car_usage' => 'required|max:50',
             'drive_type' =>  'required|max:20',
             'speedmotors' =>  'required|max:20',
             'origin' =>  'required|max:20',
@@ -37,9 +38,10 @@ class CarController extends Controller
             'glass' =>  'required|max:20',
             'shown' => 'required|max:20',
             'pay_method' =>  'required|max:20',
-            'extras' =>  'required|max:200',
-            'description' =>  'required|max:500',
-            'img'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'extras' =>  'required|max:500',
+            'description' =>  'required|max:600',
+            'img'=> 'required',
+            'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'advertiser_name' => 'required|max:30',
             'phone_number' =>  'required|max:20',
             'mobile' => 'required|max:20',
@@ -47,17 +49,17 @@ class CarController extends Controller
             'city' =>  'required|max:20',
             'address' => 'required|max:100'
         ]);
-
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
             $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
             $file_image->move(public_path('assets/site/images/cars'), $imageName); // move the new img 
             array_push($validate['img'],$imageName); // store image name to db
+            echo $file_image."jk";
+
         }
         $validate['img'] = implode(',',$validate['img']);
         $validate['state'] = 'pinned';
         Cars::create($validate);
-       
         return redirect()->route('car.index');
     }
 

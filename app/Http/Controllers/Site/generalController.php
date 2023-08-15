@@ -8,9 +8,10 @@ use Illuminate\Http\Request;
 
 class generalController extends Controller
 {
+    use Traits\SimilarTrait;
     public function index()
     {
-        $generals = General::all();
+        $generals = General::paginate(2);
         return view('vendor.general.index',compact('generals'));
     }
 
@@ -27,10 +28,12 @@ class generalController extends Controller
         return view('vendor.general.index',compact('generals_show','generals'));
     }
 
-    public function product()
+    public function product(Request $request)
     {
         $generals = General::all();
-       return view('vendor.general.details',compact('generals'));
+        $general = General::find($request->general);
+        $similar = $this->similar($generals, $general, ['address' => 30,'category'=>70]);
+       return view('vendor.general.details',compact('generals','general','similar'));
     }
 
     public function add()

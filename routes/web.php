@@ -54,7 +54,7 @@ Route::group([
 //Auth::routes();
 Route::get('/login', function () {
     return view('vendor.login');
-})->name('login');
+})->name('login')->middleware('auth:vendor');
 
 Route::get('/register', function () {
     return view('vendor.register');

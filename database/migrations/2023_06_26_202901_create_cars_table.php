@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
             $table->string('model');
-            $table->string('company');
             $table->string('reset_model');
             $table->string('model_year');
             $table->string('car_color');
@@ -26,13 +25,13 @@ return new class extends Migration
             $table->bigInteger('price');
             $table->string('ad_durtion_per_day');
 
-            $table->enum('driving_license',['فلسطينية','نمرة الصفراء']);
-            $table->enum('fuel_type', ['ديزل','هايبرد','بنزين']);
-            $table->enum('lime_type',['عادي','اوتوماتيكي','نصف اوتوماتيكي']);
+            $table->enum('driving_license',['فلسطينية','نمرة صفراء']);
+            $table->enum('fuel_type', ['هايبرد','بنزين','سولار','كهرباء']);
+            $table->enum('lime_type',['عادي','اوتوماتيك','نصف اوتوماتيك']);
             $table->enum('glass',['يدوي','الكتروني']);
-            $table->enum('shown',['للبيع فقط','للتبديل فقط','للبيع أو التبديل']);
-            $table->enum('pay_method',['نقدا فقط ','إمكانية التقسيط']);
-            $table->string('extras');
+            $table->enum('shown',['للبيع','للبدل فقط','للبيع أو البدل','للايجار']);
+            $table->enum('pay_method',['نقدا فقط ','إمكانيهس التقسيط']);
+            $table->text('extras');
             $table->longText('description');
             $table->string('img');
             $table->string('advertiser_name');

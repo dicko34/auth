@@ -23,18 +23,7 @@
         }), t(window).on("load", function() { t("#status").fadeOut(), t("#preloader").delay(350).fadeOut("slow") }), Waves.init()
 }(jQuery);
 $(document).ready(function() {
-    let checkedEl = [];
-    let setExetras = () => {
-        document.getElementById('extras').value = checkedEl;
-    }
-    let checkedIf = (e) => {
-        if (checkedEl.includes(e.target.value)) {
-            checkedEl.splice(checkedEl.indexOf(e.target.value), 1)
-        } else {
-            checkedEl.push(e.target.value)
-        }
 
-    }
     function checkeda(e) {
         console.log(e);
     }
