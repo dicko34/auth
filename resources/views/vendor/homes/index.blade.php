@@ -24,9 +24,22 @@
                             <div class="form-group row">
                                 <div class="col-12  m-0 p-0">
                                     <select class="form-control">
-                                        <option>المحافظة</option>
-                                        <option>Large select</option>
-                                        <option>Small select</option>
+                                        <option selected disabeled>المحافظة</option>
+                                        <option value="1">رام الله والبيرة </option>
+                                        <option value="2">القدس </option>
+                                        <option value="14">قطاع غزة </option>
+                                        <option value="4">الخليل </option>
+                                        <option value="5">بيت لحم </option>
+                                        <option value="6">أريحا </option>
+                                        <option value="7">سلفيت وبديا </option>
+                                        <option value="13">روابي </option>
+                                        <option value="12">طوباس </option>
+                                        <option value="11">قلقيلية </option>
+                                        <option value="10">طولكرم </option>
+                                        <option value="9">جنين </option>
+                                        <option value="8">نابلس </option>
+                                        <option value="15">جميع الاماكن </option>
+                                        <option value="16">مناطق الداخل </option>
                                     </select>
                                 </div>
                             </div>

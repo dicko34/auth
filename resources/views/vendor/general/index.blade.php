@@ -6,11 +6,7 @@
 @section('content')
 <div class="row pb-1">
     <div class="card w-100">
-        <div class="body-card">
-            <div class="row">
-                <h3 class="m-0 mx-auto">الفلترة </h3>
-            </div>
-            <form method="POST" action="{{ route("general.search") }}">
+            <form  method="POST" action="{{ route("general.search") }}">
                 @csrf
                 <div class="row px-1" style="
                     margin-left: 00px;
@@ -20,10 +16,23 @@
                             <label class="col-sm-4 col-form-label"></label>
                             <div class="col-sm-8">
                                 <select class="form-control">
-                                    <option value="">المدينة</option>
-                                    <option>الكل</option>
-                                    <option>Large select</option>
-                                    <option>Small select</option>
+                                    <option value=""selected disabeled>المدينة</option>
+                                    <option value="1">رام الله والبيرة </option>
+                                    <option value="2">القدس </option>
+                                    <option value="14">قطاع غزة </option>
+                                    <option value="4">الخليل </option>
+                                    <option value="5">بيت لحم </option>
+                                    <option value="6">أريحا </option>
+                                    <option value="7">سلفيت وبديا </option>
+                                    <option value="13">روابي </option>
+                                    <option value="12">طوباس </option>
+                                    <option value="11">قلقيلية </option>
+                                    <option value="10">طولكرم </option>
+                                    <option value="9">جنين </option>
+                                    <option value="8">نابلس </option>
+                                    <option value="15">جميع الاماكن </option>
+                                    <option value="16">مناطق الداخل </option>
+                        
                                 </select>
                             </div>
                         </div>
@@ -95,7 +104,7 @@
                     </div>
                 </div>
             </form>
-        </div>
+        
     </div>
 </div>
 
@@ -215,6 +224,7 @@
 </div>
 </div>
 </div>
+
 <style>
 h1,
 h2,
@@ -260,6 +270,17 @@ p {
     .card-body p {
         display: none;
     }
+    form .form-control option,
+    form .form-control,
+    form select,
+    form input {
+        height: 33px !important;
+        font-size: 13px;
+        box-sizing: border-box;
+        margin: 0 !important;
+    }
 }
 </style>
+
+
 @endsection

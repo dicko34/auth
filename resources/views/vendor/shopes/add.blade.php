@@ -18,12 +18,12 @@
                 </td>
                 <td>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" required="" type="radio" name="offer_type" id="offer_type_sell"
+                        <input class="form-check-input" required="" type="radio"  id="offer_type_sell"
                             value="للبيع">
                         <label class="form-check-label" for="offer_type_sell">للبيع</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="offer_type" id="offer_type_rent"
+                        <input class="form-check-input" type="radio"  id="offer_type_rent"
                             value="للايجار">
                         <label class="form-check-label" for="offer_type_rent">للايجار</label>
                     </div>
