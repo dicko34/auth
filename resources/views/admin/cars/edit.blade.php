@@ -211,12 +211,12 @@
                                     <tr>
                                         <td class="">مدة الاعلان باليوم</td>
                                         <td class="">
-                                            <select name="ad_durtion_per_day" id="ad_durtion_per_day">
+                                            <select name="ad_duration_per_day" id="ad_duration_per_day">
                                                 <option>30</option>
                                                 <option>Large select</option>
                                                 <option>Small select</option>
                                             </select>
-                                            @error('ad_durtion_per_day')
+                                            @error('ad_duration_per_day')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                             {{$message}}
                                             </span>
@@ -511,7 +511,7 @@
     selectTarget('passengers')
     selectTarget('drive_type')
     selectTarget('origin')
-    selectTarget('ad_durtion_per_day')
+    selectTarget('ad_duration_per_day')
     checkTarget('driving_license')
     checkTarget('fuel_type')
     checkTarget('lime_type')

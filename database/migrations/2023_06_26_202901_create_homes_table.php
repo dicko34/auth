@@ -19,14 +19,12 @@ return new class extends Migration
             $table->integer('rooms_number');
             $table->integer('bathrooms_number');
             $table->integer('kitchen_number');
+            $table->string('outspace');
             $table->string('loung');
             $table->string('area');
             $table->string('land_area');
             $table->bigInteger('price');
-            $table->string('gov');
-            $table->string('city');
-            $table->string('street');
-            $table->string('ad_durtion_per_day');
+            $table->string('ad_duration_per_day');
             $table->string('extras');
             $table->string('address');
             $table->longText('description');
@@ -35,8 +33,6 @@ return new class extends Migration
              $table->string('phone_number');
             $table->string('mobile');
             $table->string('email');
-            $table->string('advertiser_city');
-            $table->string('advertiser_address');
             $table->enum('state',['pinned','refused','allowed']);
             $table->timestamps();
         });

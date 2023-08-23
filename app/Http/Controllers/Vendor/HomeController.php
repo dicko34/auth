@@ -10,17 +10,6 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('vendor.homes.index')->with("homes",Home::all());
-    }
-
-   
 
     /**
      * Store a newly created resource in storage.
@@ -37,15 +26,14 @@ class HomeController extends Controller
             'rooms_number' =>  'required|max:20',
             'bathrooms_number' =>  'required|max:20',
             'kitchen_number' => 'required|max:20',
+            'outspace' =>  'required|max:20',
             'loung' =>  'required|max:20',
             'area' =>  'required|max:20',
             'land_area' =>  'required|max:20',
             'price' =>  'required|max:20',
-            'gov' =>  'required|max:20',
             'city' => 'required|max:30',
-            'street' =>  'required|max:20',
             'address' => 'required|max:100',
-            'ad_durtion_per_day' =>  'required|max:20',
+            'ad_duration_per_day' =>  'required|max:20',
             'extras' =>  'required|max:200',
             'description' =>  'required|max:500',
             'img'=> 'required',
@@ -54,8 +42,6 @@ class HomeController extends Controller
             'phone_number' =>  'required|max:20',
             'mobile' => 'required|max:20',
             'email' =>  'required|email',
-            'advertiser_city' =>  'required|max:20',
-            'advertiser_address' => 'required|max:100'
         ]);
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {

@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Http\Controllers\Controller;
+use App\Models\Shop;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ShopController extends Controller
 {
     public function index()
     {
-        return view('vendor.shopes.index');
+        $shopes =Shop::all();
+        return view('vendor.shopes.index',compact('shopes'));
     }
 
     public function search()

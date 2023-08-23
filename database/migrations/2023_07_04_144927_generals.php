@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('category');
             $table->bigInteger('price');
-            $table->string('ad_durtion_per_day');
+            $table->string('ad_duration_per_day');
             $table->string('category');
             $table->longText('description');
             $table->string('img');

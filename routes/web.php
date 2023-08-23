@@ -77,15 +77,11 @@ Route::any('/homes/search', 'Site\HomeController@search')->name('homes.search');
 Route::any('/home/product/{home}', 'Site\HomeController@product')->name('home.product');
 Route::any('/home/add', 'Site\HomeController@add')->name('home.add');
 
-Route::any('/shopes', 'Site\ShopController@index')->name('shop.index');
-Route::any('/shopes/search', 'Site\ShopController@search')->name('shops.search');
-Route::any('/shopes/product/{shop}', 'Site\ShopController@product')->name('shop.product');
-Route::any('/shopes/add', 'Site\ShopController@add')->name('shop.add');
 
 Route::any('/lands', 'Site\LandsController@index')->name('land.index');
 Route::any('/lands/search', 'Site\LandsController@search')->name('lands.search');
 Route::any('/land/product/{land}', 'Site\LandsController@product')->name('land.product');
-Route::any('/lands/add', 'Site\LandsController@add')->name('land.add');
+Route::any('/land/add', 'Site\LandsController@add')->name('land.add');
 
 Route::any('/jobs', 'Site\JobsController@index')->name('job.index');
 Route::any('/jobs/search', 'Site\JobsController@search')->name('jobs.search');
@@ -101,5 +97,10 @@ Route::any('/generals', 'Site\GeneralController@index')->name('general.index');
 Route::any('/generals/search', 'Site\GeneralController@search')->name('generals.search');
 Route::any('/general/product/{general}', 'Site\GeneralController@product')->name('general.product');
 Route::any('/general/add', 'Site\GeneralController@add')->name('general.add');
+
+Route::any('/shopes', 'Site\ShopController@index')->name('shop.index');
+Route::any('/shopes/search', 'Site\ShopController@search')->name('shopes.search');
+Route::any('/shop/product/{shop}', 'Site\ShopController@product')->name('shop.product');
+Route::any('/shop/add', 'Site\ShopController@add')->name('shop.add');
 
 Auth::routes();

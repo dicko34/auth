@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('city');
             $table->string('street');
             $table->string('address');
-            $table->string('ad_durtion_per_day');
+            $table->string('ad_duration_per_day');
             $table->string('advertiser_name');
              $table->string('phone_number');
             $table->string('mobile');

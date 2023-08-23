@@ -623,7 +623,7 @@
                         <td>مُدة الإعلان</td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <select required="" name="ad_durtion_per_day" class="form-select">
+                                <select required="" name="ad_duration_per_day" class="form-select">
                                     <option value="15">15</option>
                                     <option value="16">16</option>
                                     <option value="17">17</option>
