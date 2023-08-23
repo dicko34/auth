@@ -22,31 +22,31 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route("home.index") }}">
+                        <a class="nav-link" href="{{ route("homes.index") }}">
                             <i class="mdi mdi-home mr-2"></i> شقق
                         </a> 
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route("shop.index") }}">
+                        <a class="nav-link" href="{{ route("shops.index") }}">
                             <i class=" mdi mdi-shopping-search mr-2"></i> محلات و مكاتب 
                         </a> 
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route("land.index") }}">
+                        <a class="nav-link" href="{{ route("lands.index") }}">
                             <i class="mdi mdi-view-dashboard mr-2"></i> اراضي
                         </a> 
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route("job.index") }}">
+                        <a class="nav-link" href="{{ route("jobs.index") }}">
                             <i class=" fas fa-address-book mr-2"></i> توظيف
                         </a> 
                     </li> 
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route("mobile.index") }}">
+                        <a class="nav-link" href="{{ route("mobiles.index") }}">
                             <i class="mbri-mobile2 mr-2"></i>الاجهزة الذكية
                         </a> 
                     </li>
