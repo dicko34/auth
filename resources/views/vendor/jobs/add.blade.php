@@ -1,9 +1,10 @@
-@extends('layouts.admin')
+@extends("layouts.vendor")
 @section('pageTitle', 'Koala Web Libraries')
 @section('styleChart')
     <link href="{{ asset('assets/admin/libs/c3/c3.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
 @endsection
-@section('content')
+@section('content') 
+
     <form method="POST" action="{{ route('vendor.jobs.store') }}" enctype="multipart/form-data">
         @if ($errors->any())
             @foreach ($errors->all() as $error)
