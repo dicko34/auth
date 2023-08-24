@@ -148,7 +148,7 @@
                         <div class="card-body">
                             <h4 class="card-title">محل</h4>
                             <p class="card-text">
-                                محل {{$shop->city}} {{$shop->address}} للبيع في {{$shop->phone_number}} - {{$shop->advertiser_name}} - {{$shop->offre}}
+                                محل {{$shop->city}} {{$shop->address}} للبيع في {{$shop->phone_number}} - {{$shop->advertiser_name}} - {{$shop->offer}}
                             </p>
                         </div>
                     </div>
@@ -224,7 +224,7 @@
                         <div class="card-body">
                             <h4 class="card-title">توظيف</h4>
                             <p class="card-text">
-                                وظيفة {{$job->advertiser_city}} {{$job->advertiser_address}}  في {{$job->phone_number}} - {{$job->advertiser_name}} - {{$job->specialization}}
+                                وظيفة {{$job->city }} {{$job->address}}  في {{$job->phone_number}} - {{$job->advertiser_name}} - {{$job->specialization}}
                             </p>
                         </div>
                     </div>
@@ -301,7 +301,7 @@
                         <div class="card-body">
                             <h4 class="card-title">الاجهزة الذكية </h4>
                             <p class="card-text">
-                                جهاز {{$mobile->advertiser_city}} {{$mobile->advertiser_address}}  في {{$mobile->phone_number}} - {{$mobile->advertiser_name}} - {{$mobile->model}}
+                                جهاز {{$mobile->city}} {{$mobile->address}}  في {{$mobile->phone_number}} - {{$mobile->advertiser_name}} - {{$mobile->model}}
                             </p>
                         </div>
                     </div>

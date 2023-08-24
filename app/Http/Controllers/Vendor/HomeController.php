@@ -27,6 +27,7 @@ class HomeController extends Controller
             'bathrooms_number' =>  'required|max:20',
             'kitchen_number' => 'required|max:20',
             'outspace' =>  'required|max:20',
+            'balcony' =>  'required|max:20',
             'loung' =>  'required|max:20',
             'area' =>  'required|max:20',
             'land_area' =>  'required|max:20',

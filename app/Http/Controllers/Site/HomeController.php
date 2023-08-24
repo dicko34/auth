@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
+    use Traits\SimilarTrait;
+    public function index(Request $request)
     {
         $homes = Home::paginate(2);
+       
         return view('vendor.homes.index',compact('homes'));
     }
 
@@ -29,10 +31,12 @@ class HomeController extends Controller
         return view('vendor.homes.index',compact('homes_show','homes'));
     }
 
-    public function product()
+    public function product(Request $request)
     {
         $homes = Home::all();
-        return view('vendor.homes.details',\compact('homes'));
+        $home = Home::find($request->home);
+        $similar = $this->similar($homes, $home, ['show' => 30,'price'=>70]);
+        return view('vendor.homes.details',compact('homes','home','similar'));
     }
 
     public function add()

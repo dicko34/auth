@@ -25,6 +25,8 @@ class jobController extends Controller
             'workplace' =>  'required|max:30',
             'night_work' =>  'required|max:20',
             'permanence' =>  'required|max:30',
+            'city' =>  'required|max:20',
+            'address' => 'required|max:100',
             'description' =>  'required|max:500',
             'img'=> 'required',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
@@ -33,8 +35,6 @@ class jobController extends Controller
             'phone_number' =>  'required|max:20',
             'mobile' => 'required|max:20',
             'email' =>  'required|email',
-            // 'advertiser_city' =>  'required|max:20',
-            // 'advertiser_address' => 'required|max:100'
         ]);
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
-            $table->string('offre');
+            $table->string('offer');
             $table->string('displayed');
             $table->string('brief');
             $table->string('loung');
@@ -29,8 +29,6 @@ return new class extends Migration
              $table->string('phone_number');
             $table->string('mobile');
             $table->string('email');
-            $table->string('advertiser_city');
-            $table->string('advertiser_address');
             $table->enum('state',['pinned','refused','allowed']);
             $table->timestamps();
         });
