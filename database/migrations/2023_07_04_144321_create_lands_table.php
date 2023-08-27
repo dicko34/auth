@@ -11,21 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('generals', function (Blueprint $table) {
+        Schema::create('lands', function (Blueprint $table) {
             $table->id();
-            $table->string('address');
-            $table->string('category');
+            $table->string('brief');
+            $table->string('area');
             $table->bigInteger('price');
-            $table->string('ad_duration_per_day');
-            $table->string('category');
+            $table->string('surrounded_by');
+            $table->string('located_on');
+            $table->string('features');
             $table->longText('description');
             $table->string('img');
+            $table->string('city');
+            $table->string('address');
+            $table->string('ad_duration_per_day');
             $table->string('advertiser_name');
              $table->string('phone_number');
             $table->string('mobile');
             $table->string('email');
-            // $table->string('advertiser_city');
-            // $table->string('advertiser_address');
             $table->enum('state',['pinned','refused','allowed']);
             $table->timestamps();
         });
@@ -36,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('generals');
+        Schema::dropIfExists('lands');
     }
 };

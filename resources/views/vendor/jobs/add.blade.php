@@ -160,6 +160,23 @@
                             </div>
                         </td>
                     </tr>
+                    <tr>
+                        <td>العنوان <span class="text-danger" style="font-weight: 700;">*</span> </td>
+                        <td>
+                            <div class="input-group input-group-sm">
+                                <input required="" type="text" class="form-control form-control-sm" name="address"
+                                    placeholder="أسم المنطقة او الشارع" aria-label="أسم المنطقة او الشارع"
+                                    aria-describedby="basic-addon2">
+                                <span class="input-group-text d-flex d-lg-none " data-bs-toggle="tooltip"
+                                    data-bs-placement="left" title="" style="width:50px !important;"
+                                    id="basic-addon2"
+                                    data-original-title="ملاحظة: لن يتم قبول الإعلان بدون العنوان الكامل"><i
+                                        class="fas fa-info-circle"></i></span>
+                                <span class="input-group-text d-none d-lg-block w-100" id="basic-addon2">ملاحظة: لن
+                                    يتم قبول الإعلان بدون العنوان الكامل</span>
+                            </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>

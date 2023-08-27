@@ -19,7 +19,6 @@ return new class extends Migration
             $table->integer('rooms_number');
             $table->integer('bathrooms_number');
             $table->integer('kitchen_number');
-            $table->string('outspace');
             $table->string('balcony');
             $table->string('loung');
             $table->string('area');
