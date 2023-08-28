@@ -192,77 +192,87 @@
                                 </div>
                                 <div class="row mt-3">
                                     <div class="col-lg-6">
-                                    <table class="table table-striped">
-    <thead class="bg-blue text-white">
-        <tr class="bg-primary">
-            <th style="font-family: 'Tajawal';">الشركة</th>
-            <th style="font-family:'Tajawal';">التخصص</th>
-            <th style="font-family:'Tajawal';">المدينه</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>SonaTrack</td>
-            <td style="vertical-align: middle;"><a style="color:#000;" href="https://www.wenak.ps/job/46388.html">محاضر</a></td>
-            <td style="vertical-align: middle;">قطاع غزة</td>
-        </tr>
-        <tr>
-            <td>SonaTrack</td>
-            <td style="vertical-align: middle;"><a style="color:#000;" href="https://www.wenak.ps/job/46387.html">مساعد شوفير</a></td>
-            <td style="vertical-align: middle;">الخليل</td>
-        </tr>
-        <tr>
-            <td>SonaTrack</td>
-            <td style="vertical-align: middle;"><a style="color:#000;" href="https://www.wenak.ps/job/46383.html">محاضر</a></td>
-            <td style="vertical-align: middle;">نابلس</td>
-        </tr>
-        <tr>
-            <td>SonaTrack</td>
-            <td style="vertical-align: middle;"><a style="color:#000;" href="https://www.wenak.ps/job/46375.html">معلم/ة</a></td>
-            <td style="vertical-align: middle;">قطاع غزة</td>
-        </tr>
-    </tbody>
-</table>
+                                        <table class="table table-striped">
+                                            <thead class="bg-blue text-white">
+                                                <tr class="bg-primary">
+                                                    <th style="font-family: 'Tajawal';">الشركة</th>
+                                                    <th style="font-family:'Tajawal';">التخصص</th>
+                                                    <th style="font-family:'Tajawal';">المدينه</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>SonaTrack</td>
+                                                    <td style="vertical-align: middle;"><a style="color:#000;"
+                                                            href="https://www.wenak.ps/job/46388.html">محاضر</a></td>
+                                                    <td style="vertical-align: middle;">قطاع غزة</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SonaTrack</td>
+                                                    <td style="vertical-align: middle;"><a style="color:#000;"
+                                                            href="https://www.wenak.ps/job/46387.html">مساعد شوفير</a>
+                                                    </td>
+                                                    <td style="vertical-align: middle;">الخليل</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SonaTrack</td>
+                                                    <td style="vertical-align: middle;"><a style="color:#000;"
+                                                            href="https://www.wenak.ps/job/46383.html">محاضر</a></td>
+                                                    <td style="vertical-align: middle;">نابلس</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SonaTrack</td>
+                                                    <td style="vertical-align: middle;"><a style="color:#000;"
+                                                            href="https://www.wenak.ps/job/46375.html">معلم/ة</a></td>
+                                                    <td style="vertical-align: middle;">قطاع غزة</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
 
 
                                     </div>
                                     <div class="col-lg-6">
-                                    <table class="table table-striped">
-    <thead class="d-lg-table d-none bg-primary text-white">
-        <tr>
-            
-            <th style="font-family: 'Tajawal';">الشركة</th>
-            <th style="font-family: 'Tajawal';">التخصص</th>
-            <th style="font-family: 'Tajawal';">المدينة</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            
-            <td>SonaTrack</td>
-            <td ><a style="color:#000;" href="https://www.wenak.ps/job/46388.html">محاضر</a></td>
-            <td >قطاع غزة</td>
-        </tr>
-        <tr>
-            
-            <td>SonaTrack</td>
-            <td ><a style="color:#000;" href="https://www.wenak.ps/job/46387.html">مساعد شوفير</a></td>
-            <td >الخليل</td>
-        </tr>
-        <tr>
-            
-            <td>SonaTrack</td>
-            <td ><a style="color:#000;" href="https://www.wenak.ps/job/46383.html">محاضر</a></td>
-            <td style="vertical-align: middle;">نابلس</td>
-        </tr>
-        <tr>
-            
-            <td>SonaTrack</td>
-            <td ><a style="color:#000;" href="https://www.wenak.ps/job/46375.html">معلم/ة</a></td>
-            <td >قطاع غزة</td>
-        </tr>
-    </tbody>
-</table>
+                                        <table class="table table-striped">
+                                            <thead class="d-lg-table d-none bg-primary text-white">
+                                                <tr>
+
+                                                    <th style="font-family: 'Tajawal';">الشركة</th>
+                                                    <th style="font-family: 'Tajawal';">التخصص</th>
+                                                    <th style="font-family: 'Tajawal';">المدينة</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+
+                                                    <td>SonaTrack</td>
+                                                    <td><a style="color:#000;"
+                                                            href="https://www.wenak.ps/job/46388.html">محاضر</a></td>
+                                                    <td>قطاع غزة</td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td>SonaTrack</td>
+                                                    <td><a style="color:#000;"
+                                                            href="https://www.wenak.ps/job/46387.html">مساعد شوفير</a>
+                                                    </td>
+                                                    <td>الخليل</td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td>SonaTrack</td>
+                                                    <td><a style="color:#000;"
+                                                            href="https://www.wenak.ps/job/46383.html">محاضر</a></td>
+                                                    <td style="vertical-align: middle;">نابلس</td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td>SonaTrack</td>
+                                                    <td><a style="color:#000;"
+                                                            href="https://www.wenak.ps/job/46375.html">معلم/ة</a></td>
+                                                    <td>قطاع غزة</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
 
 
                                         <div class="col-12">
@@ -348,12 +358,14 @@
             box-sizing: border-box;
             margin: 0 !important;
         }
+
         table thead {
-            font-size:15px !important;
-            font-weight:700 !important;
+            font-size: 15px !important;
+            font-weight: 700 !important;
         }
+
         table {
-            font-size:14px !important;
+            font-size: 14px !important;
         }
     }
     </style>
