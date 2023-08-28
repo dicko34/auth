@@ -236,43 +236,7 @@
 </div>
 </div>
 
-{{-- <div class="row">
-        <div class="card w-100">
-            <div class="body-card m-5">
 
-                <h3 class="mb-4"><i class="fas fa-address-book mr-2"></i> إعلانات الوظائف الشاغرة </h3>
-                <div class="row">
-
-                    @for ($i=0; $i < 8; $i++)
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="card">
-                            <a href="{{ asset('assets/admin/images/job2.jpg') }}" class="gallery-popup" style="height: 230px; width:100%">
-<div class="project-item">
-    <div class="overlay-container">
-        <img src="{{ asset('assets/admin/images/job2.jpg') }}" alt="img" class="gallery-thumb-img m-0" style="height: 230px; width:100%">
-        <div class="project-item-overlay text-right">
-            <h4>إعلانات الوظائف الشاغرة</h4>
-            <p>
-                <img src="{{ asset('assets/admin/images/job2.jpg') }}" alt="user" class="avatar-xs rounded-circle">
-                <span class="ml-2">مارتينا جرجس</span>
-            </p>
-        </div>
-    </div>
-</div>
-</a>
-<div class="card-body">
-    <h4 class="card-title">إعلانات الوظائف الشاغرة</h4>
-    <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م - فيصل بريك 0562700836
-        وسط الخليل على بعد 570 متر من مستشفى الأهلي</p>
-</div>
-</div>
-</div>
-@endfor
-
-</div>
-</div>
-</div>
-</div> --}}
 
 <div class="row">
     <div class="card w-100">
@@ -389,6 +353,7 @@
         </div>
     </div> --}}
 
+    {{--
     <div class="row main-section">
         <div class="w-100">
             <div class="body-card m-3">
@@ -618,7 +583,7 @@
             </div>
         </div>
     </div>
-
+    --}}
     {{-- <div class="row">
         <div class="w-100">
             <div class="body-card m-5">
@@ -655,7 +620,7 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div> 
 
     <div class="row main-section">
         <div class="w-100">
@@ -694,6 +659,8 @@
             </div>
         </div>
     </div>
+
+    --}}
 
     
 
