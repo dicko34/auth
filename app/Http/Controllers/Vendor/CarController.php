@@ -39,6 +39,7 @@ class CarController extends Controller
             'shown' => 'required|max:20',
             'pay_method' =>  'required|max:20',
             'extras' =>  'required|max:200',
+            'address' => 'required|max:100',
             'description' =>  'required|max:600',
             'img'=> 'required',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
@@ -47,7 +48,6 @@ class CarController extends Controller
             'mobile' => 'required|max:20',
             'email' =>  'required|email',
             'city' =>  'required|max:20',
-            'address' => 'required|max:100'
         ]);
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {

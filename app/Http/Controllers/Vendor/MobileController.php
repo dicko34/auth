@@ -33,14 +33,14 @@ class MobileController extends Controller
             'storage' =>  'required|max:30',
             'price' =>  'required|max:30',
             'description' =>  'required|max:500',
+            'city' =>  'required|max:20',
+            'address' => 'required|max:100',
             'img'=> 'nullable',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'ad_duration_per_day' =>  'required|max:20',
             'advertiser_name' => 'required|max:30',
             'phone_number' =>  'required|max:20',
             'email' =>  'required|email',
-            // 'advertiser_city' =>  'required|max:20',
-            // 'advertiser_address' => 'required|max:100'
         ]);
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {

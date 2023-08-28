@@ -10,7 +10,7 @@ class ShopController extends Controller
 {
     public function index()
     {
-        $shopes =Shop::all();
+        $shopes =Shop::paginate(2);
         return view('vendor.shopes.index',compact('shopes'));
     }
 
@@ -19,9 +19,12 @@ class ShopController extends Controller
         return view('vendor.shopes.search');
     }
 
-    public function product()
+    public function  product(Request $request)
     {
-        return view('vendor.shopes.details');
+        $shops = Shop::all();
+        $shop = Shop::find($request->shop);
+        $similar = $this->similar($shops, $shop, ['model' => 30,'reset_model'=>70]);
+        return view('vendor.shops.details',compact('shops','shop','similar'));
     }
 
     public function add()

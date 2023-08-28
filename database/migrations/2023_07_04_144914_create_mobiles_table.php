@@ -14,24 +14,23 @@ return new class extends Migration
         Schema::create('mobiles', function (Blueprint $table) {
             $table->id();
             $table->string('device_status');
-            $table->string('company');
             $table->string('model');
             $table->string('reset_model');
-            $table->integer('model_year');
             $table->string('slides_number');
             $table->string('screen_size');
             $table->string('cameras');
             $table->string('memory');
             $table->string('storage');
             $table->string('price');
+            $table->string('city');
+            $table->string('address');
             $table->string('ad_duration_per_day');
             $table->longText('description');
             $table->string('img');
             $table->string('advertiser_name');
             $table->string('phone_number');
             $table->string('email');
-            $table->string('advertiser_city');
-            $table->string('advertiser_address');
+            $table->string('mobile');
             $table->enum('state',['pinned','refused','allowed']);
             $table->timestamps();
         });

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('rooms_number');
             $table->integer('bathrooms_number');
             $table->integer('kitchen_number');
-            $table->string('outspace');
+            $table->string('balcony');
             $table->string('loung');
             $table->string('area');
             $table->string('land_area');
@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('ad_duration_per_day');
             $table->string('extras');
             $table->string('address');
+            $table->string('city');
             $table->longText('description');
             $table->string('img');
             $table->string('advertiser_name');

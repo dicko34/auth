@@ -16,8 +16,9 @@ trait SimilarTrait
               }
              similar_text($product[$col], $str2,$pr);
              round($pr) >= $percentge ? array_push($sim, $row) : '';
+             
              if(count($sim) == 6 ) {
-                 break;
+                break;
              }
          }
      }
