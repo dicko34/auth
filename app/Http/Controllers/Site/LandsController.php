@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Http\Controllers\Controller;
+use App\Models\Land;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class LandsController extends Controller
 {
     public function index()
     {
-        return view('vendor.lands.index');
+        $lands =Land::all();
+        return view('vendor.lands.index',compact('lands'));
     }
 
     public function search()

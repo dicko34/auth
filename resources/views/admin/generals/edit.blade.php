@@ -103,12 +103,12 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">مدة الاعلان باليوم</label>
                                         <div class="col-sm-8">
-                                            <select name="ad_durtion_per_day" class="form-control">
+                                            <select name="ad_duration_per_day" class="form-control">
                                                 <option>30</option>
                                                 <option>Large select</option>
                                                 <option>Small select</option>
                                             </select>
-                                            @error('ad_durtion_per_day')
+                                            @error('ad_duration_per_day')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                             {{$message}}
                                             </span>
@@ -262,7 +262,7 @@ var vars = {{Illuminate\Support\Js::from($general)}};
             (el.innerHTML == vars[id]) ? el.selected = true: '';
         }
     }
-    selectTarget('ad_durtion_per_day')
+    selectTarget('ad_duration_per_day')
     selectTarget('category')
     selectTarget('advertiser_city')
     </script>

@@ -23,7 +23,7 @@ return new class extends Migration
             $table->bigInteger('speedmotors');
             $table->string('origin');
             $table->bigInteger('price');
-            $table->string('ad_durtion_per_day');
+            $table->string('ad_duration_per_day');
 
             $table->enum('driving_license',['فلسطينية','نمرة صفراء']);
             $table->enum('fuel_type', ['هايبرد','بنزين','سولار','كهرباء']);

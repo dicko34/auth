@@ -20,25 +20,25 @@ class ShopController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'offre' =>  'required|max:30',
+            'offer' =>  'required|max:30',
             'displayed' =>  'required|max:30',
             'brief' =>  'required|max:20',
-            'loung' =>  'required|max:20',
+            'area' =>  'required|max:20',
             'price' =>  'required|max:20',
             'description' =>  'required|max:500',
             'img'=> 'required',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'gov' =>  'required|max:20',
+            // 'gov' =>  'required|max:20',
             'city' => 'required|max:30',
-            'street' =>  'required|max:20',
-            'ad_durtion_per_day' =>  'required|max:20',
+            // 'street' =>  'required|max:20',
+            'ad_duration_per_day' =>  'required|max:20',
             'address' => 'required|max:100',            
             'advertiser_name' => 'required|max:30',
             'phone_number' =>  'required|max:20',
             'mobile' => 'required|max:20',
             'email' =>  'required|email',
-            'advertiser_city' =>  'required|max:20',
-            'advertiser_address' => 'required|max:100'
+            // 'advertiser_city' =>  'required|max:20',
+            // 'advertiser_address' => 'required|max:100'
         ]);
         //
         $validate['img'] = [];
@@ -50,7 +50,7 @@ class ShopController extends Controller
         $validate['img'] = implode(',',$validate['img']);
         $validate['state'] = 'pinned';
         Shop::create($validate);
-        return redirect()->route('shops.index');
+        return redirect()->route('shop.index');
     }
 
 }

@@ -199,12 +199,12 @@
                                     <tr>
                                         <td class="">مدة الاعلان باليوم</td>
                                         <td class="">
-                                            <select name="ad_durtion_per_day">
+                                            <select name="ad_duration_per_day">
                                                 <option>30</option>
                                                 <option>Large select</option>
                                                 <option>Small select</option>
                                             </select>
-                                            @error('ad_durtion_per_day')
+                                            @error('ad_duration_per_day')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                                 {{$message}}
                                             </span>
@@ -350,6 +350,6 @@
     selectTarget('city')
     selectTarget('street')
     selectTarget('advretiser_city')
-    selectTarget('ad_durtion_per_day')
+    selectTarget('ad_duration_per_day')
 </script>
 @endsection

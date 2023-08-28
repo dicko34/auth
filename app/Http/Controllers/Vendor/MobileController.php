@@ -10,17 +10,7 @@ use App\Http\Controllers\Controller;
 
 class MobileController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('vendor.mobiles.index')->with("mobiles",Mobile::all());
-    }
 
-   
 
     /**
      * Store a newly created resource in storage.
@@ -32,9 +22,9 @@ class MobileController extends Controller
     {
         $validate = $request->validate([
             'device_status' =>  'required|max:30',
-            'company' =>  'required|max:30',
+            // 'company' =>  'required|max:30',
             'model' =>  'required|max:20',
-            'model_year' =>  'required|integer',
+            // 'model_year' =>  'required|integer',
             'reset_model' =>  'required|max:30',
             'slides_number' =>  'required|max:20',
             'screen_size' =>  'required|max:30',
@@ -49,8 +39,8 @@ class MobileController extends Controller
             'advertiser_name' => 'required|max:30',
             'phone_number' =>  'required|max:20',
             'email' =>  'required|email',
-            'advertiser_city' =>  'required|max:20',
-            'advertiser_address' => 'required|max:100'
+            // 'advertiser_city' =>  'required|max:20',
+            // 'advertiser_address' => 'required|max:100'
         ]);
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
