@@ -28,7 +28,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route("shops.index") }}">
+                        <a class="nav-link" href="{{ route("shop.index") }}">
                             <i class=" mdi mdi-shopping-search mr-2"></i> محلات و مكاتب 
                         </a> 
                     </li>
@@ -77,3 +77,5 @@
         color:black !important;
     }
 </style>
+
+

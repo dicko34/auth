@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Http\Controllers\Controller;
+use App\Models\Shop;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ShopController extends Controller
 {
     public function index()
     {
-        return view('vendor.shopes.index');
+        $shopes =Shop::paginate(2);
+        return view('vendor.shopes.index',compact('shopes'));
     }
 
     public function search()
@@ -17,9 +19,12 @@ class ShopController extends Controller
         return view('vendor.shopes.search');
     }
 
-    public function product()
+    public function  product(Request $request)
     {
-        return view('vendor.shopes.details');
+        $shops = Shop::all();
+        $shop = Shop::find($request->shop);
+        $similar = $this->similar($shops, $shop, ['model' => 30,'reset_model'=>70]);
+        return view('vendor.shops.details',compact('shops','shop','similar'));
     }
 
     public function add()

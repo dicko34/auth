@@ -19,7 +19,6 @@
     <!-- App Css-->
     @yield("style")
     <link href="{{asset("assets/admin/css/app-rtl.css")}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset("css/app.scss") }}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,7 +59,6 @@
     }
     </style>
 </head>
-
 <body data-topbar="dark" data-layout="horizontal">
 
     <!-- Loader -->
@@ -361,7 +359,7 @@
     <script src="{{asset("assets/admin/js/pages/gallery.init.js")}}"></script>
 
     <script src="{{asset("assets/admin/js/app.js")}}"></script>
-
+    <script src="{{asset("js/action.js")}}"></script>
 </body>
 
 </html>

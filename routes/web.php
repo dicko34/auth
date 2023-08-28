@@ -57,15 +57,16 @@ Route::any('/homes/search', 'Site\HomeController@search')->name('homes.search');
 Route::any('/homes/product', 'Site\HomeController@product')->name('homes.product');
 Route::any('/homes/add', 'Site\HomeController@add')->name('homes.add');
 
-Route::any('/shops', 'Site\ShopController@index')->name('shops.index');
-Route::any('/shops/search', 'Site\ShopController@search')->name('shops.search');
-Route::any('/shops/product', 'Site\ShopController@product')->name('shops.product');
-Route::any('/shops/add', 'Site\ShopController@add')->name('shops.add');
+
+Route::any('/shopes', 'Site\ShopController@index')->name('shop.index');
+Route::any('/shopes/search', 'Site\ShopController@search')->name('shops.search');
+Route::any('/shopes/product/{shop}', 'Site\ShopController@product')->name('shop.product');
+Route::any('/shopes/add', 'Site\ShopController@add')->name('shop.add');
 
 Route::any('/lands', 'Site\LandsController@index')->name('lands.index');
 Route::any('/lands/search', 'Site\LandsController@search')->name('lands.search');
-Route::any('/lands/product', 'Site\LandsController@product')->name('lands.product');
-Route::any('/lands/add', 'Site\LandsController@add')->name('lands.add');
+Route::any('/land/product/{land}', 'Site\LandsController@product')->name('land.product');
+Route::any('/lands/add', 'Site\LandsController@add')->name('land.add');
 
 Route::any('/jobs', 'Site\JobsController@index')->name('jobs.index');
 Route::any('/jobs/search', 'Site\JobsController@search')->name('jobs.search');
@@ -77,10 +78,10 @@ Route::any('/mobiles/search', 'Site\MobilesController@search')->name('mobiles.se
 Route::any('/mobiles/product', 'Site\MobilesController@product')->name('mobiles.product');
 Route::any('/mobiles/add', 'Site\MobilesController@add')->name('mobiles.add');
 
-Route::any('/general', 'Site\generalController@index')->name('general.index');
-Route::any('/general/search', 'Site\generalController@search')->name('general.search');
-Route::any('/general/product', 'Site\generalController@product')->name('general.product');
-Route::any('/general/add', 'Site\generalController@add')->name('general.add');
+Route::any('/generals', 'Site\GeneralController@index')->name('general.index');
+Route::any('/generals/search', 'Site\GeneralController@search')->name('generals.search');
+Route::any('/general/product/{general}', 'Site\GeneralController@product')->name('general.product');
+Route::any('/general/add', 'Site\GeneralController@add')->name('general.add');
 
 Route::get('/test', function () {
     return view('vendor.mobilesnew.add');
