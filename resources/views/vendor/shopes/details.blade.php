@@ -1,12 +1,14 @@
 @extends("layouts.vendor")
 @section('pageTitle', 'Koala Web Libraries')
 @section('styleChart')
-    <link href="{{ asset('assets/admin/libs/c3/c3.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
-    <script type="text/javascript"
-        src="https://platform-api.sharethis.com/js/sharethis.js#property=6063a4476f7ab900129cec66&product=inline-share-buttons"
-        async="async"></script>
+<link href="{{ asset('assets/admin/libs/c3/c3.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+<script type="text/javascript"
+    src="https://platform-api.sharethis.com/js/sharethis.js#property=6063a4476f7ab900129cec66&product=inline-share-buttons"
+    async="async"></script>
 @endsection
-@section('content') 
+@section('content')
+
+
 <div class="w-100 mx-auto bg-white" style="max-width:980px;">
     <div class="w-100">
         <div class="media-header">
@@ -16,20 +18,20 @@
                     شارك الاعلان
                     <ul class="d-inline-flex mb-0">
                         <li class="f-right px-2 py-1" style="font-size: 14px;">
-                            <a onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://www.wenak.ps/car/{{$shop->id}}.html&amp;src=sdkpreparse','newwindow','width=300,height=250'); return false;"
+                            <a onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://www.wenak.ps/car/61128.html&amp;src=sdkpreparse','newwindow','width=300,height=250'); return false;"
                                 style="color: #888"><i class="fab fa-facebook-square" style="font-size: 18px;"></i></a>
                         </li>
                         <li class="f-right px-2 py-1" style="font-size: 14px;">
-                            <a onclick="window.open('https://twitter.com/intent/tweet?text=https://www.wenak.ps/car/{{$shop->id}}.html&amp;src=sdkpreparse','newwindow','width=300,height=250'); return false;"
+                            <a onclick="window.open('https://twitter.com/intent/tweet?text=https://www.wenak.ps/car/61128.html&amp;src=sdkpreparse','newwindow','width=300,height=250'); return false;"
                                 style="color: #888"><i class="fab fa-twitter" style="font-size: 18px;"></i></a>
                         </li>
                         <li class="f-right px-2 py-1" style="font-size: 14px;">
-                            <a onclick="window.open('https://api.whatsapp.com/send?text=https://www.wenak.ps/car/{{$shop->id}}.html','newwindow','width=1200,height=450'); return false;"
+                            <a onclick="window.open('https://api.whatsapp.com/send?text=https://www.wenak.ps/car/61128.html','newwindow','width=1200,height=450'); return false;"
                                 style="color: #888"><i class="fab fa-whatsapp" aria-hidden="true"
                                     style="font-size: 18px;"></i></a>
                         </li>
                         <li class="f-right px-2 py-1" style="font-size: 14px;">
-                            <a onclick="window.open('https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=&amp;su=وينك من زمان - سيات | SEAT ابيزا 2009&amp;body=سيات | SEAT ابيزا 2009 https://www.wenak.ps/car/{{$shop->id}}.html&amp;ui=2&amp;tf=1&amp;pli=','newwindow','width=1200,height=450'); return false;"
+                            <a onclick="window.open('https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=&amp;su=وينك من زمان - سيات | SEAT ابيزا 2009&amp;body=سيات | SEAT ابيزا 2009 https://www.wenak.ps/car/61128.html&amp;ui=2&amp;tf=1&amp;pli=','newwindow','width=1200,height=450'); return false;"
                                 style="color: #888"><i class="fas fa-envelope" aria-hidden="true"
                                     style="font-size: 18px;"></i></a>
                         </li>
@@ -44,19 +46,17 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-9" style="padding: 0;height: 110px;">
                         <div class="media h-100" style="width: 100%;">
                             <div style="position: relative" class="h-100">
-                                <img class="first-img img-fluid" src="{{ asset('assets/site/images/shops/' . explode(',', $shop->img)[0]) }}"
+                                <img class="first-img img-fluid" src="{{ url('assets/admin/images/shopes.jpg') }}"
                                     alt="سيات | SEAT ابيزا 2009" title="سيات | SEAT ابيزا 2009"
                                     style="max-width:150px;height:100%">
                             </div>
                             <div class="media-body px-3 pt-1" style="">
                                 <span style="color: #ff9800;  font-size: 13px ;font-weight: 700"><i
-                                        class="fas  fa-map-marker-alt" style="    font-size: small;"></i> 
-
-                                    </span>
-                                <h5 class="mt-2 title" style="    font-size: 1.1rem;font-family:Tajawal">
-                                {{$shop->displayed}} {{$shop->offer}}      
-                                </h5>
-                                <li class="old-price not-cut d-block d-lg-none">{{$shop->price}} </li>
+                                        class="fas  fa-map-marker-alt" style="    font-size: small;"></i> رام الله
+                                    والبيرة </span>
+                                <h5 class="mt-2 title" style="    font-size: 1.1rem;font-family:Tajawal">محل منفصل
+                                    للبيع</h5>
+                                <li class="old-price not-cut d-block d-lg-none">سعر غير محدد</li>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,8 @@
 
                             <div class="">
                                 <ul>
-                                    <li class="old-price not-cut d-none d-lg-block" style="font-size: 20px;">{{$shop->price}} </li>
+                                    <li class="old-price not-cut d-none d-lg-block" style="font-size: 20px;">سعر غير
+                                        محدد</li>
                                 </ul>
                             </div>
                         </div>
@@ -99,19 +100,19 @@
                             <tbody style="font-weight:500">
                                 <tr>
                                     <td>العرض</td>
-                                    <td>{{$shop->displayed}} </td>
+                                    <td>للبيع</td>
                                 </tr>
                                 <tr>
                                     <td>المساحه</td>
-                                    <td>{{$shop->displayed}} </td>
+                                    <td>250 متر</td>
                                 </tr>
                                 <tr>
                                     <td>معلومات اضافية</td>
-                                    <td>{{$shop->displayed}} </td>
+                                    <td>....</td>
                                 </tr>
                                 <tr>
                                     <td>العنوان</td>
-                                    <td>{{$shop->address}} </td>
+                                    <td>بيت لحم - جنوب بيت لحم </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -120,16 +121,16 @@
                     <div class="d-none d-lg-block">
                         <div class="row mb-20px">
                             <div class="col-xl-4 col-md-6" style="    line-height: 28px;">
-                                <span><i class="fas fa-tags"></i> حاله المحل :</span> {{$shop->status}}
+                                <span><i class="fas fa-tags"></i> حاله المحل :</span> عظم
                             </div>
                             <div class="col-xl-4 col-md-6" style="    line-height: 28px;">
-                                <span><i class="fas fa-globe"></i> مساحه المحل :</span> {{$shop->address}}
+                                <span><i class="fas fa-globe"></i> مساحه المحل :</span> 250 متر
                             </div>
                             <div class="col-xl-4 col-md-6" style="    line-height: 28px;">
-                                <span><i class="fas fa-globe"></i> مساحه الارض :</span> {{$shop->address}}
+                                <span><i class="fas fa-globe"></i> مساحه الارض :</span> 550 متر
                             </div>
                             <div class="col-xl-12 col-md-12" style="line-height: 28px;">
-                                <span><i class="fas fa-compass"></i>العنوان :</span> {{$shop->address}}
+                                <span><i class="fas fa-compass"></i>العنوان :</span> بيت لحم - جنوب بيت لحم
                             </div>
                         </div>
                     </div>
@@ -294,13 +295,27 @@
                                              ">
                         <div class="d-none d-lg-block">
                             <ul>
-                                <li style="line-height: 1.3rem !important;">
-                                    <pre>
-                                       {{$shop->description}}  
-                                    </pre>
-                               
+                                <li style="line-height: 1.3rem !important;">لمن يبحث عن الهدوء والتميز </li>
+                                <li style="line-height: 1.3rem !important;">محل عظم مستقل للبيع والتواصل مع المالك
+                                    مباشرة بدون وسطاء </li>
+                                <li style="line-height: 1.3rem !important;">الموقع .. جنوب بيت لحم </li>
+                                <li style="line-height: 1.3rem !important;">تبعد عن حاجز مزموريا 15 دقيقة </li>
+                                <li style="line-height: 1.3rem !important;">المواصفات : </li>
+                                <li style="line-height: 1.3rem !important;"> مساحة الأرض 550 متر </li>
+                                <li style="line-height: 1.3rem !important;">مساحة البناء الكلي 250 متر </li>
+                                <li style="line-height: 1.3rem !important;"> الطابق الاول 135 متر </li>
+                                <li style="line-height: 1.3rem !important;"> الطابق الثاني 120 متر </li>
+                                <li style="line-height: 1.3rem !important;"> يوجد حديقة منفصلة عن المحل </li>
+                                <li style="line-height: 1.3rem !important;">منطقة B طابو سلطة صادر </li>
+                                <li style="line-height: 1.3rem !important;">على قمة جبل . وعلى شارع مباشرة . إطلالة
+                                    مميزة جدا وهادئة </li>
+                                <li style="line-height: 1.3rem !important;"> جميع الخدمات .. كهرباء ... ماء .. شارع
                                 </li>
-                                
+                                <li style="line-height: 1.3rem !important;"> بإشراف هندسي متكامل مع تصوير جميع مراحل
+                                    البناء من البداية وحتى النهاية </li>
+                                <li style="line-height: 1.3rem !important;">للمعنيين فقط الاتصال على </li>
+                                <li style="line-height: 1.3rem !important;">0568233968 </li>
+                                <li style="line-height: 1.3rem !important;">0597949736 الواتس</li>
                             </ul>
                         </div>
                         <div class="d-block d-lg-none">
@@ -406,7 +421,7 @@
                     <div class="d-none d-lg-block">
                         <div class="row mb-20px" style="line-height: 28px;">
                             <div class="col-xl-6 col-md-6">
-                                <span><i class="fas fa-map-marker"></i> العنوان :</span> {{$shop->address}}
+                                <span><i class="fas fa-map-marker"></i> العنوان :</span> رام الله والبيرة
                             </div>
                         </div>
                     </div>
@@ -423,11 +438,11 @@
                                     <tbody>
                                         <tr>
                                             <td>اسم المعلن</td>
-                                            <td>{{$shop->advertiser_name}}</td>
+                                            <td>محمد يوسف</td>
                                         </tr>
                                         <tr>
                                             <td>رقم الموبايل</td>
-                                            <td><a class="text-dark" href="tel:{{$shop->mobile}}"> {{$shop->mobile}}
+                                            <td><a class="text-dark" href="tel:0569838215"> 0569838215
                                                 </a></td>
                                             </td>
                                         </tr>
@@ -435,8 +450,8 @@
                                 </table>
                             </div>
                             <div class="card-footer w-100 mt-3 d-block d-lg-none">
-                                <a href="javascript:ReportModal({{$shop->id}});">هل وجدت خطأ في الاعلان ؟</a>
-                                <p>رقم الاعلان : {{$shop->id}}</p>
+                                <a href="javascript:ReportModal(61128);">هل وجدت خطأ في الاعلان ؟</a>
+                                <p>رقم الاعلان : 61128</p>
                             </div>
                         </div>
                     </div>
@@ -457,7 +472,7 @@
                         </div>
                     </div>
                     <div class="col-md-12 text-center mt-1">
-                        <b style="color: #ff9800 ;font-size: 20px;" class="text-dark">{{$mobile->advertiser_name}}</b>
+                        <b style="color: #ff9800 ;font-size: 20px;" class="text-dark">Anas Musa</b>
                     </div>
                     <div class="col-md-12 text-center mt-3">
                         <table class="table table-striped table-sm">
@@ -466,7 +481,7 @@
                                     <td colspan="100%" style="font-size: 20px;">رقم الموبايل</td>
                                 </tr>
                                 <tr>
-                                    <td><a dir="ltr" href="tel:{{$shop->mobile}}" style="font-size: 20px;"> {{$shop->mobile}} </a>
+                                    <td><a dir="ltr" href="tel:0569838215" style="font-size: 20px;"> 0569838215 </a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -477,8 +492,8 @@
                                                 width: 100%;
                                                 font-size: 11px;
                                                 right: 0;">
-                        <a href="javascript:ReportModal({{$shop->id}});">هل وجدت خطأ في الاعلان ؟</a>
-                        <p>رقم الاعلان : {{$shop->id}}</p>
+                        <a href="javascript:ReportModal(61128);">هل وجدت خطأ في الاعلان ؟</a>
+                        <p>رقم الاعلان : 61128</p>
                     </div>
                 </div>
             </div>
@@ -487,34 +502,31 @@
     <div class="w-100 px-1">
         <h5>اعلانات مشابهة</h5>
         <div class="row">
-            @foreach ($similar as $shop_similar)
-            <div class="col-6 col-xl-2 p-1 ">
-
-                <div
-                    class="annonce-item"style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
-                    <a href="{{ asset('assets/site/images/shops/' . explode(',', $shop_similar['img'])[0]) }}"
-                        class="gallery-popup" style="height: 160px; width:100%">
+            @for ($i=0; $i < 6; $i++) <div class="col-6 col-xl-2 p-1">
+                <div class="card annonce-item" style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
+                    <a href="{{ asset('/admin/images/land.jpg') }}" class="gallery-popup"
+                        style="height: 160px; width:100%">
                         <div class="project-item">
                             <div class="overlay-container">
-                                <img src="{{ asset('assets/site/images/shops/' . explode(',', $shop_similar['img'])[0]) }}"
-                                    alt="img" style="height: 160px; width:100%">
+                                <img src="{{ asset('/admin/images/land.jpg') }}" alt="img" class=""
+                                    style="height: 160px; width:100%">
                                 <div class="project-item-overlay text-right">
-                                    <h2>هاتف</h2>
+                                    <h4>عقارات</h4>
                                     <p>
-                                        <img src="{{ asset('assets/site/images/shops/' . explode(',', $shop_similar['img'])[0]) }}"
-                                            alt="user" class="avatar-xs rounded-circle">
-                                        <span class="ml-2">{{ $shop_similar['advertiser_name'] }}</span>
+                                        <img src="{{ asset('/admin/images/land.jpg') }}" alt="user"
+                                            class="avatar-xs rounded-circle">
+                                        <span class="ml-2">مارتينا جرجس</span>
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </a>
                     <div class="card-body">
-                        <h4 class="card-title">هاتف</h4>
+                        <h4 class="card-title">شقق</h4>
                     </div>
                 </div>
-            </div>
-        @endforeach
+        </div>
+        @endfor
     </div>
 </div>
 <style>

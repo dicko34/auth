@@ -9,7 +9,7 @@
      margin-bottom: 0rem; 
 }
 </style>
-<div class="row">
+<div class="row "style="margin-top:50px;">
 <div class="col-lg-9 col-12"> 
     <div class="row">
         <div class="card w-100">
@@ -17,107 +17,107 @@
                 <div class="row">
                     <h3 class="mb-4 m-auto"><i class="mdi mdi-home mr-2"></i> اعلانات الشقق و المنازل </h3>
                 </div>
-                <form method="POST" action="{{ route("homes.search") }}">
-                    @csrf
-                    <div class="row m-1">
-                                <div class="col-4">
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">جميع الشركات</label>
-                                        <div class="col-12 m-0 p-0">
-                                            <select name="city" class="form-control">
-                                            <option value="الكل">الكل</option>
-                                            @foreach($homes->unique('city') as $home)
-                                                    <option value="{{$home->city}}">{{$home->city}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-4">
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">الموديل</label>
-                                        <div class="col-12 m-0 p-0">
-                                        <select name="address" class="form-control">
-                                        <option value="الكل">الكل</option>
-                                        @foreach($homes->unique('address') as $home)
-                                                    <option value="{{$home->address}}">{{$home->address}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-4">
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">المحافظة</label>
-                                        <div class="col-12 m-0 p-0">
-                                        <select name="street" class="form-control">
-                                        <option value="الكل">الكل</option>
-                                        @foreach($homes->unique('street') as $home)
-                                                    <option value="{{$home->street}}">{{$home->street}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-4">
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">المحافظة</label>
-                                        <div class="col-12 m-0 p-0">
-                                        <select name="home_type" class="form-control">
-                                        <option value="الكل">الكل</option>
-                                        @foreach($homes->unique('home_type') as $home)
-                                                    <option value="{{$home->home_type}}">{{$home->home_type}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-4">
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">من سنة</label>
-                                        <div class="col-12 m-0 p-0">
-                                            <select name="rooms_number" class="form-control">
-                                            <option value="الكل">الكل</option>
-                                            @foreach($homes->unique('rooms_number') as $home)
-                                                    <option value="{{$home->rooms_number}}">{{$home->rooms_number}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-4">
-                                    <div class="form-group row">
-                                       <label class="col-sm-4 col-form-label">نوع الجير</label>
-                                        <div class="col-12 m-0 p-0">
-                                        <select name="status" class="form-control">
-                                        <option value="الكل">الكل</option>
-                                        @foreach($homes->unique('status') as $home)
-                                                    <option value="{{$home->status}}">{{$home->status}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-4">
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 col-form-label">العرض</label>
-                                        <div class="col-12 m-0 p-0">
-                                        <select name="show" class="form-control">
-                                        <option value="الكل">الكل</option>
-                                        @foreach($homes->unique('show') as $home)
-                                                    <option value="{{$home->show}}">{{$home->show}}</option>
-                                        @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
+                <form method="POST" action="{{ route("car.search") }}">
+                    @csrf 
+                    <div class="row m-3">
+                        <div class="col-4">
+                            <div class="form-group row">
+                                <div class="col-12  m-0 p-0">
+                                    <select class="form-control">
+                                        <option selected disabeled>المحافظة</option>
+                                        <option value="1">رام الله والبيرة </option>
+                                        <option value="2">القدس </option>
+                                        <option value="14">قطاع غزة </option>
+                                        <option value="4">الخليل </option>
+                                        <option value="5">بيت لحم </option>
+                                        <option value="6">أريحا </option>
+                                        <option value="7">سلفيت وبديا </option>
+                                        <option value="13">روابي </option>
+                                        <option value="12">طوباس </option>
+                                        <option value="11">قلقيلية </option>
+                                        <option value="10">طولكرم </option>
+                                        <option value="9">جنين </option>
+                                        <option value="8">نابلس </option>
+                                        <option value="15">جميع الاماكن </option>
+                                        <option value="16">مناطق الداخل </option>
+                                    </select>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="form-group row">
+                                <div class="col-sm-12  m-0 p-0">
+                                    <select class="form-control">
+                                        <option>المنطقة</option>
+                                        <option>Large select</option>
+                                        <option>Small select</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="form-group row">
+                                <div class="col-sm-12  m-0 p-0">
+                                    <select class="form-control">
+                                        <option>الشارع</option>
+                                        <option>Large select</option>
+                                        <option>Small select</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="form-group row">
+                                <div class="col-sm-12  m-0 p-0">
+                                    <select class="form-control">
+                                        <option>نوع المنزل</option>
+                                        <option>Large select</option>
+                                        <option>Small select</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="form-group row">
+                                <div class="col-sm-12  m-0 p-0">
+                                    <select class="form-control">
+                                        <option>عدد الغرف</option>
+                                        <option>Large select</option>
+                                        <option>Small select</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="form-group row">
+                                <div class="col-12  m-0 p-0">
+                                    <select class="form-control">
+                                        <option>الحالة</option>
+                                        <option>Large select</option>
+                                        <option>Small select</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="form-group row">
+                                <div class="col-12  m-0 p-0">
+                                    <select class="form-control">
+                                        <option> العروض</option>
+                                        <option>Large select</option>
+                                        <option>Small select</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                     <div class="row">
                         <div class="col-12 text-center">
                             <button class="btn btn-primary w-md waves-effect waves-light" type="submit">بحث الان</button>
@@ -134,26 +134,26 @@
                 <div class="row">
                     <h3 class="mb-4 col-6 btn btn-primary w-md waves-effect waves-light"><i class="mdi mdi-home mr-2"></i>800 شقة</h3>
                     <div class="col-6 text-right">
-                        <a class="btn btn-primary w-md waves-effect waves-light w-100" href="{{ route("home.add") }}">أضافة أعلان هنا</a>
+                        <a class="btn btn-primary w-md waves-effect waves-light w-100" href="{{ route("homes.add") }}">أضافة أعلان هنا</a>
                     </div>
                 </div>
                 <div class="row mt-2 mb-2">
 
-                @foreach($homes as $home)
+                    @for ($i = 0; $i < 12; $i++)
                         <div class="col-6 col-xl-4  p-0 bordertoty">
                             <div class="cardtoty m-sm-1 m-0 p-1">
-                                <a href="{{ asset('assets/site/images/homes/'.explode(',',$home->img)[0]) }}" class="gallery-popup"
+                                <a href="{{ asset('assets/admin/images/home.jpg') }}" class="gallery-popup"
                                     style="height: 130px; width:100%">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="{{ asset('assets/site/images/homes/'.explode(',',$home->img)[0]) }}" alt="img"
+                                            <img src="{{ asset('assets/admin/images/home.jpg') }}" alt="img"
                                                 class="gallery-thumb-img m-0" style="height: 130px; width:100%">
                                             <div class="project-item-overlay text-right">
                                                 <h4>عقارات</h4>
                                                 <p>
-                                                    <img src="{{ asset('assets/site/images/homes/'.explode(',',$home->img)[0]) }}" alt="user"
+                                                    <img src="{{ asset('assets/admin/images/home.jpg') }}" alt="user"
                                                         class="avatar-xs rounded-circle">
-                                                    <span class="ml-2">{{$home->advertiser_name}}</span>
+                                                    <span class="ml-2">مارتينا جرجس</span>
                                                 </p>
                                             </div>
                                         </div>
@@ -161,14 +161,12 @@
                                 </a>
                                 <div class="mt-2 mb-2">
                                     <h4 class="" style="color:#820120">شقق</h4>
-                                    <p class="card-text">
-                                    {{$home->city}} {{$home->address}} للبيع في  {{$home->model}} شقة
-                                       
-                                </p>
+                                    <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م
+                                    وسط الخليل على بعد 570 متري</p>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    @endfor
 
                 </div>
                 <nav aria-label="..." class="">
@@ -199,33 +197,34 @@
                 </div>
                 <div class="row m-2 mb-2">
 
-                @foreach($homes as $home)
+                    @for ($i = 0; $i < 4; $i++)
                         <div class="col-12 p-0 bordertoty">
                             <div class="cardtoty m-sm-1 m-0 p-1">
-                                <a href="{{asset('assets/site/images/homes/'.explode(',',$home->img)[0])}}" class="gallery-popup"
+                                <a href="{{ asset('assets/admin/images/car.jpeg') }}" class="gallery-popup"
                                     style="height: 130px; width:100%">
                                     <div class="project-item">
                                         <div class="overlay-container">
-                                            <img src="{{asset('assets/site/images/homes/'.explode(',',$home->img)[0])}}" alt="img"
+                                            <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="img"
                                                 class="gallery-thumb-img m-0" style="height: 130px; width:100%">
                                             <div class="project-item-overlay text-right">
-                                                <h4>السيارات</h4>
+                                                <h4>عقارات</h4>
                                                 <p>
-                                                    <img src="{{asset('assets/site/images/homes/'.explode(',',$home->img)[0])}}" alt="user"
+                                                    <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="user"
                                                         class="avatar-xs rounded-circle">
-                                                    <span class="ml-2">{{$home->advertiser_name}}</span>
+                                                    <span class="ml-2">مارتينا جرجس</span>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
                                 <div class="mt-2 mb-2">
-                                    <h4 class="" style="color:#820120">منازل</h4>
-                                    <p class="card-text">{{$home->city}} {{$home->address}} للبيع في  {{$home->model}} سيارة</p>
+                                    <h4 class="" style="color:#820120">شقق</h4>
+                                    <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م
+                                    وسط الخليل على بعد 570 متري</p>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    @endfor
 
                 </div> 
             </div>

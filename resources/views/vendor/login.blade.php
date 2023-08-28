@@ -16,7 +16,7 @@
                                 <div class="p-3">
                                     <h4 class="font-size-18 m-1 text-center">تسجيل دخول</h4>
     
-                                    <form class="form-horizontal w-sm-50 m-auto" method="POST" action="{{ route('login') }}">
+                                    <form class="form-horizontal w-sm-50 m-auto" action="{{ route('vendor.login.submit') }}">
                                     @csrf
                                     @php
                                         $k = explode('/',Request::path());
@@ -24,27 +24,17 @@
                                     @endphp
                                         <div class="form-group">
                                             <label for="username">البريد الالكتروني</label>
-                                            <input type="text" class="form-control" id="username" name="email" placeholder="البريد الالكتروني">
-                                            @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                            <input type="text" class="form-control" id="username" placeholder="البريد الالكتروني">
                                         </div>
     
                                         <div class="form-group">
                                             <label for="userpassword">كلمة المرور</label>
-                                            <input type="password" name="password" class="form-control" id="userpassword" placeholder="كلمة المرور">
-                                            @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                            <input type="password" class="form-control" id="userpassword" placeholder="كلمة المرور">
                                         </div>
 
                                         <div class="form-group mb-0 row">
                                             <div class="col-12 mt-4">
-                                                <a href="{{ route('register') }}" class="text-muted"><i class="mdi mdi-account-check"></i> انشاء حساب جديد </a>
+                                                <a href="{{ route('vendor.register') }}" class="text-muted"><i class="mdi mdi-account-check"></i> انشاء حساب جديد </a>
                                             </div>
                                         </div>
     

@@ -120,7 +120,7 @@
 <script src="{{asset("assets/admin/libs/node-waves/waves.min.js")}}"></script>
 
 @yield("script")
-<script src="{{asset("js/action.js")}}"></script>
 <script src="{{asset("assets/admin/js/app.js")}}"></script>
+
 </body>
 </html>

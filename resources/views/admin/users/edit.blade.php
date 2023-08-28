@@ -1,10 +1,15 @@
 @extends("layouts.admin")
 @section("pageTitle", "Koala Web Libraries")
 @section('styleChart')
-    <link href="{{asset("admin/libs/select2/css/select2.min.css")}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset("admin/libs/summernote/summernote-bs4.min.css")}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset("assets/admin/libs/select2/css/select2.min.css")}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset("assets/admin/libs/summernote/summernote-bs4.min.css")}}" rel="stylesheet" type="text/css"/>
 @endsection
 @section("content")
+@php
+    $id = Request::route('user');
+     $user = \App\Models\User::find($id)
+@endphp
+
 <div class="row">
 
         <div class="col-12">
@@ -23,7 +28,7 @@
                     </div>
                     @endif
                     <h5 class="mb-5 mt-3">تعديل مستخدم </h5>
-                    <form method="post" action="{{route('admin.users.update',['user'=>$user->id])}}" enctype="multipart/form-data">
+                    <form method="post" action="{{route('admin.users.update',['user'=>$id])}}" enctype="multipart/form-data">
                         @csrf
                         @method('put')
                         <div class="form-group row">
@@ -116,7 +121,7 @@
                         <div class="form-group row">
                             <label for="example-text-input" class="col-sm-2 col-form-label"> صورة </label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="file" id="example-text-input" name="img" >
+                                <input class="form-control" type="file" id="example-text-input" name="img" required>
                                 @error('img')
                                     <span class="invalid-feedback" style="display: block;" role="alert">
                                         <strong>{{ $message }} </strong>
@@ -134,23 +139,11 @@
             </div>
         </div> <!-- end col -->
     </div> <!-- end row -->
-    <script>
-
-var vars = {{Illuminate\Support\Js::from($user)}};
-    let selectTarget = (id) => {
-        let com = document.querySelectorAll(`select[name="${id}"] option`);
-
-        for (const el of com) {
-            (el.innerHTML == vars[id]) ? el.selected = true: '';
-        }
-    }
-    selectTarget('city')
-    </script>
 @endsection
 
 @section("script")
-<script src="{{asset("admin/libs/select2/js/select2.min.js")}}"></script>
-<script src="{{asset("admin/libs/summernote/summernote-bs4.min.js")}}"></script>
-<script src="{{asset("admin/js/pages/email-summernote.init.js")}}"></script>
-<script src="{{asset("admin/js/app.js")}}"></script>
+<script src="{{asset("assets/admin/libs/select2/js/select2.min.js")}}"></script>
+<script src="{{asset("assets/admin/libs/summernote/summernote-bs4.min.js")}}"></script>
+<script src="{{asset("assets/admin/js/pages/email-summernote.init.js")}}"></script>
+<script src="{{asset("assets/admin/js/app.js")}}"></script>
 @endsection 

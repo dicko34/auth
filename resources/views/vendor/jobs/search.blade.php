@@ -47,13 +47,11 @@
                         <div class="col-4">
                             <div class="form-group row">
                                 <div class="col-12 m-0 p-0">
-                                    <label class="col-sm-4 col-form-label">مكان العمل</label>
-                                    <select name="workplace" class="form-control">
-                                        <option value="الكل">الكل</option>
-                                        @foreach($jobs->unique('workplace') as $job)
-                                                    <option value="{{$job->workplace}}">{{$job->workplace}}</option>
-                                        @endforeach
-                                            </select>
+                                    <select class="form-control">
+                                        <option>المكان</option>
+                                        <option>Large select</option>
+                                        <option>Small select</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -61,13 +59,11 @@
                         <div class="col-4">
                             <div class="form-group row">
                                 <div class="col-12 m-0 p-0">
-                                    <label class="col-sm-4 col-form-label">التخصص</label>
-                                    <select name="specialization" class="form-control">
-                                        <option value="الكل">الكل</option>
-                                        @foreach($jobs->unique('specialization') as $job)
-                                                    <option value="{{$job->specialization}}">{{$job->specialization}}</option>
-                                        @endforeach
-                                            </select>
+                                    <select class="form-control">
+                                        <option>التخصص</option>
+                                        <option>Large select</option>
+                                        <option>Small select</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -75,13 +71,11 @@
                         <div class="col-4">
                             <div class="form-group row">
                                 <div class="col-12 m-0 p-0">
-                                    <label class="col-sm-4 col-form-label">الدوام</label>
-                                    <select name="permanence" class="form-control">
-                                        <option value="الكل">الكل</option>
-                                        @foreach($jobs->unique('permanence') as $job)
-                                                    <option value="{{$job->permanence}}">{{$job->permanence}}</option>
-                                        @endforeach
-                                            </select>
+                                    <select class="form-control">
+                                        <option>الدوام</option>
+                                        <option>Large select</option>
+                                        <option>Small select</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +97,7 @@
                 <div class="row">
                     <h3 class="mb-4 col-6 btn btn-primary w-md waves-effect waves-light"><i class="fas fa-address-book mr-2"></i> اعلانات التوظيف </h3>
                     <div class="col-6 text-right">
-                        <a class="btn btn-primary w-md waves-effect waves-light w-100" href="{{ route("job.add") }}">أضافة أعلان هنا</a>
+                        <a class="btn btn-primary w-md waves-effect waves-light w-100" href="{{ route("jobs.add") }}">أضافة أعلان هنا</a>
                     </div>
                 </div>
                 <div class="row">
@@ -118,26 +112,26 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($jobs_show as $job)
+                                @for ($i = 0; $i < 10; $i++)
                                     <tr>
                                         <td>
-                                            <a href="{{ ('job/product/'.$job->id) }}">
-                                                <img src="{{ asset('assets/site/images/jobs/'.explode(',',$job->img)[0]) }}" alt="img"
+                                            <a href="{{ route('jobs.product') }}">
+                                                <img src="{{ asset('assets/admin/images/com.jpeg') }}" alt="img"
                                                 class="gallery-thumb-img m-0" style="height: 100px; width:100px">
                                             </a>
                                         </td>
                                         <th>
-                                            <a href="{{ ('/job/product/'.$job->id) }}">
+                                            <a href="{{ route('jobs.product') }}">
                                                 مطلوب عدة تخصصات سكرتيره و مديره مبيعات و محاسبة
                                             </a>
                                         </th>
                                         <td>
-                                            {{$job->advertiser_address}}
+                                            رام الله والبيرة
                                             <br>
-                                            {{$job->created_at}}
+                                            2021-11-10
                                         </td>
                                     </tr>
-                                @endforeach
+                                @endfor
                             </tbody>
                         </table>
                     </div>
@@ -170,30 +164,34 @@
                 </div>
                 <div class="row m-2 mb-2">
 
-                    @foreach($jobs as $job)
-                    <div class="col-12 p-0 bordertoty">
-                        <div class="cardtoty m-sm-1 m-0 p-1">
-                            <a href="{{asset('assets/site/images/jobs/'.explode(',',$job->img)[0])}}" class="gallery-popup" style="height: 130px; width:100%">
-                                <div class="project-item">
-                                    <div class="overlay-container">
-                                        <img src="{{asset('assets/site/images/jobs/'.explode(',',$job->img)[0])}}" alt="img" class="gallery-thumb-img m-0" style="height: 130px; width:100%">
-                                        <div class="project-item-overlay text-right">
-                                            <h4>الوظائف</h4>
-                                            <p>
-                                                <img src="{{asset('assets/site/images/jobs/'.explode(',',$job->img)[0])}}" alt="user" class="avatar-xs rounded-circle">
-                                                <span class="ml-2">{{$job->advertiser_name}}</span>
-                                            </p>
+                    @for ($i = 0; $i < 4; $i++)
+                        <div class="col-12 p-0 bordertoty">
+                            <div class="cardtoty m-sm-1 m-0 p-1">
+                                <a href="{{ asset('assets/admin/images/car.jpeg') }}" class="gallery-popup"
+                                    style="height: 130px; width:100%">
+                                    <div class="project-item">
+                                        <div class="overlay-container">
+                                            <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="img"
+                                                class="gallery-thumb-img m-0" style="height: 130px; width:100%">
+                                            <div class="project-item-overlay text-right">
+                                                <h4>عقارات</h4>
+                                                <p>
+                                                    <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="user"
+                                                        class="avatar-xs rounded-circle">
+                                                    <span class="ml-2">مارتينا جرجس</span>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
+                                </a>
+                                <div class="mt-2 mb-2">
+                                    <h4 class="" style="color:#820120">شقق</h4>
+                                    <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م
+                                    وسط الخليل على بعد 570 متري</p>
                                 </div>
-                            </a>
-                            <div class="mt-2 mb-2">
-                                <h4 class="" style="color:#820120">سيارة</h4>
-                                <p class="card-text">{{$job->city}} {{$job->address}} للبيع في {{$job->model}} سيارة</p>
                             </div>
                         </div>
-                    </div>
-                    @endforeach
+                    @endfor
 
                 </div> 
             </div>

@@ -53,11 +53,11 @@
                             <div class="p-3">
                                 <h4 class="font-size-18 mt-2 text-center">تسجيل دخول</h4>
 
-                                <form class="form-horizontal" method="post"  action="{{route('login')}}">
+                                <form class="form-horizontal" method="post"  action="{{route('vendor.login.submit')}}">
                                 
                                     @csrf 
                                     <div class="form-group">
-                                        <label for="username">البريد الالكتروني  999999</label>
+                                        <label for="username">البريد الالكتروني</label>
                                         <input type="mail" class="form-control" name="email" id="email" placeholder="ادخل البريد الالكتروني" required>
                                     </div>
 

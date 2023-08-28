@@ -7,39 +7,31 @@
     async="async"></script>
 @endsection
 @section('content')
-@php
-$general = $generals[request()->general -1];
-
-@endphp
-
-
-
-@section('content')
 
 
 <div class="w-100 mx-auto bg-white" style="max-width:980px;">
     <div class="w-100">
         <div class="media-header">
-            <div class="w-100 mt-0 generald-header text-left d-flex justify-content-between align-items-center"
+            <div class="w-100 mt-0 card-header text-left d-flex justify-content-between align-items-center"
                 style="border: 1px solid #ccc; border-radius: 0px; border-bottom: 0px; padding: 0;">
                 <div class="float-left text-dark border-right px-2 py-1" style="font-size: 14px;">
                     شارك الاعلان
                     <ul class="d-inline-flex mb-0">
                         <li class="f-right px-2 py-1" style="font-size: 14px;">
-                            <a onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://www.wenak.ps/general/61128.html&amp;src=sdkpreparse','newwindow','width=300,height=250'); return false;"
+                            <a onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://www.wenak.ps/car/61128.html&amp;src=sdkpreparse','newwindow','width=300,height=250'); return false;"
                                 style="color: #888"><i class="fab fa-facebook-square" style="font-size: 18px;"></i></a>
                         </li>
                         <li class="f-right px-2 py-1" style="font-size: 14px;">
-                            <a onclick="window.open('https://twitter.com/intent/tweet?text=https://www.wenak.ps/general/61128.html&amp;src=sdkpreparse','newwindow','width=300,height=250'); return false;"
+                            <a onclick="window.open('https://twitter.com/intent/tweet?text=https://www.wenak.ps/car/61128.html&amp;src=sdkpreparse','newwindow','width=300,height=250'); return false;"
                                 style="color: #888"><i class="fab fa-twitter" style="font-size: 18px;"></i></a>
                         </li>
                         <li class="f-right px-2 py-1" style="font-size: 14px;">
-                            <a onclick="window.open('https://api.whatsapp.com/send?text=https://www.wenak.ps/general/61128.html','newwindow','width=1200,height=450'); return false;"
+                            <a onclick="window.open('https://api.whatsapp.com/send?text=https://www.wenak.ps/car/61128.html','newwindow','width=1200,height=450'); return false;"
                                 style="color: #888"><i class="fab fa-whatsapp" aria-hidden="true"
                                     style="font-size: 18px;"></i></a>
                         </li>
                         <li class="f-right px-2 py-1" style="font-size: 14px;">
-                            <a onclick="window.open('https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=&amp;su=وينك من زمان - سيات | SEAT ابيزا 2009&amp;body=سيات | SEAT ابيزا 2009 https://www.wenak.ps/general/61128.html&amp;ui=2&amp;tf=1&amp;pli=','newwindow','width=1200,height=450'); return false;"
+                            <a onclick="window.open('https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=&amp;su=وينك من زمان - سيات | SEAT ابيزا 2009&amp;body=سيات | SEAT ابيزا 2009 https://www.wenak.ps/car/61128.html&amp;ui=2&amp;tf=1&amp;pli=','newwindow','width=1200,height=450'); return false;"
                                 style="color: #888"><i class="fas fa-envelope" aria-hidden="true"
                                     style="font-size: 18px;"></i></a>
                         </li>
@@ -54,15 +46,17 @@ $general = $generals[request()->general -1];
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-9" style="padding: 0;height: 110px;">
                         <div class="media h-100" style="width: 100%;">
                             <div style="position: relative" class="h-100">
-                                <img class="first-img img-fluid" src="{{asset('assets/site/images/general/'.explode(',',$general->img)[0])}}"
-                                    alt="{{$general->address}} - {{$general->category}}" title="{{$general->address}} - {{$general->category}}"
+                                <img class="first-img img-fluid" src="{{ url('assets/admin/images/shopes.jpg') }}"
+                                    alt="سيات | SEAT ابيزا 2009" title="سيات | SEAT ابيزا 2009"
                                     style="max-width:150px;height:100%">
                             </div>
                             <div class="media-body px-3 pt-1" style="">
                                 <span style="color: #ff9800;  font-size: 13px ;font-weight: 700"><i
-                                        class="fas  fa-map-marker-alt" style="    font-size: small;"></i> {{$general->address}}</span>
-                                <h5 class="mt-2 title" style="    font-size: 1.1rem;font-family:Tajawal">{{$general->category}}</h5>
-                                <li class="old-price not-cut d-block d-lg-none">{{$general->address}}</li>
+                                        class="fas  fa-map-marker-alt" style="    font-size: small;"></i> رام الله
+                                    والبيرة </span>
+                                <h5 class="mt-2 title" style="    font-size: 1.1rem;font-family:Tajawal">عام منفصل
+                                    للبيع</h5>
+                                <li class="old-price not-cut d-block d-lg-none">سعر غير محدد</li>
                             </div>
                         </div>
                     </div>
@@ -71,7 +65,8 @@ $general = $generals[request()->general -1];
 
                             <div class="">
                                 <ul>
-                                    <li class="old-price not-cut d-none d-lg-block" style="font-size: 20px;">{{$general->price}}</li>
+                                    <li class="old-price not-cut d-none d-lg-block" style="font-size: 20px;">سعر غير
+                                        محدد</li>
                                 </ul>
                             </div>
                         </div>
@@ -106,13 +101,11 @@ $general = $generals[request()->general -1];
                                 
                                 <tr>
                                     <td>العنوان</td>
-                                    <td>{{$general->advertiser_address}} - {{$general->advertiser_city}}</td>
+                                    <td>بيت لحم - جنوب بيت لحم </td>
                                 </tr>
                                 <tr>
                                     <td>معلومات اضافية</td>
-                                    <td>
-...
-                                    </td>
+                                    <td>....</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -121,7 +114,7 @@ $general = $generals[request()->general -1];
                     <div class="d-none d-lg-block">
                         <div class="row mb-20px">
                             <div class="col-xl-12 col-md-12" style="line-height: 28px;">
-                                <span><i class="fas fa-compass"></i>العنوان :</span> {{$general->advertiser_address}} - {{$general->advertiser_city}}
+                                <span><i class="fas fa-compass"></i>العنوان :</span> بيت لحم - جنوب بيت لحم
                             </div>
                             <div class="col-xl-12 col-md-12" style="line-height: 28px;">
                                 <span><i class="fas fa-info"></i>اضافات :</span> 
@@ -297,19 +290,20 @@ $general = $generals[request()->general -1];
                                     <tbody>
                                         <tr>
                                             <td>اسم المعلن</td>
-                                            <td>{{$general->advertiser_name}} </td>
+                                            <td>محمد يوسف</td>
                                         </tr>
                                         <tr>
                                             <td>رقم الموبايل</td>
-                                            <td><a class="text-dark" href="tel:0569838215"> {{$general->mobile}}
+                                            <td><a class="text-dark" href="tel:0569838215"> 0569838215
                                                 </a></td>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="generald-footer w-100 mt-3 d-block d-lg-none">
-                                <p>رقم الاعلان : {{$general->id}}</p>
+                            <div class="card-footer w-100 mt-3 d-block d-lg-none">
+                                <a href="javascript:ReportModal(61128);">هل وجدت خطأ في الاعلان ؟</a>
+                                <p>رقم الاعلان : 61128</p>
                             </div>
                         </div>
                     </div>
@@ -330,7 +324,7 @@ $general = $generals[request()->general -1];
                         </div>
                     </div>
                     <div class="col-md-12 text-center mt-1">
-                        <b style="color: #ff9800 ;font-size: 20px;" class="text-dark">{{$general->advertiser_name}}</b>
+                        <b style="color: #ff9800 ;font-size: 20px;" class="text-dark">Anas Musa</b>
                     </div>
                     <div class="col-md-12 text-center mt-3">
                         <table class="table table-striped table-sm">
@@ -339,17 +333,19 @@ $general = $generals[request()->general -1];
                                     <td colspan="100%" style="font-size: 20px;">رقم الموبايل</td>
                                 </tr>
                                 <tr>
+                                    <td><a dir="ltr" href="tel:0569838215" style="font-size: 20px;"> 0569838215 </a>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div class="generald-footer mt-3 " style="position: absolute;
+                    <div class="card-footer mt-3 " style="position: absolute;
                                                 bottom: 0;
                                                 width: 100%;
                                                 font-size: 11px;
                                                 right: 0;">
-                        <p>رقم الاعلان : {{$general->id}}</p>
+                        <a href="javascript:ReportModal(61128);">هل وجدت خطأ في الاعلان ؟</a>
+                        <p>رقم الاعلان : 61128</p>
                     </div>
                 </div>
             </div>
@@ -358,35 +354,31 @@ $general = $generals[request()->general -1];
     <div class="w-100 px-1">
         <h5>اعلانات مشابهة</h5>
         <div class="row">
-            @foreach ($similar as $general_similar)
-  
-                        <div class="col-6 col-xl-2 p-1 ">
-                            
-                             <div
-                                class="annonce-item"style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
-                                <a href="{{ asset('assets/site/images/generals/' . explode(',', $general_similar['img'])[0]) }}"
-                                    class="gallery-popup" style="height: 160px; width:100%">
-                                    <div class="project-item">
-                                        <div class="overlay-container">
-                                            <img src="{{ asset('assets/site/images/generals/' . explode(',', $general_similar['img'])[0]) }}"
-                                                alt="img" style="height: 160px; width:100%">
-                                            <div class="project-item-overlay text-right">
-                                                <h2>سيارات</h2>
-                                                <p>
-                                                    <img src="{{ asset('assets/site/images/generals/' . explode(',', $general_similar['img'])[0]) }}"
-                                                        alt="user" class="avatar-xs rounded-circle">
-                                                    <span class="ml-2">{{ $general_similar['advertiser_name'] }}</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="generald-body">
-                                    <h4 class="generald-title">سيارات</h4>
+            @for ($i=0; $i < 6; $i++) <div class="col-6 col-xl-2 p-1">
+                <div class="card annonce-item" style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
+                    <a href="{{ asset('/admin/images/land.jpg') }}" class="gallery-popup"
+                        style="height: 160px; width:100%">
+                        <div class="project-item">
+                            <div class="overlay-container">
+                                <img src="{{ asset('/admin/images/land.jpg') }}" alt="img" class=""
+                                    style="height: 160px; width:100%">
+                                <div class="project-item-overlay text-right">
+                                    <h4>عقارات</h4>
+                                    <p>
+                                        <img src="{{ asset('/admin/images/land.jpg') }}" alt="user"
+                                            class="avatar-xs rounded-circle">
+                                        <span class="ml-2">مارتينا جرجس</span>
+                                    </p>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
-                @endforeach
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title">شقق</h4>
+                    </div>
+                </div>
+        </div>
+        @endfor
     </div>
 </div>
 <style>
