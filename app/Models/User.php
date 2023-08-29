@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
-    protected $guard = 'vendor';
+    use Notifiable , HasFactory;
+    protected $guard = 'users';
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'fname','lname', 'email', 'password','address','city','state','pssword_confirmation','phone','img',
+        'name', 'email', 'password','address','city','state','pssword_confirmation','phone','img',
     ];
 
     /**

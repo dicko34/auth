@@ -38,7 +38,7 @@ class CarController extends Controller
             'glass' =>  'required|max:20',
             'shown' => 'required|max:20',
             'pay_method' =>  'required|max:20',
-            'extras' =>  'required|max:200',
+            'extras' =>  'required|max:500',
             'address' => 'required|max:100',
             'description' =>  'required|max:600',
             'img'=> 'required',

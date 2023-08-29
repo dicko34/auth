@@ -142,16 +142,21 @@
                             اتصل بنا
                         </a>
                     </div>
-
+                    @guest("user")
                     <div class="dropdown d-inline-block ">
                         <a href="{{ route('login') }}" class="btn header-item  waves-effect mt-3">
                             <i class="fa fa-sign-in-alt"></i>
                             دخول
                         </a>
                     </div>
+                    @endguest
+                    @if(Auth::guard('web')->check())
+                    ssssssss
+                    @endif
 
-
-
+                    @if(Auth::guard('user')->check())
+                    ssssssss
+                    @endif
                 </div>
             </div>
 

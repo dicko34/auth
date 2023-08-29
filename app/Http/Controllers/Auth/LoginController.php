@@ -50,18 +50,20 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         // Validate form data
-        $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required|min:8'
-        ]);
-
-        // Attempt to log the user in
-        if(Auth::guard('vendor')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember))
         {
-            return redirect()->intended(route('/'));
-        } 
-
-        return redirect()->back()->withErrors();
+            $credentials = $request->validate([
+                'email' => ['required', 'email'],
+                'password' => ['required'],
+            ]);
+     
+            if (Auth::guard('user')->attempt($credentials)) {     
+                return redirect()->intended('/');
+            }
+     
+            return back()->withErrors([
+                'email' => 'The provided credentials do not match our records.',
+            ])->onlyInput('email');
+        }
     }
     
 }
