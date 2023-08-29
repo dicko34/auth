@@ -11,6 +11,7 @@ use App\Models\Shop;
 use App\Models\Mobile;
 use App\Models\General;
 use Illuminate\Database\Seeder;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -34,19 +35,14 @@ class DatabaseSeeder extends Seeder
         Land::factory()
         ->count(50)
         ->create();
-
-
         Mobile::factory()
         ->count(50)
         ->create();
         Shop::factory()
         ->count(50)
         ->create();
-         \App\Models\Job::factory(10)->create();
-
-         \App\Models\User::factory()->create([
-             'name' => 'Test User',
-             'email' => 'test@example.com',
-         ]);
+        User::factory()
+        ->count(1)
+        ->create();
     }
 }
