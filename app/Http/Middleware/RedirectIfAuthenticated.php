@@ -2,7 +2,6 @@
 
 namespace App\Http\Middleware;
 
-use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,8 +20,8 @@ class RedirectIfAuthenticated
         if ($guard == "admin" && Auth::guard($guard)->check()) {
             return redirect()->route('admin.dashboard');
         }
-        if ($guard == "vendor" && Auth::guard($guard)->check()) {
-            return redirect()->route('vendor.dashboard');
+        if ($guard == "users" && Auth::guard($guard)->check()) {
+            return redirect()->route('/');
         }
 
         if (Auth::guard($guard)->check()) {
