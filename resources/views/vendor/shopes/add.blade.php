@@ -67,7 +67,7 @@
                     <td>المساحة</td>
                     <td>
                         <div class="input-group input-group-sm">
-                            <input type="number" class="form-control " name="area"
+                            <input type="number" class="form-control " name="area" value="{{Auth::user()->email ??   ''}}"
                                 placeholder="ما هي مساحة الشقة أو البيت؟" aria-label="ما هي مساحة الشقة أو البيت؟"
                                 aria-describedby="basic-addon2">
                             <span class="input-group-text" id="basic-addon2">متر مربع</span>

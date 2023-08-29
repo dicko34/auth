@@ -16,36 +16,36 @@
                 <div class="p-sm-3">
                     <h4 class="font-size-18 mt-2 text-center">انشاء حساب جديد</h4>
 
-                    <form class="form-horizontal w-sm-50 m-auto p-sm-5" method="POST" action="{{ route('vendor.register.submit') }}">
+                    <form class="form-horizontal w-sm-50 m-auto p-sm-5" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="username">الاسم</label>
                             <input type="text" class="form-control" name="name" id="name" placeholder="الاسم او الشركة">
-                            @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }} </strong>
+                            @if ($errors->has('name'))
+                                    <span class="invalid-feedback"  role="alert" style="display:inline">
+                                        <strong>{{ $errors->first('name') }} </strong>
                                     </span>
-                                @enderror
+                                @endif
                         </div> 
 
                         <div class="form-group">
                             <label for="username">البريد الالكتروني</label>
                             <input type="text" class="form-control" name="email" id="email" placeholder="البريد الالمتروني">
-                            @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }} </strong>
+                            @if ($errors->has('email'))
+                                    <span class="invalid-feedback"  role="alert" style="display:inline">
+                                        <strong>{{ $errors->first('email') }} </strong>
                                     </span>
-                                @enderror
+                                @endif
                         </div>
 
                         <div class="form-group">
                             <label for="userpassword">كلمة المرور</label>
                             <input type="password" class="form-control"name="password" id="password" placeholder="اكثر من 8 احرف ">
-                            @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }} </strong>
+                            @if ($errors->has('password'))
+                                    <span class="invalid-feedback"  role="alert" style="display:inline">
+                                        <strong>{{ $errors->first('password') }} </strong>
                                     </span>
-                                @enderror
+                                @endif
                         </div> 
 
                         <div class="form-group">
@@ -61,46 +61,46 @@
                                 <option>Large select</option>
                                 <option>Small select</option>
                             </select>
-                            @error('city')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }} </strong>
+                            @if ($errors->has('city'))
+                                    <span class="invalid-feedback"  role="alert" style="display:inline">
+                                        <strong>{{ $errors->first('city') }} </strong>
                                     </span>
-                                @enderror
+                                @endif
                         </div>
 
                         <div class="form-group">
                             <label for="userpassword">العنوان</label>
                             <input type="text" class="form-control" id="address" name="address" placeholder="المنطقة و الشارع">
-                            @error('address')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }} </strong>
+                            @if ($errors->has('address'))
+                                    <span class="invalid-feedback"  role="alert" style="display:inline">
+                                        <strong>{{ $errors->first('address') }} </strong>
                                     </span>
-                                @enderror
+                                @endif
                         </div>
 
                         <div class="form-group">
                             <label for="userpassword">رقم الهاتف</label>
                             <input type="phone" class="form-control" id="phone" name="phone" placeholder="رقم الهاتف">
-                            @error('phone')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }} </strong>
+                            @if ($errors->has('phone'))
+                                    <span class="invalid-feedback"  role="alert" style="display:inline">
+                                        <strong>{{ $errors->first('phone') }} </strong>
                                     </span>
-                                @enderror
+                                @endif
                         </div>
 
                         <div class="form-group">
                             <label for="userpassword">img</label>
                             <input type="file" class="form-control" id="image" name="img" placeholder=" صورة">
-                            @error('img')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }} </strong>
+                            @if ($errors->has('img'))
+                                    <span class="invalid-feedback"  role="alert" style="display:inline">
+                                        <strong>{{ $errors->first('img') }} </strong>
                                     </span>
-                                @enderror
+                                @endif
                         </div>
 
                         <div class="form-group mb-0 row">
                             <div class="col-12 mt-4">
-                                <a href="{{ route('vendor.login') }}" class="text-muted"><i class="mdi mdi-account-check"></i> تمتلك حساب بالفعل </a>
+                                <a href="{{ route('login') }}" class="text-muted"><i class="mdi mdi-account-check"></i> تمتلك حساب بالفعل </a>
                             </div>
                         </div>
 

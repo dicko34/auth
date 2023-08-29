@@ -51,7 +51,6 @@
 
             <h3 class="mb-4"><i class="mdi mdi-car-side mr-2"></i> سيارات </h3>
             <div class="row">
-
                 @foreach($cars as $car)
                 <div class="col-6 col-xl-2 p-1">
                     <div class="">
@@ -340,7 +339,7 @@
                         <div class="card-body">
                             <h4 class="card-title">الإعلانات العامة</h4>
                             <p class="card-text">
-                                إعلان {{$general->advertiser_city}} {{$general->address}}  في {{$general->phone_number}} - {{$general->advertiser_name}} - {{$general->category}}
+                                إعلان {{$general->city}} {{$general->address}}  في {{$general->phone_number}} - {{$general->advertiser_name}} - {{$general->category}}
                             </p>
                         </div>
                     </div>

@@ -40,6 +40,7 @@ class MobileController extends Controller
             'ad_duration_per_day' =>  'required|max:20',
             'advertiser_name' => 'required|max:30',
             'phone_number' =>  'required|max:20',
+            'mobile' => 'required|max:20',
             'email' =>  'required|email',
         ]);
         $validate['img'] = [];

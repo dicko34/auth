@@ -99,7 +99,7 @@
                         <td>عدد البرندات</td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <input type="number" class="form-control" name="outspace" placeholder="عدد البرندات"
+                                <input type="number" class="form-control" name="balcony" placeholder="عدد البرندات"
                                     aria-label="عدد المطابخ" aria-describedby="basic-addon2">
                                 <span class="input-group-text" id="basic-addon2">كم برندة او بلكونة؟</span>
                             </div>
