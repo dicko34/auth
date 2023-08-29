@@ -22,11 +22,11 @@
                     </div>
 
                     <div class="col-sm-12 text-center m-3">
-                        <a href="{{ route('shops.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان محل او مكتب او مخزن</a>
+                        <a href="{{ route('shop.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان محل او مكتب او مخزن</a>
                     </div>
 
                     <div class="col-sm-12 text-center m-3">
-                        <a href="{{ route('lands.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان ارض</a>
+                        <a href="{{ route('land.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان ارض</a>
                     </div>
 
                     <div class="col-sm-12 text-center m-3">

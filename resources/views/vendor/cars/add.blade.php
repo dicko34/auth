@@ -281,7 +281,7 @@
                             <div class="input-group input-group-sm">
                                 <input type="text" name="car_usage" class="form-control form-control-sm "
                                     placeholder="يد اولى , يد ثانيه ..." aria-label="يد اولى , يد ثانيه ..."
-                                    aria-describedby="basic-addon2">
+                                    >
                             </div>
                         </td>
                     </tr>
