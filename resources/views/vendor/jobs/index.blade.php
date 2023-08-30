@@ -103,7 +103,7 @@
                 <div class="row">
                     <h3 class="mb-4 col-6 btn btn-primary w-md waves-effect waves-light"><i class="fas fa-address-book mr-2"></i> اعلانات التوظيف </h3>
                     <div class="col-6 text-right">
-                        <a class="btn btn-primary w-md waves-effect waves-light w-100" href="{{ route("job.add") }}">أضافة أعلان هنا</a>
+                        <a class="btn btn-primary w-md waves-effect waves-light w-100" href="{{ route("jobs.add") }}">أضافة أعلان هنا</a>
                     </div>
                 </div>
                 <div class="row">

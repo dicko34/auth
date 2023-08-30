@@ -50,7 +50,7 @@ class LandController extends Controller
         $validate['img'] = implode(',',$validate['img']);
         $validate['state'] = 'pinned';
         Land::create($validate);
-        return redirect()->route('land.index');
+        return redirect()->route('lands.index');
     }
 
     /**

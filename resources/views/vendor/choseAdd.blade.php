@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="col-sm-12 text-center m-3">
-                        <a href="{{ route('home.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان شقة</a>
+                        <a href="{{ route('homes.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان شقة</a>
                     </div>
 
                     <div class="col-sm-12 text-center m-3">
@@ -30,11 +30,11 @@
                     </div>
 
                     <div class="col-sm-12 text-center m-3">
-                        <a href="{{ route('job.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان وظيفة</a>
+                        <a href="{{ route('jobs.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان وظيفة</a>
                     </div>
 
                     <div class="col-sm-12 text-center m-3">
-                        <a href="{{ route('mobile.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان جهاز ذكي</a>
+                        <a href="{{ route('mobiles.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان جهاز ذكي</a>
                     </div>
 
                     <div class="col-sm-12 text-center m-3">

@@ -52,7 +52,7 @@ class HomeController extends Controller
         $validate['img'] = implode(',',$validate['img']);
         $validate['state'] = 'pinned';
         Home::create($validate);
-        return redirect()->route('home.index');
+        return redirect()->route('homes.index');
     }
 
 }

@@ -50,7 +50,7 @@ class ShopController extends Controller
         $validate['img'] = implode(',',$validate['img']);
         $validate['state'] = 'pinned';
         Shop::create($validate);
-        return redirect()->route('shop.index');
+        return redirect()->route('shops.index');
     }
 
 }

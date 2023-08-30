@@ -17,7 +17,7 @@
                     <div class="row">
                         <h3 class="mb-4 m-auto"><i class="fas fa-star mr-2"></i> اعلانات المحلات و المخازن </h3>
                     </div>
-                    <form method="POST" action="{{ route("shopes.search") }}">
+                    <form method="POST" action="{{ route("shops.search") }}">
                         @csrf 
                         <div class="row m-3">
                             <div class="col-4">

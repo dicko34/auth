@@ -45,7 +45,7 @@ class jobController extends Controller
         $validate['img'] = implode(',',$validate['img']);
         $validate['state'] = 'pinned';
         Job::create($validate);
-        return redirect()->route('job.index');
+        return redirect()->route('jobs.index');
     }
 
    
