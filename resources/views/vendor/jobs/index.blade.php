@@ -9,7 +9,7 @@
     <div class="col-lg-9 col-12 mx-auto">
         <div class="row">
             <div class="card w-100">
-                <div class="body-card m-5">
+                <div class="body-card m-2">
                     <form method="POST" action="{{ route("jobs.search") }}">
                         @csrf
                         <div class="row m-1">
@@ -192,7 +192,7 @@
                                 </div>
                                 <div class="row mt-3">
                                     <div class="col-lg-6">
-                                        <table class="table table-striped">
+                                        <table class="table table-striped table-bordered">
                                             <thead class="bg-blue text-white">
                                                 <tr class="bg-primary">
                                                     <th style="font-family: 'Tajawal';">الشركة</th>
@@ -232,7 +232,7 @@
 
                                     </div>
                                     <div class="col-lg-6">
-                                        <table class="table table-striped">
+                                        <table class="table table-striped table-bordered">
                                             <thead class="d-lg-table d-none bg-primary text-white">
                                                 <tr>
 
@@ -279,7 +279,7 @@
                                             <nav aria-label="..." class="w-100 m-auto">
                                                 <ul class="pagination">
                                                     <li class="page-item disabled">
-                                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                                        <a class="page-link" href="#" tabindex="-1">السابق</a>
                                                     </li>
                                                     <li class="page-item"><a class="page-link" href="#">1</a></li>
                                                     <li class="page-item active">
@@ -288,7 +288,7 @@
                                                     </li>
                                                     <li class="page-item"><a class="page-link" href="#">3</a></li>
                                                     <li class="page-item">
-                                                        <a class="page-link" href="#">Next</a>
+                                                        <a class="page-link" href="#">التالي</a>
                                                     </li>
                                                 </ul>
                                             </nav>

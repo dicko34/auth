@@ -9,11 +9,11 @@
     margin-bottom: 0rem;
 }
 </style>
-<div class="row " style="margin-top:50px;">
+<div class="row ">
     <div class="col-lg-9 col-12">
         <div class="row">
             <div class="card w-100">
-                <div class="body-card m-1 mt-3 mb-3">
+                <div class="body-card m-1 mb-3">
 
                     <form method="POST" action="{{ route("car.search") }}">
                         @csrf
@@ -98,7 +98,7 @@
                                     <div class="col-12 m-0 p-0">
                                         <select class="form-control">
                                             <option selected disabled>العروض</option>
-                                            <option>للبيع</option>
+                                            <option>لل للبيع</option>
                                             <option>للايجار</option>
                                         </select>
                                     </div>
@@ -140,88 +140,81 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-lg-6">
-                        <table class="table table-striped">
+                        <table class="table table-striped table-bordered">
                             <thead class="bg-blue text-white">
                                 <tr class="bg-primary">
-                                    <th style="font-family: 'Tajawal';">عدد الغرف</th>
+                                    <th style="font-family: 'Tajawal';">نوع العقار</th>
                                     <th style="font-family: 'Tajawal';">نوع العقد</th>
-                                    <th style="font-family: 'Tajawal';">التاريخ</th>
+                                    <th style="font-family: 'Tajawal';">المدينة</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>3</td>
-                                    <td><a style="color:#000;" href="https://www.example.com/job/1.html">عقد إيجار</a>
+                                    <td>شقة</td>
+                                    <td><a style="color:#000;" href="https://www.example.com/job/1.html"> للايجار</a>
                                     </td>
-                                    <td>2023-07-02</td>
+                                    <td>رام الله</td>
                                 </tr>
                                 <tr>
-                                    <td>2</td>
-                                    <td><a style="color:#000;" href="https://www.example.com/job/2.html">عقد بيع</a>
+                                    <td>منزل منفصل</td>
+                                    <td><a style="color:#000;" href="https://www.example.com/job/2.html"> للبيع</a>
                                     </td>
-                                    <td>2023-07-03</td>
+                                    <td>القدس</td>
                                 </tr>
                                 <tr>
-                                    <td>4</td>
-                                    <td><a style="color:#000;" href="https://www.example.com/job/3.html">عقد إيجار</a>
+                                    <td>شقة</td>
+                                    <td><a style="color:#000;" href="https://www.example.com/job/3.html"> للايجار</a>
                                     </td>
-                                    <td>2023-07-04</td>
+                                    <td>نابلس</td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td><a style="color:#000;" href="https://www.example.com/job/4.html">عقد بيع</a>
+                                    <td>منزل منفصل</td>
+                                    <td><a style="color:#000;" href="https://www.example.com/job/4.html"> للبيع</a>
                                     </td>
-                                    <td>2023-07-05</td>
+                                    <td>الخليل</td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: middle;">شقة</td>
+                                    <td style="vertical-align: middle;"><a style="color:#000;"
+                                            href="https://www.example.com/job/1.html"> للايجار</a></td>
+                                    <td>جنين</td>
+                                </tr>
+                                <tr>
+                                    <td>منزل منفصل</td>
+                                    <td><a style="color:#000;" href="https://www.example.com/job/2.html"> للبيع</a>
+                                    </td>
+                                    <td>بيت لحم</td>
+                                </tr>
+                                <tr>
+                                    <td>شقة</td>
+                                    <td><a style="color:#000;" href="https://www.example.com/job/3.html"> للايجار</a>
+                                    </td>
+                                    <td>قلقيلية</td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: middle;">منزل منفصل</td>
+                                    <td style="vertical-align: middle;"><a style="color:#000;"
+                                            href="https://www.example.com/job/4.html"> للبيع</a></td>
+                                    <td>سلفيت وبديا</td>
                                 </tr>
                             </tbody>
                         </table>
+
+
+
 
 
 
                     </div>
                     <div class="col-lg-6">
-                        <table class="table table-striped">
-                            <thead class="d-lg-table d-none bg-primary text-white">
-                            <tr class="bg-primary">
-                                    <th style="font-family: 'Tajawal';">عدد الغرف</th>
-                                    <th style="font-family: 'Tajawal';">نوع العقد</th>
-                                    <th style="font-family: 'Tajawal';">التاريخ</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>3</td>
-                                    <td><a style="color:#000;" href="https://www.example.com/job/1.html">عقد إيجار</a>
-                                    </td>
-                                    <td>2023-07-02</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td><a style="color:#000;" href="https://www.example.com/job/2.html">عقد بيع</a>
-                                    </td>
-                                    <td>2023-07-03</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td><a style="color:#000;" href="https://www.example.com/job/3.html">عقد إيجار</a>
-                                    </td>
-                                    <td>2023-07-04</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td><a style="color:#000;" href="https://www.example.com/job/4.html">عقد بيع</a>
-                                    </td>
-                                    <td>2023-07-05</td>
-                                </tr>
-                            </tbody>
-                        </table>
+
 
 
                         <div class="col-12">
                             <nav aria-label="..." class="w-100 m-auto">
                                 <ul class="pagination">
                                     <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                        <a class="page-link" href="#" tabindex="-1">السابق</a>
                                     </li>
                                     <li class="page-item"><a class="page-link" href="#">1</a></li>
                                     <li class="page-item active">
@@ -229,7 +222,7 @@
                                     </li>
                                     <li class="page-item"><a class="page-link" href="#">3</a></li>
                                     <li class="page-item">
-                                        <a class="page-link" href="#">Next</a>
+                                        <a class="page-link" href="#">التالي</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -243,6 +236,7 @@
 </div>
 </div>
 </div>
+
 <style>
 h1,
 h2,
