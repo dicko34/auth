@@ -23,50 +23,16 @@
                         <td>موديل السيارة <span class="text-danger" style="">*</span></td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <select name="model" class="form-select form-select-sm model-type-car" id="carCompany"
+                                <select name="carCompany" class="form-select form-select-sm model-type-car" id="carCompany"
                                     required="">
-                                    <option value="">جميع الشركات</option>
-                                    <option value="1">بي ام دبليو | BMW </option>
-                                    <option value="18">رينو | RENAULT </option>
-                                    <option value="27">سوبارو | SUBARU </option>
-                                    <option value="28">روفر | ROVER </option>
-                                    <option value="29">سانغ يونغ | SSANGYONG </option>
-                                    <option value="35">داتشا | DACIA </option>
-                                    <option value="39">فولفو | VOLVO </option>
-                                    <option value="2">الفا روميو | ALFA ROMEO </option>
-                                    <option value="5">سكودا | SKODA </option>
-                                    <option value="6">هونداي | HYUNDAI </option>
-                                    <option value="7">فورد | FORD </option>
-                                    <option value="8">سيات | SEAT </option>
-                                    <option value="24">فولكسفاجن | VOLKSWAGEN </option>
-                                    <option value="25">شفرليت | CHEVROLET </option>
-                                    <option value="26">ستروين | CITROEN </option>
-                                    <option value="30">دايو | DAEWOO </option>
-                                    <option value="46">جاكوار </option>
-                                    <option value="47">سوزوكي </option>
-                                    <option value="48">جاجوار </option>
-                                    <option value="49">SCANIA </option>
-                                    <option value="3">اودي | AUDI </option>
-                                    <option value="34">ميتسوبيشي | MITSUBISHI </option>
-                                    <option value="4">اوبل | OPEL </option>
-                                    <option value="36">شحن داف | DAF </option>
-                                    <option value="40">دراجة هيوسونغ | HYOSUNG </option>
-                                    <option value="10">كيا | KIA </option>
-                                    <option value="38">شحن مان | MAN </option>
-                                    <option value="43">جي ام سي | GMC </option>
-                                    <option value="12">جيب | JEEP </option>
-                                    <option value="13">دودج | DODGE </option>
-                                    <option value="45">دراجة </option>
-                                    <option value="14">شحن ايفيكو | IVECO </option>
-                                    <option value="15">ايسوزو | ISUZU </option>
-                                    <option value="23">مرسيدس | MERCEDES </option>
-                                    <option value="16">بيجو | PEUGEOT </option>
-                                    <option value="17">مازدا | MAZDA </option>
-                                    <option value="19">تويوتا | TOYOTA </option>
-                                    <option value="21">نيسان | NISSAN </option>
-                                    <option value="22">لاندروفر | LAND ROVER </option>
-                                    <option value="42">فيات | FIAT </option>
-                                    <option value="44">هوندا | HONDA </option>
+                                    <option value=""selected disabled> الشركات</option>
+                                        @foreach ($carCompanies as $carCompany)
+                                            <option value="{{ $carCompany->name}}">{{ $carCompany->name }}</option>
+                                        @endforeach
+                                </select>
+                                <select name="CarModel" class="form-select form-select-sm model-type-car" id="carModel"
+                                    required="">
+                                    <option value=""selected disabled> الموديل</option>
                                 </select>
                                 <span class="input-group-text d-flex d-lg-none text-center" data-bs-toggle="tooltip"
                                     data-bs-placement="left" title=""
@@ -76,22 +42,6 @@
                                         class="fas fa-info-circle"></i></span>
                                 <span class="input-group-text d-none d-lg-block w-100" id="basic-addon2">في حال عدم
                                     توفر موديل السيارة، الرجاء تعبئة خانة "باقي الموديل"</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>شركة</td>
-                        <td>
-                            <div class="input-group input-group-sm">
-                                <input type="text" name="company" class="form-control form-control-sm"
-                                    aria-label="شركة " aria-describedby="basic-addon2">
-                                <span class="input-group-text d-flex d-lg-none text-center" data-bs-toggle="tooltip"
-                                    data-bs-placement="left" title=""
-                                    style="width:50px !important;flex-wrap: nowrap; justify-content: center;"
-                                    id="basic-addon2" data-original-title="مثال: فولكسفايجن باسات،اوبل استرا"><i
-                                        class="fas fa-info-circle"></i></span>
-                                <span class="input-group-text d-none d-lg-block w-100" id="basic-addon2">مثال:
-                                    فولكسفايجن</span>
                             </div>
                         </td>
                     </tr>
@@ -809,4 +759,32 @@
             }
         }
     </style>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#carCompany').change(function () {
+                    
+                    var carCompany = encodeURIComponent($(this).val());
+                    
+                    if (carCompany) {
+                        $.ajax({
+                            type: "GET",
+                            url: "/get-car-models/" + carCompany,
+                            success: function (data) {
+                                $('#carModel').empty();
+                                $.each(data, function (id, model) {
+                                    $('#carModel').append(new Option(model, id));
+                                });
+                            }
+                        });
+                    } else {
+                        $('#carModel').empty();
+                    }
+                });
+            });
+        </script>
+
+
 @endsection

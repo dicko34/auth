@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Site;
 
 use App\Models\Cars;
+use App\Models\CarCompanies;
+use App\Models\CarModels;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -50,4 +52,30 @@ class CarController extends Controller
     {
         return view('vendor.choseAdd');
     }
+
+    public function getCarCompanies()
+    {
+        $carCompanies = carCompanies::all();
+
+        return view('vendor.cars.add', compact('carCompanies'));
+    }
+
+    public function getCarModels($carCompany)
+    {
+        try {
+            // Query the database to retrieve car models for the selected car company
+            $carModels = CarModels::where('car_company_name', $carCompany)->pluck('model_name', 'id');
+    
+            // Return the car models as JSON
+            return response()->json($carModels);
+        } catch (\Exception $e) {
+            // Log the exception for debugging
+            \Log::error($e->getMessage());
+    
+            // Return an error response with a 500 status code
+            return response()->json(['error' => 'An error occurred'], 500);
+        }
+    }
+    
+
 }

@@ -49,6 +49,9 @@ Route::any('/cars', 'Site\CarController@index')->name('car.index');
 Route::any('/cars/search', 'Site\CarController@search')->name('car.search');
 Route::any('/cars/product', 'Site\CarController@product')->name('car.product');
 Route::any('/cars/add', 'Site\CarController@add')->name('car.add');
+Route::get('/cars/add', 'Site\CarController@getCarCompanies');
+Route::get('get-car-models/{carCompany}', 'Site\CarController@getCarModels');
+
 Route::any('/cars/store', 'Vendor\CarController@store')->name('vendor.cars.store');
 Route::any('/choseAdd', 'Site\CarController@choseAdd')->name('choseAdd');
 
