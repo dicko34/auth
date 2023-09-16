@@ -20,13 +20,13 @@ class RedirectIfAuthenticated
         if ($guard == "admin" && Auth::guard($guard)->check()) {
             return redirect()->route('admin.dashboard');
         }
-        if ($guard == "users" && Auth::guard($guard)->check()) {
-            return redirect()->route('/');
-        }
+        if ($guard == "user" && Auth::guard($guard)->check()) {
+            return redirect()->route('home');
+        } 
 
         if (Auth::guard($guard)->check()) {
             return redirect()->route('home');
-        }
+        } 
 
         return $next($request);
     }

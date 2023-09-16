@@ -11,7 +11,7 @@ class LandsController extends Controller
     use Traits\SimilarTrait;
     public function index()
     {
-        $lands =Land::all();
+        $lands =Land::paginate(6);
         return view('vendor.lands.index',compact('lands'));
     }
 
@@ -22,7 +22,7 @@ class LandsController extends Controller
 
     public function product(Request $request)
     {
-        $lands = Land::all();
+        $lands = Land::paginate(6);
         $land = Land::find($request->land);
         $similar = $this->similar($lands, $land, ['brief' => 30,'area'=>70]);
         return view('vendor.lands.details',compact('lands','land','similar'));

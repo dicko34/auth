@@ -65,20 +65,6 @@
 
                             <div class="col-4">
                                 <div class="form-group row">
-                                    <label class="col-sm-4 col-form-label">من سنة</label>
-                                    <div class="col-12 m-0 p-0">
-                                        <select name="company" class="form-control">
-                                            <option value="الكل">الكل</option>
-                                            @foreach($cars->unique('company') as $car)
-                                            <option value="{{$car->company}}">{{$car->company}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="form-group row">
                                     <label class="col-sm-4 col-form-label">الي سنة</label>
                                     <div class="col-12 m-0 p-0">
                                         <select class="form-control">
@@ -220,21 +206,7 @@
                         @endforeach
 
                     </div>
-                    <nav aria-label="..." class="">
-                        <ul class="pagination">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1">Previous</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item active">
-                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                            </li>
-                        </ul>
-                    </nav>
+                    {{ $cars_show->links('vendor.paginate') }}
                 </div>
             </div>
         </div>

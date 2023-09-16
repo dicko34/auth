@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
+use App\Rules\AdvertiserInfo;
 
 class CarController extends Controller
 {
@@ -20,7 +21,7 @@ class CarController extends Controller
     {
         $validate = $request->validate([
             'model' =>  'required|max:30',
-            'company' =>  'required|max:30',
+            'company' =>  'max:30',
             'reset_model' =>  'required|max:20',
             'model_year' =>  'required|max:20',
             'car_color' =>  'required|max:20',
@@ -43,18 +44,34 @@ class CarController extends Controller
             'description' =>  'required|max:600',
             'img'=> 'required',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'advertiser_name' => 'required|max:30',
-            'phone_number' =>  'required|max:20',
-            'mobile' => 'required|max:20',
-            'email' =>  'required|email',
-            'city' =>  'required|max:20',
+            'advertiser_name' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'phone_number' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'mobile' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'email' =>  [
+                New AdvertiserInfo(), 'max:20','email'
+            ],
+            'city' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
         ]);
+        if($request->user()) {
+            $credentilas = $request->user();
+            $validate["advertiser_name"] = $credentilas->name;
+            $validate["phone_number"] = $credentilas->phone;
+            $validate["mobile"] = null;
+            $validate["email"] = $credentilas->email;
+        }
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
             $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
             $file_image->move(public_path('assets/site/images/cars'), $imageName); // move the new img 
             array_push($validate['img'],$imageName); // store image name to db
-            echo $file_image."jk";
 
         }
         $validate['img'] = implode(',',$validate['img']);

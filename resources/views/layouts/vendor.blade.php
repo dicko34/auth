@@ -142,7 +142,7 @@
                             اتصل بنا
                         </a>
                     </div>
-                    @guest("user")
+                    @guest
                     <div class="dropdown d-inline-block ">
                         <a href="{{ route('login') }}" class="btn header-item  waves-effect mt-3">
                             <i class="fa fa-sign-in-alt"></i>
@@ -150,12 +150,18 @@
                         </a>
                     </div>
                     @endguest
-                    @if(Auth::guard('web')->check())
-                    ssssssss
-                    @endif
 
-                    @if(Auth::guard('user')->check())
-                    ssssssss
+                    @if(Auth::guard()->check())
+                    <div class="dropdown d-inline-block ">
+                        <form method="POST" action="{{ route('logout') }}" >
+                            @csrf
+                            <button  class="btn header-item  waves-effect mt-3">
+                            <i class="fa fa-sign-in-alt"></i>
+                            تسجيل الخروج
+                            </button>
+                        </form>
+                        
+                    </div>
                     @endif
                 </div>
             </div>

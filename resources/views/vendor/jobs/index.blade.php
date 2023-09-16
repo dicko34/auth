@@ -128,7 +128,7 @@
                                         </td>
                                         <th>
                                             <a href="{{ ('job/product/'.$job->id) }}">
-                                                مطلوب عدة تخصصات سكرتيره و مديره مبيعات و محاسبة
+                                                مطلوب {{$job->specialization}}
                                             </a>
                                         </th>
                                         <td>
@@ -142,21 +142,7 @@
                         </table>
                     </div>
                 </div>
-                <nav aria-label="..." class="w-100 m-auto">
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Previous</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active">
-                            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
+                {{ $jobs->links('vendor.paginate') }}
             </div>
         </div>
     </div>
@@ -178,7 +164,7 @@
                                     <div class="overlay-container">
                                         <img src="{{asset('assets/site/images/jobs/'.explode(',',$job->img)[0])}}" alt="img" class="gallery-thumb-img m-0" style="height: 130px; width:100%">
                                         <div class="project-item-overlay text-right">
-                                            <h4>السيارات</h4>
+                                            <h4>وظائف</h4>
                                             <p>
                                                 <img src="{{asset('assets/site/images/jobs/'.explode(',',$job->img)[0])}}" alt="user" class="avatar-xs rounded-circle">
                                                 <span class="ml-2">{{$job->advertiser_name}}</span>

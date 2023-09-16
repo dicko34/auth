@@ -43,6 +43,13 @@ class HomeController extends Controller
             'mobile' => 'required|max:20',
             'email' =>  'required|email',
         ]);
+        if($request->user()) {
+            $credentilas = $request->user();
+            $validate["advertiser_name"] = $credentilas->name;
+            $validate["phone_number"] = $credentilas->phone;
+            $validate["mobile"] = null;
+            $validate["email"] = $credentilas->email;
+        }
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
             $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();

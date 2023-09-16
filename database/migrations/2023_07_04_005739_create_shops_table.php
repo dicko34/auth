@@ -24,8 +24,8 @@ return new class extends Migration
             $table->string('address');
             $table->string('ad_duration_per_day');
             $table->string('advertiser_name');
-             $table->string('phone_number');
-            $table->string('mobile');
+            $table->string('phone_number');
+            $table->string('mobile')->nullable();
             $table->string('email');
             $table->enum('state',['pinned','refused','allowed']);
             $table->timestamps();

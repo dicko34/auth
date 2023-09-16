@@ -3,15 +3,17 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use App\Models\Job;
 use App\Models\Cars;
 use App\Models\Home;
 use App\Models\Land;
 use App\Models\Shop;
+use App\Models\User;
 use App\Models\Mobile;
 use App\Models\General;
 use Illuminate\Database\Seeder;
-use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Sequence;
 
 class DatabaseSeeder extends Seeder
 {
@@ -44,5 +46,6 @@ class DatabaseSeeder extends Seeder
         User::factory()
         ->count(1)
         ->create();
+       $this->call([CarCompaniesSeeder::class,CarModelsSeeder::class]);
     }
 }

@@ -16,45 +16,40 @@ use Illuminate\Support\Facades\Route;
 
 
 //Auth::routes();
-
-Route::get('/','HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->middleware('verified')->name('home');
 
 // Vendor routes
 
-Route::prefix('vendor')->group(function(){
+Route::prefix('vendor')->group(function () {
     Route::get('/', 'Users\Vendor\VendorController@index')->name('vendor.dashboard');
     Route::any('/gallery/{id}', 'Users\Vendor\VendorController@gallery')->name('vendor.gallery');
-
-
-   
-
 });
+
 Route::group([
     'as' => 'vendor.',
     'namespace' => 'Vendor',
-], function(){
+], function () {
 
-    Route::post('cars','CarController@store')->name('cars.store');
-    
-    Route::post('generals','GeneralController@store')->name('generals.store');
+    Route::post('cars', 'CarController@store')->name('cars.store');
 
-    Route::post('homes','HomeController@store')->name('homes.store');
+    Route::post('generals', 'GeneralController@store')->name('generals.store');
 
-    Route::post('jobs','JobController@store')->name('jobs.store');
-    
-    Route::post('lands','LandController@store')->name('lands.store');
+    Route::post('homes', 'HomeController@store')->name('homes.store');
 
-    Route::post('mobiles','MobileController@store')->name('mobiles.store');
+    Route::post('jobs', 'JobController@store')->name('jobs.store');
 
-    Route::post('shopes','ShopController@store')->name('shopes.store');
+    Route::post('lands', 'LandController@store')->name('lands.store');
+
+    Route::post('mobiles', 'MobileController@store')->name('mobiles.store');
+
+    Route::post('shopes', 'ShopController@store')->name('shopes.store');
 
     Route::resource('contacts', 'ContactController');
-
-});
+})->middleware('verified');
 //Auth::routes();
 Route::get('/login', function () {
     return view('vendor.login');
-})->name('login')->middleware('auth:vendor');
+})->name('login');
 
 Route::get('/register', function () {
     return view('vendor.register');
@@ -65,42 +60,42 @@ Route::get('/contact', function () {
 })->name('contact');
 
 
-Route::any('/cars', 'Site\CarController@index')->name('car.index');
+Route::get('/cars', 'Site\CarController@index')->name('car.index');
 Route::any('/cars/search', 'Site\CarController@search')->name('cars.search');
-Route::any('/car/product/{car}', 'Site\CarController@product')->name('car.product');
-Route::any('/car/add', 'Site\CarController@add')->name('car.add');
+Route::get('/car/product/{car}', 'Site\CarController@product')->name('car.product');
+Route::get('/car/add', 'Site\CarController@add')->name('car.add');
+Route::get('get-car-models/{carCompany}', 'Site\CarController@getCarModels');
 
-Route::any('/choseAdd', 'Site\CarController@choseAdd')->name('choseAdd');
+Route::get('/choseAdd', 'Site\CarController@choseAdd')->name('choseAdd');
 
-Route::any('/homes', 'Site\HomeController@index')->name('home.index');
+Route::get('/homes', 'Site\HomeController@index')->name('home.index');
 Route::any('/homes/search', 'Site\HomeController@search')->name('homes.search');
-Route::any('/home/product/{home}', 'Site\HomeController@product')->name('home.product');
-Route::any('/home/add', 'Site\HomeController@add')->name('home.add');
+Route::get('/home/product/{home}', 'Site\HomeController@product')->name('home.product');
+Route::get('/home/add', 'Site\HomeController@add')->name('home.add');
 
 
-Route::any('/lands', 'Site\LandsController@index')->name('land.index');
+Route::get('/lands', 'Site\LandsController@index')->name('land.index');
 Route::any('/lands/search', 'Site\LandsController@search')->name('lands.search');
-Route::any('/land/product/{land}', 'Site\LandsController@product')->name('land.product');
-Route::any('/land/add', 'Site\LandsController@add')->name('land.add');
+Route::get('/land/product/{land}', 'Site\LandsController@product')->name('land.product');
+Route::get('/land/add', 'Site\LandsController@add')->name('land.add');
 
-Route::any('/jobs', 'Site\JobsController@index')->name('job.index');
+Route::get('/jobs', 'Site\JobsController@index')->name('job.index');
 Route::any('/jobs/search', 'Site\JobsController@search')->name('jobs.search');
-Route::any('/job/product/{job}', 'Site\JobsController@product')->name('job.product');
-Route::any('/job/add', 'Site\JobsController@add')->name('job.add');
+Route::get('/job/product/{job}', 'Site\JobsController@product')->name('job.product');
+Route::get('/job/add', 'Site\JobsController@add')->name('job.add');
 
-Route::any('/mobiles', 'Site\MobilesController@index')->name('mobile.index');
+Route::get('/mobiles', 'Site\MobilesController@index')->name('mobile.index');
 Route::any('/mobiles/search', 'Site\MobilesController@search')->name('mobiles.search');
-Route::any('/mobile/product/{mobile}', 'Site\MobilesController@product')->name('mobile.product');
-Route::any('/mobile/add', 'Site\MobilesController@add')->name('mobile.add');
+Route::get('/mobile/product/{mobile}', 'Site\MobilesController@product')->name('mobile.product');
+Route::get('/mobile/add', 'Site\MobilesController@add')->name('mobile.add');
 
-Route::any('/generals', 'Site\GeneralController@index')->name('general.index');
+Route::get('/generals', 'Site\GeneralController@index')->name('general.index');
 Route::any('/generals/search', 'Site\GeneralController@search')->name('generals.search');
-Route::any('/general/product/{general}', 'Site\GeneralController@product')->name('general.product');
-Route::any('/general/add', 'Site\GeneralController@add')->name('general.add');
+Route::get('/general/product/{general}', 'Site\GeneralController@product')->name('general.product');
+Route::get('/general/add', 'Site\GeneralController@add')->name('general.add');
 
-Route::any('/shopes', 'Site\ShopController@index')->name('shop.index');
+Route::get('/shopes', 'Site\ShopController@index')->name('shop.index');
 Route::any('/shopes/search', 'Site\ShopController@search')->name('shopes.search');
-Route::any('/shop/product/{shop}', 'Site\ShopController@product')->name('shop.product');
-Route::any('/shop/add', 'Site\ShopController@add')->name('shop.add');
-
-Auth::routes();
+Route::get('/shop/product/{shop}', 'Site\ShopController@product')->name('shop.product');
+Route::get('/shop/add', 'Site\ShopController@add')->name('shop.add');
+Auth::routes(['verify' => true]);
