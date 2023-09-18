@@ -80,11 +80,9 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">من سنة</label>
                                         <div class="col-12 m-0 p-0">
-                                            <select name="rooms_number" class="form-control">
+                                            <select name="" class="form-control">
                                             <option value="الكل">الكل</option>
-                                            @foreach($homes->unique('rooms_number') as $home)
-                                                    <option value="{{$home->rooms_number}}">{{$home->rooms_number}}</option>
-                                                @endforeach
+                                            
                                             </select>
                                         </div>
                                     </div>
