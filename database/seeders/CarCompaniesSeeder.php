@@ -61,4 +61,6 @@ class CarCompaniesSeeder extends Seeder
         CarCompanies::insert($carCompanies);
     }
     
+
 }
+

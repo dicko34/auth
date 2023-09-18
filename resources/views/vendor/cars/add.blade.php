@@ -23,14 +23,16 @@
                         <td>موديل السيارة <span class="text-danger" style="">*</span></td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <select name="carCompany" class="form-select form-select-sm model-type-car" id="carCompany"
+
+                                <select name="company" class="form-select form-select-sm model-type-car" id="carCompany"
                                     required="">
                                     <option value=""selected disabled> الشركات</option>
                                         @foreach ($carCompanies as $carCompany)
                                             <option value="{{ $carCompany->name}}">{{ $carCompany->name }}</option>
                                         @endforeach
                                 </select>
-                                <select name="CarModel" class="form-select form-select-sm model-type-car" id="carModel"
+
+                                <select name="model" class="form-select form-select-sm model-type-car" id="carModel"
                                     required="">
                                     <option value=""selected disabled> الموديل</option>
                                 </select>
@@ -45,7 +47,6 @@
                             </div>
                         </td>
                     </tr>
-
                     <tr>
                         <td>باقي الموديل </td>
                         <td>
@@ -671,8 +672,8 @@
             </table>
 
         </div>
-
         <div class="add-section w-75 mx-auto bg-white">
+            @if (!auth()->user())
             <div class="add-section-title btn w-100 bg-primary p-1 px-3 mb-3">
                 <h5 class="text-white ml-2 font-weight-bold text-left">معلومات المُعلن</h5>
             </div>
@@ -718,11 +719,11 @@
                     </tr>
                     <tr>
                         <td>
-                            موبايل <span class="text-danger" style="font-weight: 700;">*</span>
+                            موبايل <span class="text-danger" style="font-weight: 700;"></span>
                         </td>
                         <td>
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" required="" name="mobile"
+                                <input type="text" class="form-control form-control-sm" name="mobile"
                                     placeholder="رقم الموبايل" aria-label="رقم الهاتف مع المقدمة">
                             </div>
                         </td>
@@ -734,6 +735,19 @@
                     </tr>
                 </tbody>
             </table>
+            @else 
+
+            <table class="table table-bordered table-striped mb-0 bg-white">
+                <tbody>
+                    <tr>
+                        <td colspan="100%" class="text-center">
+                            <button type="submit" class="btn btn-secondary" id="submit-all">اضف الأعلان</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            @endif
         </div>
     </form>
     <style>
@@ -761,30 +775,32 @@
     </style>
 
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('#carCompany').change(function () {
-                    
-                    var carCompany = encodeURIComponent($(this).val());
-                    
-                    if (carCompany) {
-                        $.ajax({
-                            type: "GET",
-                            url: "/get-car-models/" + carCompany,
-                            success: function (data) {
-                                $('#carModel').empty();
-                                $.each(data, function (id, model) {
-                                    $('#carModel').append(new Option(model, id));
-                                });
-                            }
-                        });
-                    } else {
-                        $('#carModel').empty();
-                    }
-                });
-            });
-        </script>
 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+          $(document).ready(function () {
+              $('#carCompany').change(function () {
+                  
+                  var carCompany = encodeURIComponent($(this).val());
+                  
+                  if (carCompany) {
+                      $.ajax({
+                          type: "GET",
+                          url: "/get-car-models/" + carCompany,
+                          success: function (data) {
+                              $('#carModel').empty();
+                              $.each(data, function (id, model) {
+                                  $('#carModel').append(new Option(model, id));
+                              });
+                          }
+                      });
+                  } else {
+                      $('#carModel').empty();
+                  }
+              });
+          });
+      </script>
 
 @endsection

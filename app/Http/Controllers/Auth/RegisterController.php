@@ -7,9 +7,12 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Foundation\Auth\VerifiesEmails;
+use Illuminate\Support\Facades\Mail;
 
 class RegisterController extends Controller
 {
@@ -24,7 +27,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    use RegistersUsers, VerifiesEmails;
 
     /**
      * Where to redirect users after registration.
@@ -46,7 +49,7 @@ class RegisterController extends Controller
      * @return \App\Models\User
      */
 
-    protected function register(Request $request)
+    protected function register(Request $request, User $user)
     {
         $validate = $request->validate([
             'name' => 'required|string|max:255',
@@ -60,10 +63,10 @@ class RegisterController extends Controller
 
         $validate['img'] = [];
         $validate['password'] =  Hash::make($request->password);
-         $imageName =  Str::of(Carbon::now()->millisecond() . $request->id)->pipe('md5') . $request->file('img')->getClientOriginalName();
-         $request->file('img')->move(public_path('assets/site/images/users'), $imageName); // move the new img 
-         $validate['img'] = $imageName;
-        //return dd($request->file('img'),$validate);
-        return User::create($validate);
+        $imageName =  Str::of(Carbon::now()->millisecond() . $request->id)->pipe('md5') . $request->file('img')->getClientOriginalName();
+        $request->file('img')->move(public_path('assets/site/images/users'), $imageName); // move the new img 
+        $validate['img'] = $imageName;
+        User::create($validate);
+        return redirect()->route('login');
     }
 }

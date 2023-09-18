@@ -13,20 +13,7 @@
                 <form method="POST" action="{{ route('generals.search') }}">
                     @csrf
                     <div class="row m-3">
-                        <div class="col-sm-4">
-                            <div class="form-group row">
-                                <label class="col-sm-4 col-form-label">المدينة</label>
-                                <div class="col-sm-8">
-                                    <select name="advertiser_city" class="form-control">
-                                        <option>الكل</option>
-                                        @foreach ($generals->unique('advertiser_city') as $general)
-                                            <option value="{{ $general->advertiser_city }}">{{ $general->advertiser_city }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
+                        
 
                         <div class="col-sm-4">
                             <div class="form-group row">

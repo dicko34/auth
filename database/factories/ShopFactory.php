@@ -31,6 +31,7 @@ class ShopFactory extends Factory
             'phone_number' =>  \fake()->e164PhoneNumber(),
             'mobile' => \fake()->e164PhoneNumber(),
             'email' =>  \fake()->email(),
+            'state' => \fake()->randomElement(['pinned','refused','allowed']),
         ];
     }
 }

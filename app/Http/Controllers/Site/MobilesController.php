@@ -11,20 +11,21 @@ class MobilesController extends Controller
     use Traits\SimilarTrait;
     public function index()
     {
-        $mobiles =Mobile::all();
+        $mobiles =Mobile::paginate(6);
         return view('vendor.mobiles.index',compact('mobiles'));
     }
 
     public function search(Request $request)
     {
-        $mobiles = Mobile::all();
-         $mobiles_show = Mobile::where(
+        $mobiles = Mobile::paginate(6);
+        $mobiles_show = Mobile::where(
             [
-                ['company',$request->company == 'الكل'? '!=': '='  ,$request->company == 'الكل' ? null : $request->company ],
                 ['device_status',$request->device_status == 'الكل'? '!=': '='  ,$request->device_status == 'الكل' ? null : $request->device_status ],
-                ['advertiser_city',$request->advertiser_city == 'الكل'? '!=': '='  ,$request->advertiser_city == 'الكل' ? null : $request->advertiser_city ],
            ]
         )->whereBetween('price',[(int) $request->price_min,(int) $request->price_max])->get();
+        if (count($mobiles_show) < 1) {
+            $mobiles_show =  Mobile::paginate(6);
+        }
         return  view('vendor.mobiles.search',compact('mobiles','mobile','mobile'));
     }
 

@@ -11,7 +11,6 @@
                     <h3 class="mb-4 m-auto"><i class="mbri-mobile2 mr-2"></i> اعلانات الأجهزة الذكية - موبايل </h3>
                 </div>
                 <form method="POST" action="{{ route("mobiles.search") }}">
-                        @method('put')
                         @csrf
                         @if ($errors->any())
                         @foreach ($errors->all() as $error)

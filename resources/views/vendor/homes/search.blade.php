@@ -132,7 +132,7 @@
         <div class="card w-100">
             <div class="body-card m-3">
                 <div class="row">
-                    <h3 class="mb-4 col-6 btn btn-primary w-md waves-effect waves-light"><i class="mdi mdi-home mr-2"></i>800 شقة</h3>
+                    <h3 class="mb-4 col-6 btn btn-primary w-md waves-effect waves-light"><i class="mdi mdi-home mr-2"></i>{{$homes->total()}} شقة</h3>
                     <div class="col-6 text-right">
                         <a class="btn btn-primary w-md waves-effect waves-light w-100" href="{{ route("home.add") }}">أضافة أعلان هنا</a>
                     </div>
@@ -171,21 +171,7 @@
                     @endforeach
 
                 </div>
-                <nav aria-label="..." class="">
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Previous</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active">
-                            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
+                {{ $homes_show->links('vendor.paginate') }}
             </div>
         </div>
     </div>

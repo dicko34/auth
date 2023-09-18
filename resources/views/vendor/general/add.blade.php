@@ -189,7 +189,7 @@
                 </tbody>
             </table>
         </div>
-
+        @if (!auth()->user())
         <div class="add-section w-75 mx-auto bg-white">
             <div class="add-section-title btn w-100 bg-primary p-1 px-3 mb-3">
                 <h5 class="text-white ml-2 font-weight-bold text-left">معلومات المُعلن</h5>
@@ -253,6 +253,7 @@
                 </tbody>
             </table>
         </div>
+        @endif
     </form>
     <style>
         .add-section * {

@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\VerifiesEmails;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 
@@ -23,7 +24,7 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesUsers , VerifiesEmails;
 
     /**
      * Where to redirect users after login.
@@ -39,7 +40,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest:user')->except('logout');
         
     }
     public function showLoginForm()
@@ -52,12 +53,22 @@ class LoginController extends Controller
         // Validate form data
         {
             $credentials = $request->validate([
-                'email' => ['required', 'email'],
-                'password' => ['required'],
+                'email' => 'required|email',
+                'password' => 'required',
             ]);
      
-            if (Auth::guard('user')->attempt($credentials)) {     
-                return redirect()->intended('/');
+            if (Auth::guard('user')->attempt($credentials)) { 
+                if ($request->user()->hasVerifiedEmail()) {
+                    return $request->wantsJson()
+                                ? new JsonResponse([], 204)
+                                : redirect($this->redirectPath());
+                }
+        
+                $request->user()->sendEmailVerificationNotification();
+        
+                return $request->wantsJson()
+                            ? new JsonResponse([], 202)
+                            : route('verification.notice', ['sent' => true]);
             }
      
             return back()->withErrors([

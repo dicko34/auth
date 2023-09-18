@@ -22,9 +22,8 @@ return new class extends Migration
             $table->string('city');
             $table->string('advertiser_name');
             $table->string('phone_number');
-            $table->string('mobile');
+            $table->string('mobile')->nullable();
             $table->string('email');
-            // $table->string('advertiser_address');
             $table->enum('state',['pinned','refused','allowed']);
             $table->timestamps();
         });
