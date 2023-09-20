@@ -91,10 +91,10 @@ Route::any('/mobiles/search', 'Site\MobilesController@search')->name('mobiles.se
 Route::get('/mobile/product/{mobile}', 'Site\MobilesController@product')->name('mobile.product');
 Route::get('/mobile/add', 'Site\MobilesController@add')->name('mobile.add');
 
-Route::get('/generals', 'Site\GeneralController@index')->name('general.index');
-Route::any('/generals/search', 'Site\GeneralController@search')->name('generals.search');
-Route::get('/general/product/{general}', 'Site\GeneralController@product')->name('general.product');
-Route::get('/general/add', 'Site\GeneralController@add')->name('general.add');
+Route::get('/generals', 'Site\generalController@index')->name('general.index');
+Route::any('/generals/search', 'Site\generalController@search')->name('generals.search');
+Route::get('/general/product/{general}', 'Site\generalController@product')->name('general.product');
+Route::get('/general/add', 'Site\generalController@add')->name('general.add');
 
 Route::get('/shopes', 'Site\ShopController@index')->name('shop.index');
 Route::any('/shopes/search', 'Site\ShopController@search')->name('shopes.search');

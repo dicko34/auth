@@ -22,7 +22,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route("homes.index") }}">
+                        <a class="nav-link" href="{{ route("home.index") }}">
                             <i class="mdi mdi-home mr-2"></i> شقق
                         </a> 
                     </li>
@@ -34,19 +34,19 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route("lands.index") }}">
+                        <a class="nav-link" href="{{ route("land.index") }}">
                             <i class="mdi mdi-view-dashboard mr-2"></i> اراضي
                         </a> 
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route("jobs.index") }}">
+                        <a class="nav-link" href="{{ route("job.index") }}">
                             <i class=" fas fa-address-book mr-2"></i> توظيف
                         </a> 
                     </li> 
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route("mobiles.index") }}">
+                        <a class="nav-link" href="{{ route("mobile.index") }}">
                             <i class="mbri-mobile2 mr-2"></i>الاجهزة الذكية
                         </a> 
                     </li>
