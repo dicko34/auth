@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Site;
 
 use App\Models\Cars;
 
-
 use App\Models\CarCompanies;
 use App\Models\CarModels;
 use Illuminate\Http\Request;
@@ -64,10 +63,11 @@ class CarController extends Controller
 
     public function getCarCompanies()
     {
-        $carCompanies = carCompanies::all();
-
-        return view('vendor.cars.add', compact('carCompanies'));
+        $carCompanies = CarCompanies::all(); // Assuming you have a CarCompany model
+        // Share the $carCompanies data with all views
+        view()->share('carCompanies', $carCompanies);
     }
+
 
     public function getCarModels($carCompany)
     {
