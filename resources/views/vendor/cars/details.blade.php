@@ -363,22 +363,6 @@
                                                 <li style="display: list-item !important; ">{{ $car->speedmotors }}</li>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <li style="display: list-item !important; ">بيع او بدل </li>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <li style="display: list-item !important; ">امكانية التقسيط </li>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <li style="display: list-item !important; ">{{ $car->advertiser_name }}
-                                                    {{ $car->phone_number }}</li>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -504,7 +488,7 @@
                     </div>
                     <div class="col-md-4 col-xl-3 border-right border-md-top d-none d-lg-block d-xl-block"
                         style="min-height: 230px;background-color: #fff;">
-                        <div class="row text-center">
+                        <div class="row text-center px-0">
                             <div class="col-md-12 mt-5">
                                 <div
                                     style="
@@ -522,7 +506,7 @@
                         <div class="col-md-12 text-center mt-1">
                             <b style="color: #ff9800 ;font-size: 20px;" class="text-dark">{{ $car->advertiser_name }}</b>
                         </div>
-                        <div class="col-md-12 text-center mt-3">
+                        <div class="col-md-12 mt-3">
                             <table class="table table-sm">
                                 <tbody>
                                     <tr>
