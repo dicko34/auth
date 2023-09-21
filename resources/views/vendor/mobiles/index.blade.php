@@ -7,7 +7,7 @@
 <div class="row">
     <div class="card w-100">
         <div class="body-card m-2">
-            <form method="POST" action="http://127.0.0.1:8000/mobiles/search">
+            <form method="POST" action="{{route('mobiles.search')}}">
                 <input type="hidden" name="_token" value="77oiXIoX8qobY8K1FEqLOmNWutRIb9lTHcvckJwD">
                 <div class="row m-1">
                     <div class="col-4 col-sm-4">

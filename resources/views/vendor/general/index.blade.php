@@ -9,53 +9,54 @@
     <div class="col-lg-9 col-12">
         <div class="row">
             <div class="card w-100">
-                <form method="POST" action="{{ route("car.search") }}">
+                <form method="POST" action="{{ route("generals.search") }}">
                     @csrf
                     <div class="row m-2 mt-3">
                         <div class="col-4 col-sm-4">
                             <div class="form-group row">
                                 <div class="col-12 m-0 p-0">
-                                    <select class="form-control">
-                                        <option value="">الأصناف</option>
-                                        <option value="1">اثاث منزلي و مكتبي</option>
-                                        <option value="2">اجهزة الكترونية</option>
-                                        <option value="3">اجهزة انذار ومراقبة</option>
-                                        <option value="4">اجهزة طبية</option>
-                                        <option value="5">اجهزة كهربائية</option>
-                                        <option value="6">احذية</option>
-                                        <option value="7">ادوات رياضية</option>
-                                        <option value="8">ادوات صحية</option>
-                                        <option value="9">ادوات منزلية</option>
-                                        <option value="10">ازهار واشتال ونباتات</option>
-                                        <option value="11">الات ومعدات</option>
-                                        <option value="12">العاب</option>
-                                        <option value="13">برامج كمبيوتر</option>
-                                        <option value="14">تجهيزات مكتبية</option>
-                                        <option value="15">تحف وهدايا</option>
-                                        <option value="16">تكييف وتبريد</option>
-                                        <option value="21">خلويات ولوازمها</option>
-                                        <option value="25">ديكور</option>
-                                        <option value="26">سجاد وموكيت</option>
-                                        <option value="29">شحن وتخليص جمركي</option>
-                                        <option value="30">شروات وصفقات تجارية</option>
-                                        <option value="31">عطور</option>
-                                        <option value="32">قرطاسية</option>
-                                        <option value="34">كمبيوتر ومستلزماته</option>
-                                        <option value="35">قطع سيارات</option>
-                                        <option value="36">مجوهرات</option>
-                                        <option value="37">معدات ثقيلة</option>
-                                        <option value="38">مفروشات</option>
-                                        <option value="39">ملابس</option>
-                                        <option value="40">مواد تجميل</option>
-                                        <option value="41">مواد غذائية</option>
-                                        <option value="42">نظارات</option>
-                                        <option value="43">آلات موسيقية</option>
-                                        <option value="44">اتصالات</option>
-                                        <option value="45">اكسسوارات ونثريات</option>
-                                        <option value="46">دورات تعليمية</option>
-                                        <option value="47">سيارات وتوابعها</option>
-                                        <option value="49">حيوانات</option>
-                                        <option value="48">خدمات عامة</option>
+                                    <select name="category" class="form-control">
+                                        <option selected disabeled>الأصناف</option>
+                                        <option value="اثاث منزلي و مكتبي">اثاث منزلي و مكتبي</option>
+                                        <option value="اجهزة الكترونية">اجهزة الكترونية</option>
+                                        <option value="اجهزة انذار ومراقبة">اجهزة انذار ومراقبة</option>
+                                        <option value="اجهزة طبية">اجهزة طبية</option>
+                                        <option value="اجهزة كهربائية">اجهزة كهربائية</option>
+                                        <option value="احذية">احذية</option>
+                                        <option value="ادوات رياضية">ادوات رياضية</option>
+                                        <option value="ادوات صحية">ادوات صحية</option>
+                                        <option value="ادوات منزلية">ادوات منزلية</option>
+                                        <option value="ازهار واشتال ونباتات">ازهار واشتال ونباتات</option>
+                                        <option value="الات ومعدات">الات ومعدات</option>
+                                        <option value="العاب">العاب</option>
+                                        <option value="برامج كمبيوتر">برامج كمبيوتر</option>
+                                        <option value="تجهيزات مكتبية">تجهيزات مكتبية</option>
+                                        <option value="تحف وهدايا">تحف وهدايا</option>
+                                        <option value="تكييف وتبريد">تكييف وتبريد</option>
+                                        <option value="خلويات ولوازمها">خلويات ولوازمها</option>
+                                        <option value="ديكور">ديكور</option>
+                                        <option value="سجاد وموكيت">سجاد وموكيت</option>
+                                        <option value="شحن وتخليص جمركي">شحن وتخليص جمركي</option>
+                                        <option value="شروات وصفقات تجارية">شروات وصفقات تجارية</option>
+                                        <option value="عطور">عطور</option>
+                                        <option value="قرطاسية">قرطاسية</option>
+                                        <option value="كمبيوتر ومستلزماته">كمبيوتر ومستلزماته</option>
+                                        <option value="قطع سيارات">قطع سيارات</option>
+                                        <option value="مجوهرات">مجوهرات</option>
+                                        <option value="معدات ثقيلة">معدات ثقيلة</option>
+                                        <option value="مفروشات">مفروشات</option>
+                                        <option value="ملابس">ملابس</option>
+                                        <option value="مواد تجميل">مواد تجميل</option>
+                                        <option value="مواد غذائية">مواد غذائية</option>
+                                        <option value="نظارات">نظارات</option>
+                                        <option value="آلات موسيقية">آلات موسيقية</option>
+                                        <option value="اتصالات">اتصالات</option>
+                                        <option value="اكسسوارات ونثريات">اكسسوارات ونثريات</option>
+                                        <option value="دورات تعليمية">دورات تعليمية</option>
+                                        <option value="سيارات وتوابعها">سيارات وتوابعها</option>
+                                        <option value="حيوانات">حيوانات</option>
+                                        <option value="خدمات عامة">خدمات عامة</option>
+
                                     </select>
                                 </div>
                             </div>
@@ -66,15 +67,15 @@
                         <div class="col-4 col-sm-4">
                             <div class="form-group row">
                                 <div class="col-12 m-0 p-0">
-                                    <input class="form-control" type="text" placeholder="مثال: التلفزيون">
+                                    <input name="address"class="form-control" type="text" placeholder="مثال: التلفزيون">
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-4 col-sm-4">
                             <div class="form-group row">
-                                <div class="col-12 m-0 p-0">
-                                    <select class="form-control">
+                                <div  class="col-12 m-0 p-0">
+                                    <select name="city" class="form-control">
                                         <option selected="" disabeled="">المحافظة</option>
                                         <option value="1">رام الله والبيرة </option>
                                         <option value="2">القدس </option>
@@ -108,50 +109,7 @@
             </div>
         </div>
 
-        {{-- <div class="row">
-        <div class="card w-100">
-            <div class="body-card m-5">
-                <div class="row">
-                    <h3 class="mb-4 col-6"><i class="fas fa-star mr-2"></i> الاعلانات المميزة </h3>
-                    <div class="col-6 text-right">
-                        <a href="{{ route('choseAdd') }}" class="btn btn-primary w-md waves-effect waves-light" >أضافة
-        أعلان هنا</a>
-    </div>
-</div>
-<div class="row">
-
-    @for ($i = 0; $i < 4; $i++) <div class="col-md-6 col-lg-6 col-xl-3">
-        <div class="card">
-            <a href="{{ asset('assets/admin/images/martina.jpg') }}" class="gallery-popup"
-                style="height: 230px; width:100%">
-                <div class="project-item">
-                    <div class="overlay-container">
-                        <img src="{{ asset('assets/admin/images/martina.jpg') }}" alt="img"
-                            class="gallery-thumb-img m-0" style="height: 230px; width:100%">
-                        <div class="project-item-overlay text-right">
-                            <h4>عقارات</h4>
-                            <p>
-                                <img src="{{ asset('assets/admin/images/martina.jpg') }}" alt="user"
-                                    class="avatar-xs rounded-circle">
-                                <span class="ml-2">مارتينا جرجس</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <div class="card-body">
-                <h4 class="card-title">شقق</h4>
-                <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م - فيصل بريك 0562700836
-                    وسط الخليل على بعد 570 متر من مستشفى الأهلي</p>
-            </div>
-        </div>
-</div>
-@endfor
-
-</div>
-</div>
-</div>
-</div> --}}
+        
 
 <div class="row">
     <div class="card w-100">
@@ -177,50 +135,39 @@
             margin-left: 00px;
             margin-right: 0px;">
 
-            @for ($i=0; $i < 8; $i++) <div class="col-6 col-xl-2 p-1">
+            @foreach ($generals as $general)
+            <div class="col-6 col-xl-2 p-1">
                 <div class="card annonce-item" style="border: 1px solid;border-color: #0000002b;border-radius: 5px;"">
-                            <a href=" {{ asset('/admin/images/general.jpg') }}" class="gallery-popup"
+                            <a href=" {{  asset('assets/site/images/general/' . explode(',', $general->img)[0])}}" class="gallery-popup"
                     style="height: 160px; width:100%">
                     <div class="project-item">
                         <div class="overlay-container">
-                            <img src="{{ asset('/admin/images/general.jpg') }}" alt="img" class=""
+                            <img src="{{ asset('assets/site/images/general/' . explode(',', $general->img)[0]) }}" alt="img" class=""
                                 style="height: 160px; width:100%">
                             <div class="project-item-overlay text-right">
-                                <h4>الإعلانات العامة</h4>
+                                <h4>{{$general->address}} </h4>
                                 <p>
-                                    <img src="{{ asset('/admin/images/general.jpg') }}" alt="user"
+                                    <img src="{{ asset('assets/site/images/general/' . explode(',', $general->img)[0]) }}" alt="user"
                                         class="avatar-xs rounded-circle">
-                                    <span class="ml-2">مارتينا جرجس</span>
+                                    <span class="ml-2">{{$general->advertiser_name}}</span>
                                 </p>
                             </div>
                         </div>
                     </div>
                     </a>
                     <div class="card-body">
-                        <h4 class="card-title">الإعلانات العامة</h4>
-                        <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م - فيصل بريك 0562700836
-                            وسط الخليل على بعد 570 متر من مستشفى الأهلي</p>
+                        <h4 class="card-title"> {{$general->address}}</h4>
+                        <p class="card-text">
+                            {{ $general->city }} {{ $general->address }} للبيع في
+                            {{ $general->model }} اعلان
+                        </p>
                     </div>
                 </div>
         </div>
-        @endfor
+        @endforeach
 
     </div>
-    <nav aria-label="..." class="">
-        <ul class="pagination">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">السابق</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item active">
-                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">التالي</a>
-            </li>
-        </ul>
-    </nav>
+    {{ $generals->links('vendor.paginate') }}
 </div>
 </div>
 </div>

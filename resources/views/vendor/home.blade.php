@@ -1,55 +1,17 @@
 ﻿@extends("layouts.vendor")
 @section('pageTitle', 'Koala Web Libraries')
 @section('styleChart')
-<link href="{{ asset('/admin/libs/c3/c3.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+<link href="{{ url('assets/admin/libs/c3/c3.min.css') }}"id="bootstrap-style"rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
-{{-- <div class="row">
-        <div class="w-100">
-            <div class="body-card m-5">
-
-                <h3 class="mb-4"><i class="fas fa-star mr-2"></i> الاعلانات المميزة </h3>
-                <div class="row">
-
-                    @for ($i=0; $i < 6; $i++)
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="card">
-                            <a href="{{ asset('/admin/images/martina.jpg') }}" class="gallery-popup" style="height:
-230px; width:100%">
-<div class="project-item">
-    <div class="overlay-container">
-        <img src="{{ asset('a/admin/images/martina.jpg') }}" alt="img" class="" style="height: 230px; width:100%">
-        <div class="project-item-overlay text-right">
-            <h4>عقارات</h4>
-            <p>
-                <img src="{{ asset('/admin/images/martina.jpg') }}" alt="user" class="avatar-xs rounded-circle">
-                <span class="ml-2">مارتينا جرجس</span>
-            </p>
-        </div>
-    </div>
-</div>
-</a>
-<div class="card-body">
-    <h4 class="card-title">شقق</h4>
-    <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م - فيصل بريك 0562700836
-        وسط الخليل على بعد 570 متر من مستشفى الأهلي</p>
-</div>
-</div>
-</div>
-@endfor
-
-</div>
-</div>
-</div>
-</div> --}}
 
 <div class="row main-section">
     <div class="w-100">
         <div class="card-header m-0 p-0 w-100 d-inline-flex" style="height:60px;background:#262726 ;">
 
             <div class="h-100 text-white px-2" style="width:65%">
-                <a href="/general" class="text-white">
+                <a href="{{route('general.index')}}" class="text-white">
                     <h3 class="mb-4"><i class="mdi mdi-view-module mr-2"></i> الإعلانات العامة </h3>
                 </a>
             </div>
@@ -68,42 +30,44 @@
         <div class="body-card m-3">
             <div class="row">
 
-                @for ($i=0; $i < 6; $i++) <div class="col-6 col-xl-2 p-1">
+                @foreach($generals as $general)
+                <div class="col-6 col-xl-2 p-1">
                     <div class="card annonce-item" style="border: 1px solid;border-color: #0000002b;border-radius: 5px;"">
-                            <a href=" {{ asset('/admin/images/general.jpg') }}" class="gallery-popup"
+                            <a href=" {{asset('assets/site/images/generals/'.$general->img)}}" class="gallery-popup"
                         style="height: 160px; width:100%">
                         <div class="project-item">
                             <div class="overlay-container">
-                                <img src="{{ asset('/admin/images/general.jpg') }}" alt="img" class=""
+                                <img src="{{asset('assets/site/images/generals/'.$general->img)}}" alt="img" class=""
                                     style="height: 160px; width:100%">
                                 <div class="project-item-overlay text-right">
-                                    <h4>الإعلانات العامة</h4>
+                                    <h4>{{$general->address}}</h4>
                                     <p>
-                                        <img src="{{ asset('/admin/images/general.jpg') }}" alt="user"
+                                        <img src="{{asset('assets/site/images/generals/'.$general->img)}}" alt="user"
                                             class="avatar-xs rounded-circle">
-                                        <span class="ml-2">مارتينا جرجس</span>
+                                        <span class="ml-2">advertiser_name</span>
                                     </p>
                                 </div>
                             </div>
                         </div>
                         </a>
                         <div class="card-body">
-                            <h4 class="card-title">الإعلانات العامة</h4>
-                            <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م - فيصل بريك 0562700836
-                                وسط الخليل على بعد 570 متر من مستشفى الأهلي</p>
+                            <h4 class="card-title"> {{$general->address}}</h4>
+                            <p class="card-text">{{$general->description}}</p>
                         </div>
                     </div>
-            </div>
-            @endfor
-            <div class="mx-auto" style="width:150px;">
-                <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
-                    style="height:33px;font-size: 11px;line-height:33px;">
-                    تصفح المزيد
-                </button>
+                </div>
+                @endforeach
+                @if(count($generals) > 6)
+                <div class="mx-auto" style="width:150px;">
+                    <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
+                        style="height:33px;font-size: 11px;line-height:33px;">
+                        تصفح المزيد
+                    </button>
+                </div>
+                @endif
             </div>
         </div>
     </div>
-</div>
 </div>
 
 <div class="row main-section">
@@ -132,40 +96,43 @@
 
             <div class="row">
 
-                @for ($i=0; $i < 6; $i++) <div class="col-6 col-xl-2 p-1 ">
+                @foreach ($cars as $car)
+                <div class="col-6 col-xl-2 p-1 ">
                     <div class="annonce-item" style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
-                        <a href="{{  asset('/admin/images/car.jpeg')  }}" class="gallery-popup"
+                        <a href="{{asset('/admin/images/'.$car->img)  }}" class="gallery-popup"
                             style="height: 160px; width:100%">
                             <div class="project-item">
                                 <div class="overlay-container">
                                     <img src="{{ asset('/admin/images/car.jpeg') }}" alt="img"
                                         style="height: 160px; width:100%">
                                     <div class="project-item-overlay text-right">
-                                        <h2>سيارات</h2>
+                                        <h2>{{$car->company. $car->model}}</h2>
                                         <p>
                                             <img src="{{ asset('/admin/images/car.jpeg') }}" alt="user"
                                                 class="avatar-xs rounded-circle">
-                                            <span class="ml-2">مارتينا جرجس</span>
+                                            <span class="ml-2">advertiser_name</span>
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </a>
                         <div class="card-body">
-                            <h4 class="card-title">سيارات</h4>
+                            <h4 class="card-title">{{ $car->company . ' ' . ($car->model ? $car->model : 'reset_model') }}</h4>
                             <p class="card-text">
-                                تويوتا لاند كروزر موديل سنة 2019 فل الفل سبورت (قصير) بابين
+                                {{$car->description}}
                             </p>
                         </div>
                     </div>
-            </div>
-            @endfor
-            <div class="mx-auto" style="width:150px;">
-                <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
-                    style="height:33px;font-size: 11px;line-height:33px;">
-                    تصفح المزيد
-                </button>
-            </div>
+                </div>
+            @endforeach
+            @if(count($cars) > 6)
+                <div class="mx-auto" style="width:150px;">
+                    <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
+                        style="height:33px;font-size: 11px;line-height:33px;">
+                        تصفح المزيد
+                    </button>
+                </div>
+            @endif
         </div>
     </div>
 </div>
@@ -199,22 +166,25 @@
                 <table class="table table-striped table-bordered">
 
                     <tbody>
-                        @for ($i=0; $i < 6; $i++) <tr>
-                            <td>شقة</td>
-                            <td><a style="color:#000;" href="https://www.example.com/job/1.html"> للايجار</a>
+                        @foreach ($homes as $home)
+                        <tr>
+                            <td>{{$home->home_type}}</td>
+                            <td><a style="color:#000;" href="https://www.example.com/job/1.html"> {{$home->show}}</a>
                             </td>
-                            <td>رام الله</td>
-                            </tr>
-                            @endfor
+                            <td>{{$home->city}} </td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
 
+                @if(count($homes) > 6)
                 <div class="mx-auto" style="width:150px;">
                     <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
                         style="height:33px;font-size: 11px;line-height:33px;">
                         تصفح المزيد
                     </button>
                 </div>
+                @endif
             </div>
         </div>
     </div>
@@ -247,21 +217,24 @@
                 <table class="table table-striped table-bordered">
 
                     <tbody>
-                        @for ($i=0; $i < 6; $i++) <tr>
-                            <td>محل تجاري في وسط رام الله.</td>
-                            <td>للبيع</td>
-                            <td>رام الله</td>
-                            </tr>
-                            @endfor
+                        @foreach ($shops as $shop)
+                        <tr>
+                            <td>{{$shop->brief}}</td>
+                            <td>{{$shop->offer}}</td>
+                            <td>{{$shop->city}}</td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
 
+                @if(count($shops) > 6)
                 <div class="mx-auto" style="width:150px;">
                     <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
                         style="height:33px;font-size: 11px;line-height:33px;">
                         تصفح المزيد
                     </button>
                 </div>
+                @endif
             </div>
         </div>
     </div>
@@ -293,21 +266,24 @@
             <div class="row">
                 <table class="table table-striped table-bordered">
                     <tbody>
-                        @for ($i=0; $i < 6; $i++) <div class="col-6 col-xl-2 p-1">
+                        @foreach ($lands as $land) 
+                        <div class="col-6 col-xl-2 p-1">
                             <tr>
-                                <td>أرض جميلة</td>
-                                <td>120m²</td>
-                                <td>رام الله</td>
+                                <td>{{$land->brief}}</td>
+                                <td>{{$land->area}}</td>
+                                <td>{{$land->city}}</td>
                             </tr>
-                            @endfor
+                        @endforeach
                     </tbody>
                 </table>
+                @if(count($lands) > 6)
                 <div class="mx-auto" style="width:150px;">
                     <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
                         style="height:33px;font-size: 11px;line-height:33px;">
                         تصفح المزيد
                     </button>
                 </div>
+                @endif
             </div>
         </div>
     </div>
@@ -341,7 +317,8 @@
 
                 <table class="table table-striped table-bordered">
                     <tbody>
-                        @for ($i=0; $i < 6; $i++) <div class="col-6 col-xl-2 p-1">
+                        @foreach ($jobs as $job) 
+                        <div class="col-6 col-xl-2 p-1">
                             <tr>
                                 <td>SonaTrack</td>
                                 <td style="vertical-align: middle;"><a style="color:#000;"
@@ -355,63 +332,21 @@
                                 </td>
                                 <td style="vertical-align: middle;">الخليل</td>
                             </tr>
-                            @endfor
+                        @endforeach
                     </tbody>
                 </table>
+                @if(count($jobs) > 6)
                 <div class="mx-auto" style="width:150px;">
                     <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
                         style="height:33px;font-size: 11px;line-height:33px;">
                         تصفح المزيد
                     </button>
                 </div>
+                @endif
             </div>
         </div>
     </div>
 </div>
-
-{{-- <div class="row">
-        <div class="w-100">
-            <div class="body-card m-5">
-
-                <h3 class="mb-4"><i class="fas fa-address-book mr-2"></i> إعلانات الوظائف الشاغرة </h3>
-                <div class="row">
-
-                    @for ($i=0; $i < 8; $i++)
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="card annonce-item"style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
-                            <a href="{{ asset('/admin/images/job2.jpg') }}" class="gallery-popup" style="height: 230px;
-width:100%">
-<div class="project-item">
-    <div class="overlay-container">
-        <img src="{{ asset('/admin/images/job2.jpg') }}" alt="img" class="" style="height: 230px; width:100%">
-        <div class="project-item-overlay text-right">
-            <h4>إعلانات الوظائف الشاغرة</h4>
-            <p>
-                <img src="{{ asset('/admin/images/job2.jpg') }}" alt="user" class="avatar-xs rounded-circle">
-                <span class="ml-2">مارتينا جرجس</span>
-            </p>
-        </div>
-    </div>
-</div>
-</a>
-<div class="card-body">
-    <h4 class="card-title">إعلانات الوظائف الشاغرة</h4>
-    <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م - فيصل بريك 0562700836
-        وسط الخليل على بعد 570 متر من مستشفى الأهلي</p>
-</div>
-</div>
-</div>
-@endfor
-<div class="mx-auto" style="width:150px;">
-    <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
-        style="height:33px;font-size: 11px;line-height:33px;">
-        تصفح المزيد
-    </button>
-</div>
-</div>
-</div>
-</div>
-</div> --}}
 
 <div class="row main-section">
     <div class="w-100">
@@ -437,39 +372,41 @@ width:100%">
 
             <div class="row">
 
-                @for ($i=0; $i < 6; $i++) <div class="col-6 col-xl-2 p-1">
+                @foreach ($mobiles as $mobile) 
+                <div class="col-6 col-xl-2 p-1">
                     <div class="annonce-item" style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
-                        <a href="{{ asset('/admin/images/mobile.jpg') }}" class="gallery-popup"
+                        <a href="{{ asset('/admin/images/'.$mobile->img) }}" class="gallery-popup"
                             style="height: 160px; width:100%">
                             <div class="project-item">
                                 <div class="overlay-container">
-                                    <img src="{{ asset('/admin/images/mobile.jpg') }}" alt="img" class=""
+                                    <img src="{{ asset('/admin/images/'.$mobile->img) }}" alt="img" class=""
                                         style="height: 160px; width:100%">
                                     <div class="project-item-overlay text-right">
                                         <h4>الاجهزة الذكية</h4>
                                         <p>
-                                            <img src="{{ asset('/admin/images/mobile.jpg') }}" alt="user"
+                                            <img src="{{ asset('/admin/images/'.$mobile->img) }}" alt="user"
                                                 class="avatar-xs rounded-circle">
-                                            <span class="ml-2">مارتينا جرجس</span>
+                                            <span class="ml-2">{{$mobile->advertiser_name}}</span>
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </a>
                         <div class="card-body">
-                            <h4 class="card-title">الاجهزة الذكية</h4>
-                            <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م - فيصل بريك 0562700836
-                                وسط الخليل على بعد 570 متر من مستشفى الأهلي</p>
+                            <h4 class="card-title">{{$car->model ? $car->model : 'reset_model'}}</h4>
+                            <p class="card-text">{{$mobile->description}}</p>
                         </div>
                     </div>
             </div>
-            @endfor
-            <div class="mx-auto" style="width:150px;">
-                <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
-                    style="height:33px;font-size: 11px;line-height:33px;">
-                    تصفح المزيد
-                </button>
-            </div>
+            @endforeach
+            @if(count($mobiles) > 6)
+                <div class="mx-auto" style="width:150px;">
+                    <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
+                        style="height:33px;font-size: 11px;line-height:33px;">
+                        تصفح المزيد
+                    </button>
+                </div>
+            @endif
         </div>
     </div>
 </div>
