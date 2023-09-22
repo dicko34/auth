@@ -24,7 +24,7 @@
                         <td>
                             <div class="input-group input-group-sm">
 
-                                <select name="company" class="form-select form-select-sm model-type-car" id="carCompany"
+                                <select name="company" class="form-control model-type-car" id="carCompany"
                                     required="">
                                     <option value=""selected disabled> الشركات</option>
                                         @foreach ($carCompanies as $carCompany)
@@ -32,7 +32,7 @@
                                         @endforeach
                                 </select>
 
-                                <select name="model" class="form-select form-select-sm model-type-car" id="carModel"
+                                <select name="model" class="form-control model-type-car" id="carModel"
                                     required="">
                                     <option value=""selected disabled> الموديل</option>
                                 </select>
@@ -51,7 +51,7 @@
                         <td>باقي الموديل </td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <input type="text" name="reset_model" class="form-control form-control-sm"
+                                <input type="text" name="reset_model" class="form-control"
                                     aria-label="باقي الموديل " aria-describedby="basic-addon2">
                                 <span class="input-group-text d-flex d-lg-none text-center" data-bs-toggle="tooltip"
                                     data-bs-placement="left" title=""
@@ -177,7 +177,7 @@
                         <td>
                             <div class="input-group input-group-sm">
                                 <input required="" type="number" name="power" dir="rtl"
-                                    class="form-control form-control-sm text-end" aria-label="قوه الماتور "
+                                    class="form-control text-end" aria-label="قوه الماتور "
                                     aria-describedby="basic-addon2">
                                 <span class="input-group-text  text-center" data-bs-toggle="tooltip"
                                     data-bs-placement="left" title=""
@@ -214,7 +214,7 @@
                         <td>
                             <div class="input-group input-group-sm">
                                 <input type="number" name="speedmotors" dir="rtl"
-                                    class="form-control form-control-sm text-start" aria-label="باقي الموديل "
+                                    class="form-control text-start" aria-label="باقي الموديل "
                                     aria-describedby="basic-addon2">
                                 <span class="input-group-text d-flex d-lg-none text-center" data-bs-toggle="tooltip"
                                     data-bs-placement="left" title=""
@@ -230,7 +230,7 @@
                         <td>أصحاب سابقون </td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <input type="text" name="car_usage" class="form-control form-control-sm "
+                                <input type="text" name="car_usage" class="form-control "
                                     placeholder="يد اولى , يد ثانيه ..." aria-label="يد اولى , يد ثانيه ..."
                                     >
                             </div>
@@ -347,7 +347,7 @@
                         <td>
                             <div class="input-group input-group-sm">
                                 <input type="number" name="price" placeholder="30000"
-                                    class="form-control form-control-sm text-start" aria-label="30000"
+                                    class="form-control text-start" aria-label="30000"
                                     aria-describedby="basic-addon2">
                                 <select name="currency" readonly="" class="form-select readonly"
                                     style="max-width:120px;">
@@ -553,7 +553,7 @@
                         <td>التفاصيل </td>
                         <td>
                             <div class="form-group">
-                                <textarea name="description" class="form-control form-control-sm" id="description"
+                                <textarea name="description" class="form-control" id="description"
                                     placeholder="المزيد من المعلومات، كل معلومة بسطر." cols="30" rows="5"></textarea>
                             </div>
                         </td>
@@ -654,7 +654,7 @@
                         <td>العنوان <span class="text-danger" style="font-weight: 700;">*</span> </td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <input required="" type="text" class="form-control form-control-sm" name="address"
+                                <input required="" type="text" class="form-control" name="address"
                                     placeholder="أسم المنطقة او الشارع" aria-label="أسم المنطقة او الشارع"
                                     aria-describedby="basic-addon2">
                                 <span class="input-group-text d-flex d-lg-none " data-bs-toggle="tooltip"
@@ -685,7 +685,7 @@
                         </td>
                         <td>
                             <div class="input-group">
-                                <input type="text" class="form-control form-control-sm" required=""
+                                <input type="text" class="form-control" required=""
                                     name="advertiser_name" placeholder="الاسم الحقيقي">
                                 <span class="input-group-text d-flex d-lg-none " style="width:50px !important;"><i
                                         class="fas fa-info-circle"></i></span>
@@ -701,7 +701,7 @@
                         </td>
                         <td>
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="email"
+                                <input type="text" class="form-control" name="email"
                                     placeholder="البريد الالكتروني" aria-label="البريد الالكتروني">
                             </div>
                         </td>
@@ -712,7 +712,7 @@
                         </td>
                         <td>
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="phone_number"
+                                <input type="text" class="form-control" name="phone_number"
                                     placeholder="رقم الهاتف مع المقدمة" aria-label="رقم الهاتف مع المقدمة">
                             </div>
                         </td>
@@ -723,7 +723,7 @@
                         </td>
                         <td>
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="mobile"
+                                <input type="text" class="form-control" name="mobile"
                                     placeholder="رقم الموبايل" aria-label="رقم الهاتف مع المقدمة">
                             </div>
                         </td>
