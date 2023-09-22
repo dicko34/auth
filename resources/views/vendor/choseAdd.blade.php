@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="col-sm-12 text-center m-3">
-                        <a href="{{ route('homes.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان شقة</a>
+                        <a href="{{ route('home.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان شقة</a>
                     </div>
 
                     <div class="col-sm-12 text-center m-3">
