@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('land_area');
             $table->bigInteger('price');
             $table->string('ad_duration_per_day');
-            $table->string('extras');
+            $table->string('extras')->nullable();
             $table->string('address');
             $table->string('city');
             $table->longText('description');
