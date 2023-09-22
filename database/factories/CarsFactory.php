@@ -34,8 +34,8 @@ class CarsFactory extends Factory
             'fuel_type' =>  \fake()->randomElement(['هايبرد','بنزين','سولار','كهرباء']),
             'lime_type' => \fake()->randomElement(['عادي','اوتوماتيك','نصف اوتوماتيك']),
             'glass' =>  \fake()->randomElement(['يدوي','الكتروني']),
-            'shown' => \fake()->randomElement(['للبيع','للبدل فقط','للبيع أو البدل','للايجار']),
-            'pay_method' =>  \fake()->randomElement(['نقدا فقط ','إمكانيهس التقسيط']),
+            'shown' => \fake()->randomElement(['للبيع','للبدل','للبيع و البدل','للايجار']),
+            'pay_method' =>  \fake()->randomElement(['نقدا فقط ','إمكانيه التقسيط']),
             'extras' =>  \join(",",\fake()->words()),
             'address' => \fake()->address(),
             'description' =>  \fake()->text(),
@@ -46,6 +46,7 @@ class CarsFactory extends Factory
             'phone_number' =>  \fake()->e164PhoneNumber(),
             'mobile' => \fake()->e164PhoneNumber(),
             'email' =>  \fake()->email(),
+            'state' => \fake()->randomElement(['pinned','refused','allowed']),
         ];
     }
 }

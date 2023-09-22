@@ -11,20 +11,25 @@ class JobsController extends Controller
     use Traits\SimilarTrait;
     public function index()
     {
-        $jobs = Job::all();
+        $jobs = Job::paginate(5);
         return view('vendor.jobs.index', compact('jobs'));
     }
 
     public function search(Request $request)
     {
-        $jobs = Job::all();
+        $jobs = Job::paginate(6);
+        
         $jobs_show = Job::where(
             [
                 ['workplace', $request->workplace == 'الكل' ? '!=' : '=', $request->workplace == 'الكل' ? null : $request->workplace],
                 ['specialization', $request->specialization == 'الكل' ? '!=' : '=', $request->specialization == 'الكل' ? null : $request->specialization],
                 ['permanence', $request->permanence == 'الكل' || $request->permanence == '' ? '!=' : '=', $request->permanence == 'الكل' ? null : $request->permanence],
             ]
-        )->get();
+        )->paginate(6);
+        
+        if (count($jobs_show) < 1) {
+            $jobs_show =  Job::paginate(6);
+        } 
         return view('vendor.jobs.search', compact('jobs_show', 'jobs'));
     }
 

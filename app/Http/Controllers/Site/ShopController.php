@@ -10,7 +10,7 @@ class ShopController extends Controller
 {
     public function index()
     {
-        $shopes =Shop::paginate(2);
+        $shopes =Shop::paginate(6);
         return view('vendor.shopes.index',compact('shopes'));
     }
 

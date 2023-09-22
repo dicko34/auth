@@ -1,11 +1,11 @@
 @extends('layouts.vendor')
 @section('pageTitle', 'Koala Web Libraries')
 @section('styleChart')
-    <link href="{{ url('assets/admin/libs/c3/c3.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/admin/libs/c3/c3.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
 
-    <form method="POST" action="" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('vendor.cars.store') }}" enctype="multipart/form-data">
         @csrf
         @if ($errors->any())
             @foreach ($errors->all() as $error)
@@ -23,14 +23,16 @@
                         <td>موديل السيارة <span class="text-danger" style="">*</span></td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <select name="carCompany" class="form-control form-control model-type-car" id="carCompany"
+
+                                <select name="company" class="form-select form-select-sm model-type-car" id="carCompany"
                                     required="">
                                     <option value=""selected disabled> الشركات</option>
                                         @foreach ($carCompanies as $carCompany)
                                             <option value="{{ $carCompany->name}}">{{ $carCompany->name }}</option>
                                         @endforeach
                                 </select>
-                                <select name="CarModel" class="form-control form-control model-type-car" id="carModel"
+
+                                <select name="model" class="form-select form-select-sm model-type-car" id="carModel"
                                     required="">
                                     <option value=""selected disabled> الموديل</option>
                                 </select>
@@ -65,7 +67,7 @@
                         <td>موديل سنة <span class="text-danger" style="">*</span></td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <select name="model_year" id="year" required="" class="form-control">
+                                <select name="model_year" id="year" required="" class="form-select">
                                     <option value="2023">2023 </option>
                                     <option value="2022">2022 </option>
                                     <option value="2021">2021 </option>
@@ -138,7 +140,7 @@
                         <td>لون السيارة <span class="text-danger" style="">*</span></td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <select required="required" name="car_color" id="car_color" class="form-control">
+                                <select required="required" name="car_color" id="car_color" class="form-select">
                                     <option value="">اختر لون المركبه</option>
                                     <option value="أبيض">أبيض</option>
                                     <option value="أبيض عاجي">أبيض عاجي</option>
@@ -188,7 +190,7 @@
                         <td>عدد الركاب </td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <select name="passengers" class="form-control" id="car_passengers">
+                                <select name="passengers" class="form-select" id="car_passengers">
                                     <option value="">حدد عدد الركاب</option>
                                     <option value="1">1</option>
                                     <option value="1+1">1+1</option>
@@ -238,7 +240,7 @@
                         <td>أصل المركبه <span class="text-danger">*</span></td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <select name="origin" id="origin" class="form-control" require="">
+                                <select name="origin" id="origin" class="form-select" require="">
                                     <option value="خصوصي">خصوصي</option>
                                     <option value="عمومي">عمومي</option>
                                     <option value="تأجير">تأجير</option>
@@ -253,7 +255,7 @@
                         <td>نوع المركبه <span class="text-danger">*</span></td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <select name="drive_type" id="type" class="form-control" aria-invalid="false">
+                                <select name="drive_type" id="type" class="form-select" aria-invalid="false">
                                     <option value="2">مركبات خاصه </option>
                                     <option value="3">مركبات ايجار </option>
                                     <option value="4">دراجات ناريه </option>
@@ -347,7 +349,7 @@
                                 <input type="number" name="price" placeholder="30000"
                                     class="form-control form-control-sm text-start" aria-label="30000"
                                     aria-describedby="basic-addon2">
-                                <select name="currency" readonly="" class="form-control readonly"
+                                <select name="currency" readonly="" class="form-select readonly"
                                     style="max-width:120px;">
                                     <option value="شيكل"> شيكل </option>
                                 </select>
@@ -572,7 +574,7 @@
                         <td>مُدة الإعلان</td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <select required="" name="ad_duration_per_day" class="form-control">
+                                <select required="" name="ad_duration_per_day" class="form-select">
                                     <option value="15">15</option>
                                     <option value="16">16</option>
                                     <option value="17">17</option>
@@ -628,7 +630,7 @@
                         <td>المدينه <span class="text-danger" style="font-weight: 700;">*</span> </td>
                         <td>
                             <div class="form-group input-group-sm">
-                                <select required="" name="city" class="form-control">
+                                <select required="" name="city" class="form-select">
                                     <option value="1">رام الله والبيرة </option>
                                     <option value="2">القدس </option>
                                     <option value="14">قطاع غزة </option>
@@ -675,7 +677,7 @@
             <div class="add-section-title btn w-100 bg-primary p-1 px-3 mb-3">
                 <h5 class="text-white ml-2 font-weight-bold text-left">معلومات المُعلن</h5>
             </div>
-            <table class="table table-bordered  mb-0 bg-white">
+            <table class="table table-bordered table-striped mb-0 bg-white">
                 <tbody>
                     <tr>
                         <td>
@@ -735,7 +737,7 @@
             </table>
             @else 
 
-            <table class="table table-bordered  mb-0 bg-white">
+            <table class="table table-bordered table-striped mb-0 bg-white">
                 <tbody>
                     <tr>
                         <td colspan="100%" class="text-center">
@@ -779,7 +781,6 @@
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script>
           $(document).ready(function () {
-            
               $('#carCompany').change(function () {
                   
                   var carCompany = encodeURIComponent($(this).val());

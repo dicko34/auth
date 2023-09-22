@@ -30,7 +30,7 @@ class HomeController extends Controller
             'loung' =>  'required|max:20',
             'area' =>  'required|max:20',
             'land_area' =>  'required|max:20',
-            'extras' =>  'required|max:200',
+            'extras' =>  'required|max:500',
             'price' =>  'required|max:20',
             'city' => 'required|max:30',
             'address' => 'required|max:100',
@@ -43,6 +43,13 @@ class HomeController extends Controller
             'mobile' => 'required|max:20',
             'email' =>  'required|email',
         ]);
+        if($request->user()) {
+            $credentilas = $request->user();
+            $validate["advertiser_name"] = $credentilas->name;
+            $validate["phone_number"] = $credentilas->phone;
+            $validate["mobile"] = null;
+            $validate["email"] = $credentilas->email;
+        }
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
             $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
@@ -52,7 +59,7 @@ class HomeController extends Controller
         $validate['img'] = implode(',',$validate['img']);
         $validate['state'] = 'pinned';
         Home::create($validate);
-        return redirect()->route('home.index');
+        return redirect()->route('homes.index');
     }
 
 }

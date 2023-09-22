@@ -31,8 +31,8 @@ return new class extends Migration
             $table->longText('description');
             $table->string('img');
             $table->string('advertiser_name');
-             $table->string('phone_number');
-            $table->string('mobile');
+            $table->string('phone_number');
+            $table->string('mobile')->nullable();
             $table->string('email');
             $table->enum('state',['pinned','refused','allowed']);
             $table->timestamps();
