@@ -54,7 +54,7 @@
                     <div class="col-4 col-sm-4">
                         <div class="form-group row">
                             <div class="col-12 m-0 p-0">
-                                <input type="text" name="model"placeholder="الموديل">
+                                <input class="form-control"type="text" name="model"placeholder="الموديل">
                             </div>
                         </div>
                     </div>
@@ -170,20 +170,25 @@
                                     <img src="{{ asset('/admin/images/mobile.jpg') }}" alt="img" class=""
                                         style="height: 160px; width:100%">
                                     <div class="project-item-overlay text-right">
-                                        <h4>الاجهزة الذكية</h4>
+                                        <h4>
+                                             هاتف {{$mobile->model}} {{$mobile->reset_model}}
+                                        </h4>
                                         <p>
                                             <img src="{{ asset('/admin/images/mobile.jpg') }}" alt="user"
                                                 class="avatar-xs rounded-circle">
-                                            <span class="ml-2">مارتينا جرجس</span>
+                                            <span class="ml-2">{{$mobile->advertiser_name}} </span>
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </a>
                         <div class="card-body">
-                            <h4 class="card-title">الاجهزة الذكية</h4>
-                            <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م - فيصل بريك 0562700836
-                                وسط الخليل على بعد 570 متر من مستشفى الأهلي</p>
+                            <h4 class="card-title">هاتف
+                                {{$mobile->model}} {{$mobile->reset_model}}
+                            </h4>
+                            <p class="card-text">
+                                {{$mobile->model}} {{$mobile->reset_model}} - {{$mobile->device_status}}
+                            </p>
                         </div>
                     </div>
             </div>
@@ -191,68 +196,12 @@
             @endforeach
         </div>
     </div>
-    <nav aria-label="..." class="">
-        <ul class="pagination">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">السابق</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item active">
-                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">التالي</a>
-            </li>
-        </ul>
-    </nav>
+    {{$mobiles->links('vendor.paginate')}}
 </div>
 </div>
 </div>
 </div>
-<div class="col-00 col-lg-3">
-    <div class="row m-1">
-        <div class="card w-100">
-            <div class="body-card m-3">
-                <div class="row">
-                    <h3 class="mb-4 col-6 ">اعلانات</h3>
-                </div>
-                <div class="row m-2 mb-2">
 
-                    @for ($i = 0; $i < 4; $i++) <div class="col-12 p-0 bordertoty">
-                        <div class="cardtoty m-sm-1 m-0 p-1">
-                            <a href="{{ asset('assets/admin/images/car.jpeg') }}" class="gallery-popup"
-                                style="height: 130px; width:100%">
-                                <div class="project-item">
-                                    <div class="overlay-container">
-                                        <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="img"
-                                            class="gallery-thumb-img m-0" style="height: 130px; width:100%">
-                                        <div class="project-item-overlay text-right">
-                                            <h4>عقارات</h4>
-                                            <p>
-                                                <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="user"
-                                                    class="avatar-xs rounded-circle">
-                                                <span class="ml-2">مارتينا جرجس</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="mt-2 mb-2">
-                                <h4 class="" style="color:#820120">شقق</h4>
-                                <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م
-                                    وسط الخليل على بعد 570 متري</p>
-                            </div>
-                        </div>
-                </div>
-                @endfor
-
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
 
 <style>
 h1,
