@@ -16,96 +16,52 @@
                             <div class="col-6 col-sm-4">
                                 <div class="form-group row">
                                     <div class="col-12 m-0 p-0">
-                                        <select name="category" class="form-control" required="">
+                                        <select name="category" class="form-control">
                                             <option value="" selected="" class="d-none">التخصص</option>
-                                            <option value="6">تصميم الأزياء و الخياطة</option>
-                                            <option value="7">مدرس\ة</option>
-                                            <option value="8">تكنولوجيا المعلومات</option>
-                                            <option value="9">ادارة مشاريع</option>
-                                            <option value="10">اتمتة صناعية</option>
-                                            <option value="11">احياء</option>
-                                            <option value="12">اخصائي/ة سمع و نطق</option>
-                                            <option value="13">اخصائي/ة تغذية</option>
-                                            <option value="14">امين مستودع</option>
-                                            <option value="16">علوم انسانية و اجتماعية</option>
-                                            <option value="17">تسويق ومبيعات</option>
-                                            <option value="18">علاقات عامة والاتصال والتواصل</option>
-                                            <option value="19">صحافة واعلام</option>
-                                            <option value="20">تخصصات أخرى</option>
-                                            <option value="21">عمليات الدعم اللوجستي</option>
-                                            <option value="22">قانون ومحاماة</option>
-                                            <option value="23">فندقة وسياحة وسفر</option>
-                                            <option value="24">طب وتمريض وصيدلة</option>
-                                            <option value="25">تصميم داخلي</option>
-                                            <option value="26">لغات وترجمة</option>
-                                            <option value="27">محاسبة وعلوم مالية</option>
-                                            <option value="28">هندسة</option>
-                                            <option value="29">تعليم وتدريب</option>
-                                            <option value="30">ثقافة وفنون</option>
-                                            <option value="31">ادارة أعمال</option>
-                                            <option value="32">بائع/ة</option>
-                                            <option value="33">بصريات</option>
-                                            <option value="34">تحليل مخبري</option>
-                                            <option value="35">تخدير</option>
-                                            <option value="36">تدريب سياقة</option>
-                                            <option value="37">تربية اطفال</option>
-                                            <option value="38">تصنيع غذائي</option>
-                                            <option value="39">حراسة</option>
-                                            <option value="40">حدادة</option>
-                                            <option value="41">حلاقة</option>
-                                            <option value="42">خباز و صانع حلويات</option>
-                                            <option value="43">دهان</option>
-                                            <option value="44">سائق</option>
-                                            <option value="45">سكرتير/ة</option>
-                                            <option value="46">صياغة مجوهرات</option>
-                                            <option value="47">طب بيطري</option>
-                                            <option value="48">عامل بناء</option>
-                                            <option value="49">تجميل</option>
-                                            <option value="50">فني ميكانيك وكهربائي سيارات</option>
-                                            <option value="51">كيمياء</option>
-                                            <option value="52">مدرب/ة رياضة</option>
-                                            <option value="53">مصور/ة</option>
-                                            <option value="54">منقذ/ة</option>
-                                            <option value="55">مزارع/ة</option>
-                                            <option value="56">فني تكييف</option>
-                                            <option value="57">عامل/ة نظافة</option>
-                                            <option value="58">علاج طبيعي</option>
-                                            <option value="59">فني ألمنيوم</option>
-                                            <option value="60">فني كهرباء</option>
-                                            <option value="61">فني مصاعد</option>
-                                            <option value="62">طباخ/ة</option>
-                                            <option value="63">عامل/ة</option>
-                                            <option value="64">نجارة وصناعة الاثاث</option>
-                                            <option value="65">مسؤول برنامج</option>
-                                            <option value="66">مشرف\ة</option>
-                                            <option value="67">مندوب\ة مبيعات</option>
-                                            <option value="68">جزار</option>
-                                            <option value="69">تنجيد كنب</option>
-                                            <option value="70">فني صيانة</option>
-                                            <option value="71">سفرجي\ة</option>
-                                            <option value="72">عدة تخصصات</option>
-                                            <option value="73">موظف\ة استقبال</option>
-                                            <option value="74">معلم شاورما</option>
-                                            <option value="75">معلم مشاوي</option>
-                                            <option value="76">جرافيكس</option>
-                                            <option value="77">باحث</option>
-                                            <option value="78">موظف/ة</option>
-                                            <option value="79">كاشير</option>
-                                            <option value="81">مدبرة منزل</option>
-                                            <option value="82">فني الكترونيات</option>
-                                            <option value="83">مبرمج/ة</option>
-                                            <option value="84">ادخال بيانات</option>
-                                            <option value="85">فني كاميرات</option>
-                                            <option value="86">تجليس و دهان سيارات</option>
-                                            <option value="87">موظف\ة باريستا</option>
-                                            <option value="88">مدرب\ة</option>
-                                            <option value="89">فني اتصالات</option>
-                                            <option value="90">مساعد\ة ادارية</option>
-                                            <option value="91">تربية خاصة</option>
-                                            <option value="92">فني طباعة</option>
-                                            <option value="93">اخرى</option>
-                                            <option value="94">أمين صندوق</option>
-                                            <option value="95">مروج/ة</option>
+                                            <option value="تصميم الأزياء و الخياطة">تصميم الأزياء و الخياطة</option>
+                                            <option value="مدرس\ة">مدرس\ة</option>
+                                            <option value="تكنولوجيا المعلومات">تكنولوجيا المعلومات</option>
+                                            <option value="ادارة مشاريع">ادارة مشاريع</option>
+                                            <option value="اتمتة صناعية">اتمتة صناعية</option>
+                                            <option value="احياء">احياء</option>
+                                            <option value="اخصائي/ة سمع و نطق">اخصائي/ة سمع و نطق</option>
+                                            <option value="اخصائي/ة تغذية">اخصائي/ة تغذية</option>
+                                            <option value="امين مستودع">امين مستودع</option>
+                                            <option value="علوم انسانية و اجتماعية">علوم انسانية و اجتماعية</option>
+                                            <option value="تسويق ومبيعات">تسويق ومبيعات</option>
+                                            <option value="علاقات عامة والاتصال والتواصل">علاقات عامة والاتصال والتواصل</option>
+                                            <option value="صحافة واعلام">صحافة واعلام</option>
+                                            <option value="تخصصات أخرى">تخصصات أخرى</option>
+                                            <option value="عمليات الدعم اللوجستي">عمليات الدعم اللوجستي</option>
+                                            <option value="قانون ومحاماة">قانون ومحاماة</option>
+                                            <option value="فندقة وسياحة وسفر">فندقة وسياحة وسفر</option>
+                                            <option value="طب وتمريض وصيدلة">طب وتمريض وصيدلة</option>
+                                            <option value="تصميم داخلي">تصميم داخلي</option>
+                                            <option value="لغات وترجمة">لغات وترجمة</option>
+                                            <option value="محاسبة وعلوم مالية">محاسبة وعلوم مالية</option>
+                                            <option value="هندسة">هندسة</option>
+                                            <option value="تعليم وتدريب">تعليم وتدريب</option>
+                                            <option value="ثقافة وفنون">ثقافة وفنون</option>
+                                            <option value="ادارة أعمال">ادارة أعمال</option>
+                                            <option value="بائع/ة">بائع/ة</option>
+                                            <option value="بصريات">بصريات</option>
+                                            <option value="تحليل مخبري">تحليل مخبري</option>
+                                            <option value="تخدير">تخدير</option>
+                                            <option value="تدريب سياقة">تدريب سياقة</option>
+                                            <option value="تربية اطفال">تربية اطفال</option>
+                                            <option value="تصنيع غذائي">تصنيع غذائي</option>
+                                            <option value="حراسة">حراسة</option>
+                                            <option value="حدادة">حدادة</option>
+                                            <option value="حلاقة">حلاقة</option>
+                                            <option value="خباز و صانع حلويات">خباز و صانع حلويات</option>
+                                            <option value="دهان">دهان</option>
+                                            <option value="سائق">سائق</option>
+                                            <option value="سكرتير/ة">سكرتير/ة</option>
+                                            <option value="صياغة مجوهرات">صياغة مجوهرات</option>
+                                            <option value="طب بيطري">طب بيطري</option>
+                                            <option value="عامل بناء">عامل بناء</option>
+                                            <option value="تجميل">تجميل</option>
+                                            <option value="فني ميكانيك وكهربائي سيارات">فني ميكانيك وكهربائي سيارات</option>
                                         </select>
                                     </div>
                                 </div>
@@ -116,10 +72,10 @@
                             <div class="col-6 col-sm-4">
                                 <div class="form-group row">
                                     <div class="col-12 m-0 p-0">
-                                        <select class="form-control">
-                                            <option> الدوام</option>
-                                            <option>كلي</option>
-                                            <option>جزئي</option>
+                                        <select name="" class="form-control">
+                                            <option selected disabeled> الدوام</option>
+                                            <option value="كلي">كلي</option>
+                                            <option value="جزئي">جزئي</option>
                                             <option value="دوام ليلي">دوام ليلي</option>
                                         </select>
                                     </div>
@@ -132,20 +88,20 @@
                                         <select class="form-control">
                                             <option selected="" disabeled="">المحافظة</option>
                                             <option value="رام الله والبيرة">رام الله والبيرة</option>
-<option value="القدس">القدس</option>
-<option value="قطاع غزة">قطاع غزة</option>
-<option value="الخليل">الخليل</option>
-<option value="بيت لحم">بيت لحم</option>
-<option value="أريحا">أريحا</option>
-<option value="سلفيت وبديا">سلفيت وبديا</option>
-<option value="روابي">روابي</option>
-<option value="طوباس">طوباس</option>
-<option value="قلقيلية">قلقيلية</option>
-<option value="طولكرم">طولكرم</option>
-<option value="جنين">جنين</option>
-<option value="نابلس">نابلس</option>
-<option value="جميع الاماكن">جميع الاماكن</option>
-<option value="مناطق الداخل">مناطق الداخل</option>
+                                            <option value="القدس">القدس</option>
+                                            <option value="قطاع غزة">قطاع غزة</option>
+                                            <option value="الخليل">الخليل</option>
+                                            <option value="بيت لحم">بيت لحم</option>
+                                            <option value="أريحا">أريحا</option>
+                                            <option value="سلفيت وبديا">سلفيت وبديا</option>
+                                            <option value="روابي">روابي</option>
+                                            <option value="طوباس">طوباس</option>
+                                            <option value="قلقيلية">قلقيلية</option>
+                                            <option value="طولكرم">طولكرم</option>
+                                            <option value="جنين">جنين</option>
+                                            <option value="نابلس">نابلس</option>
+                                            <option value="جميع الاماكن">جميع الاماكن</option>
+                                            <option value="مناطق الداخل">مناطق الداخل</option>
 
                                         </select>
                                     </div>
@@ -196,103 +152,37 @@
                                         <table class="table table-striped table-bordered">
                                             <thead class="bg-blue text-white">
                                                 <tr class="bg-primary">
+                                                @if (count($jobs) == NULL)
+                                                    <h6 class="text-center pt-5 pb-5 mt-5 mb-5">
+                                                    لا يوجد اعلانات حاليا<br>
+                                                    <a href="{{route('home')}} ">عودة</a>
+                                                    </h6>                         
+                                                @elseif (count($jobs) > 0)  
                                                     <th style="font-family: 'Tajawal';">الشركة</th>
                                                     <th style="font-family:'Tajawal';">التخصص</th>
                                                     <th style="font-family:'Tajawal';">المدينه</th>
                                                 </tr>
+                                                @endif
                                             </thead>
                                             <tbody>
+                                                @foreach ($jobs as $job)
                                                 <tr>
-                                                    <td>SonaTrack</td>
-                                                    <td style="vertical-align: middle;"><a style="color:#000;"
-                                                            href="https://www.wenak.ps/job/46388.html">محاضر</a></td>
-                                                    <td style="vertical-align: middle;">قطاع غزة</td>
+                                                    <td>{{$job->advertiser_name}} </td>
+                                                    <td style="vertical-align: middle;">{{$job->specialization}} </td>
+                                                    <td style="vertical-align: middle;">{{$job->city}} </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>SonaTrack</td>
-                                                    <td style="vertical-align: middle;"><a style="color:#000;"
-                                                            href="https://www.wenak.ps/job/46387.html">مساعد شوفير</a>
-                                                    </td>
-                                                    <td style="vertical-align: middle;">الخليل</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>SonaTrack</td>
-                                                    <td style="vertical-align: middle;"><a style="color:#000;"
-                                                            href="https://www.wenak.ps/job/46383.html">محاضر</a></td>
-                                                    <td style="vertical-align: middle;">نابلس</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>SonaTrack</td>
-                                                    <td style="vertical-align: middle;"><a style="color:#000;"
-                                                            href="https://www.wenak.ps/job/46375.html">معلم/ة</a></td>
-                                                    <td style="vertical-align: middle;">قطاع غزة</td>
-                                                </tr>
+                                                @endforeach           
                                             </tbody>
                                         </table>
 
 
                                     </div>
                                     <div class="col-lg-6">
-                                        <table class="table table-striped table-bordered">
-                                            <thead class="d-lg-table d-none bg-primary text-white">
-                                                <tr>
-
-                                                    <th style="font-family: 'Tajawal';">الشركة</th>
-                                                    <th style="font-family: 'Tajawal';">التخصص</th>
-                                                    <th style="font-family: 'Tajawal';">المدينة</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-
-                                                    <td>SonaTrack</td>
-                                                    <td><a style="color:#000;"
-                                                            href="https://www.wenak.ps/job/46388.html">محاضر</a></td>
-                                                    <td>قطاع غزة</td>
-                                                </tr>
-                                                <tr>
-
-                                                    <td>SonaTrack</td>
-                                                    <td><a style="color:#000;"
-                                                            href="https://www.wenak.ps/job/46387.html">مساعد شوفير</a>
-                                                    </td>
-                                                    <td>الخليل</td>
-                                                </tr>
-                                                <tr>
-
-                                                    <td>SonaTrack</td>
-                                                    <td><a style="color:#000;"
-                                                            href="https://www.wenak.ps/job/46383.html">محاضر</a></td>
-                                                    <td style="vertical-align: middle;">نابلس</td>
-                                                </tr>
-                                                <tr>
-
-                                                    <td>SonaTrack</td>
-                                                    <td><a style="color:#000;"
-                                                            href="https://www.wenak.ps/job/46375.html">معلم/ة</a></td>
-                                                    <td>قطاع غزة</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        
 
 
                                         <div class="col-12">
-                                            <nav aria-label="..." class="w-100 m-auto">
-                                                <ul class="pagination">
-                                                    <li class="page-item disabled">
-                                                        <a class="page-link" href="#" tabindex="-1">السابق</a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item active">
-                                                        <a class="page-link" href="#">2 <span
-                                                                class="sr-only">(current)</span></a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">التالي</a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
+                                        {{ $jobs->links('vendor.paginate') }}
                                         </div>
                                     </div>
                                 </div>
@@ -371,4 +261,4 @@
     }
     </style>
 
-    @endsection
+@endsection

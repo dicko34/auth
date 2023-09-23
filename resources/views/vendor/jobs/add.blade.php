@@ -1,169 +1,111 @@
-@extends('layouts.vendor')
+@extends("layouts.vendor")
 @section('pageTitle', 'Koala Web Libraries')
 @section('styleChart')
     <link href="{{ asset('assets/admin/libs/c3/c3.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
 @endsection
-@section('content')
+@section('content') 
 
-    <form method="POST" action="{{ route('vendor.lands.store') }}" enctype="multipart/form-data">
-        @csrf
+    <form method="POST" action="{{ route('vendor.jobs.store') }}" enctype="multipart/form-data">
         @if ($errors->any())
             @foreach ($errors->all() as $error)
                 <div>{{ $error }}</div>
             @endforeach
         @endif
+        @csrf
         <div class="add-section w-75 mx-auto bg-white">
             <div class="add-section-title btn w-100 bg-primary p-1 px-3 mb-3">
-                <h4 class="text-white ml-2 font-weight-bold text-left">اضافة أرض جديدة</h4>
+                <h4 class="text-white ml-2 font-weight-bold text-left">إعلان وظيفة جديد</h4>
             </div>
             <table class="table table-bordered table-striped mb-0">
                 <tbody>
                     <tr>
-                        <td>نُبذة <span class="text-danger" style="font-weight: 700;">*</span> </td>
+                        <td>التخصص<span class="text-danger" style="">*</span></td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control " name="brief" placeholder="نبذه عن الارض"
-                                    aria-label="نبذه عن الارض" aria-describedby="basic-addon2">
-                                <span class="input-group-text d-none d-lg-block w-100" id="basic-addon2">مثال : ارض 5 دونم
-                                    صالحة
-                                    للبناء</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>مساحة <span class="text-danger" style="font-weight: 700;">*</span> </td>
-                        <td>
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control " name="area"
-                                    placeholder="مساحة المحل , مثال  : 400 متر" aria-label="مساحة المحل , مثال  : 400 متر"
-                                    aria-describedby="basic-addon2">
-                                <span class="input-group-text" id="basic-addon2">متر مربع</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>السعر </td>
-                        <td>
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control " name="price" placeholder="سعر الارض"
-                                    aria-label="سعر الارض " aria-describedby="basic-addon2">
-                                <select name="currency" class="form-select" style="max-width:110px;">
-                                    <option value="دولار">دولار</option>
-                                    <option value="شيكل"> شيكل </option>
-                                    <option value="دينار">دينار</option>
-                                    <option value="يورو">يورو</option>
+                                <select name="specialization" class="form-control">
+                                    <option value="" selected="" class="d-none">التخصص</option>
+                                    <option value="تصميم الأزياء و الخياطة">تصميم الأزياء و الخياطة</option>
+                                    <option value="مدرس\ة">مدرس\ة</option>
+                                    <option value="تكنولوجيا المعلومات">تكنولوجيا المعلومات</option>
+                                    <option value="ادارة مشاريع">ادارة مشاريع</option>
+                                    <option value="اتمتة صناعية">اتمتة صناعية</option>
+                                    <option value="احياء">احياء</option>
+                                    <option value="اخصائي/ة سمع و نطق">اخصائي/ة سمع و نطق</option>
+                                    <option value="اخصائي/ة تغذية">اخصائي/ة تغذية</option>
+                                    <option value="امين مستودع">امين مستودع</option>
+                                    <option value="علوم انسانية و اجتماعية">علوم انسانية و اجتماعية</option>
+                                    <option value="تسويق ومبيعات">تسويق ومبيعات</option>
+                                    <option value="علاقات عامة والاتصال والتواصل">علاقات عامة والاتصال والتواصل</option>
+                                    <option value="صحافة واعلام">صحافة واعلام</option>
+                                    <option value="تخصصات أخرى">تخصصات أخرى</option>
+                                    <option value="عمليات الدعم اللوجستي">عمليات الدعم اللوجستي</option>
+                                    <option value="قانون ومحاماة">قانون ومحاماة</option>
+                                    <option value="فندقة وسياحة وسفر">فندقة وسياحة وسفر</option>
+                                    <option value="طب وتمريض وصيدلة">طب وتمريض وصيدلة</option>
+                                    <option value="تصميم داخلي">تصميم داخلي</option>
+                                    <option value="لغات وترجمة">لغات وترجمة</option>
+                                    <option value="محاسبة وعلوم مالية">محاسبة وعلوم مالية</option>
+                                    <option value="هندسة">هندسة</option>
+                                    <option value="تعليم وتدريب">تعليم وتدريب</option>
+                                    <option value="ثقافة وفنون">ثقافة وفنون</option>
+                                    <option value="ادارة أعمال">ادارة أعمال</option>
+                                    <option value="بائع/ة">بائع/ة</option>
+                                    <option value="بصريات">بصريات</option>
+                                    <option value="تحليل مخبري">تحليل مخبري</option>
+                                    <option value="تخدير">تخدير</option>
+                                    <option value="تدريب سياقة">تدريب سياقة</option>
+                                    <option value="تربية اطفال">تربية اطفال</option>
+                                    <option value="تصنيع غذائي">تصنيع غذائي</option>
+                                    <option value="حراسة">حراسة</option>
+                                    <option value="حدادة">حدادة</option>
+                                    <option value="حلاقة">حلاقة</option>
+                                    <option value="خباز و صانع حلويات">خباز و صانع حلويات</option>
+                                    <option value="دهان">دهان</option>
+                                    <option value="سائق">سائق</option>
+                                    <option value="سكرتير/ة">سكرتير/ة</option>
+                                    <option value="صياغة مجوهرات">صياغة مجوهرات</option>
+                                    <option value="طب بيطري">طب بيطري</option>
+                                    <option value="عامل بناء">عامل بناء</option>
+                                    <option value="تجميل">تجميل</option>
+                                    <option value="فني ميكانيك وكهربائي سيارات">فني ميكانيك وكهربائي سيارات</option>
                                 </select>
-                                <span class="input-group-text" id="basic-addon2">يجب وضع سعر حقيقي</span>
                             </div>
                         </td>
                     </tr>
                     <tr>
+                        <td>مكان العمل</td>
                         <td>
-                            تقع على
-                        </td>
-                        <td>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" required="" type="radio" name="located_on"
-                                    id="offer_type_sell" value="شارع رئيسي">
-                                <label class="form-check-label" for="offer_type_sell">شارع رئيسي</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="located_on" id="offer_type_rent"
-                                    value="شارع فرعي">
-                                <label class="form-check-label" for="offer_type_rent">شارع فرعي</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="located_on" id="offer_type_space"
-                                    value="شارع رئيسي وفرعي">
-                                <label class="form-check-label" for="offer_type_space">شارع رئيسي وفرعي</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="located_on" id="offer_type_other"
-                                    value="غير ذلك">
-                                <label class="form-check-label" for="offer_type_other">غير ذلك</label>
+                            <div class="input-group input-group-sm">
+                                <input type="text" name="workplace" class="form-control form-control-sm">
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td>محاطة ب </td>
+                        <td>عمل ليلي <span class="text-danger" style="">*</span></td>
                         <td>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" required="" type="radio" name="surrounded_by"
-                                    id="stores_type_sell" value="غير محاطة">
-                                <label class="form-check-label" for="stores_type_sell">غير محاطة </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="surrounded_by" id="stores_type_rent"
-                                    value="سور حجر">
-                                <label class="form-check-label" for="stores_type_rent">سور حجر </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="surrounded_by"
-                                    id="stores_type_space" value="سور إسمنت">
-                                <label class="form-check-label" for="stores_type_space">سور إسمنت</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="surrounded_by"
-                                    id="stores_type_street" value="سياج">
-                                <label class="form-check-label" for="stores_type_street">سياج</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="surrounded_by"
-                                    id="stores_type_outher" value="غير ذلك">
-                                <label class="form-check-label" for="stores_type_outher">غير ذلك</label>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>مميزات <span class="text-danger" style="font-weight: 700;">*</span></td>
-                        <td>
-                            <input type="hidden" name="features" id="extras">
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[It_gets_electricity]" type="checkbox"
-                                        name="property[It_gets_electricity]" onclick="checkedIf(event)"
-                                        value="تصلها كهرباء">
-                                    <label class="form-check-label" for="property[It_gets_electricity]"> تصلها
-                                        كهرباء</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[It_gets_water]" type="checkbox"
-                                        name="property[It_gets_water]" onclick="checkedIf(event)" value="تصلها مياه">
-                                    <label class="form-check-label" for="property[It_gets_water]"> تصلها مياه</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[arable]" type="checkbox"
-                                        name="property[arable]" onclick="checkedIf(event)" value="صالحة للزراعة">
-                                    <label class="form-check-label" for="property[arable]"> صالحة للزراعة</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[commercial_construction]"
-                                        type="checkbox" name="property[commercial_construction]"
-                                        onclick="checkedIf(event)" value="صالحة للبناء">
-                                    <label class="form-check-label" for="property[commercial_construction]"> صالحة للبناء
-                                        التجاري</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[building_housing]" type="checkbox"
-                                        name="property[building_housing]" onclick="checkedIf(event)"
-                                        value="صالحة للبناء السكن">
-                                    <label class="form-check-label" for="property[building_housing]"> صالحة للبناء
-                                        السكن</label>
-                                </div>
+                            <div class="input-group input-group-sm">
+                                <input type="text" name="night_work" class="form-control form-control-sm"
+                                    placeholder="معلومات عن العمل الليلي">
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td>التفاصيل </td>
+                        <td>نوع الدوام <span class="text-danger" style="">*</span></td>
+                        <td>
+                            <div class="form-check form-check-inline">
+                                <input required="" class="form-check-input" type="radio" name="permanence"
+                                    id="license_1" value="دوام كلي">
+                                <label class="form-check-label" for="license_1">دوام كلي</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input required="" class="form-check-input" type="radio" name="permanence"
+                                    id="license_1" value="دوام كلي">
+                                <label class="form-check-label" for="license_1">دوام جزئي</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>معلومات اضافية</td>
                         <td>
                             <div class="form-group">
                                 <textarea name="description" class="form-control form-control-sm" id="description"
@@ -174,54 +116,13 @@
                     <tr>
                         <td>الصور </td>
                         <td>
+
                             <div class="form-group input-group-sm">
                                 <div class="custom-file">
-                                    <input type="file" name="img[]" class="custom-file-input" id="inputGroupFile04"
-                                        aria-describedby="inputGroupFileAddon04" multiple>
-                                    <label class="custom-file-label" for="inputGroupFile04">اختر صورة</label>
+                                    <input type="file" name="img[]" class="custom-file-input" id="inputGroupFile05"
+                                        aria-describedby="inputGroupFileAddon05">
+                                    <label class="custom-file-label" for="inputGroupFile05">اختر صورة</label>
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>المدينه <span class="text-danger" style="font-weight: 700;">*</span> </td>
-                        <td>
-                            <div class="form-group input-group-sm">
-                                <select name="city" class="form-select" required="">
-                                    <option value="1">رام الله والبيرة </option>
-                                    <option value="2">القدس </option>
-                                    <option value="14">قطاع غزة </option>
-                                    <option value="4">الخليل </option>
-                                    <option value="5">بيت لحم </option>
-                                    <option value="6">أريحا </option>
-                                    <option value="7">سلفيت وبديا </option>
-                                    <option value="13">روابي </option>
-                                    <option value="12">طوباس </option>
-                                    <option value="11">قلقيلية </option>
-                                    <option value="10">طولكرم </option>
-                                    <option value="9">جنين </option>
-                                    <option value="8">نابلس </option>
-                                    <option value="15">جميع الاماكن </option>
-                                    <option value="16">مناطق الداخل </option>
-                                </select>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>العنوان <span class="text-danger" style="font-weight: 700;">*</span> </td>
-                        <td>
-                            <div class="input-group">
-                                <input type="text" class="form-control form-control-sm" required="" name="address"
-                                    placeholder="أسم المنطقة او الشارع" aria-label="أسم المنطقة او الشارع"
-                                    aria-describedby="basic-addon2">
-                                <span class="input-group-text d-flex d-lg-none " data-bs-toggle="tooltip"
-                                    data-bs-placement="left" title="" style="width:50px !important;"
-                                    id="basic-addon2"
-                                    data-original-title="ملاحظة: لن يتم قبول الإعلان بدون العنوان الكامل"><i
-                                        class="fas fa-info-circle"></i></span>
-                                <span class="input-group-text d-none d-lg-block w-100" id="basic-addon2">ملاحظة: لن يتم
-                                    قبول
-                                    الإعلان بدون العنوان الكامل</span>
                             </div>
                         </td>
                     </tr>
@@ -282,21 +183,59 @@
                         </td>
                     </tr>
                     <tr>
+                        <td>المدينه <span class="text-danger" style="font-weight: 700;">*</span> </td>
+                        <td>
+                            <div class="form-group input-group-sm">
+                                <select required="" name="city" class="form-select">
+                                    <option value="1">رام الله والبيرة </option>
+                                    <option value="2">القدس </option>
+                                    <option value="14">قطاع غزة </option>
+                                    <option value="4">الخليل </option>
+                                    <option value="5">بيت لحم </option>
+                                    <option value="6">أريحا </option>
+                                    <option value="7">سلفيت وبديا </option>
+                                    <option value="13">روابي </option>
+                                    <option value="12">طوباس </option>
+                                    <option value="11">قلقيلية </option>
+                                    <option value="10">طولكرم </option>
+                                    <option value="9">جنين </option>
+                                    <option value="8">نابلس </option>
+                                    <option value="15">جميع الاماكن </option>
+                                    <option value="16">مناطق الداخل </option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>العنوان <span class="text-danger" style="font-weight: 700;">*</span> </td>
+                        <td>
+                            <div class="input-group input-group-sm">
+                                <input required="" type="text" class="form-control form-control-sm" name="address"
+                                    placeholder="أسم المنطقة او الشارع" aria-label="أسم المنطقة او الشارع"
+                                    aria-describedby="basic-addon2">
+                                <span class="input-group-text d-flex d-lg-none " data-bs-toggle="tooltip"
+                                    data-bs-placement="left" title="" style="width:50px !important;"
+                                    id="basic-addon2"
+                                    data-original-title="ملاحظة: لن يتم قبول الإعلان بدون العنوان الكامل"><i
+                                        class="fas fa-info-circle"></i></span>
+                                <span class="input-group-text d-none d-lg-block w-100" id="basic-addon2">ملاحظة: لن
+                                    يتم قبول الإعلان بدون العنوان الكامل</span>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
-
         <div class="add-section w-75 mx-auto bg-white">
             @if (!auth()->user())
             <div class="add-section-title btn w-100 bg-primary p-1 px-3 mb-3">
-                <h5 class="text-white ml-2 font-weight-bold text-left">معلومات المُعلن</h5>
+                <h5 class="text-white ml-2 font-weight-bold text-left">معلومات الشركة </h5>
             </div>
             <table class="table table-bordered table-striped mb-0 bg-white">
                 <tbody>
                     <tr>
                         <td>
-                            اسم المُعلن <span class="text-danger" style="font-weight: 700;">*</span>
+                            اسم الشركة <span class="text-danger" style="font-weight: 700;">*</span>
                         </td>
                         <td>
                             <div class="input-group">

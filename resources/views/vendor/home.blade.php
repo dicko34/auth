@@ -44,7 +44,7 @@
                                     <p>
                                         <img src="{{asset('assets/site/images/generals/'.$general->img)}}" alt="user"
                                             class="avatar-xs rounded-circle">
-                                        <span class="ml-2">advertiser_name</span>
+                                        <span class="ml-2">{{$general->advertiser_name}} </span>
                                     </p>
                                 </div>
                             </div>

@@ -57,7 +57,7 @@ class MobileController extends Controller
         $validate['img'] = implode(',',$validate['img']);
         $validate['state'] = 'pinned';
         Mobile::create($validate);
-        return redirect()->route('mobiles.index');
+        return redirect()->route('mobile.index');
     }
 
     

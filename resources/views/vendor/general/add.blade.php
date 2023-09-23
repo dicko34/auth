@@ -33,45 +33,47 @@
                         <td>
                             <div class="input-group input-group-sm">
                                 <select name="category" class="form-select ">
-                                    <option value="1">اثاث منزلي و مكتبي</option>
-                                    <option value="2">اجهزة الكترونية</option>
-                                    <option value="3">اجهزة انذار ومراقبة</option>
-                                    <option value="4">اجهزة طبية</option>
-                                    <option value="5">اجهزة كهربائية</option>
-                                    <option value="6">احذية</option>
-                                    <option value="7">ادوات رياضية</option>
-                                    <option value="8">ادوات صحية</option>
-                                    <option value="9">ادوات منزلية</option>
-                                    <option value="10">ازهار واشتال ونباتات</option>
-                                    <option value="11">الات ومعدات</option>
-                                    <option value="12">العاب</option>
-                                    <option value="13">برامج كمبيوتر</option>
-                                    <option value="14">تجهيزات مكتبية</option>
-                                    <option value="15">تحف وهدايا</option>
-                                    <option value="16">تكييف وتبريد</option>
-                                    <option value="21">خلويات ولوازمها</option>
-                                    <option value="25">ديكور</option>
-                                    <option value="26">سجاد وموكيت</option>
-                                    <option value="29">شحن وتخليص جمركي</option>
-                                    <option value="30">شروات وصفقات تجارية</option>
-                                    <option value="31">عطور</option>
-                                    <option value="32">قرطاسية</option>
-                                    <option value="34">كمبيوتر ومستلزماته</option>
-                                    <option value="35">قطع سيارات</option>
-                                    <option value="36">مجوهرات</option>
-                                    <option value="37">معدات ثقيلة</option>
-                                    <option value="38">مفروشات</option>
-                                    <option value="39">ملابس</option>
-                                    <option value="40">مواد تجميل</option>
-                                    <option value="41">مواد غذائية</option>
-                                    <option value="42">نظارات</option>
-                                    <option value="43">آلات موسيقية</option>
-                                    <option value="44">اتصالات</option>
-                                    <option value="45">اكسسوارات ونثريات</option>
-                                    <option value="46">دورات تعليمية</option>
-                                    <option value="47">سيارات وتوابعها</option>
-                                    <option value="49">حيوانات</option>
-                                    <option value="48">خدمات عامة</option>
+                                    <option selected disabeled>الأصناف</option>
+                                    <option value="اثاث منزلي و مكتبي">اثاث منزلي و مكتبي</option>
+                                    <option value="اجهزة الكترونية">اجهزة الكترونية</option>
+                                    <option value="اجهزة انذار ومراقبة">اجهزة انذار ومراقبة</option>
+                                    <option value="اجهزة طبية">اجهزة طبية</option>
+                                    <option value="اجهزة كهربائية">اجهزة كهربائية</option>
+                                    <option value="احذية">احذية</option>
+                                    <option value="ادوات رياضية">ادوات رياضية</option>
+                                    <option value="ادوات صحية">ادوات صحية</option>
+                                    <option value="ادوات منزلية">ادوات منزلية</option>
+                                    <option value="ازهار واشتال ونباتات">ازهار واشتال ونباتات</option>
+                                    <option value="الات ومعدات">الات ومعدات</option>
+                                    <option value="العاب">العاب</option>
+                                    <option value="برامج كمبيوتر">برامج كمبيوتر</option>
+                                    <option value="تجهيزات مكتبية">تجهيزات مكتبية</option>
+                                    <option value="تحف وهدايا">تحف وهدايا</option>
+                                    <option value="تكييف وتبريد">تكييف وتبريد</option>
+                                    <option value="خلويات ولوازمها">خلويات ولوازمها</option>
+                                    <option value="ديكور">ديكور</option>
+                                    <option value="سجاد وموكيت">سجاد وموكيت</option>
+                                    <option value="شحن وتخليص جمركي">شحن وتخليص جمركي</option>
+                                    <option value="شروات وصفقات تجارية">شروات وصفقات تجارية</option>
+                                    <option value="عطور">عطور</option>
+                                    <option value="قرطاسية">قرطاسية</option>
+                                    <option value="كمبيوتر ومستلزماته">كمبيوتر ومستلزماته</option>
+                                    <option value="قطع سيارات">قطع سيارات</option>
+                                    <option value="مجوهرات">مجوهرات</option>
+                                    <option value="معدات ثقيلة">معدات ثقيلة</option>
+                                    <option value="مفروشات">مفروشات</option>
+                                    <option value="ملابس">ملابس</option>
+                                    <option value="مواد تجميل">مواد تجميل</option>
+                                    <option value="مواد غذائية">مواد غذائية</option>
+                                    <option value="نظارات">نظارات</option>
+                                    <option value="آلات موسيقية">آلات موسيقية</option>
+                                    <option value="اتصالات">اتصالات</option>
+                                    <option value="اكسسوارات ونثريات">اكسسوارات ونثريات</option>
+                                    <option value="دورات تعليمية">دورات تعليمية</option>
+                                    <option value="سيارات وتوابعها">سيارات وتوابعها</option>
+                                    <option value="حيوانات">حيوانات</option>
+                                    <option value="خدمات عامة">خدمات عامة</option>
+
                                 </select>
                             </div>
                         </td>
@@ -167,21 +169,22 @@
                         <td>
                             <div class="form-group input-group-sm">
                                 <select required="" name="city" class="form-select">
-                                    <option value="1">رام الله والبيرة </option>
-                                    <option value="2">القدس </option>
-                                    <option value="14">قطاع غزة </option>
-                                    <option value="4">الخليل </option>
-                                    <option value="5">بيت لحم </option>
-                                    <option value="6">أريحا </option>
-                                    <option value="7">سلفيت وبديا </option>
-                                    <option value="13">روابي </option>
-                                    <option value="12">طوباس </option>
-                                    <option value="11">قلقيلية </option>
-                                    <option value="10">طولكرم </option>
-                                    <option value="9">جنين </option>
-                                    <option value="8">نابلس </option>
-                                    <option value="15">جميع الاماكن </option>
-                                    <option value="16">مناطق الداخل </option>
+                                    <option value="رام الله والبيرة">رام الله والبيرة</option>
+<option value="القدس">القدس</option>
+<option value="قطاع غزة">قطاع غزة</option>
+<option value="الخليل">الخليل</option>
+<option value="بيت لحم">بيت لحم</option>
+<option value="أريحا">أريحا</option>
+<option value="سلفيت وبديا">سلفيت وبديا</option>
+<option value="روابي">روابي</option>
+<option value="طوباس">طوباس</option>
+<option value="قلقيلية">قلقيلية</option>
+<option value="طولكرم">طولكرم</option>
+<option value="جنين">جنين</option>
+<option value="نابلس">نابلس</option>
+<option value="جميع الاماكن">جميع الاماكن</option>
+<option value="مناطق الداخل">مناطق الداخل</option>
+
                                 </select>
                             </div>
                         </td>

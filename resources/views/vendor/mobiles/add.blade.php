@@ -22,37 +22,37 @@
                         <td>موديل <span class="text-danger" style="">*</span></td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <select name="model" class="form-select form-select-sm model-type-car" id="carCompany"
+                                <select name="model" class="form-control  model-type-car" id="carCompany"
                                     required="">
-                                    <option value="27">Alcatel</option>
-                                    <option value="4">Apple</option>
-                                    <option value="19">Asus</option>
-                                    <option value="21">BlackView</option>
-                                    <option value="17">Bluboo</option>
-                                    <option value="15">Doogee</option>
-                                    <option value="16">Elephone</option>
-                                    <option value="26">Homtom</option>
-                                    <option value="7">HTC</option>
-                                    <option value="24">Leagoo</option>
-                                    <option value="6">LG</option>
-                                    <option value="25">Micromax</option>
-                                    <option value="10">OnePlus</option>
-                                    <option value="22">Oppo</option>
-                                    <option value="29">Posh</option>
-                                    <option value="23">Telego</option>
-                                    <option value="18">UMi</option>
-                                    <option value="20">Vernee</option>
-                                    <option value="28">XGody</option>
-                                    <option value="13">بلاك بيري</option>
-                                    <option value="14">توشيبا</option>
-                                    <option value="9">جوجل</option>
-                                    <option value="2">سامسونج</option>
-                                    <option value="5">سوني</option>
-                                    <option value="12">شومي Xiaomi</option>
-                                    <option value="8">لينوفو</option>
-                                    <option value="3">موتورولا</option>
-                                    <option value="1">نوكيا</option>
-                                    <option value="11">هواوي</option>
+                                    <option value="Alcatel">Alcatel</option>
+                                    <option value="Apple">Apple</option>
+                                    <option value="Asus">Asus</option>
+                                    <option value="BlackView">BlackView</option>
+                                    <option value="Bluboo">Bluboo</option>
+                                    <option value="Doogee">Doogee</option>
+                                    <option value="Elephone">Elephone</option>
+                                    <option value="Homtom">Homtom</option>
+                                    <option value="HTC">HTC</option>
+                                    <option value="Leagoo">Leagoo</option>
+                                    <option value="LG">LG</option>
+                                    <option value="Micromax">Micromax</option>
+                                    <option value="OnePlus">OnePlus</option>
+                                    <option value="Oppo">Oppo</option>
+                                    <option value="Posh">Posh</option>
+                                    <option value="Telego">Telego</option>
+                                    <option value="UMi">UMi</option>
+                                    <option value="Vernee">Vernee</option>
+                                    <option value="XGody">XGody</option>
+                                    <option value="بلاك بيري">بلاك بيري</option>
+                                    <option value="توشيبا">توشيبا</option>
+                                    <option value="جوجل">جوجل</option>
+                                    <option value="سامسونج">سامسونج</option>
+                                    <option value="سوني">سوني</option>
+                                    <option value="شومي Xiaomi">شومي Xiaomi</option>
+                                    <option value="لينوفو">لينوفو</option>
+                                    <option value="موتورولا">موتورولا</option>
+                                    <option value="نوكيا">نوكيا</option>
+                                    <option value="هواوي">هواوي</option>
                                 </select>
                                 <span class="input-group-text d-flex d-lg-none text-center"
                                     style="width:50px !important;flex-wrap: nowrap; justify-content: center;"
@@ -245,21 +245,22 @@
                         <td>
                             <div class="form-group input-group-sm">
                                 <select required="" name="city" class="form-select">
-                                    <option value="1">رام الله والبيرة </option>
-                                    <option value="2">القدس </option>
-                                    <option value="14">قطاع غزة </option>
-                                    <option value="4">الخليل </option>
-                                    <option value="5">بيت لحم </option>
-                                    <option value="6">أريحا </option>
-                                    <option value="7">سلفيت وبديا </option>
-                                    <option value="13">روابي </option>
-                                    <option value="12">طوباس </option>
-                                    <option value="11">قلقيلية </option>
-                                    <option value="10">طولكرم </option>
-                                    <option value="9">جنين </option>
-                                    <option value="8">نابلس </option>
-                                    <option value="15">جميع الاماكن </option>
-                                    <option value="16">مناطق الداخل </option>
+                                    <option value="رام الله والبيرة">رام الله والبيرة</option>
+<option value="القدس">القدس</option>
+<option value="قطاع غزة">قطاع غزة</option>
+<option value="الخليل">الخليل</option>
+<option value="بيت لحم">بيت لحم</option>
+<option value="أريحا">أريحا</option>
+<option value="سلفيت وبديا">سلفيت وبديا</option>
+<option value="روابي">روابي</option>
+<option value="طوباس">طوباس</option>
+<option value="قلقيلية">قلقيلية</option>
+<option value="طولكرم">طولكرم</option>
+<option value="جنين">جنين</option>
+<option value="نابلس">نابلس</option>
+<option value="جميع الاماكن">جميع الاماكن</option>
+<option value="مناطق الداخل">مناطق الداخل</option>
+
                                 </select>
                             </div>
                         </td>

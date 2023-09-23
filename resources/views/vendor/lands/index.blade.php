@@ -24,20 +24,20 @@
                                         <select class="form-control">
                                             <option selected="" disabeled="">المحافظة</option>
                                             <option value="رام الله والبيرة">رام الله والبيرة</option>
-<option value="القدس">القدس</option>
-<option value="قطاع غزة">قطاع غزة</option>
-<option value="الخليل">الخليل</option>
-<option value="بيت لحم">بيت لحم</option>
-<option value="أريحا">أريحا</option>
-<option value="سلفيت وبديا">سلفيت وبديا</option>
-<option value="روابي">روابي</option>
-<option value="طوباس">طوباس</option>
-<option value="قلقيلية">قلقيلية</option>
-<option value="طولكرم">طولكرم</option>
-<option value="جنين">جنين</option>
-<option value="نابلس">نابلس</option>
-<option value="جميع الاماكن">جميع الاماكن</option>
-<option value="مناطق الداخل">مناطق الداخل</option>
+                                            <option value="القدس">القدس</option>
+                                            <option value="قطاع غزة">قطاع غزة</option>
+                                            <option value="الخليل">الخليل</option>
+                                            <option value="بيت لحم">بيت لحم</option>
+                                            <option value="أريحا">أريحا</option>
+                                            <option value="سلفيت وبديا">سلفيت وبديا</option>
+                                            <option value="روابي">روابي</option>
+                                            <option value="طوباس">طوباس</option>
+                                            <option value="قلقيلية">قلقيلية</option>
+                                            <option value="طولكرم">طولكرم</option>
+                                            <option value="جنين">جنين</option>
+                                            <option value="نابلس">نابلس</option>
+                                            <option value="جميع الاماكن">جميع الاماكن</option>
+                                            <option value="مناطق الداخل">مناطق الداخل</option>
 
                                         </select>
                                     </div>
@@ -57,7 +57,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row w-100 px-1 mx-auto">
             <div class="card w-100">
                 <div class="card-header m-0 p-0 w-100 d-inline-flex" style="height:60px;background:#262726 ;">
 
@@ -81,123 +81,40 @@
                     <div class="col-lg-6">
                         <table class="table table-striped table-bordered">
                             <thead class="bg-blue text-white">
-                                <tr class="bg-primary">
-                                    <th style="font-family: 'Tajawal';">العنوان</th>
-                                    <th style="font-family: 'Tajawal';">المساحة</th>
-                                    <th style="font-family: 'Tajawal';">المدينة</th>
-                                </tr>
+                                @if (count($lands) == NULL)
+                                    <h6 class="text-center pt-5 pb-5 mt-5 mb-5">
+                                        لا يوجد اعلانات حاليا <br>
+                                        <a class="text-primary"href="{{route('home')}}">عودة</a>
+                                    </h6>
+                                @else
+                                    <tr class="bg-primary">
+                                        <th style="font-family: 'Tajawal';">العنوان</th>
+                                        <th style="font-family: 'Tajawal';">المساحة</th>
+                                        <th style="font-family: 'Tajawal';">المدينة</th>
+                                    </tr>
+                                @endif
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>أرض جميلة</td>
-                                    <td>120m²</td>
-                                    <td>رام الله</td>
-                                </tr>
-                                <tr>
-                                    <td>أرض رائعة في حي القدس</td>
-                                    <td>300m²</td>
-                                    <td>القدس</td>
-                                </tr>
-                                <tr>
-                                    <td>قطعة أرض مميزة</td>
-                                    <td>90m²</td>
-                                    <td>نابلس</td>
-                                </tr>
-                                <tr>
-                                    <td>أرض جميلة للبيع</td>
-                                    <td>250m²</td>
-                                    <td>الخليل</td>
-                                </tr>
-                                <tr>
-                                    <td>أرض سكنية في جنين</td>
-                                    <td>150m²</td>
-                                    <td>جنين</td>
-                                </tr>
-                                <tr>
-                                    <td>منطقة هادئة في بيت لحم</td>
-                                    <td>180m²</td>
-                                    <td>بيت لحم</td>
-                                </tr>
-                                <tr>
-                                    <td>قطعة أرض ممتازة في قلقيلية</td>
-                                    <td>110m²</td>
-                                    <td>قلقيلية</td>
-                                </tr>
-                                <tr>
-                                    <td>أرض كبيرة في سلفيت وبديا</td>
-                                    <td>280m²</td>
-                                    <td>سلفيت وبديا</td>
-                                </tr>
+                                
+                                    @foreach ($lands as $land)
+                                    <tr>
+                                        <td>{{$land->brief}} </td>
+                                        <td>{{$land->area}} </td>
+                                        <td>{{$land->city}} </td>
+                                    </tr>
+                                    @endforeach
+                                
                             </tbody>
                         </table>
 
 
                     </div>
-                    <nav aria-label="..." class="">
-                        <ul class="pagination">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1">السابق</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item active">
-                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">التالي</a>
-                            </li>
-                        </ul>
-                    </nav>
+                    {{$lands->links('vendor.paginate')}}
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-00 col-lg-3">
-        <div class="row m-1">
-            <div class="card w-100">
-                <div class="body-card m-3">
-                    <div class="row">
-                        <h3 class="mb-4 col-6 ">اعلانات</h3>
-                    </div>
-                    <div class="row m-2 mb-2">
-
-                        @for ($i = 0; $i < 4; $i++) <div class="col-12 p-0 bordertoty">
-                            <div class="cardtoty m-sm-1 m-0 p-1">
-                                <a href="{{ asset('assets/admin/images/car.jpeg') }}" class="gallery-popup"
-                                    style="height: 130px; width:100%">
-                                    <div class="project-item">
-                                        <div class="overlay-container">
-                                            <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="img"
-                                                class="gallery-thumb-img m-0" style="height: 130px; width:100%">
-                                            <div class="project-item-overlay text-right">
-                                                <h4>عقارات</h4>
-                                                <p>
-                                                    <img src="{{ asset('assets/admin/images/car.jpeg') }}" alt="user"
-                                                        class="avatar-xs rounded-circle">
-                                                    <span class="ml-2">مارتينا جرجس</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="mt-2 mb-2">
-                                    <h4 class="" style="color:#820120">شقق</h4>
-                                    <p class="card-text">شقة عظم للبيع في الخليل ١٣٦ م
-                                        وسط الخليل على بعد 570 متري</p>
-                                </div>
-                            </div>
-                    </div>
-                    @endfor
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-
-
-
+    
 <style>
 h1,
 h2,

@@ -30,7 +30,7 @@ class HomeController extends Controller
             'loung' =>  'required|max:20',
             'area' =>  'required|max:20',
             'land_area' =>  'required|max:20',
-            'extras' =>  'required|max:500',
+            'extras' =>  'nullable|max:500',
             'price' =>  'required|max:20',
             'city' => 'required|max:30',
             'address' => 'required|max:100',
@@ -59,7 +59,7 @@ class HomeController extends Controller
         $validate['img'] = implode(',',$validate['img']);
         $validate['state'] = 'pinned';
         Home::create($validate);
-        return redirect()->route('homes.index');
+        return redirect()->route('home.index');
     }
 
 }

@@ -150,57 +150,21 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($homes as $home)
                                 <tr>
-                                    <td>شقة</td>
-                                    <td><a style="color:#000;" href="https://www.example.com/job/1.html"> للايجار</a>
-                                    </td>
-                                    <td>رام الله</td>
+                                    <td>{{$home->home_type}} </td>
+                                    <td>{{$home->show}} </td>
+                                    <td>{{$home->city}} </td>
                                 </tr>
-                                <tr>
-                                    <td>منزل منفصل</td>
-                                    <td><a style="color:#000;" href="https://www.example.com/job/2.html"> للبيع</a>
-                                    </td>
-                                    <td>القدس</td>
-                                </tr>
-                                <tr>
-                                    <td>شقة</td>
-                                    <td><a style="color:#000;" href="https://www.example.com/job/3.html"> للايجار</a>
-                                    </td>
-                                    <td>نابلس</td>
-                                </tr>
-                                <tr>
-                                    <td>منزل منفصل</td>
-                                    <td><a style="color:#000;" href="https://www.example.com/job/4.html"> للبيع</a>
-                                    </td>
-                                    <td>الخليل</td>
-                                </tr>
-                                <tr>
-                                    <td style="vertical-align: middle;">شقة</td>
-                                    <td style="vertical-align: middle;"><a style="color:#000;"
-                                            href="https://www.example.com/job/1.html"> للايجار</a></td>
-                                    <td>جنين</td>
-                                </tr>
-                                <tr>
-                                    <td>منزل منفصل</td>
-                                    <td><a style="color:#000;" href="https://www.example.com/job/2.html"> للبيع</a>
-                                    </td>
-                                    <td>بيت لحم</td>
-                                </tr>
-                                <tr>
-                                    <td>شقة</td>
-                                    <td><a style="color:#000;" href="https://www.example.com/job/3.html"> للايجار</a>
-                                    </td>
-                                    <td>قلقيلية</td>
-                                </tr>
-                                <tr>
-                                    <td style="vertical-align: middle;">منزل منفصل</td>
-                                    <td style="vertical-align: middle;"><a style="color:#000;"
-                                            href="https://www.example.com/job/4.html"> للبيع</a></td>
-                                    <td>سلفيت وبديا</td>
-                                </tr>
+                                @endforeach
+                                @if(count($homes) == NULL)
+                                    <h6>لا يوجد اعلانات حاليا <br>
+                                    <a class="text-primary" href="{{route('home')}} ">عودة</a>
+                                    </h6>
+                                @endif
                             </tbody>
                         </table>
-
+                       
 
 
 
@@ -212,21 +176,7 @@
 
 
                         <div class="col-12">
-                            <nav aria-label="..." class="w-100 m-auto">
-                                <ul class="pagination">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1">السابق</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item active">
-                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">التالي</a>
-                                    </li>
-                                </ul>
-                            </nav>
+                        {{ $homes->links('vendor.paginate') }}
                         </div>
                     </div>
                 </div>
