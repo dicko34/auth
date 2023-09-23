@@ -22,12 +22,41 @@
                                 <div class="form-group row">
                                     <label class="col-sm-4 col-form-label">جميع الشركات</label>
                                     <div class="col-12 m-0 p-0">
-                                        <select name="company" class="form-control">
-                                            <option value="الكل">الكل</option>
-                                            @foreach($mobiles->unique('company') as $mobile)
-                                            <option value="{{$mobile->company}}">{{$mobile->company}}</option>
-                                            @endforeach
-                                        </select>
+                                    <select name="model" class="form-control  model-type-car" id="carCompany"
+                                    required="">
+                                    <option value="Alcatel">Alcatel</option>
+                                    <option value="Apple">Apple</option>
+                                    <option value="Asus">Asus</option>
+                                    <option value="BlackView">BlackView</option>
+                                    <option value="Bluboo">Bluboo</option>
+                                    <option value="Doogee">Doogee</option>
+                                    <option value="Elephone">Elephone</option>
+                                    <option value="Homtom">Homtom</option>
+                                    <option value="HTC">HTC</option>
+                                    <option value="Leagoo">Leagoo</option>
+                                    <option value="LG">LG</option>
+                                    <option value="Micromax">Micromax</option>
+                                    <option value="OnePlus">OnePlus</option>
+                                    <option value="Oppo">Oppo</option>
+                                    <option value="Posh">Posh</option>
+                                    <option value="Telego">Telego</option>
+                                    <option value="UMi">UMi</option>
+                                    <option value="Vernee">Vernee</option>
+                                    <option value="XGody">XGody</option>
+                                    <option value="بلاك بيري">بلاك بيري</option>
+                                    <option value="توشيبا">توشيبا</option>
+                                    <option value="جوجل">جوجل</option>
+                                    <option value="سامسونج">سامسونج</option>
+                                    <option value="سوني">سوني</option>
+                                    <option value="شومي Xiaomi">شومي Xiaomi</option>
+                                    <option value="لينوفو">لينوفو</option>
+                                    <option value="موتورولا">موتورولا</option>
+                                    <option value="نوكيا">نوكيا</option>
+                                    <option value="هواوي">هواوي</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -37,10 +66,9 @@
                                     <label class="col-sm-4 col-form-label">الحالة</label>
                                     <div class="col-12 m-0 p-0">
                                         <select name="device_status" class="form-control">
-                                            <option value="الكل">الكل</option>
-                                            @foreach($mobiles->unique('device_status') as $mobile)
-                                            <option value="{{$mobile->device_status}}">{{$mobile->device_status}}</option>
-                                            @endforeach
+                                            <option selected="" disabeled="">الحالة</option>
+                                            <option value="جديد">جديد</option>
+                                            <option value="مستعمل"> مستعمل</option>
                                         </select>
                                     </div>
                                 </div>
@@ -50,12 +78,25 @@
                                 <div class="form-group row">
                                     <label class="col-sm-4 col-form-label">المحافظة</label>
                                     <div class="col-12 m-0 p-0">
-                                        <select name="advertiser_city" class="form-control">
-                                            <option value="الكل">الكل</option>
-                                            @foreach($mobiles->unique('advertiser_city') as $mobile)
-                                            <option value="{{$mobile->advertiser_city}}">{{$mobile->advertiser_city}}</option>
-                                            @endforeach
-                                        </select>
+                                    <select class="form-control">
+                                        <option selected="" disabeled="">المحافظة</option>
+                                        <option value="رام الله والبيرة">رام الله والبيرة</option>
+                                        <option value="القدس">القدس</option>
+                                        <option value="قطاع غزة">قطاع غزة</option>
+                                        <option value="الخليل">الخليل</option>
+                                        <option value="بيت لحم">بيت لحم</option>
+                                        <option value="أريحا">أريحا</option>
+                                        <option value="سلفيت وبديا">سلفيت وبديا</option>
+                                        <option value="روابي">روابي</option>
+                                        <option value="طوباس">طوباس</option>
+                                        <option value="قلقيلية">قلقيلية</option>
+                                        <option value="طولكرم">طولكرم</option>
+                                        <option value="جنين">جنين</option>
+                                        <option value="نابلس">نابلس</option>
+                                        <option value="جميع الاماكن">جميع الاماكن</option>
+                                        <option value="مناطق الداخل">مناطق الداخل</option>
+
+                                    </select>
                                     </div>
                                 </div>
                             </div>
@@ -64,22 +105,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-4 col-form-label">السعر من</label>
                                     <div class="col-12 m-0 p-0">
-                                        <select name="price_max" class="form-control">
-
-                                            @php
-                                            $price_max = '';
-                                            $ar = [];
-                                            @endphp
-                                            @foreach($mobiles->unique('price') as $mobile)
-                                            @php
-                                            array_push($ar,$mobile->price);
-                                            rsort($ar);
-                                            @endphp
-                                            @endforeach
-                                            <option value="{{$ar[0]}}">{{$ar[0]}}</option>
-                                            @for($i = 1; $i < count($ar)-1; $i++) @php($price=$ar[$i]) <option value="{{$price}}">{{$price}}</option>
-                                                @endfor
-                                        </select>
+                                        <input class="form-control input-form-group" type="text" placeholder="اقل سعر">
                                     </div>
                                 </div>
                             </div>
@@ -88,13 +114,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-4 col-form-label">السعر الي</label>
                                     <div class="col-12 m-0 p-0">
-                                        <select name="price_min" class="form-control">
-
-                                            @php(sort($ar))
-                                            <option value="{{$ar[0]}}">{{$ar[0]}}</option>
-                                            @for($i = 1 ; $i < count($ar)-1; $i++) @php($price=$ar[$i]) <option value="{{$price}}">{{$price}}</option>
-                                                @endfor
-                                        </select>
+                                        <input class="form-control input-form-group" type="text" placeholder="اعلى سعر">
                                     </div>
                                 </div>
                             </div>
@@ -160,12 +180,12 @@
                 <div class="row">
                     <h3 class="mb-4 col-6"><i class="mdi mdi-car-side mr-2"></i> أعلانات السيارات </h3>
                     <div class="col-6 text-right">
-                        <a class="btn btn-primary w-md waves-effect waves-light" href="{{ route("mobiles.add") }}">أضافة أعلان هنا</a>
+                        <a class="btn btn-primary w-md waves-effect waves-light" href="{{ route("mobile.add") }}">أضافة أعلان هنا</a>
                     </div>
                 </div>
                 <div class="row">
 
-                @foreach(isset($mobiles_show) ? $mobiles_show : $mobiles as $mobile)
+                @foreach($mobiles as $mobile)
                         <div class="col-md-6 col-lg-6 col-xl-3">
                             <div class="card">
                                 <a href="{{ asset('assets/site/images/mobiles/'.explode(',',$mobile->img)[0]) }}" class="gallery-popup"
@@ -175,7 +195,11 @@
                                             <img src="{{ asset('assets/site/images/mobiles/'.explode(',',$mobile->img)[0]) }}" alt="img"
                                                 class="gallery-thumb-img m-0" style="height: 230px; width:100%">
                                             <div class="project-item-overlay text-right">
-                                                <h4>موبايل</h4>
+                                                <h4>هاتف {{$mobile->model}} 
+                                                    @if(!empty($mobile->reset_model))
+                                                        {{$mobile->reset_model}}
+                                                    @endif
+                                                </h4>
                                                 <p>
                                                     <img src="{{ asset('assets/site/images/mobiles/'.explode(',',$mobile->img)[0]) }}" alt="user"
                                                         class="avatar-xs rounded-circle">
