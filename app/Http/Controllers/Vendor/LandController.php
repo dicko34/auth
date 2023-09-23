@@ -24,9 +24,9 @@ class LandController extends Controller
             'area' =>  'required|max:30',
             'price' =>  'required|max:20',
             'located_on' =>  'required|max:30',
-            'features' =>  'required|max:200',
+            'features' =>  'nullable|max:200',
             'surrounded_by' =>  'required|max:50',
-            'description' =>  'required|max:500',
+            'description' =>  'required|max:1500',
             'img'=> 'required',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'city' => 'required|max:30',
@@ -53,7 +53,7 @@ class LandController extends Controller
         $validate['img'] = implode(',',$validate['img']);
         $validate['state'] = 'pinned';
         Land::create($validate);
-        return redirect()->route('lands.index');
+        return redirect()->route('land.index');
     }
 
     /**

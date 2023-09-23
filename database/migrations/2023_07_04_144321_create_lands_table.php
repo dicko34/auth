@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigInteger('price');
             $table->string('surrounded_by');
             $table->string('located_on');
-            $table->string('features');
+            $table->string('features')->nullable();
             $table->longText('description');
             $table->string('img');
             $table->string('city');

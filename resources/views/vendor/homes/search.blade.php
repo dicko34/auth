@@ -131,12 +131,12 @@
 
 
                     <div class="h-100 mr-1 pt-1" style="width:34%;">
-                        <button class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
+                        <a href="{{route('home.add')}}" class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
                             style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
 
                             <i class="fa fa-plus-circle "></i>اضف اعلان جديد
 
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="row mt-3">

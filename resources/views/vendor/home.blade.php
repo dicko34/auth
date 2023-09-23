@@ -1,7 +1,7 @@
 ﻿@extends("layouts.vendor")
 @section('pageTitle', 'Koala Web Libraries')
 @section('styleChart')
-<link href="{{ url('assets/admin/libs/c3/c3.min.css') }}"id="bootstrap-style"rel="stylesheet" type="text/css" />
+<link href="{{ url('assets/admin/libs/c3/c3.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -18,12 +18,12 @@
 
 
             <div class="h-100 mr-1 pt-1" style="width:34%;">
-                <button class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
+                <a href="{{route('general.add')}}" class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
                     style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
 
                     <i class="fa fa-plus-circle "></i>اضف اعلان جديد
 
-                </button>
+                </a>
             </div>
         </div>
 
@@ -64,6 +64,8 @@
                         تصفح المزيد
                     </button>
                 </div>
+                @elseif (count($generals) == 0)
+                    <h6 class="text-center pt-2 pb-2">لا توجد اعلانات في هذه الفئة</h6>
                 @endif
             </div>
         </div>
@@ -75,19 +77,19 @@
         <div class="card-header m-0 p-0 w-100 d-inline-flex" style="height:60px;background:#262726 ;">
 
             <div class="h-100 text-white px-2" style="width:65%">
-                <a href="/general" class="text-white">
+                <a href="{{route('car.index')}}" class="text-white">
                     <h3><i class="mdi mdi-car-side mr-2"></i> سيارات </h3>
                 </a>
             </div>
 
 
             <div class="h-100 mr-1 pt-1" style="width:34%;">
-                <button class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
+                <a href="{{route('car.add')}}" class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
                     style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
 
                     <i class="fa fa-plus-circle "></i>اضف اعلان جديد
 
-                </button>
+                </a>
             </div>
         </div>
         <div class="body-card m-3">
@@ -110,32 +112,33 @@
                                         <p>
                                             <img src="{{ asset('/admin/images/car.jpeg') }}" alt="user"
                                                 class="avatar-xs rounded-circle">
-                                            <span class="ml-2">advertiser_name</span>
+                                            <span class="ml-2">{{$car->advertiser_name}}</span>
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </a>
                         <div class="card-body">
-                            <h4 class="card-title">{{ $car->company . ' ' . ($car->model ? $car->model : 'reset_model') }}</h4>
+                            <h4 class="card-title">
+                                {{ $car->company . ' ' . ($car->model ? $car->model : 'reset_model') }}</h4>
                             <p class="card-text">
                                 {{$car->description}}
                             </p>
                         </div>
                     </div>
                 </div>
-            @endforeach
-            @if(count($cars) > 6)
+                @endforeach
+                @if(count($cars) > 6)
                 <div class="mx-auto" style="width:150px;">
                     <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
                         style="height:33px;font-size: 11px;line-height:33px;">
                         تصفح المزيد
                     </button>
                 </div>
-            @endif
+                @endif
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 <div class="row main-section">
@@ -143,19 +146,19 @@
         <div class="card-header m-0 p-0 w-100 d-inline-flex" style="height:60px;background:#262726 ;">
 
             <div class="h-100 text-white px-2" style="width:65%">
-                <a href="/homes" class="text-white">
+                <a href="{{route('home.index')}}" class="text-white">
                     <h3><i class="mdi mdi-home mr-2"></i> شقق </h3>
                 </a>
             </div>
 
 
             <div class="h-100 mr-1 pt-1" style="width:34%;">
-                <button class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
+                <a href="{{route('home.add')}}" class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
                     style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
 
                     <i class="fa fa-plus-circle "></i>اضف اعلان جديد
 
-                </button>
+                </a>
             </div>
         </div>
         <div class="body-card m-3">
@@ -195,19 +198,19 @@
         <div class="card-header m-0 p-0 w-100 d-inline-flex" style="height:60px;background:#262726 ;">
 
             <div class="h-100 text-white px-2" style="width:65%">
-                <a href="/homes" class="text-white">
+                <a href="{{route('shop.index')}}" class="text-white">
                     <h3><i class=" mdi mdi-shopping-search mr-2"></i> محلات و مكاتب </h3>
                 </a>
             </div>
 
 
             <div class="h-100 mr-1 pt-1" style="width:34%;">
-                <button class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
+                <a href="{{route('shop.add')}}" class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
                     style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
 
                     <i class="fa fa-plus-circle "></i>اضف اعلان جديد
 
-                </button>
+                </a>
             </div>
         </div>
         <div class="body-card m-3">
@@ -245,19 +248,19 @@
         <div class="card-header m-0 p-0 w-100 d-inline-flex" style="height:60px;background:#262726 ;">
 
             <div class="h-100 text-white px-2" style="width:65%">
-                <a href="/homes" class="text-white">
+                <a href="{{route('land.index')}}" class="text-white">
                     <h3><i class="mdi mdi-view-dashboard mr-2"></i> اراضي </h3>
                 </a>
             </div>
 
 
             <div class="h-100 mr-1 pt-1" style="width:34%;">
-                <button class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
+                <a href="{{route('land.add')}}" class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
                     style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
 
                     <i class="fa fa-plus-circle "></i>اضف اعلان جديد
 
-                </button>
+                </a>
             </div>
         </div>
         <div class="body-card m-3">
@@ -266,14 +269,14 @@
             <div class="row">
                 <table class="table table-striped table-bordered">
                     <tbody>
-                        @foreach ($lands as $land) 
+                        @foreach ($lands as $land)
                         <div class="col-6 col-xl-2 p-1">
                             <tr>
                                 <td>{{$land->brief}}</td>
                                 <td>{{$land->area}}</td>
                                 <td>{{$land->city}}</td>
                             </tr>
-                        @endforeach
+                            @endforeach
                     </tbody>
                 </table>
                 @if(count($lands) > 6)
@@ -294,19 +297,19 @@
         <div class="card-header m-0 p-0 w-100 d-inline-flex" style="height:60px;background:#262726 ;">
 
             <div class="h-100 text-white px-2" style="width:65%">
-                <a href="/homes" class="text-white">
+                <a href="{{route('job.index')}}" class="text-white">
                     <h3><i class=" fas fa-user-friends mr-2"></i> توظيف </h3>
                 </a>
             </div>
 
 
             <div class="h-100 mr-1 pt-1" style="width:34%;">
-                <button class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
+                <a href="{{route('job.add')}}" class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
                     style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
 
                     <i class="fa fa-plus-circle "></i>اضف اعلان جديد
 
-                </button>
+                </a>
             </div>
         </div>
         <div class="body-card m-3">
@@ -317,21 +320,12 @@
 
                 <table class="table table-striped table-bordered">
                     <tbody>
-                        @foreach ($jobs as $job) 
-                        <div class="col-6 col-xl-2 p-1">
-                            <tr>
-                                <td>SonaTrack</td>
-                                <td style="vertical-align: middle;"><a style="color:#000;"
-                                        href="https://www.wenak.ps/job/46388.html">محاضر</a></td>
-                                <td style="vertical-align: middle;">قطاع غزة</td>
-                            </tr>
-                            <tr>
-                                <td>SonaTrack</td>
-                                <td style="vertical-align: middle;"><a style="color:#000;"
-                                        href="https://www.wenak.ps/job/46387.html">مساعد شوفير</a>
-                                </td>
-                                <td style="vertical-align: middle;">الخليل</td>
-                            </tr>
+                        @foreach ($jobs as $job)
+                        <tr>
+                            <td>{{$job->advertiser_name}} </td>
+                            <td style="vertical-align: middle;">{{$job->specialization}} </td>
+                            <td style="vertical-align: middle;">{{$job->city}} </td>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>
@@ -353,26 +347,26 @@
         <div class="card-header m-0 p-0 w-100 d-inline-flex" style="height:60px;background:#262726 ;">
 
             <div class="h-100 text-white px-2" style="width:65%">
-                <a href="/homes" class="text-white">
+                <a href="{{route('mobile.index')}}" class="text-white">
                     <h3><i class="mbri-mobile2 mr-2"></i> الاجهزة الذكية </h3>
                 </a>
             </div>
 
 
             <div class="h-100 mr-1 pt-1" style="width:34%;">
-                <button class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
+                <a href="{{route('mobile.add')}}" class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
                     style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
 
                     <i class="fa fa-plus-circle "></i>اضف اعلان جديد
 
-                </button>
+                </a>
             </div>
         </div>
         <div class="body-card m-3">
 
             <div class="row">
 
-                @foreach ($mobiles as $mobile) 
+                @foreach ($mobiles as $mobile)
                 <div class="col-6 col-xl-2 p-1">
                     <div class="annonce-item" style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
                         <a href="{{ asset('/admin/images/'.$mobile->img) }}" class="gallery-popup"
@@ -397,19 +391,19 @@
                             <p class="card-text">{{$mobile->description}}</p>
                         </div>
                     </div>
-            </div>
-            @endforeach
-            @if(count($mobiles) > 6)
+                </div>
+                @endforeach
+                @if(count($mobiles) > 6)
                 <div class="mx-auto" style="width:150px;">
                     <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
                         style="height:33px;font-size: 11px;line-height:33px;">
                         تصفح المزيد
                     </button>
                 </div>
-            @endif
+                @endif
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 
