@@ -39,7 +39,6 @@ class CarController extends Controller
             'glass' =>  'required|max:20',
             'shown' => 'required|max:20',
             'pay_method' =>  'required|max:20',
-            'extras' =>  'nullable|max:500',
             'address' => 'required|max:100',
             'description' =>  'required|max:600',
             'img'=> 'required',
@@ -69,6 +68,14 @@ class CarController extends Controller
             $validate["mobile"] = null;
             $validate["email"] = $credentilas->email;
         }
+
+        $extras = $request->input('extras', []);
+
+        // Convert the array to a comma-separated string
+        $extrasString = implode(',', $extras);
+
+        $validate['extras'] = $extrasString;
+        
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
             $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();

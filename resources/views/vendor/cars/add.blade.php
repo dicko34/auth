@@ -33,7 +33,7 @@
                                 </select>
 
                                 <select name="model" class="form-control model-type-car" id="carModel"
-                                    required="">
+                                    >
                                     <option value=""selected disabled> الموديل</option>
                                 </select>
                                 <span class="input-group-text d-flex d-lg-none text-center" data-bs-toggle="tooltip"
@@ -258,13 +258,13 @@
                         <td>
                             <div class="input-group input-group-sm">
                                 <select name="drive_type" id="type" class="form-select" aria-invalid="false">
-                                    <option value="2">مركبات خاصه </option>
-                                    <option value="3">مركبات ايجار </option>
-                                    <option value="4">دراجات ناريه </option>
-                                    <option value="5">سكوتر </option>
-                                    <option value="6">الشاحنات </option>
-                                    <option value="7">المعدات الثقيله </option>
-                                    <option value="8">تجاريه خفيفه </option>
+                                    <option value="مركبات خاصه">مركبات خاصه </option>
+                                    <option value="مركبات ايجار">مركبات ايجار </option>
+                                    <option value="دراجات ناريه">دراجات ناريه </option>
+                                    <option value="سكوتر">سكوتر </option>
+                                    <option value="الشاحنات">الشاحنات </option>
+                                    <option value="المعدات الثقيله">المعدات الثقيله </option>
+                                    <option value="تجاريه خفيفه">تجاريه خفيفه </option>
                                 </select>
                             </div>
                         </td>
@@ -406,150 +406,151 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>إضافات </td>
-                        <td>
-                            <input type="hidden" id="extras" name="extras">
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[1]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[1]" value="جهاز إنذار">
-                                    <label class="form-check-label" for="property[1]"> جهاز إنذار</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[2]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[2]" value="مُكيّف">
-                                    <label class="form-check-label" for="property[2]"> مُكيّف</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[3]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[3]" value="مسجل CD">
-                                    <label class="form-check-label" for="property[3]"> مسجل CD</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[4]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[4]" value="فتحة سقف">
-                                    <label class="form-check-label" for="property[4]"> فتحة سقف</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[5]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[5]" value="فرش جلد">
-                                    <label class="form-check-label" for="property[5]"> فرش جلد </label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[6]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[6]" value="إغلاق مركزي">
-                                    <label class="form-check-label" for="property[6]"> إغلاق مركزي</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[7]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[7]" value="جنطات مغنيسيوم">
-                                    <label class="form-check-label" for="property[7]"> جنطات مغنيسيوم</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[8]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[8]" value="وسادة حماية هوائية">
-                                    <label class="form-check-label" for="property[8]"> وسادة حماية هوائية</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[9]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[9]" value="كميرا ريفرس">
-                                    <label class="form-check-label" for="property[9]"> كميرا ريفرس</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[10]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[10]" value="حساسات">
-                                    <label class="form-check-label" for="property[10]"> حساسات</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[11]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[11]" value="انارة لد داخلية">
-                                    <label class="form-check-label" for="property[11]"> انارة لد داخلية</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[12]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[12]" value="اضواء زينون وليدات">
-                                    <label class="form-check-label" for="property[12]"> اضواء زينون وليدات</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[14]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[14]" value="كاميرا 360 درجة">
-                                    <label class="form-check-label" for="property[14]"> كاميرا 360 درجة</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[15]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[15]" value="زجاج معتم">
-                                    <label class="form-check-label" for="property[15]"> زجاج معتم</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[16]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[16]" value="نظام ردار">
-                                    <label class="form-check-label" for="property[16]"> نظام ردار</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[17]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[17]" value="شاشة">
-                                    <label class="form-check-label" for="property[17]"> شاشة</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[18]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[18]" value="مثبت سرعة">
-                                    <label class="form-check-label" for="property[18]"> مثبت سرعة</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[19]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[19]"  value="هاند بريك كهرباء">
-                                    <label class="form-check-label" for="property[19]"> هاند بريك كهرباء</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[20]" type="checkbox"
-                                        onclick="checkedIf(event)" name="property[20]" value="فتحة سقف بانوراما">
-                                    <label class="form-check-label" for="property[20]"> فتحة سقف بانوراما</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" id="property[21]" type="checkbox"
-                                    onclick="checkedIf(event)" name="property[21]" value="شاحن لاسلكي">
-                                    <label class="form-check-label" for="property[21]"> شاحن لاسلكي</label>
-                                </div>
-                            </div>
-                        </td>
+                    <td>إضافات</td>
+<td>
+    <input type="hidden" id="extras" name="extras[]" value=""> <!-- Add [] to the name attribute -->
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[1]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="جهاز إنذار">
+            <label class="form-check-label" for="property[1]"> جهاز إنذار</label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[2]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="مُكيّف">
+            <label class="form-check-label" for="property[2]"> مُكيّف</label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[3]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="مسجل CD">
+            <label class="form-check-label" for="property[3]"> مسجل CD</label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[4]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="فتحة سقف">
+            <label class="form-check-label" for="property[4]"> فتحة سقف</label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[5]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="فرش جلد">
+            <label class="form-check-label" for="property[5]"> فرش جلد </label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[6]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="إغلاق مركزي">
+            <label class="form-check-label" for="property[6]"> إغلاق مركزي</label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[7]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="جنطات مغنيسيوم">
+            <label class="form-check-label" for="property[7]"> جنطات مغنيسيوم</label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[8]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="وسادة حماية هوائية">
+            <label class="form-check-label" for="property[8]"> وسادة حماية هوائية</label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[9]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="كميرا ريفرس">
+            <label class="form-check-label"> كميرا ريفرس</label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[10]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="حساسات">
+            <label class="form-check-label" for="property[10]"> حساسات</label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[11]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="انارة لد داخلية">
+            <label class="form-check-label" for="property[11]"> انارة لد داخلية</label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[12]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="اضواء زينون وليدات">
+            <label class="form-check-label" for="property[12]"> اضواء زينون وليدات</label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[14]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="كاميرا 360 درجة">
+            <label class="form-check-label" for="property[14]"> كاميرا 360 درجة</label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[15]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="زجاج معتم">
+            <label class="form-check-label" for="property[15]"> زجاج معتم</label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[16]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="نظام ردار">
+            <label class="form-check-label" for="property[16]"> نظام ردار</label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[17]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="شاشة">
+            <label class="form-check-label" for="property[17]"> شاشة</label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[18]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="مثبت سرعة">
+            <label class="form-check-label" for="property[18]"> مثبت سرعة</label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[19]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="هاند بريك كهرباء">
+            <label class="form-check-label" for="property[19]"> هاند بريك كهرباء</label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[20]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="فتحة سقف بانوراما">
+            <label class="form-check-label" for="property[20]"> فتحة سقف بانوراما</label>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" id="property[21]" name="extras[]" type="checkbox" 
+            onclick="checkedIf(event)" value="شاحن لاسلكي">
+            <label class="form-check-label" for="property[21]"> شاحن لاسلكي</label>
+        </div>
+    </div>
+</td>
+
                     </tr>
                     <tr>
                         <td>التفاصيل </td>
@@ -566,7 +567,7 @@
                             <div class="form-group input-group-sm mb-2">
                                 <div class="custom-file">
                                     <input type="file" name="img[]" class="custom-file-input"
-                                        id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" multiple>
+                                        id="inputGroupFile01"  multiple>
                                     <label class="custom-file-label" for="inputGroupFile01">اختر صورة</label>
                                 </div>
                             </div>
