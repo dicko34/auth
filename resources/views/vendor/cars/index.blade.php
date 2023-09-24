@@ -174,14 +174,14 @@
                         </a>
                     </div>
                 </div>
-                <div class="body-card m-3">
+                <div class="card-body px-1 mt-3">
 
 
 
-                    <div class="row px-1 m-0">
+                    <div class="row px-0 m-0">
 
                     @foreach ($cars as $car)
-                                <div class="col-sm-12 col-lg-4 p-0">
+                                <div class="col-6 col-lg-4 p-0 mx-0">
                                     <div class="cardtoty m-sm-1 m-0 p-1">
                                         <a href="{{ asset('assets/site/images/cars/' . $car->img) }}"
                                             class="gallery-popup" style="height: 130px; width:100%">
@@ -216,7 +216,6 @@
     </div>
 </div>
 </div>
-
 <style>
 h1,
 h2,
