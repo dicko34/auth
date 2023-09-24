@@ -20,13 +20,13 @@ class CarController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'model' =>  'required|max:30',
+            'model' =>  'nullable|max:30',
             'company' =>  'max:30',
-            'reset_model' =>  'required|max:20',
+            'reset_model' =>  'nullable|max:20',
             'model_year' =>  'required|max:20',
             'car_color' =>  'required|max:20',
             'power' => 'required|max:20',
-            'passengers' =>  'required|max:20',
+            'passengers' =>  'required|max:50',
             'car_usage' => 'required|max:50',
             'drive_type' =>  'required|max:20',
             'speedmotors' =>  'required|max:20',
@@ -39,27 +39,29 @@ class CarController extends Controller
             'glass' =>  'required|max:20',
             'shown' => 'required|max:20',
             'pay_method' =>  'required|max:20',
-            'extras' =>  'required|max:500',
+            'extras' =>  'nullable|max:500',
             'address' => 'required|max:100',
             'description' =>  'required|max:600',
             'img'=> 'required',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'advertiser_name' => [
-                New AdvertiserInfo(), 'max:20'
+                'required', 'max:200'
             ],
             'phone_number' => [
-                New AdvertiserInfo(), 'max:20'
+                'required', 'max:20'
             ],
             'mobile' => [
-                New AdvertiserInfo(), 'max:20'
+                'required', 'max:20'
             ],
             'email' =>  [
-                New AdvertiserInfo(), 'max:20','email'
+                'required', 'max:300', 'email'
             ],
             'city' => [
-                New AdvertiserInfo(), 'max:20'
+                'required', 'max:20'
             ],
+            
         ]);
+
         if($request->user()) {
             $credentilas = $request->user();
             $validate["advertiser_name"] = $credentilas->name;

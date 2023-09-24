@@ -191,18 +191,20 @@
                         <td>
                             <div class="input-group input-group-sm">
                                 <select name="passengers" class="form-select" id="car_passengers">
-                                    <option value="">حدد عدد الركاب</option>
+                                    <option  selected disabled>حدد عدد الركاب</option>
                                     <option value="1">1</option>
-                                    <option value="1+1">1+1</option>
-                                    <option value="2+1">2+1</option>
-                                    <option value="3+1">3+1</option>
-                                    <option value="4+1">4+1</option>
-                                    <option value="5+1">5+1</option>
-                                    <option value="6+1">6+1</option>
-                                    <option value="7+1">7+1</option>
-                                    <option value="8+1">8+1</option>
-                                    <option value="9+1">9+1</option>
+                                    <option value="1">1+1</option>
+                                    <option value="2">2+1</option>
+                                    <option value="3">3+1</option>
+                                    <option value="4">4+1</option>
+                                    <option value="5">5+1</option>
+                                    <option value="6">6+1</option>
+                                    <option value="7">7+1</option>
+                                    <option value="8">8+1</option>
+                                    <option value="9">9+1</option>
                                     <option value="اكثر من 10">اكثر من 10</option>
+                                </select>
+
                                 </select>
                             </div>
                         </td>
@@ -632,20 +634,20 @@
                             <div class="form-group input-group-sm">
                                 <select required="" name="city" class="form-select">
                                     <option value="رام الله والبيرة">رام الله والبيرة</option>
-<option value="القدس">القدس</option>
-<option value="قطاع غزة">قطاع غزة</option>
-<option value="الخليل">الخليل</option>
-<option value="بيت لحم">بيت لحم</option>
-<option value="أريحا">أريحا</option>
-<option value="سلفيت وبديا">سلفيت وبديا</option>
-<option value="روابي">روابي</option>
-<option value="طوباس">طوباس</option>
-<option value="قلقيلية">قلقيلية</option>
-<option value="طولكرم">طولكرم</option>
-<option value="جنين">جنين</option>
-<option value="نابلس">نابلس</option>
-<option value="جميع الاماكن">جميع الاماكن</option>
-<option value="مناطق الداخل">مناطق الداخل</option>
+                                    <option value="القدس">القدس</option>
+                                    <option value="قطاع غزة">قطاع غزة</option>
+                                    <option value="الخليل">الخليل</option>
+                                    <option value="بيت لحم">بيت لحم</option>
+                                    <option value="أريحا">أريحا</option>
+                                    <option value="سلفيت وبديا">سلفيت وبديا</option>
+                                    <option value="روابي">روابي</option>
+                                    <option value="طوباس">طوباس</option>
+                                    <option value="قلقيلية">قلقيلية</option>
+                                    <option value="طولكرم">طولكرم</option>
+                                    <option value="جنين">جنين</option>
+                                    <option value="نابلس">نابلس</option>
+                                    <option value="جميع الاماكن">جميع الاماكن</option>
+                                    <option value="مناطق الداخل">مناطق الداخل</option>
 
                                 </select>
                             </div>
@@ -685,6 +687,10 @@
                             اسم المُعلن <span class="text-danger" style="font-weight: 700;">*</span>
                         </td>
                         <td>
+                        @error('advertiser_name')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+
                             <div class="input-group">
                                 <input type="text" class="form-control" required=""
                                     name="advertiser_name" placeholder="الاسم الحقيقي">
@@ -702,8 +708,8 @@
                         </td>
                         <td>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="email"
-                                    placeholder="البريد الالكتروني" aria-label="البريد الالكتروني">
+                                <input type="text" required class="form-control" name="email"
+                                    placeholder="البريد الالكتروني" >
                             </div>
                         </td>
                     </tr>
@@ -713,8 +719,8 @@
                         </td>
                         <td>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="phone_number"
-                                    placeholder="رقم الهاتف مع المقدمة" aria-label="رقم الهاتف مع المقدمة">
+                                <input type="text" required class="form-control" name="phone_number"
+                                    placeholder="رقم الهاتف مع المقدمة" >
                             </div>
                         </td>
                     </tr>
@@ -725,7 +731,7 @@
                         <td>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="mobile"
-                                    placeholder="رقم الموبايل" aria-label="رقم الهاتف مع المقدمة">
+                                    placeholder="رقم الموبايل" required>
                             </div>
                         </td>
                     </tr>

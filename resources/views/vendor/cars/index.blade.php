@@ -181,13 +181,13 @@
                     <div class="row px-1 m-0">
 
                     @foreach ($cars as $car)
-                                <div class="col-12 p-0">
+                                <div class="col-sm-12 col-lg-4 p-0">
                                     <div class="cardtoty m-sm-1 m-0 p-1">
-                                        <a href="{{ asset('jjassets/site/images/cars/' . $car->img) }}"
+                                        <a href="{{ asset('assets/site/images/cars/' . $car->img) }}"
                                             class="gallery-popup" style="height: 130px; width:100%">
                                             <div class="project-item">
                                                 <div class="overlay-container">
-                                                    <img src="{{ asset('kkassets/site/images/cars/' . explode(',', $car->img)[0]) }}"
+                                                    <img src="{{ asset('assets/site/images/cars/' . explode(',', $car->img)[0]) }}"
                                                         alt="img" class="gallery-thumb-img m-0"
                                                         style="height: 130px; width:100%">
                                                     <div class="project-item-overlay text-right">
