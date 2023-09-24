@@ -34,7 +34,7 @@ return new class extends Migration
             $table->enum('glass', ['يدوي', 'الكتروني']);
             $table->enum('shown', ['للبيع', 'للبدل', 'للبيع و البدل', 'للايجار']);
             $table->enum('pay_method', ['نقدا فقط ', 'إمكانيه التقسيط']);
-            $table->text('extras')->nullable();
+            $table->text('extras');
             $table->longText('description');
             $table->string('img');
             $table->string('advertiser_name');
