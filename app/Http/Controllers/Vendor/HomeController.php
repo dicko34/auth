@@ -30,7 +30,6 @@ class HomeController extends Controller
             'loung' =>  'required|max:20',
             'area' =>  'required|max:20',
             'land_area' =>  'required|max:20',
-            'extras' =>  'nullable|max:500',
             'price' =>  'required|max:20',
             'city' => 'required|max:30',
             'address' => 'required|max:100',
@@ -50,6 +49,14 @@ class HomeController extends Controller
             $validate["mobile"] = null;
             $validate["email"] = $credentilas->email;
         }
+
+        $extras = $request->input('extras', []);
+
+        // Convert the array to a comma-separated string
+        $extrasString = implode(',', $extras);
+
+        $validate['extras'] = $extrasString;
+        
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
             $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
