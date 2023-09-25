@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class ShopController extends Controller
-{
+{   
+    use Traits\SimilarTrait;
     public function index()
     {
         $shopes =Shop::paginate(6);
@@ -24,7 +25,7 @@ class ShopController extends Controller
         $shops = Shop::all();
         $shop = Shop::find($request->shop);
         $similar = $this->similar($shops, $shop, ['model' => 30,'reset_model'=>70]);
-        return view('vendor.shops.details',compact('shops','shop','similar'));
+        return view('vendor.shopes.details',compact('shops','shop','similar'));
     }
 
     public function add()
