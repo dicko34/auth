@@ -1,6 +1,6 @@
 ! function(t) {
     "use strict";
-   
+
     function s(e) { 1 == t("#light-mode-switch").prop("checked") && "light-mode-switch" === e ? (t("#dark-mode-switch").prop("checked", !1), t("#rtl-mode-switch").prop("checked", !1), t("#bootstrap-style").attr("href", "assets/css/bootstrap.min.css"), t("#app-style").attr("href", "assets/css/app.min.css"), sessionStorage.setItem("is_visited", "light-mode-switch")) : 1 == t("#dark-mode-switch").prop("checked") && "dark-mode-switch" === e ? (t("#light-mode-switch").prop("checked", !1), t("#rtl-mode-switch").prop("checked", !1), t("#bootstrap-style").attr("href", "assets/css/bootstrap-dark.min.css"), t("#app-style").attr("href", "assets/css/app-dark.min.css"), sessionStorage.setItem("is_visited", "dark-mode-switch")) : 1 == t("#rtl-mode-switch").prop("checked") && "rtl-mode-switch" === e && (t("#light-mode-switch").prop("checked", !1), t("#dark-mode-switch").prop("checked", !1), t("#bootstrap-style").attr("href", "assets/css/bootstrap.min.css"), t("#app-style").attr("href", "assets/css/app-rtl.min.css"), sessionStorage.setItem("is_visited", "rtl-mode-switch")) }
 
     function e() { document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement || (console.log("pressed"), t("body").removeClass("fullscreen-enable")) }
@@ -23,18 +23,6 @@
         }), t(window).on("load", function() { t("#status").fadeOut(), t("#preloader").delay(350).fadeOut("slow") }), Waves.init()
 }(jQuery);
 $(document).ready(function() {
-    let checkedEl = [];
-    let setExetras = () => {
-        document.getElementById('extras').value = checkedEl;
-    }
-    let checkedIf = (e) => {
-        if (checkedEl.includes(e.target.value)) {
-            checkedEl.splice(checkedEl.indexOf(e.target.value), 1)
-        } else {
-            checkedEl.push(e.target.value)
-        }
-
-    }
     function checkeda(e) {
         console.log(e);
     }
