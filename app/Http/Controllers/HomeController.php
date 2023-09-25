@@ -2,37 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cars;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        $cars = DB::table('cars')->take(6)->get();
-        $generals = DB::table('generals')->take(6)->get();
-        $homes = DB::table('homes')->take(6)->get();
-        $jobs = DB::table('jobs')->take(6)->get();
-        $lands = DB::table('lands')->take(6)->get();
-        $mobiles = DB::table('mobiles')->take(6)->get();
-        $shops = DB::table('shops')->take(6)->get();
-        //return dd($cars);
-       return view('vendor.home',\compact('cars','generals','homes','jobs','lands','mobiles','shops'));
+        $cars = collect(DB::select("select * from cars where state = 'allowed' LIMIT 6"));
+        $generals =  collect(DB::select("select * from generals where state = 'allowed' LIMIT 6"));
+        $homes =  collect(DB::select("select * from homes where state = 'allowed' LIMIT 6"));
+        $jobs =  collect(DB::select("select * from jobs where state = 'allowed' LIMIT 6"));
+        $lands =  collect(DB::select("select * from lands where state = 'allowed' LIMIT 6"));
+        $mobiles =  collect(DB::select("select * from mobiles where state = 'allowed' LIMIT 6"));
+        $shops =  collect(DB::select("select * from shops where state = 'allowed' LIMIT 6"));
+        return view('vendor.home', \compact('cars', 'generals', 'homes', 'jobs', 'lands', 'mobiles', 'shops'));
     }
 }

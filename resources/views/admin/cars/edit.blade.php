@@ -32,6 +32,10 @@
         line-height: inherit;
     }
 </style>
+@php
+$id = Request::route('car');
+$car = \App\Models\Cars::find($id);
+@endphp
 <div class="row">
     <div class="col-lg-12 col-12">
         <div class="row">
@@ -40,7 +44,7 @@
                     <div class="row m-2">
                         <h3 class="m-2 m-auto"><i class="mdi mdi-car-side mr-2"></i> تعديل أعلان سيارة </h3>
                     </div>
-                    <form method="post" action="{{route('admin.cars.update',['car'=>$car->id])}}" enctype="multipart/form-data">
+                    <form method="post" action="{{route('admin.cars.update',['car'=>$id])}}" enctype="multipart/form-data">
                         @csrf
                         @method('put')
                         @if ($errors->any())

@@ -64,20 +64,42 @@
                                         </div>
 
                                         <div class="row m-2">
-                                        @foreach(explode(',',$job->img) as $img)
                                             <div class="col-4">
-                                                <a href="{{ asset('assets/site/images/jobs/'.$img) }}"
+                                                <a href="{{ asset('assets/admin/images/job.jpg') }}"
                                                     class="gallery-popup" style="height: 100px; width:100%">
                                                     <div class="project-item">
                                                         <div class="overlay-container">
-                                                            <img src="{{ asset('assets/site/images/jobs/'.$img) }}"
+                                                            <img src="{{ asset('assets/admin/images/job.jpg') }}"
                                                                 alt="img" class="gallery-thumb-img m-0"
                                                                 style="height: 100px; width:100%">
                                                         </div>
                                                     </div>
                                                 </a>
                                             </div>
-                                            @endforeach
+                                            <div class="col-4">
+                                                <a href="{{ asset('assets/admin/images/job.jpg') }}"
+                                                    class="gallery-popup" style="height: 100px; width:100%">
+                                                    <div class="project-item">
+                                                        <div class="overlay-container">
+                                                            <img src="{{ asset('assets/admin/images/job.jpg') }}"
+                                                                alt="img" class="gallery-thumb-img m-0"
+                                                                style="height: 100px; width:100%">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a href="{{ asset('assets/admin/images/job.jpg') }}"
+                                                    class="gallery-popup" style="height: 100px; width:100%">
+                                                    <div class="project-item">
+                                                        <div class="overlay-container">
+                                                            <img src="{{ asset('assets/admin/images/job.jpg') }}"
+                                                                alt="img" class="gallery-thumb-img m-0"
+                                                                style="height: 100px; width:100%">
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -99,7 +121,7 @@
                     <tbody>
                         <tr>
                             <td class="">مكان العمل	</td>
-                            <td class=""> {{$job->workplace}} </td>
+                            <td class=""> الخليل </td>
                         </tr>
                         <tr>
                             <td class="">آخر موعد للتقديم</td>
@@ -107,22 +129,29 @@
                         </tr>
                         <tr>
                             <td class="">التخصص</td>
-                            <td class=""> {{$job->specialization}} </td>
+                            <td class=""> برمجة </td>
                         </tr>
                         <tr>
                             <td class="">الدوام</td>
-                            <td class="">  {{$job->permanence}}</td>
+                            <td class="">  دوام كامل </td>
                         </tr>
                         <tr>
                             <td class="">عمل ليلي</td>
-                            <td class="">{{$job->night_work}}</td>
+                            <td class=""> لا يوجد </td>
                         </tr>
                         
                         <tr>
                             <td class="" colspan="2">
                                 <ul class="list-unstyled m-3 text-left">
                                     <li>
-                                        {{$job->description}}
+                                        <ul>
+                                            <li class="m-2">تفاصيل العمل</li>
+                                            <li class="m-2">تفاصيل العمل</li>
+                                            <li class="m-2">تفاصيل العمل</li>
+                                            <li class="m-2">تفاصيل العمل</li>
+                                            <li class="m-2">تفاصيل العمل</li>
+                                            <li class="m-2">تفاصيل العمل</li>
+                                        </ul>
                                     </li>
                                 </ul>
                             </td>
@@ -141,27 +170,27 @@
                     <tbody>
                         <tr>
                             <td class="">إسم المعلن</td>
-                            <td class=""> {{$job->advertiser_name}}</td>
+                            <td class=""> مارتينا جرجس </td>
                         </tr>
                         <tr>
                             <td class="">العنوان</td>
-                            <td class="">{{$job->advertiser_address}}</td>
+                            <td class=""> الخليل - شارع السلام </td>
                         </tr>
                         <tr>
                             <td class="">رقم الهاتف</td>
-                            <td class="">{{$job->phone_number}}</td>
+                            <td class=""> 12345678 </td>
                         </tr>
                         <tr>
                             <td class="">موبايل</td>
-                            <td class="">{{$job->mobile}}</td>
+                            <td class=""> 1234567 </td>
                         </tr>
                         <tr>
                             <td class="">البريد الالكتروني</td>
-                            <td class=""> {{$job->email}}</td>
+                            <td class=""> 1123@nnn.com </td>
                         </tr>
                         <tr>
                             <td class=""> تاريخ نشر الاعلان</td>
-                            <td class=""> {{$job->created_at}}</td>
+                            <td class=""> 11-11-2022 </td>
                         </tr>
                         <tr>
                             <td class="">تاريخ انتهاء الاعلان</td>
@@ -172,17 +201,10 @@
             </div>
             <div class="row mt-3">
                 <div class="col-12 text-center">
-                <form method="post" action="{{route('admin.jobs.change.state',['action'=>$job->state == 'refused' ? 'allowed' : 'refused','job'=>$job->id])}}">
-                    @csrf
-                    @if($job->state == 'pinned')
-                                                                <button type="submit" value="allowed" class="btn btn-primary w-md waves-effect waves-light d-block" >تفعيل</button>
-                                                                <button type="submit" value="blocked" class="btn btn-primary w-md waves-effect waves-light d-block" >حظر</button>
-                                                                @else 
-                                                                <button type="submit" value="{{$job->state == 'blocked'? 'allowed':'blocked' }}" class="btn btn-primary w-md waves-effect waves-light" >{{$job->state == 'blocked' ? 'قبول' : 'رفض'}}</button>
-
-
-                                                            @endif                                           
-                </form>    
+                    <button class="btn btn-primary w-md waves-effect waves-light" type="submit">قبول
+                        الأعلان</button>
+                        <button class="btn btn-primary w-md waves-effect waves-light" type="submit">رفض
+                            الأعلان</button>
                 </div>
             </div>
         </div>
