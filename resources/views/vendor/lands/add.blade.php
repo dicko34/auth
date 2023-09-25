@@ -22,8 +22,7 @@
                         <td>نُبذة <span class="text-danger" style="font-weight: 700;">*</span> </td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control " name="brief" placeholder="نبذه عن الارض"
-                                    aria-label="نبذه عن الارض" aria-describedby="basic-addon2">
+                                <input type="text" class="form-control " name="brief" placeholder="نبذه عن الارض">
                                 <span class="input-group-text d-none d-lg-block w-100" id="basic-addon2">مثال : ارض 5 دونم
                                     صالحة
                                     للبناء</span>
@@ -118,11 +117,11 @@
                     <tr>
                         <td>مميزات <span class="text-danger" style="font-weight: 700;">*</span></td>
                         <td>
-                            <input type="hidden" name="features" id="extras">
+                            <input type="hidden" name="features[]" id="features">
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" id="property[It_gets_electricity]" type="checkbox"
-                                        name="property[It_gets_electricity]" onclick="checkedIf(event)"
+                                    <input class="form-check-input" type="checkbox"
+                                        name="features[]" onclick="checkedIf(event)"
                                         value="تصلها كهرباء">
                                     <label class="form-check-label" for="property[It_gets_electricity]"> تصلها
                                         كهرباء</label>
@@ -130,22 +129,22 @@
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" id="property[It_gets_water]" type="checkbox"
-                                        name="property[It_gets_water]" onclick="checkedIf(event)" value="تصلها مياه">
+                                    <input class="form-check-input" type="checkbox"
+                                        name="features[]" onclick="checkedIf(event)" value="تصلها مياه">
                                     <label class="form-check-label" for="property[It_gets_water]"> تصلها مياه</label>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" id="property[arable]" type="checkbox"
-                                        name="property[arable]" onclick="checkedIf(event)" value="صالحة للزراعة">
+                                    <input class="form-check-input" type="checkbox"
+                                        name="features[]" onclick="checkedIf(event)" value="صالحة للزراعة">
                                     <label class="form-check-label" for="property[arable]"> صالحة للزراعة</label>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" id="property[commercial_construction]"
-                                        type="checkbox" name="property[commercial_construction]"
+                                    <input class="form-check-input" 
+                                        type="checkbox" name="features[]"
                                         onclick="checkedIf(event)" value="صالحة للبناء">
                                     <label class="form-check-label" for="property[commercial_construction]"> صالحة للبناء
                                         التجاري</label>
@@ -153,8 +152,8 @@
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" id="property[building_housing]" type="checkbox"
-                                        name="property[building_housing]" onclick="checkedIf(event)"
+                                    <input class="form-check-input"  type="checkbox"
+                                        name="features[]" onclick="checkedIf(event)"
                                         value="صالحة للبناء السكن">
                                     <label class="form-check-label" for="property[building_housing]"> صالحة للبناء
                                         السكن</label>

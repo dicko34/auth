@@ -24,7 +24,6 @@ class LandController extends Controller
             'area' =>  'required|max:30',
             'price' =>  'required|max:20',
             'located_on' =>  'required|max:30',
-            'features' =>  'nullable|max:200',
             'surrounded_by' =>  'required|max:50',
             'description' =>  'required|max:1500',
             'img'=> 'required',
@@ -44,6 +43,15 @@ class LandController extends Controller
             $validate["mobile"] = null;
             $validate["email"] = $credentilas->email;
         }
+        $features = $request->input('features', []);
+
+        // Convert the array to a comma-separated string
+        $featuresString = implode(',', $features);
+
+        $validate['features'] = $featuresString;
+
+        
+    
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
             $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
@@ -51,6 +59,11 @@ class LandController extends Controller
             array_push($validate['img'],$imageName); // store image name to db
         }
         $validate['img'] = implode(',',$validate['img']);
+        $validate['features'] = [];
+        foreach ($request->input('features') as $feature) {
+            array_push($validate['features'], $feature);
+        }
+        $validate['features'] = implode(',', $validate['features']);
         $validate['state'] = 'pinned';
         Land::create($validate);
         return redirect()->route('land.index');
