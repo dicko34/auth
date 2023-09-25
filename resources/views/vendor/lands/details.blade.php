@@ -45,7 +45,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-9" style="padding: 0;height: 110px;">
                         <div class="media h-100" style="width: 100%;">
                             <div style="position: relative" class="h-100">
-                                <img class="first-img img-fluid" src="{{ asset('assets/site/images/lands/' . explode(',', $land_similar['img'])[0]) }}"
+                                <img class="first-img img-fluid" src="{{ asset('assets/site/images/lands/' . explode(',', $land['img'])[0]) }}"
                                     alt="سيات | SEAT ابيزا 2009" title="سيات | SEAT ابيزا 2009"
                                     style="max-width:150px;height:100%">
                             </div>
@@ -483,10 +483,12 @@
         </div>
     </div>
     <div class="w-100 px-1">
-        <h5>اعلانات مشابهة</h5>
+        <h5>اعلانات مشابهة {{count($similar)}}</h5>
+        @if (count($similar) > 0)
         <div class="row">
             @foreach ($similar as $land_similar)
 
+            
             <div class="col-6 col-xl-2 p-1 ">
                 
                  <div
@@ -514,6 +516,7 @@
                 </div> 
             </div>
     @endforeach
+    @endif
     </div>
 </div>
 <style>

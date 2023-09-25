@@ -24,7 +24,7 @@ class LandsController extends Controller
     {
         $lands = Land::paginate(6);
         $land = Land::find($request->land);
-        $similar = $this->similar($lands, $land, ['brief' => 30,'area'=>70]);
+        $similar = $this->similar($lands, $land, ['price' => 30,'city'=>70]);
         return view('vendor.lands.details',compact('lands','land','similar'));
     }
 
