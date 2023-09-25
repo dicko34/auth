@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Http\Controllers\Controller;
+use App\Models\Land;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class LandsController extends Controller
 {
+    use Traits\SimilarTrait;
     public function index()
     {
-        return view('vendor.lands.index');
+        $lands =Land::paginate(6);
+        return view('vendor.lands.index',compact('lands'));
     }
 
     public function search()
@@ -17,9 +20,12 @@ class LandsController extends Controller
         return view('vendor.lands.search');
     }
 
-    public function product()
+    public function product(Request $request)
     {
-        return view('vendor.lands.details');
+        $lands = Land::paginate(6);
+        $land = Land::find($request->land);
+        $similar = $this->similar($lands, $land, ['price' => 30,'city'=>70]);
+        return view('vendor.lands.details',compact('lands','land','similar'));
     }
 
     public function add()

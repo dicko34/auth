@@ -11,27 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lands', function (Blueprint $table) {
+        Schema::create('generals', function (Blueprint $table) {
             $table->id();
-            $table->string('brief');
-            $table->string('area');
+            $table->string('address');
+            $table->string('category');
             $table->bigInteger('price');
-            $table->string('surrounded_by');
-            $table->string('located_on');
-            $table->string('features');
             $table->longText('description');
             $table->string('img');
-            $table->string('gov');
+            $table->string('ad_duration_per_day');
             $table->string('city');
-            $table->string('street');
-            $table->string('address');
-            $table->string('ad_durtion_per_day');
             $table->string('advertiser_name');
-            $table->bigInteger('phone_number');
-            $table->string('mobile');
+            $table->string('phone_number');
+            $table->string('mobile')->nullable();
             $table->string('email');
-            $table->string('advertiser_city');
-            $table->string('advertiser_address');
             $table->enum('state',['pinned','refused','allowed']);
             $table->timestamps();
         });
@@ -42,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lands');
+        Schema::dropIfExists('generals');
     }
 };

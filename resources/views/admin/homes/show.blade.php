@@ -53,9 +53,9 @@
                                                 شقة للبيع
                                             </h2>
                                             <h5 class="smallColor mt-3">
-                                            {{$car->price}} شيكل
+                                                200 شيكل 
                                             </h5>
-                                            <h5 class="maincolor">{{$land->address}} - {{$land->street}} - {{$land->gov}}  </h5>
+                                            <h5 class="maincolor">رام الله والبيرة - مدينة رام الله - بير نبالا</h5>
                                         </div>
                                         <div>
                                             <div class="apsc-icons-wrapper clearfix apsc-theme-4">
@@ -223,14 +223,7 @@
                 <div class="col-12 text-center">
                 <form method="post" action="{{route('admin.homes.change.state',['action'=>$home->state == 'refused' ? 'allowed' : 'refused','home'=>$home->id])}}">
                     @csrf
-                    @if($home->state == 'pinned')
-                                                                <button type="submit" value="allowed" class="btn btn-primary w-md waves-effect waves-light d-block" >تفعيل</button>
-                                                                <button type="submit" value="blocked" class="btn btn-primary w-md waves-effect waves-light d-block" >حظر</button>
-                                                                @else 
-                                                                <button type="submit" value="{{$home->state == 'blocked'? 'allowed':'blocked' }}" class="btn btn-primary w-md waves-effect waves-light" >{{$home->state == 'blocked' ? 'قبول' : 'رفض'}}</button>
-
-
-                                                            @endif                                            
+                  <button type="submit" class="btn btn-primary w-md waves-effect waves-light" >{{$home->state == 'refused' ? 'قبول الاعلان' :  'رفض الاعلان'}}</button>                                            
                 </form>    
                 </div>
             </div>

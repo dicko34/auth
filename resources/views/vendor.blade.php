@@ -31,7 +31,17 @@
                 font-size: smaller;
                 padding-top: 10px;
             }
-            
+            .card-body {
+                padding:15px 5px 15px 5px!important;
+            }
+
+            .card-body h4 {
+                font-size:large !important;
+            }
+
+            .card-body p {
+                line-height:20px;
+            }
         }
         .table td.fit,
         .table th.fit {
@@ -41,13 +51,6 @@
 
         body {
             font-family:'Tajawal';
-            background:black;
-        }
-
-        .main-section {
-            margin:10px 5px 10px 5px;
-            box-shadow:0px 0px 1px 0px;
-            background:#fff;
         }
     </style>
 </head>

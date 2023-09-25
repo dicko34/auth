@@ -19,10 +19,15 @@ class UserFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
+            'email' => "user@email.com",
+            'address' => \fake()->address(),
+            'city' =>  \fake()->city(),
+            'img' => \fake()->imageUrl(),
             'email_verified_at' => now(),
+            'phone' =>  \fake()->e164PhoneNumber(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
+            'state' => \fake()->randomElement(['pinned','blocked','allowed']),
         ];
     }
 

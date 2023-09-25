@@ -41,13 +41,7 @@
                         <div class="row m-2">
                             <h3 class="m-2 m-auto"><i class="mdi mdi-view-dashboard mr-2"></i> إعلان محل جديدة </h3>
                         </div>
-                        <form method="POST" action="{{route('admin.shops.store')}}" enctype="multipart/form-data">
-                        @if ($errors->any())
-     @foreach ($errors->all() as $error)
-         <div>{{$error}}</div>
-     @endforeach
- @endif
-                        @csrf
+                        <form>
                             <div class="row m-0 ">
                                 <table class="table table-striped table-bordered mb-0 text-center h5">
                                     <thead>
@@ -60,156 +54,98 @@
                                         <tr>
                                             <td class="">العرض</td>
                                             <td class="">
-                                                <input value="للبيع" type="radio" id="switch21" name="offre" />
+                                                <input type="radio" id="switch21" name="gg" />
                                                 <label for="switch21">للبيع</label>
-                                               
-                                                <input  value="للإيجار" type="radio" id="switch22" name="offre" />
+
+                                                <input type="radio" id="switch22" name="gg" />
                                                 <label for="switch22">للإيجار</label>
 
-                                                <input value="ضمان أو خلو" type="radio" id="switch23" name="offre" />
+                                                <input type="radio" id="switch23" name="gg" />
                                                 <label for="switch23">ضمان أو خلو</label>
-                                                @error('offre')
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
-                                            {{$message}}
-                                            </span>
-                                            @enderror
                                             </td>
                                         </tr>
 
                                         <tr>
                                             <td class="">المعروض</td>
                                             <td class="">
-                                                <input value="محل" type="radio" id="switch24" name="displayed" />
+                                                <input type="radio" id="switch24" name="gg1" />
                                                 <label for="switch24">محل</label>
-                                                <input value="مخزن" type="radio" id="switch25" name="displayed" />
+
+                                                <input type="radio" id="switch25" name="gg1" />
                                                 <label for="switch25">مخزن</label>
-                                                <input value="مكتب" type="radio" id="switch26" name="displayed" />
+
+                                                <input type="radio" id="switch26" name="gg1" />
                                                 <label for="switch26">مكتب</label>
-                                                @error('displayed')
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
-                                            {{$message}}
-                                            </span>
-                                            @enderror
                                             </td>
                                         </tr>
 
                                         <tr>
                                             <td class="">نبذة</td>
                                             <td class="">
-                                                <input name="brief" type="text"  placeholder="نبذة عن المكتب او المحل او المخزن">
-                                                @error('brief')
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
-                                            {{$message}}
-                                            </span>
-                                            @enderror
+                                                <input value="" type="text"  placeholder="نبذة عن المكتب او المحل او المخزن">
                                             </td>
                                         </tr> 
                                         <tr>
                                             <td class="">المساحة</td>
                                             <td class="">
-                                                <input name="loung" type="text"  placeholder="مساحة المحل او المكتب او المخزن">
-                                                @error('loung')
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
-                                            {{$message}}
-                                            </span>
-                                            @enderror
+                                                <input value="" type="text"  placeholder="مساحة المحل او المكتب او المخزن">
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="">السعر</td>
                                             <td class="">
-                                                <input name="price" type="text" placeholder="سعر البيع او الايجار">
-                                                @error('price')
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
-                                            {{$message}}
-                                            </span>
-                                            @enderror
+                                                <input value="" type="text" placeholder="سعر البيع او الايجار">
                                             </td>
                                         </tr> 
                                         
                                         <tr>
                                             <td class="">معلومات إضافية</td>
                                             <td class="">
-                                                <textarea name="description" rows="4" type="text" class=""
+                                                <textarea rows="4" type="text" class=""
                                                     placeholder="المزيد من المواصفات كل معلومة بسطر"></textarea>
-                                                    @error('description')
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
-                                            {{$message}}
-                                            </span>
-                                            @enderror
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="">الصور</td>
                                             <td class="">
-                                                <input name="img[]" type="file" class="form-control" multiple>
-                                                @error('img')
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
-                                            {{$message}}
-                                            </span>
-                                            @enderror
+                                                <input value="" type="file" class="form-control" multiple>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class=""> المحافظة</td>
                                                 <td>
-                                                    <select name="gov">
+                                                    <select>
                                                         <option>اريحا</option>
                                                         <option>Large select</option>
                                                         <option>Small select</option>
                                                     </select>
-                                                    @error('gov')
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
-                                            {{$message}}
-                                            </span>
-                                            @enderror
-                                                    <select name="city">
+                                                    <select>
                                                         <option> المدينة</option>
                                                         <option>Large select</option>
                                                         <option>Small select</option>
                                                     </select>
-                                                    @error('city')
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
-                                            {{$message}}
-                                            </span>
-                                            @enderror
-                                                    <select name="street">
+                                                    <select>
                                                         <option> الشارع</option>
                                                         <option>Large select</option>
                                                         <option>Small select</option>
                                                     </select>
-                                                    @error('street')
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
-                                            {{$message}}
-                                            </span>
-                                            @enderror
                                                 </td>
                                         </tr> 
                                         <tr>
                                             <td class=""> العنوان</td>
                                                 <td>
-                                                    <input name="address" type="text"  placeholder="اسم المنطقة أو الشارع">
-                                                    @error('address')
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
-                                            {{$message}}
-                                            </span>
-                                            @enderror
+                                                    <input value="" type="text"  placeholder="اسم المنطقة أو الشارع">
                                                 </td>
                                         </tr>
                         
                                         <tr>
                                             <td class="">مدة الاعلان باليوم</td>
                                             <td class="">
-                                                <select name="ad_durtion_per_day">
+                                                <select class="">
                                                     <option>30</option>
                                                     <option>Large select</option>
                                                     <option>Small select</option>
                                                 </select>
-                                                @error('ad_durtion_per_day')
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
-                                            {{$message}}
-                                            </span>
-                                            @enderror
                                             </td>
                                         </tr> 
                                        
@@ -217,7 +153,6 @@
                                 </table>
                             </div>
                             <div class="row m-0 ">
-                                
                                 <table class="table table-striped  table-bordered mb-0 text-center h5">
                                     <thead>
                                         <tr>
@@ -228,76 +163,46 @@
                                         <tr>
                                             <td class="">إسم المعلن</td>
                                             <td class="">
-                                                <input " name="advertiser_name" type="text" class=""
+                                                <input value="" type="text" class=""
                                                     placeholder="الاسم الحقيقي">
-                                                    @error('advertisr_name')
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
-                                            {{$message}}
-                                            </span>
-                                            @enderror
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="">رقم الهاتف</td>
                                             <td class="">
-                                                <input name="phone_number" type="text" class=""
+                                                <input value="" type="text" class=""
                                                     placeholder="رقم الهاتف مع المقدمة">
-                                                    @error('phone_number')
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
-                                            {{$message}}
-                                            </span>
-                                            @enderror
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="">موبايل</td>
                                             <td class="">
-                                                <input  name="mobile" type="text" class=""
+                                                <input value="" type="text" class=""
                                                     placeholder="رقم الموبايل  ">
-                                                    @error('mobile')
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
-                                            {{$message}}
-                                            </span>
-                                            @enderror
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="">البريد الالكتروني</td>
                                             <td class="">
-                                                <input type="text" name="email" class=""
+                                                <input value="" type="text" class=""
                                                     placeholder="البريد الالكتروني">
-                                                    @error('email')
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
-                                            {{$message}}
-                                            </span>
-                                            @enderror
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class=""> المدينة</td>
                                             <td class="">
-                                                <select name="advertiser_city">
+                                                <select class="">
                                                     <option>اريحا</option>
                                                     <option>Large select</option>
                                                     <option>Small select</option>
-                                                    @error('advertiser_city')
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
-                                            {{$message}}
-                                            </span>
-                                            @enderror
                                                 </select>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="">العنوان</td>
                                             <td class="">
-                                                <input  name="advertiser_address" type="text" class=""
+                                                <input value="" type="text" class=""
                                                     placeholder="اسم الشارع او المنطقة">
-                                                    @error('advertiser_address')
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
-                                            {{$message}}
-                                            </span>
-                                            @enderror
                                             </td>
                                         </tr>
                                     </tbody>

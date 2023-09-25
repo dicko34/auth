@@ -11,20 +11,26 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('generals', function (Blueprint $table) {
+        Schema::create('mobiles', function (Blueprint $table) {
             $table->id();
+            $table->string('device_status');
+            $table->string('model');
+            $table->string('reset_model');
+            $table->string('slides_number');
+            $table->string('screen_size');
+            $table->string('cameras');
+            $table->string('memory');
+            $table->string('storage');
+            $table->string('price');
+            $table->string('city');
             $table->string('address');
-            $table->string('category');
-            $table->bigInteger('price');
-            $table->string('ad_durtion_per_day');
+            $table->string('ad_duration_per_day');
             $table->longText('description');
             $table->string('img');
             $table->string('advertiser_name');
-            $table->bigInteger('phone_number');
-            $table->string('mobile');
+            $table->string('phone_number');
             $table->string('email');
-            $table->string('advertiser_city');
-            $table->string('advertiser_address');
+            $table->string('mobile')->nullable();
             $table->enum('state',['pinned','refused','allowed']);
             $table->timestamps();
         });
@@ -35,6 +41,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('generals');
+        Schema::dropIfExists('mobiles');
     }
 };

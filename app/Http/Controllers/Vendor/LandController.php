@@ -19,6 +19,39 @@ class LandController extends Controller
     public function store(Request $request)
     {
        
+        $validate = $request->validate([
+            'brief' =>  'required|max:30',
+            'area' =>  'required|max:30',
+            'price' =>  'required|max:20',
+            'located_on' =>  'required|max:30',
+            'surrounded_by' =>  'required|max:50',
+            'description' =>  'required|max:1500',
+            'img'=> 'required',
+            'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'city' => 'required|max:30',
+            'ad_duration_per_day' =>  'required|max:20',
+            'address' => 'required|max:100',            
+            'advertiser_name' => 'required|max:30',
+            'phone_number' =>  'required|max:20',
+            'mobile' => 'required|max:20',
+            'email' =>  'required|email',
+        ]);
+        if($request->user()) {
+            $credentilas = $request->user();
+            $validate["advertiser_name"] = $credentilas->name;
+            $validate["phone_number"] = $credentilas->phone;
+            $validate["mobile"] = null;
+            $validate["email"] = $credentilas->email;
+        }
+        $features = $request->input('features', []);
+
+        // Convert the array to a comma-separated string
+        $featuresString = implode(',', $features);
+
+        $validate['features'] = $featuresString;
+
+        
+    
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
             $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
@@ -26,10 +59,14 @@ class LandController extends Controller
             array_push($validate['img'],$imageName); // store image name to db
         }
         $validate['img'] = implode(',',$validate['img']);
+        $validate['features'] = [];
+        foreach ($request->input('features') as $feature) {
+            array_push($validate['features'], $feature);
+        }
+        $validate['features'] = implode(',', $validate['features']);
         $validate['state'] = 'pinned';
         Land::create($validate);
-       
-        return redirect()->route('vendor.lands.index');
+        return redirect()->route('land.index');
     }
 
     /**

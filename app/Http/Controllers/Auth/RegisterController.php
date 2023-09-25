@@ -3,13 +3,16 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Providers\RouteServiceProvider;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Http\Request as HttpRequest;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Foundation\Auth\VerifiesEmails;
+use Illuminate\Support\Facades\Mail;
 
 class RegisterController extends Controller
 {
@@ -24,7 +27,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    use RegistersUsers, VerifiesEmails;
 
     /**
      * Where to redirect users after registration.
@@ -33,56 +36,37 @@ class RegisterController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    
-
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
+    public function showRegistrationForm()
     {
-        return Validator::make($data, [
-            'fname' => ['required', 'string', 'max:255'],
-            'lname' => ['required', 'string', 'max:255'],
-            'phone'=>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:admins'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'img'=> 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-        return('validator');
+        return view('vendor.register');
     }
 
+
     /**
-     * Create a new user instance after a valid registration.
+     * Handle a registration request for the application.
      *
-     * @param  array  $data
+     * @param  \Illuminate\Http\Request  $request
      * @return \App\Models\User
      */
-   
-     protected function create(array $data)
-     {
-         // $imageName = time().'.'.$data['img']->extension();
-         // $data['img']->move(public_path('assets/site/images/users'), $imageName);
-         $imageName = $data['img']->getClientOriginalName();
-         $data['img']->move(public_path('assets/site/images/users'), $imageName);
- 
-         return User::create([
-             'fname' => $data['fname'],
-             'email' => $data['email'],
-             'password' => Hash::make($data['password']),
-             'city' => 'null',
-             'address' => 'null',
-             'lname' => $data['lname'],
-             'phone' => $data['phone'],
-             'img' => $imageName,
-         ]);
-     }
-    
+
+    protected function register(Request $request, User $user)
+    {
+        $validate = $request->validate([
+            'name' => 'required|string|max:255',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'email' => 'required|string|email|max:255|unique:users',
+            'city' => 'required|max:30',
+            'address' => 'required|max:100',
+            'password' => 'required|string|min:8|confirmed',
+            'img' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $validate['img'] = [];
+        $validate['password'] =  Hash::make($request->password);
+        $imageName =  Str::of(Carbon::now()->millisecond() . $request->id)->pipe('md5') . $request->file('img')->getClientOriginalName();
+        $request->file('img')->move(public_path('assets/site/images/users'), $imageName); // move the new img 
+        $validate['img'] = $imageName;
+        User::create($validate);
+        return redirect()->route('login');
+    }
 }

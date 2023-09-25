@@ -18,23 +18,23 @@
                     </div>
 
                     <div class="col-sm-12 text-center m-3">
-                        <a href="{{ route('homes.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان شقة</a>
+                        <a href="{{ route('home.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان شقة</a>
                     </div>
 
                     <div class="col-sm-12 text-center m-3">
-                        <a href="{{ route('shops.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان محل او مكتب او مخزن</a>
+                        <a href="{{ route('shop.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان محل او مكتب او مخزن</a>
                     </div>
 
                     <div class="col-sm-12 text-center m-3">
-                        <a href="{{ route('lands.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان ارض</a>
+                        <a href="{{ route('land.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان ارض</a>
                     </div>
 
                     <div class="col-sm-12 text-center m-3">
-                        <a href="{{ route('jobs.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان وظيفة</a>
+                        <a href="{{ route('job.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان وظيفة</a>
                     </div>
 
                     <div class="col-sm-12 text-center m-3">
-                        <a href="{{ route('mobiles.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان جهاز ذكي</a>
+                        <a href="{{ route('mobile.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان جهاز ذكي</a>
                     </div>
 
                     <div class="col-sm-12 text-center m-3">
