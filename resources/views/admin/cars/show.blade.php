@@ -67,10 +67,10 @@ $extras = explode(",",$car->extras);
 
                                     <div class="row m-2">
                                         <div class="col-4">
-                                            <a href="{{ asset("site/images/cars/'.$car->img) }}" class="gallery-popup" style="height: 100px; width:100%">
+                                            <a href="{{ asset('site/images/cars/'.$car->img) }}" class="gallery-popup" style="height: 100px; width:100%">
                                                 <div class="project-item">
                                                     <div class="overlay-container">
-                                                        <img src="{{ asset("site/images/cars/'.$car->img) }}" alt="img" class="gallery-thumb-img m-0" style="height: 100px; width:100%">
+                                                        <img src="{{ asset('site/images/cars/'.$car->img) }}" alt="img" class="gallery-thumb-img m-0" style="height: 100px; width:100%">
                                                     </div>
                                                 </div>
                                             </a>

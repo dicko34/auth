@@ -61,7 +61,7 @@
                                         <div class="carousel-inner w-100 m-auto">
                                             @foreach(explode(',',$general->img) as $key => $img)
                                             <div class="carousel-item {{$key == 0 ? 'active' : ''}}">
-                                                <img src="{{ asset("site/images/general/'.$img) }}" height="350"
+                                                <img src="{{ asset('site/images/general/'.$img) }}" height="350"
                                                     class="d-block w-100" alt="...">
                                             </div>
                                             @endforeach

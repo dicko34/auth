@@ -125,7 +125,7 @@
                         </div>
                         <div class="modal-body">
                             <div class="group-img-container text-center post-modal">
-                                <img  src="{{asset("site/images/users/`+ y +`')}}" alt="" class="group-img img-fluid" style="width:400px; hieght:400px" ><br>
+                                <img  src="{{asset('site/images/users/`+ y +`')}}" alt="" class="group-img img-fluid" style="width:400px; hieght:400px" ><br>
                             </div>
                         </div>
                         <div class="modal-footer">
