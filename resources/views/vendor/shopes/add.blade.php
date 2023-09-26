@@ -117,21 +117,22 @@
                         <td>
                             <div class="form-group input-group-sm">
                                 <select name="city" class="form-select" required="">
-                                    <option value="1">رام الله والبيرة </option>
-                                    <option value="2">القدس </option>
-                                    <option value="14">قطاع غزة </option>
-                                    <option value="4">الخليل </option>
-                                    <option value="5">بيت لحم </option>
-                                    <option value="6">أريحا </option>
-                                    <option value="7">سلفيت وبديا </option>
-                                    <option value="13">روابي </option>
-                                    <option value="12">طوباس </option>
-                                    <option value="11">قلقيلية </option>
-                                    <option value="10">طولكرم </option>
-                                    <option value="9">جنين </option>
-                                    <option value="8">نابلس </option>
-                                    <option value="15">جميع الاماكن </option>
-                                    <option value="16">مناطق الداخل </option>
+                                    <option value="رام الله والبيرة">رام الله والبيرة</option>
+                                    <option value="القدس">القدس</option>
+                                    <option value="قطاع غزة">قطاع غزة</option>
+                                    <option value="الخليل">الخليل</option>
+                                    <option value="بيت لحم">بيت لحم</option>
+                                    <option value="أريحا">أريحا</option>
+                                    <option value="سلفيت وبديا">سلفيت وبديا</option>
+                                    <option value="روابي">روابي</option>
+                                    <option value="طوباس">طوباس</option>
+                                    <option value="قلقيلية">قلقيلية</option>
+                                    <option value="طولكرم">طولكرم</option>
+                                    <option value="جنين">جنين</option>
+                                    <option value="نابلس">نابلس</option>
+                                    <option value="جميع الاماكن">جميع الاماكن</option>
+                                    <option value="مناطق الداخل">مناطق الداخل</option>
+
                                 </select>
                             </div>
                         </td>
@@ -217,79 +218,78 @@
         </div>
         <div class="add-section w-75 mx-auto bg-white">
             @if (!auth()->user())
-            <div class="add-section-title btn w-100 bg-primary p-1 px-3 mb-3">
-                <h5 class="text-white ml-2 font-weight-bold text-left">معلومات المُعلن</h5>
-            </div>
-            <table class="table table-bordered table-striped mb-0 bg-white">
-                <tbody>
-                    <tr>
-                        <td>
-                            اسم المُعلن <span class="text-danger" style="font-weight: 700;">*</span>
-                        </td>
-                        <td>
-                            <div class="input-group">
-                                <input type="text" class="form-control form-control-sm" required=""
-                                    name="advertiser_name" placeholder="الاسم الحقيقي">
-                                <span class="input-group-text d-flex d-lg-none " style="width:50px !important;"><i
-                                        class="fas fa-info-circle"></i></span>
-                                <span class="input-group-text d-none d-lg-block w-100">ملاحظة: لن يتم قبول الإعلان من غير
-                                    اسم
-                                    حقيقي</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            البريد الالكتروني
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="email"
-                                    placeholder="البريد الالكتروني" aria-label="البريد الالكتروني">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            رقم الهاتف
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="phone_number"
-                                    placeholder="رقم الهاتف مع المقدمة" aria-label="رقم الهاتف مع المقدمة">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            موبايل <span class="text-danger" style="font-weight: 700;"></span>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-sm" name="mobile"
-                                    placeholder="رقم الموبايل" aria-label="رقم الهاتف مع المقدمة">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="100%" class="text-center">
-                            <button type="submit" class="btn btn-secondary" id="submit-all">اضف الأعلان</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            @else 
-
-            <table class="table table-bordered table-striped mb-0 bg-white">
-                <tbody>
-                    <tr>
-                        <td colspan="100%" class="text-center">
-                            <button type="submit" class="btn btn-secondary" id="submit-all">اضف الأعلان</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
+                <div class="add-section-title btn w-100 bg-primary p-1 px-3 mb-3">
+                    <h5 class="text-white ml-2 font-weight-bold text-left">معلومات المُعلن</h5>
+                </div>
+                <table class="table table-bordered table-striped mb-0 bg-white">
+                    <tbody>
+                        <tr>
+                            <td>
+                                اسم المُعلن <span class="text-danger" style="font-weight: 700;">*</span>
+                            </td>
+                            <td>
+                                <div class="input-group">
+                                    <input type="text" class="form-control form-control-sm" required=""
+                                        name="advertiser_name" placeholder="الاسم الحقيقي">
+                                    <span class="input-group-text d-flex d-lg-none " style="width:50px !important;"><i
+                                            class="fas fa-info-circle"></i></span>
+                                    <span class="input-group-text d-none d-lg-block w-100">ملاحظة: لن يتم قبول الإعلان من
+                                        غير
+                                        اسم
+                                        حقيقي</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                البريد الالكتروني
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-sm" name="email"
+                                        placeholder="البريد الالكتروني" aria-label="البريد الالكتروني">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                رقم الهاتف
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-sm" name="phone_number"
+                                        placeholder="رقم الهاتف مع المقدمة" aria-label="رقم الهاتف مع المقدمة">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                موبايل <span class="text-danger" style="font-weight: 700;"></span>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-sm" name="mobile"
+                                        placeholder="رقم الموبايل" aria-label="رقم الهاتف مع المقدمة">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="100%" class="text-center">
+                                <button type="submit" class="btn btn-secondary" id="submit-all">اضف الأعلان</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            @else
+                <table class="table table-bordered table-striped mb-0 bg-white">
+                    <tbody>
+                        <tr>
+                            <td colspan="100%" class="text-center">
+                                <button type="submit" class="btn btn-secondary" id="submit-all">اضف الأعلان</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             @endif
         </div>
     </form>

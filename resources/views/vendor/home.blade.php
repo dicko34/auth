@@ -471,48 +471,50 @@
                 if (input) {
                     if (e.which == 13) {
                         $.ajax({
-                            type: "GET",
-                            url: "/get-car-models/" + input,
+                            type: " POST",
+                            url: "/get-search-result/" + input,
                             success: function(data) {
-                                //                             let imgLink = "{{ asset("+data[i]['img'].split(',')[0]+") }}";
-                                //                             document.getElementById("results").innerHTML ="<div class=\"row\"> \
-                                //                                 <div class=\"card w-100\"> \
-                                //                                     <div class=\"body-card m-3\"> \
-                                //                                         <div class=\"row\"> \
-                                //                                             "for(let i = 0; i <  data.length; i++){"
-                                //                     <div class=\"col-6 col-xl-2 p-1\"> \
-                                //                         <div class=\"\"> \
-                                //                             <a href=\""+ imgLink  + "\" class=\"gallery-popup\"
-                                //                                 style=\"height: 160px; width:100%\"> \
-                                //                                 <div class=\"project-item\"> \
-                                //                                     <div class=\"overlay-container\"> \
-                                //                                         <img src=\"\" alt=\"img\"
-                                //                                             class=\"gallery-thumb-img m-0\" style=\"height: 160px; width:100%\"> \
-                                //                                         <div class=\"project-item-overlay text-right\"> \
-                                //                                             <h4>سيارات</h4> \
-                                //                                             <p> \
-                                //                                                 <img src=\"\"
-                                //                                                     alt=\"user\" class=\"avatar-xs rounded-circle\"> \
-                                //                                                 <span class=\"ml-2\">{{ $car->advertiser_name }}</span> \
-                                //                                             </p> \
-                                //                                         </div> \
-                                //                                     </div> \
-                                //                                 </div> \
-                                //                             </a> \
-                                //                             <div class=\"card-body\"> \
-                                //                                 <h4 class=\"card-title\">سيارات</h4> \
-                                //                                 <p class=\"card-text\"> \
-                                //                                     \
-                                //                                 </p> \
-                                //                             </div> \
-                                //                         </div> \
-                                //                     </div> \
-                                //                 "}" \
+                                console.log(data);
+{{--
+                                                            let imgLink = "{{ asset("+data[i]['img'].split(',')[0]+") }}";
+                                                            document.getElementById("results").innerHTML ="<div class=\"row\"> \
+                                                                <div class=\"card w-100\"> \
+                                                                    <div class=\"body-card m-3\"> \
+                                                                        <div class=\"row\"> \
+                                                                            "for(let i = 0; i <  data.length; i++){"
+                                                    <div class=\"col-6 col-xl-2 p-1\"> \
+                                                        <div class=\"\"> \
+                                                            <a href=\""+ imgLink  + "\" class=\"gallery-popup\"
+                                                                style=\"height: 160px; width:100%\"> \
+                                                                <div class=\"project-item\"> \
+                                                                    <div class=\"overlay-container\"> \
+                                                                        <img src=\"\" alt=\"img\"
+                                                                            class=\"gallery-thumb-img m-0\" style=\"height: 160px; width:100%\"> \
+                                                                        <div class=\"project-item-overlay text-right\"> \
+                                                                            <h4>سيارات</h4> \
+                                                                            <p> \
+                                                                                <img src=\"\"
+                                                                                    alt=\"user\" class=\"avatar-xs rounded-circle\"> \
+                                                                                <span class=\"ml-2\">{{ $car->advertiser_name }}</span> \
+                                                                            </p> \
+                                                                        </div> \
+                                                                    </div> \
+                                                                </div> \
+                                                            </a> \
+                                                            <div class=\"card-body\"> \
+                                                                <h4 class=\"card-title\">سيارات</h4> \
+                                                                <p class=\"card-text\"> \
+                                                                    \
+                                                                </p> \
+                                                            </div> \
+                                                        </div> \
+                                                    </div> \
+                                                "}" \
 
-                                //             </div> \
-                                //         </div> \
-                                //     </div> \
-                                // </div>";
+                                            </div> \
+                                        </div> \
+                                    </div> \
+                                </div>";--}}
 
                             }
                         });

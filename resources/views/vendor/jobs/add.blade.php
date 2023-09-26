@@ -22,7 +22,53 @@
                         <td>التخصص<span class="text-danger" style="">*</span></td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <input type="text" name="specialization" class="form-control form-control-sm">
+                                <select name="specialization" class="form-control">
+                                    <option value="" selected="" class="d-none">التخصص</option>
+                                    <option value="تصميم الأزياء و الخياطة">تصميم الأزياء و الخياطة</option>
+                                    <option value="مدرس\ة">مدرس\ة</option>
+                                    <option value="تكنولوجيا المعلومات">تكنولوجيا المعلومات</option>
+                                    <option value="ادارة مشاريع">ادارة مشاريع</option>
+                                    <option value="اتمتة صناعية">اتمتة صناعية</option>
+                                    <option value="احياء">احياء</option>
+                                    <option value="اخصائي/ة سمع و نطق">اخصائي/ة سمع و نطق</option>
+                                    <option value="اخصائي/ة تغذية">اخصائي/ة تغذية</option>
+                                    <option value="امين مستودع">امين مستودع</option>
+                                    <option value="علوم انسانية و اجتماعية">علوم انسانية و اجتماعية</option>
+                                    <option value="تسويق ومبيعات">تسويق ومبيعات</option>
+                                    <option value="علاقات عامة والاتصال والتواصل">علاقات عامة والاتصال والتواصل</option>
+                                    <option value="صحافة واعلام">صحافة واعلام</option>
+                                    <option value="تخصصات أخرى">تخصصات أخرى</option>
+                                    <option value="عمليات الدعم اللوجستي">عمليات الدعم اللوجستي</option>
+                                    <option value="قانون ومحاماة">قانون ومحاماة</option>
+                                    <option value="فندقة وسياحة وسفر">فندقة وسياحة وسفر</option>
+                                    <option value="طب وتمريض وصيدلة">طب وتمريض وصيدلة</option>
+                                    <option value="تصميم داخلي">تصميم داخلي</option>
+                                    <option value="لغات وترجمة">لغات وترجمة</option>
+                                    <option value="محاسبة وعلوم مالية">محاسبة وعلوم مالية</option>
+                                    <option value="هندسة">هندسة</option>
+                                    <option value="تعليم وتدريب">تعليم وتدريب</option>
+                                    <option value="ثقافة وفنون">ثقافة وفنون</option>
+                                    <option value="ادارة أعمال">ادارة أعمال</option>
+                                    <option value="بائع/ة">بائع/ة</option>
+                                    <option value="بصريات">بصريات</option>
+                                    <option value="تحليل مخبري">تحليل مخبري</option>
+                                    <option value="تخدير">تخدير</option>
+                                    <option value="تدريب سياقة">تدريب سياقة</option>
+                                    <option value="تربية اطفال">تربية اطفال</option>
+                                    <option value="تصنيع غذائي">تصنيع غذائي</option>
+                                    <option value="حراسة">حراسة</option>
+                                    <option value="حدادة">حدادة</option>
+                                    <option value="حلاقة">حلاقة</option>
+                                    <option value="خباز و صانع حلويات">خباز و صانع حلويات</option>
+                                    <option value="دهان">دهان</option>
+                                    <option value="سائق">سائق</option>
+                                    <option value="سكرتير/ة">سكرتير/ة</option>
+                                    <option value="صياغة مجوهرات">صياغة مجوهرات</option>
+                                    <option value="طب بيطري">طب بيطري</option>
+                                    <option value="عامل بناء">عامل بناء</option>
+                                    <option value="تجميل">تجميل</option>
+                                    <option value="فني ميكانيك وكهربائي سيارات">فني ميكانيك وكهربائي سيارات</option>
+                                </select>
                             </div>
                         </td>
                     </tr>
@@ -141,21 +187,21 @@
                         <td>
                             <div class="form-group input-group-sm">
                                 <select required="" name="city" class="form-select">
-                                    <option value="1">رام الله والبيرة </option>
-                                    <option value="2">القدس </option>
-                                    <option value="14">قطاع غزة </option>
-                                    <option value="4">الخليل </option>
-                                    <option value="5">بيت لحم </option>
-                                    <option value="6">أريحا </option>
-                                    <option value="7">سلفيت وبديا </option>
-                                    <option value="13">روابي </option>
-                                    <option value="12">طوباس </option>
-                                    <option value="11">قلقيلية </option>
-                                    <option value="10">طولكرم </option>
-                                    <option value="9">جنين </option>
-                                    <option value="8">نابلس </option>
-                                    <option value="15">جميع الاماكن </option>
-                                    <option value="16">مناطق الداخل </option>
+                                <option value="رام الله والبيرة">رام الله والبيرة</option>
+                                <option value="القدس">القدس</option>
+                                <option value="قطاع غزة">قطاع غزة</option>
+                                <option value="الخليل">الخليل</option>
+                                <option value="بيت لحم">بيت لحم</option>
+                                <option value="أريحا">أريحا</option>
+                                <option value="سلفيت وبديا">سلفيت وبديا</option>
+                                <option value="روابي">روابي</option>
+                                <option value="طوباس">طوباس</option>
+                                <option value="قلقيلية">قلقيلية</option>
+                                <option value="طولكرم">طولكرم</option>
+                                <option value="جنين">جنين</option>
+                                <option value="نابلس">نابلس</option>
+                                <option value="جميع الاماكن">جميع الاماكن</option>
+                                <option value="مناطق الداخل">مناطق الداخل</option>
                                 </select>
                             </div>
                         </td>
@@ -183,13 +229,13 @@
         <div class="add-section w-75 mx-auto bg-white">
             @if (!auth()->user())
             <div class="add-section-title btn w-100 bg-primary p-1 px-3 mb-3">
-                <h5 class="text-white ml-2 font-weight-bold text-left">معلومات المُعلن</h5>
+                <h5 class="text-white ml-2 font-weight-bold text-left">معلومات الشركة </h5>
             </div>
             <table class="table table-bordered table-striped mb-0 bg-white">
                 <tbody>
                     <tr>
                         <td>
-                            اسم المُعلن <span class="text-danger" style="font-weight: 700;">*</span>
+                            اسم الشركة <span class="text-danger" style="font-weight: 700;">*</span>
                         </td>
                         <td>
                             <div class="input-group">

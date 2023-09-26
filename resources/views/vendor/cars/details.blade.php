@@ -234,12 +234,6 @@
                                                  display: inline;
                                                  empty-cells: show;
                                                  float: none;
-                                                 font: normal;
-                                                 font-family: inherit;
-                                                 font-size: medium;
-                                                 font-style: normal;
-                                                 font-variant: normal;
-                                                 font-weight: normal;
                                                  height: auto;
                                                  hyphens: none;
                                                  left: auto;
@@ -314,74 +308,38 @@
                             <div class="d-none d-lg-block">
                                 <ul>
                                     <pre style="margin: 0">{{ $car->description }}</pre>
+                                    اضافات: <br>
                                     @foreach ($extras as $ext)
                                         <li>{{ $ext }}</li>
                                     @endforeach
                                 </ul>
                             </div>
+
                             <div class="d-block d-lg-none">
-                                <table class="table ">
-                                    <tbody style="font-weight:500;">
+                                <table class="table px-1">
+                                    <tbody style="font-weight:500;font-family:'Tajawal' !important">
                                         <tr>
                                             <td>
-                                                <li style="display: list-item !important; ">{{ $car->model }}</li>
+                                                <pre style="font-weight:500;font-family:'Tajawal' !important">{{ $car->description }}</pre>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <li style="display: list-item !important; ">{{ $car->lime_type }}</li>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <li style="display: list-item !important; ">{{ $car->origin }}</li>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <li style="display: list-item !important; ">{{ $car->model_year }}</li>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <li style="display: list-item !important; ">{{ $car->fuel_type }}</li>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <li style="display: list-item !important; ">{{ $car->glass }}
-                                                </li>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <li style="display: list-item !important; ">{{ $car->shown }} </li>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <li style="display: list-item !important; ">{{ $car->speedmotors }}</li>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <li style="display: list-item !important; ">بيع او بدل </li>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <li style="display: list-item !important; ">امكانية التقسيط </li>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <li style="display: list-item !important; ">{{ $car->advertiser_name }}
-                                                    {{ $car->phone_number }}</li>
+                                                اضافات:
+                                                <ul>
+                                                    @foreach ($extras as $ext)
+                                                        <li>{{ $ext }}</li>
+                                                    @endforeach
+                                                    @if(count($extras) == NULL)
+                                                         <li>لا توجد معلومات</li>
+                                                    @endif
+                                                </ul>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
+                            
                         </div>
 
                         <div class="w-100 px-2 bg-primary">
@@ -393,16 +351,16 @@
                             <table class="table ">
                                 <tbody style="font-weight:500;">
                                     <tr>
-                                        <td> عدد الركاب </td>
+                                        <td class=""> عدد الركاب </td>
                                         <td>{{ $car->passengers }}</td>
                                     </tr>
                                     <tr>
-                                        <td>قوه المحرك </td>
+                                        <td class="ps-0">قوه المحرك </td>
                                         <td> {{ $car->speedmotors }} </td>
                                     </tr>
                                     <tr>
                                         <td> تصنيف</td>
-                                        <td> مركبات خاصه</td>
+                                        <td> {{$car->drive_type}} </td>
                                     </tr>
                                     <tr>
                                         <td> اصل</td>
@@ -504,7 +462,7 @@
                     </div>
                     <div class="col-md-4 col-xl-3 border-right border-md-top d-none d-lg-block d-xl-block"
                         style="min-height: 230px;background-color: #fff;">
-                        <div class="row text-center">
+                        <div class="row text-center px-0">
                             <div class="col-md-12 mt-5">
                                 <div
                                     style="
@@ -522,7 +480,7 @@
                         <div class="col-md-12 text-center mt-1">
                             <b style="color: #ff9800 ;font-size: 20px;" class="text-dark">{{ $car->advertiser_name }}</b>
                         </div>
-                        <div class="col-md-12 text-center mt-3">
+                        <div class="col-md-12 mt-3">
                             <table class="table table-sm">
                                 <tbody>
                                     <tr>

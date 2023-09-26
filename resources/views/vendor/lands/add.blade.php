@@ -22,8 +22,7 @@
                         <td>نُبذة <span class="text-danger" style="font-weight: 700;">*</span> </td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <input type="text" class="form-control " name="brief" placeholder="نبذه عن الارض"
-                                    aria-label="نبذه عن الارض" aria-describedby="basic-addon2">
+                                <input type="text" class="form-control " name="brief" placeholder="نبذه عن الارض">
                                 <span class="input-group-text d-none d-lg-block w-100" id="basic-addon2">مثال : ارض 5 دونم
                                     صالحة
                                     للبناء</span>
@@ -118,11 +117,10 @@
                     <tr>
                         <td>مميزات <span class="text-danger" style="font-weight: 700;">*</span></td>
                         <td>
-                            <input type="hidden" name="features" id="extras">
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" id="property[It_gets_electricity]" type="checkbox"
-                                        name="property[It_gets_electricity]" onclick="checkedIf(event)"
+                                    <input class="form-check-input" type="checkbox"
+                                        name="features[]"
                                         value="تصلها كهرباء">
                                     <label class="form-check-label" for="property[It_gets_electricity]"> تصلها
                                         كهرباء</label>
@@ -130,31 +128,31 @@
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" id="property[It_gets_water]" type="checkbox"
-                                        name="property[It_gets_water]" onclick="checkedIf(event)" value="تصلها مياه">
+                                    <input class="form-check-input" type="checkbox"
+                                        name="features[]" value="تصلها مياه">
                                     <label class="form-check-label" for="property[It_gets_water]"> تصلها مياه</label>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" id="property[arable]" type="checkbox"
-                                        name="property[arable]" onclick="checkedIf(event)" value="صالحة للزراعة">
+                                    <input class="form-check-input" type="checkbox"
+                                        name="features[]" value="صالحة للزراعة">
                                     <label class="form-check-label" for="property[arable]"> صالحة للزراعة</label>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" id="property[commercial_construction]"
-                                        type="checkbox" name="property[commercial_construction]"
-                                        onclick="checkedIf(event)" value="صالحة للبناء">
+                                    <input class="form-check-input" 
+                                        type="checkbox" name="features[]"
+                                        value="صالحة للبناء">
                                     <label class="form-check-label" for="property[commercial_construction]"> صالحة للبناء
                                         التجاري</label>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" id="property[building_housing]" type="checkbox"
-                                        name="property[building_housing]" onclick="checkedIf(event)"
+                                    <input class="form-check-input"  type="checkbox"
+                                        name="features[]"
                                         value="صالحة للبناء السكن">
                                     <label class="form-check-label" for="property[building_housing]"> صالحة للبناء
                                         السكن</label>
@@ -188,21 +186,22 @@
                         <td>
                             <div class="form-group input-group-sm">
                                 <select name="city" class="form-select" required="">
-                                    <option value="1">رام الله والبيرة </option>
-                                    <option value="2">القدس </option>
-                                    <option value="14">قطاع غزة </option>
-                                    <option value="4">الخليل </option>
-                                    <option value="5">بيت لحم </option>
-                                    <option value="6">أريحا </option>
-                                    <option value="7">سلفيت وبديا </option>
-                                    <option value="13">روابي </option>
-                                    <option value="12">طوباس </option>
-                                    <option value="11">قلقيلية </option>
-                                    <option value="10">طولكرم </option>
-                                    <option value="9">جنين </option>
-                                    <option value="8">نابلس </option>
-                                    <option value="15">جميع الاماكن </option>
-                                    <option value="16">مناطق الداخل </option>
+                                    <option value="رام الله والبيرة">رام الله والبيرة</option>
+<option value="القدس">القدس</option>
+<option value="قطاع غزة">قطاع غزة</option>
+<option value="الخليل">الخليل</option>
+<option value="بيت لحم">بيت لحم</option>
+<option value="أريحا">أريحا</option>
+<option value="سلفيت وبديا">سلفيت وبديا</option>
+<option value="روابي">روابي</option>
+<option value="طوباس">طوباس</option>
+<option value="قلقيلية">قلقيلية</option>
+<option value="طولكرم">طولكرم</option>
+<option value="جنين">جنين</option>
+<option value="نابلس">نابلس</option>
+<option value="جميع الاماكن">جميع الاماكن</option>
+<option value="مناطق الداخل">مناطق الداخل</option>
+
                                 </select>
                             </div>
                         </td>

@@ -106,7 +106,7 @@ $general = $generals[request()->general -1];
                                 
                                 <tr>
                                     <td>العنوان</td>
-                                    <td>{{$general->advertiser_address}} - {{$general->advertiser_city}}</td>
+                                    <td>{{$general->address}} - {{$general->adty}}</td>
                                 </tr>
                                 <tr>
                                     <td>معلومات اضافية</td>
@@ -121,7 +121,7 @@ $general = $generals[request()->general -1];
                     <div class="d-none d-lg-block">
                         <div class="row mb-20px">
                             <div class="col-xl-12 col-md-12" style="line-height: 28px;">
-                                <span><i class="fas fa-compass"></i>العنوان :</span> {{$general->advertiser_address}} - {{$general->advertiser_city}}
+                                <span><i class="fas fa-compass"></i>العنوان :</span> {{$general->address}} - {{$general->city}}
                             </div>
                             <div class="col-xl-12 col-md-12" style="line-height: 28px;">
                                 <span><i class="fas fa-info"></i>اضافات :</span> 

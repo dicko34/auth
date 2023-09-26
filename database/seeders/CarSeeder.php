@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Cars;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class CarSeeder extends Seeder
 {
@@ -14,7 +13,7 @@ class CarSeeder extends Seeder
     public function run(): void
     {
         Cars::factory()
-        ->count(50)
+        ->count(5)
         ->create();
     }
 }

@@ -156,11 +156,10 @@
                     <tr>
                         <td>مميزات </td>
                         <td>
-                            <input type="hidden" id="extras" name="extras">
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" id="property[electronic_elevator]" type="checkbox"
-                                        name="property[electronic_elevator]" onclick="checkedIf(event)" value="يوجد مصعد">
+                                    <input class="form-check-input" type="checkbox"
+                                        name="extras[]" value="يوجد مصعد">
                                     <label class="form-check-label" for="property[electronic_elevator]"> يوجد مصعد
                                         الكتروني
                                     </label>
@@ -168,8 +167,8 @@
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" id="property[private_car_park]" type="checkbox"
-                                        name="property[private_car_park]" value="يوجد موقف سيارات">
+                                    <input class="form-check-input"  type="checkbox"
+                                        name="extras[]" value="يوجد موقف سيارات">
                                     <label class="form-check-label" for="property[private_car_park]"> يوجد موقف سيارات
                                         خاص</label>
                                 </div>
@@ -177,7 +176,7 @@
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
                                     <input class="form-check-input" id="property[central_heating]" type="checkbox"
-                                        name="property[central_heating]" onclick="checkedIf(event)" value="يوجد تدفئة">
+                                        name="extras[]" value="يوجد تدفئة">
                                     <label class="form-check-label" for="property[central_heating]"> يوجد تدفئة
                                         مركزية</label>
                                 </div>
@@ -210,21 +209,22 @@
                         <td>
                             <div class="form-group input-group-sm">
                                 <select name="city" class="form-select" required="">
-                                    <option value="1">رام الله والبيرة </option>
-                                    <option value="2">القدس </option>
-                                    <option value="14">قطاع غزة </option>
-                                    <option value="4">الخليل </option>
-                                    <option value="5">بيت لحم </option>
-                                    <option value="6">أريحا </option>
-                                    <option value="7">سلفيت وبديا </option>
-                                    <option value="13">روابي </option>
-                                    <option value="12">طوباس </option>
-                                    <option value="11">قلقيلية </option>
-                                    <option value="10">طولكرم </option>
-                                    <option value="9">جنين </option>
-                                    <option value="8">نابلس </option>
-                                    <option value="15">جميع الاماكن </option>
-                                    <option value="16">مناطق الداخل </option>
+                                    <option value="رام الله والبيرة">رام الله والبيرة</option>
+                                    <option value="القدس">القدس</option>
+                                    <option value="قطاع غزة">قطاع غزة</option>
+                                    <option value="الخليل">الخليل</option>
+                                    <option value="بيت لحم">بيت لحم</option>
+                                    <option value="أريحا">أريحا</option>
+                                    <option value="سلفيت وبديا">سلفيت وبديا</option>
+                                    <option value="روابي">روابي</option>
+                                    <option value="طوباس">طوباس</option>
+                                    <option value="قلقيلية">قلقيلية</option>
+                                    <option value="طولكرم">طولكرم</option>
+                                    <option value="جنين">جنين</option>
+                                    <option value="نابلس">نابلس</option>
+                                    <option value="جميع الاماكن">جميع الاماكن</option>
+                                    <option value="مناطق الداخل">مناطق الداخل</option>
+
                                 </select>
                             </div>
                         </td>

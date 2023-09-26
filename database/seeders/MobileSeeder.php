@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Mobile;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class MobileSeeder extends Seeder
@@ -14,7 +13,7 @@ class MobileSeeder extends Seeder
     public function run(): void
     {
         Mobile::factory()
-        ->count(50)
+        ->count(5)
         ->create();
     }
 }

@@ -25,14 +25,14 @@ class LandFactory extends Factory
             'surrounded_by' =>  \fake('ar_SA')->word(),
             'address' => \fake()->address(),
             'description' =>  \fake()->text(),
-            'img' => \fake()->imageUrl(360, 360),
+            'img'=> basename(\fake()->image(config('app.image_path')('lands'))),
             'ad_duration_per_day' =>  \fake()->randomNumber(2, true),
+            'state' => \fake()->randomElement(['pinned','refused','allowed']),
             'city' =>  \fake()->city(),
             'advertiser_name' => \fake()->name(),
             'phone_number' =>  \fake()->e164PhoneNumber(),
             'mobile' => \fake()->e164PhoneNumber(),
             'email' =>  \fake()->email(),
-            'state' => \fake()->randomElement(['pinned','refused','allowed']),
         ];
     }
 }
