@@ -163,11 +163,11 @@
                 @foreach ($mobiles as $mobile) 
                 <div class="col-6 col-xl-2 p-1 ">
                     <div class="annonce-item" style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
-                        <a href="{{ asset('assets/site/images/mobile/' . explode(',', $mobile->img)[0]) }}" class="gallery-popup"
+                        <a href="{{ asset('assets/site/images/mobiles/' . explode(',', $mobile->img)[0]) }}" class="gallery-popup"
                             style="height: 160px; width:100%">
                             <div class="project-item">
                                 <div class="overlay-container">
-                                    <img src="{{ asset('assets/site/images/mobile/' . explode(',', $mobile->img)[0]) }}" alt="img" class=""
+                                    <img src="{{ asset('assets/site/images/mobiles/' . explode(',', $mobile->img)[0]) }}" alt="img" class=""
                                         style="height: 160px; width:100%">
                                     <div class="project-item-overlay text-right">
                                         <h4>
