@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Vendor;
 use App\Models\mobile;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Rules\AdvertiserInfo;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 
@@ -31,15 +32,25 @@ class MobileController extends Controller
             'storage' =>  'required|max:30',
             'price' =>  'required|max:30',
             'description' =>  'required|max:500',
-            'city' =>  'required|max:20',
             'address' => 'required|max:100',
             'img'=> 'nullable',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'ad_duration_per_day' =>  'required|max:20',
-            'advertiser_name' => 'required|max:30',
-            'phone_number' =>  'required|max:20',
-            'mobile' => 'required|max:20',
-            'email' =>  'required|email',
+            'advertiser_name' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'phone_number' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'mobile' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'email' =>  [
+                New AdvertiserInfo(), 'max:50','email'
+            ],
+            'city' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
         ]);
         if($request->user()) {
             $credentilas = $request->user();
@@ -51,13 +62,13 @@ class MobileController extends Controller
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
             $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
-            $file_image->move(public_path('assets/site/images/mobiles'), $imageName); // move the new img 
+            $file_image->move(config('app.image_path')('mobiles'), $imageName); // move the new img 
             array_push($validate['img'],$imageName); // store image name to db
         }
         $validate['img'] = implode(',',$validate['img']);
         $validate['state'] = 'pinned';
         Mobile::create($validate);
-        return redirect()->route('mobile.index');
+        return redirect()->route('mobiles.index');
     }
 
     

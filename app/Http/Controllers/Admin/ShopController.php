@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Shop;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Rules\AdvertiserInfo;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -47,25 +48,35 @@ class ShopController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'offre' =>  'required|max:30',
-            'displayed' =>  'required|max:30',
-            'brief' =>  'required|max:20',
-            'loung' =>  'required|max:20',
-            'price' =>  'required|max:20',
+            'device_status' =>  'required|max:30',
+            'model' =>  'required|max:20',
+            'reset_model' =>  'required|max:30',
+            'slides_number' =>  'required|max:20',
+            'screen_size' =>  'required|max:30',
+            'cameras' =>  'required|max:30',
+            'memory' =>  'required|max:20',
+            'storage' =>  'required|max:30',
+            'price' =>  'required|max:30',
             'description' =>  'required|max:500',
-            'img'=> 'required',
+            'address' => 'required|max:100',
+            'img'=> 'nullable',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'gov' =>  'required|max:20',
-            'city' => 'required|max:30',
-            'street' =>  'required|max:20',
             'ad_duration_per_day' =>  'required|max:20',
-            'address' => 'required|max:100',            
-            'advertiser_name' => 'required|max:30',
-            'phone_number' =>  'required|max:20',
-            'mobile' => 'required|max:20',
-            'email' =>  'required|email',
-            'advertiser_city' =>  'required|max:20',
-            'advertiser_address' => 'required|max:100'
+            'advertiser_name' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'phone_number' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'mobile' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'email' =>  [
+                New AdvertiserInfo(), 'max:50','email'
+            ],
+            'city' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
         ]);
         //
         $validate['img'] = [];
@@ -114,25 +125,35 @@ class ShopController extends Controller
     {
         $uploaded_imgs = explode(',',$shop->img);
         $validate = $request->validate([
-            'offre' =>  'required|max:30',
-            'displayed' =>  'required|max:30',
-            'brief' =>  'required|max:20',
-            'loung' =>  'required|max:20',
-            'price' =>  'required|max:20',
+            'device_status' =>  'required|max:30',
+            'model' =>  'required|max:20',
+            'reset_model' =>  'required|max:30',
+            'slides_number' =>  'required|max:20',
+            'screen_size' =>  'required|max:30',
+            'cameras' =>  'required|max:30',
+            'memory' =>  'required|max:20',
+            'storage' =>  'required|max:30',
+            'price' =>  'required|max:30',
             'description' =>  'required|max:500',
+            'address' => 'required|max:100',
             'img'=> 'nullable',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'gov' =>  'required|max:20',
-            'city' => 'required|max:30',
-            'street' =>  'required|max:20',
             'ad_duration_per_day' =>  'required|max:20',
-            'address' => 'required|max:100',            
-            'advertiser_name' => 'required|max:30',
-            'phone_number' =>  'required|max:20',
-            'mobile' => 'required|max:20',
-            'email' =>  'required|email',
-            'advertiser_city' =>  'required|max:20',
-            'advertiser_address' => 'required|max:100'
+            'advertiser_name' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'phone_number' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'mobile' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'email' =>  [
+                New AdvertiserInfo(), 'max:50','email'
+            ],
+            'city' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
         ]);
         if(isset($validate['img']) && !empty( $validate['img'])) {
             $imgs = $request->file('img');

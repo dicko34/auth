@@ -66,7 +66,14 @@
                                                         <a class="btn btn-dark col-sm-12"  href="{{route('admin.cars.edit',['car'=>$car->id])}}">تعديل</a><br>
                                                         <form method="post" action="{{route('admin.cars.change.state',['action'=>$car->state == 'refused' ? 'allowed' : 'refused','car'=>$car->id])}}">
                                                             @csrf
-                                                            <button type="submit" class="btn btn-dark col-sm-12" >{{$car->state == 'refused' ? 'قبول' : 'رفض'}}</button>
+                                                            @if($car->state == 'pinned')
+                                                                <button type="submit" value="allowed" class="btn btn-dark col-sm-12 d-block" >قبول</button>
+                                                                <button type="submit" value="blocked" class="btn btn-dark col-sm-12 d-block" >رفض</button>
+                                                                @else 
+                                                                <button type="submit" value="{{$car->state == 'blocked'? 'allowed':'refused' }}" class="btn btn-dark col-sm-12" >{{$car->state == 'refused' ? 'قبول' : 'رفض'}}</button>
+
+
+                                                            @endif
                                                         </form>
                                                     </div>
                                                 </div>

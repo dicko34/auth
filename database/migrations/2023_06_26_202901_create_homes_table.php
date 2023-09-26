@@ -25,14 +25,14 @@ return new class extends Migration
             $table->string('land_area');
             $table->bigInteger('price');
             $table->string('ad_duration_per_day');
-            $table->string('extras');
+            $table->string('extras')->nullable();
             $table->string('address');
             $table->string('city');
             $table->longText('description');
             $table->string('img');
             $table->string('advertiser_name');
             $table->string('phone_number');
-            $table->string('mobile')->nullable();
+            $table->string('mobile');
             $table->string('email');
             $table->enum('state',['pinned','refused','allowed']);
             $table->timestamps();

@@ -12,7 +12,7 @@
 @endsection
 @section("content")
 
-    <div class="row">
+<div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
@@ -28,7 +28,7 @@
                         <strong>{{ $message }}</strong>
                     </div>
                     @endif
-                            <h4 class="">كل اعلانات الاجهزة الذكية </h4>
+                            <h4 class="">اعلانات الاجهزة الذكية</h4>
 
                         <hr>
 
@@ -44,16 +44,16 @@
                         </thead>
                         <?php $counter =1; ?>
                         <tbody>
-                            {{-- @foreach($admins as $admin) --}}
+                            @foreach($mobiles as $mobile) 
                                 <tr> 
                                     <td>
-                                        موبايل اوبو
+                                        محلات للبيع
                                     </td>
                                     <td>
-                                        محمد
+                                        {{$mobile->advertiser_name}}
                                     </td>
                                     <td>
-                                        9999999
+                                        {{$mobile->phone_number}}
                                     </td>
                                     <td>
                                         <center>
@@ -64,24 +64,34 @@
                                                         التحكم
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                                        <a class="btn btn-dark col-sm-12"  href="{{route('admin.mobiles.show',['mobile'=>1])}}">عرض</a><br>
-                                                        <a class="btn btn-dark col-sm-12"  href="{{route('admin.mobiles.edit',['mobile'=>1])}}">تعديل</a><br>
-                                                        <a class="btn btn-dark col-sm-12"  href="">قبول</a><br>
-                                                        <a class="btn btn-dark col-sm-12"  href="">رفض</a><br>
+                                                        <a class="btn btn-dark col-sm-12"  href="{{route('admin.mobiles.show',['mobile'=>$mobile->id])}}">عرض</a><br>
+                                                        <a class="btn btn-dark col-sm-12"  href="{{route('admin.mobiles.edit',['mobile'=>$mobile->id])}}">تعديل</a><br>
+                                                        <form method="post" action="{{route('admin.mobiles.change.state',['action'=>$mobile->state == 'refused' ? 'allowed' : 'refused','mobile'=>$mobile->id])}}">
+                                                            @csrf
+                                                            @if($mobile->state == 'pinned')
+                                                                <button type="submit" value="allowed" class="btn btn-dark col-sm-12 d-block" >تفعيل</button>
+                                                                <button type="submit" value="blocked" class="btn btn-dark col-sm-12 d-block" >حظر</button>
+                                                                @else 
+                                                                <button type="submit" value="{{$mobile->state == 'blocked'? 'allowed':'refused' }}" class="btn btn-dark col-sm-12" >{{$mobile->state == 'refused' ? 'قبول' : 'رفض'}}</button>
+
+
+                                                            @endif
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
                                         </center>
                                     </td>
                                 </tr>
-                            {{-- @endforeach --}}
+                            @endforeach 
                         </tbody>
+                      </tbody>
                     </table>
 
                 </div>
             </div>
         </div> <!-- end col -->
-    </div> 
+    </div>
 @endsection
 
 @section("script")

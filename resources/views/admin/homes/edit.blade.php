@@ -252,12 +252,12 @@
                                         <tr>
                                             <td class="">مدة الاعلان باليوم</td>
                                             <td class="">
-                                                <select name="ad_durtion_per_day">
+                                                <select name="ad_duration_per_day">
                                                     <option>30</option>
                                                     <option>Large select</option>
                                                     <option>Small select</option>
                                                 </select>
-                                                @error('ad_durtion_per_day')
+                                                @error('ad_duration_per_day')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                             {{$message}}
                                             </span>
@@ -407,8 +407,10 @@
     </div>
     <script>
     var vars = {{Illuminate\Support\Js::from($home)}};
+    console.log(vars);
     let selectTarget = (id) => {
-        let com = document.getElementsByName(`${id}`);
+        let com = document.querySelectorAll(`select[name="${id}"] option`);
+
         for (const el of com) {
             (el.innerHTML == vars[id]) ? el.selected = true: '';
         }
@@ -444,7 +446,7 @@
     selectTarget('gov')
     selectTarget('city')
     selectTarget('street')
-    selectTarget('ad_durtion_per_day')
+    selectTarget('ad_duration_per_day')
     checkTarget('extras')
     selectTarget('advretiser_city')
     

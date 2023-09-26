@@ -8,7 +8,7 @@ class AdvertiserInfo implements Rule
 {
     public function passes($attribute, $value)
     {
-        return  Auth::id() == null ? !empty($vaue) : true  ;
+        return  Auth::id() == null ? !empty($value) : true  ;
     }
 
     public function message()

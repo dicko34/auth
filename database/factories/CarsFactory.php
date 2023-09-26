@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use config;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 
@@ -34,19 +35,19 @@ class CarsFactory extends Factory
             'fuel_type' =>  \fake()->randomElement(['هايبرد','بنزين','سولار','كهرباء']),
             'lime_type' => \fake()->randomElement(['عادي','اوتوماتيك','نصف اوتوماتيك']),
             'glass' =>  \fake()->randomElement(['يدوي','الكتروني']),
-            'shown' => \fake()->randomElement(['للبيع','للبدل','للبيع و البدل','للايجار']),
+            'shown' => \fake()->randomElement(['للبيع','للبدل فقط','للبيع و البدل','للايجار']),
             'pay_method' =>  \fake()->randomElement(['نقدا فقط ','إمكانيه التقسيط']),
             'extras' =>  \join(",",\fake()->words()),
             'address' => \fake()->address(),
             'description' =>  \fake()->text(),
-            'img'=> \fake()->imageUrl(360, 360),
+            'img'=> basename(\fake()->image(config('app.image_path')('cars'))),
             'ad_duration_per_day' =>  \fake()->randomNumber(2,true),
+            'state' => \fake()->randomElement(['pinned','refused','allowed']),
             'city' =>  \fake()->city(),
             'advertiser_name' => \fake()->name(),
             'phone_number' =>  \fake()->e164PhoneNumber(),
             'mobile' => \fake()->e164PhoneNumber(),
             'email' =>  \fake()->email(),
-            'state' => \fake()->randomElement(['pinned','refused','allowed']),
         ];
     }
 }

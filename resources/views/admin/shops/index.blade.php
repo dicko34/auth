@@ -28,7 +28,7 @@
                         <strong>{{ $message }}</strong>
                     </div>
                     @endif
-                            <h4 class="">كل اعلانات الاراضي و المحلات</h4>
+                            <h4 class="">كل اعلانات الشقق</h4>
 
                         <hr>
 
@@ -44,16 +44,16 @@
                         </thead>
                         <?php $counter =1; ?>
                         <tbody>
-                            {{-- @foreach($admins as $admin) --}}
+                            @foreach($shops as $shop) 
                                 <tr> 
                                     <td>
-                                        محل للبيع
+                                        محلات للبيع
                                     </td>
                                     <td>
-                                        محمد
+                                        {{$shop->advertiser_name}}
                                     </td>
                                     <td>
-                                        9999999
+                                        {{$shop->phone_number}}
                                     </td>
                                     <td>
                                         <center>
@@ -64,18 +64,28 @@
                                                         التحكم
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                                        <a class="btn btn-dark col-sm-12"  href="{{route('admin.shops.show',['shop'=>1])}}">عرض</a><br>
-                                                        <a class="btn btn-dark col-sm-12"  href="{{route('admin.shops.edit',['shop'=>1])}}">تعديل</a><br>
-                                                        <a class="btn btn-dark col-sm-12"  href="">قبول</a><br>
-                                                        <a class="btn btn-dark col-sm-12"  href="">رفض</a><br>
+                                                        <a class="btn btn-dark col-sm-12"  href="{{route('admin.shops.show',['shop'=>$shop->id])}}">عرض</a><br>
+                                                        <a class="btn btn-dark col-sm-12"  href="{{route('admin.shops.edit',['shop'=>$shop->id])}}">تعديل</a><br>
+                                                        <form method="post" action="{{route('admin.shops.change.state',['action'=>$shop->state == 'refused' ? 'allowed' : 'refused','shop'=>$shop->id])}}">
+                                                            @csrf
+                                                            @if($shop->state == 'pinned')
+                                                                <button type="submit" value="allowed" class="btn btn-dark col-sm-12 d-block" >تفعيل</button>
+                                                                <button type="submit" value="blocked" class="btn btn-dark col-sm-12 d-block" >حظر</button>
+                                                                @else 
+                                                                <button type="submit" value="{{$shop->state == 'blocked'? 'allowed':'refused' }}" class="btn btn-dark col-sm-12" >{{$shop->state == 'refused' ? 'قبول' : 'رفض'}}</button>
+
+
+                                                            @endif
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
                                         </center>
                                     </td>
                                 </tr>
-                            {{-- @endforeach --}}
+                            @endforeach 
                         </tbody>
+                      </tbody>
                     </table>
 
                 </div>

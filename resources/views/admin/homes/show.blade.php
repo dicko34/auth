@@ -53,9 +53,9 @@
                                                 شقة للبيع
                                             </h2>
                                             <h5 class="smallColor mt-3">
-                                                200 شيكل 
+                                            {{$car->price}} شيكل
                                             </h5>
-                                            <h5 class="maincolor">رام الله والبيرة - مدينة رام الله - بير نبالا</h5>
+                                            <h5 class="maincolor">{{$land->address}} - {{$land->street}} - {{$land->gov}}  </h5>
                                         </div>
                                         <div>
                                             <div class="apsc-icons-wrapper clearfix apsc-theme-4">
@@ -68,11 +68,11 @@
                                         <div class="row m-2">
                                             @foreach(explode(',',$home->img) as $img)
                                             <div class="col-4">
-                                                <a href="{{ asset('assets/site/images/homes/'.$img) }}"
+                                                <a href="{{ asset('site/images/homes/'.$img) }}"
                                                     class="gallery-popup" style="height: 100px; width:100%">
                                                     <div class="project-item">
                                                         <div class="overlay-container">
-                                                            <img src="{{ asset('assets/site/images/homes/'.$img) }}"
+                                                            <img src="{{ asset('site/images/homes/'.$img) }}"
                                                                 alt="img" class="gallery-thumb-img m-0"
                                                                 style="height: 100px; width:100%">
                                                         </div>
@@ -223,7 +223,14 @@
                 <div class="col-12 text-center">
                 <form method="post" action="{{route('admin.homes.change.state',['action'=>$home->state == 'refused' ? 'allowed' : 'refused','home'=>$home->id])}}">
                     @csrf
-                  <button type="submit" class="btn btn-primary w-md waves-effect waves-light" >{{$home->state == 'refused' ? 'قبول الاعلان' :  'رفض الاعلان'}}</button>                                            
+                    @if($home->state == 'pinned')
+                                                                <button type="submit" value="allowed" class="btn btn-primary w-md waves-effect waves-light d-block" >تفعيل</button>
+                                                                <button type="submit" value="blocked" class="btn btn-primary w-md waves-effect waves-light d-block" >حظر</button>
+                                                                @else 
+                                                                <button type="submit" value="{{$home->state == 'blocked'? 'allowed':'blocked' }}" class="btn btn-primary w-md waves-effect waves-light" >{{$home->state == 'blocked' ? 'قبول' : 'رفض'}}</button>
+
+
+                                                            @endif                                            
                 </form>    
                 </div>
             </div>

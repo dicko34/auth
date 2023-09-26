@@ -68,7 +68,14 @@
                                                         <a class="btn btn-dark col-sm-12"  href="{{route('admin.homes.edit',['home'=>$home->id])}}">تعديل</a><br>
                                                         <form method="post" action="{{route('admin.homes.change.state',['action'=>$home->state == 'refused' ? 'allowed' : 'refused','home'=>$home->id])}}">
                                                             @csrf
-                                                            <button type="submit" class="btn btn-dark col-sm-12" >{{$home->state == 'refused' ? 'قبول' : 'رفض'}}</button>
+                                                            @if($home->state == 'pinned')
+                                                                <button type="submit" value="allowed" class="btn btn-dark col-sm-12 d-block" >تفعيل</button>
+                                                                <button type="submit" value="blocked" class="btn btn-dark col-sm-12 d-block" >حظر</button>
+                                                                @else 
+                                                                <button type="submit" value="{{$home->state == 'blocked'? 'allowed':'refused' }}" class="btn btn-dark col-sm-12" >{{$home->state == 'refused' ? 'قبول' : 'رفض'}}</button>
+
+
+                                                            @endif
                                                         </form>
                                                     </div>
                                                 </div>

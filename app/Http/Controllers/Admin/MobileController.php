@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\mobile;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Rules\AdvertiserInfo;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -49,9 +50,7 @@ class MobileController extends Controller
     {
         $validate = $request->validate([
             'device_status' =>  'required|max:30',
-            'company' =>  'required|max:30',
             'model' =>  'required|max:20',
-            'model_year' =>  'required|integer',
             'reset_model' =>  'required|max:30',
             'slides_number' =>  'required|max:20',
             'screen_size' =>  'required|max:30',
@@ -60,14 +59,25 @@ class MobileController extends Controller
             'storage' =>  'required|max:30',
             'price' =>  'required|max:30',
             'description' =>  'required|max:500',
+            'address' => 'required|max:100',
             'img'=> 'nullable',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'ad_duration_per_day' =>  'required|max:20',
-            'advertiser_name' => 'required|max:30',
-            'phone_number' =>  'required|max:20',
-            'email' =>  'required|email',
-            'advertiser_city' =>  'required|max:20',
-            'advertiser_address' => 'required|max:100'
+            'advertiser_name' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'phone_number' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'mobile' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'email' =>  [
+                New AdvertiserInfo(), 'max:50','email'
+            ],
+            'city' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
         ]);
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
@@ -116,9 +126,7 @@ class MobileController extends Controller
         $uploaded_imgs = explode(',',$mobile->img);
         $validate = $request->validate([
             'device_status' =>  'required|max:30',
-            'company' =>  'required|max:30',
             'model' =>  'required|max:20',
-            'model_year' =>  'required|integer',
             'reset_model' =>  'required|max:30',
             'slides_number' =>  'required|max:20',
             'screen_size' =>  'required|max:30',
@@ -127,14 +135,25 @@ class MobileController extends Controller
             'storage' =>  'required|max:30',
             'price' =>  'required|max:30',
             'description' =>  'required|max:500',
+            'address' => 'required|max:100',
             'img'=> 'nullable',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'ad_duration_per_day' =>  'required|max:20',
-            'advertiser_name' => 'required|max:30',
-            'phone_number' =>  'required|max:20',
-            'email' =>  'required|email',
-            'advertiser_city' =>  'required|max:20',
-            'advertiser_address' => 'required|max:100'
+            'advertiser_name' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'phone_number' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'mobile' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'email' =>  [
+                New AdvertiserInfo(), 'max:50','email'
+            ],
+            'city' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
         ]);
         if(isset($validate['img']) && !empty( $validate['img'])) {
             $imgs = $request->file('img');

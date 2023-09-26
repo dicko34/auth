@@ -21,8 +21,8 @@ class generalController extends Controller
         
         $generals_show = General::where(
             [
-                ['category', $request->category == 'الكل' ? '!=' : '=', $request->category == 'الكل' ? null : $request->category],
-                ['address', $request->address == 'الكل' || $request->address == '' ? '!=' : '=', $request->address == 'الكل' ? null : $request->address],
+                ['category', $request->category == 'null' ? '!=' : 'like', $request->category == 'null' ? null :"%$request->category%"],
+                ['address', $request->address == 'null' || $request->address == '' ? '!=' : 'like', $request->address == 'null' ? null : "%$request->address%"],
             ]
         )->paginate(6);
         if (count($generals_show) < 1) {

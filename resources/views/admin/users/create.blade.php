@@ -27,16 +27,9 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="example-text-input" class="col-sm-2 col-form-label">الاول الاسم </label>
+                            <label for="example-text-input" class="col-sm-2 col-form-label">الاسم او الشركة</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="text" id="example-text-input" value="" name="fname" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="example-text-input" class="col-sm-2 col-form-label"> الاسم الثاني</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="text" id="example-text-input" name="lname" required>
+                                <input class="form-control" type="text" id="example-text-input" value="" name="name" required>
                             </div>
                         </div>
                         
@@ -56,6 +49,11 @@
                             <label for="example-text-input" class="col-sm-2 col-form-label"> كلمة المرور</label>
                             <div class="col-sm-10">
                                 <input class="form-control" type="password" id="example-text-input" name="password" required>
+                                @error('password')
+                                <span class="" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div> 
 
@@ -66,6 +64,11 @@
                                     <option>اريحا</option>
                                     <option>اريحا</option>
                                 </select>
+                                @error('city')
+                                <span class="" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -73,6 +76,11 @@
                             <label for="example-text-input" class="col-sm-2 col-form-label"> العنوان </label>
                             <div class="col-sm-10">
                                 <input class="form-control" type="text" id="example-text-input" name="address" required>
+                                @error('address')
+                                <span class="" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -80,13 +88,23 @@
                             <label for="example-text-input" class="col-sm-2 col-form-label"> رقم الهاتف </label>
                             <div class="col-sm-10">
                                 <input class="form-control" type="text" id="example-text-input" name="phone" required>
+                                @error('phone')
+                                <span class="" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="example-text-input" class="col-sm-2 col-form-label"> صورة </label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="file" id="example-text-input" name="img" required>
+                                <input class="form-control" type="file" id="example-text-input" name="img" multiple>
+                                @error('img')
+                                <span class="" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
 

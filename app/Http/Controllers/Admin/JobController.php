@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Job;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Rules\AdvertiserInfo;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -52,16 +53,26 @@ class jobController extends Controller
             'workplace' =>  'required|max:30',
             'night_work' =>  'required|max:20',
             'permanence' =>  'required|max:30',
+            'address' => 'required|max:100',
             'description' =>  'required|max:500',
             'img'=> 'required',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'ad_duration_per_day' =>  'required|max:20',
-            'advertiser_name' => 'required|max:30',
-            'phone_number' =>  'required|max:20',
-            'mobile' => 'required|max:20',
-            'email' =>  'required|email',
-            'advertiser_city' =>  'required|max:20',
-            'advertiser_address' => 'required|max:100'
+            'advertiser_name' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'phone_number' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'mobile' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'email' =>  [
+                New AdvertiserInfo(), 'max:50','email'
+            ],
+            'city' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
         ]);
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
@@ -113,16 +124,26 @@ class jobController extends Controller
             'workplace' =>  'required|max:30',
             'night_work' =>  'required|max:20',
             'permanence' =>  'required|max:30',
+            'address' => 'required|max:100',
             'description' =>  'required|max:500',
             'img'=> 'nullable',
-            'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'img.*'=> 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
             'ad_duration_per_day' =>  'required|max:20',
-            'advertiser_name' => 'required|max:30',
-            'phone_number' =>  'required|max:20',
-            'mobile' => 'required|max:20',
-            'email' =>  'required|email',
-            'advertiser_city' =>  'required|max:20',
-            'advertiser_address' => 'required|max:100'
+            'advertiser_name' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'phone_number' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'mobile' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'email' =>  [
+                New AdvertiserInfo(), 'max:50','email'
+            ],
+            'city' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
         ]);
         if(isset($validate['img']) && !empty( $validate['img'])) {
             $imgs = $request->file('img');

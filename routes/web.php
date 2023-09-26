@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 //Auth::routes();
 Route::get('/', 'HomeController@index')->middleware('verified')->name('home');
+Route::post('search', 'HomeController@search')->middleware('verified')->name('search');
 
 // Vendor routes
 
@@ -58,7 +59,7 @@ Route::get('/register', function () {
 })->name('register');
 
 Route::get('/contact', function () {
-    return view('vendor.contact');
+    echo base_path().'\public\assets\site\images\'';
 })->name('contact');
 
 

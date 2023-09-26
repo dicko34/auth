@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\General;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class GeneralSeeder extends Seeder
@@ -14,7 +13,7 @@ class GeneralSeeder extends Seeder
     public function run(): void
     {
         General::factory()
-        ->count(50)
+        ->count(5)
         ->create();
     }
 }

@@ -22,28 +22,28 @@ return new class extends Migration
             $table->string('passengers');
             $table->string('drive_type');
             $table->bigInteger('speedmotors');
-
+            
             $table->string('car_usage');
             $table->string('origin');
             $table->bigInteger('price');
             $table->string('ad_duration_per_day');
 
-            $table->enum('driving_license', ['فلسطينية', 'نمرة صفراء']);
-            $table->enum('fuel_type', ['هايبرد', 'بنزين', 'سولار', 'كهرباء']);
-            $table->enum('lime_type', ['عادي', 'اوتوماتيك', 'نصف اوتوماتيك']);
-            $table->enum('glass', ['يدوي', 'الكتروني']);
-            $table->enum('shown', ['للبيع', 'للبدل', 'للبيع و البدل', 'للايجار']);
-            $table->enum('pay_method', ['نقدا فقط ', 'إمكانيه التقسيط']);
+            $table->enum('driving_license',['فلسطينية','نمرة صفراء']);
+            $table->enum('fuel_type', ['هايبرد','بنزين','سولار','كهرباء']);
+            $table->enum('lime_type',['عادي','اوتوماتيك','نصف اوتوماتيك']);
+            $table->enum('glass',['يدوي','الكتروني']);
+            $table->enum('shown',['للبيع','للبدل فقط','للبيع و البدل','للايجار']);
+            $table->enum('pay_method',['نقدا فقط ','إمكانيه التقسيط']);
             $table->text('extras');
             $table->longText('description');
             $table->string('img');
             $table->string('advertiser_name');
-            $table->string('phone_number');
-            $table->string('mobile')->nullable();
+             $table->string('phone_number');
+            $table->string('mobile');
             $table->string('email');
             $table->string('city');
             $table->string('address');
-            $table->enum('state', ['pinned', 'refused', 'allowed']);
+            $table->enum('state',['pinned','refused','allowed']);
             $table->timestamps();
         });
     }

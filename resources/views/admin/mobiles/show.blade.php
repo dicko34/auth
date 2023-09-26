@@ -56,14 +56,13 @@
                                                     width: 9px;"></li>
                                         </ol>
                                         <div class="carousel-inner w-100 m-auto">
-                                            <div class="carousel-item active">
-                                                <img src="{{ asset('assets/admin/images/martina.jpg') }}" height="350"
+                                        @foreach(explode(',',$mobile->img) as $key => $img)
+                                            <div class="carousel-item {{$key == 0 ? 'active' : ''}}">
+                                                <img src="{{ asset('site/images/mobiles/'.$img) }}" height="350"
                                                     class="d-block w-100" alt="...">
                                             </div>
-                                            <div class="carousel-item">
-                                                <img src="{{ asset('assets/admin/images/mobile.jpg') }}" height="350"
-                                                    class="d-block w-100" alt="...">
-                                            </div>
+                                            @endforeach
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -72,12 +71,12 @@
                                     <div class="m-5">
                                         <div class="mb-3">
                                             <h2>
-                                                سامسونج M62 - مستعمل
+                                               {{$mobile->name}} - {{$mobile->device_status}}
                                             </h2>
-                                            <h5 class="maincolor">1100 شيكل
+                                            <h5 class="maincolor">{{$mobile->price}} شيكل
                                             </h5>
                                             <h5 class="smallColor mt-3">
-                                                موديل سنة 2007
+                                                موديل سنة {{$mobile->model_year}}
                                             </h5>
                                         </div>
     
@@ -119,47 +118,39 @@
                                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="m-lg-4 row">
                                             <div class="col-sm-4 col-lg-2 col-md-3 m-2">
-                                                <div class="smallColor">اسم الشركة : Apple</div>
+                                                <div class="smallColor">اسم الشركة : {{$mobile->company}}</div>
                                             </div>
                                             <div class="col-sm-4 col-lg-2 col-md-3 m-2">
-                                                <div class="smallColor">الموديل : ايباد 2</div>
+                                                <div class="smallColor">{{$mobile->model}} : ايباد 2</div>
                                             </div>
                                             <div class="col-sm-4 col-lg-2 col-md-3 m-2">
-                                                <div class="smallColor">حالة الجهاز : جديد</div>
+                                                <div class="smallColor">حالة الجهاز : {{$mobile->device_status}}</div>
                                             </div>
                                             <div class="col-sm-4 col-lg-2 col-md-3 m-2">
-                                                <div class="smallColor">عدد الشرائح : شريحتين</div>
+                                                <div class="smallColor">عدد الشرائح : {{$mobile->slides_number}}</div>
                                             </div>
                                             <div class="col-sm-4 col-lg-2 col-md-3 m-2">
-                                                <div class="smallColor">حجم الشاشة : 5 بوصة</div>
+                                                <div class="smallColor">حجم الشاشة : {{$mobile->screen_size}}</div>
                                             </div>
                                             <div class="col-sm-4 col-lg-2 col-md-3 m-2">
-                                                <div class="smallColor">الكاميرات : كاميرار خلفية</div>
+                                                <div class="smallColor">الكاميرات : {{$mobile->screen_size}}</div>
                                             </div>
     
                                             <div class="col-sm-4 col-lg-2 col-md-3 m-2">
-                                                <div class="smallColor">الذاكرة : 64 جيجا</div>
+                                                <div class="smallColor">الذاكرة : {{$mobile->screen_size}}</div>
                                             </div>
                                             <div class="col-sm-4 col-lg-2 col-md-3 m-2">
-                                                <div class="smallColor">سعة التخزين : 32 جيجا</div>
+                                                <div class="smallColor">سعة التخزين : {{$mobile->screen_size}}</div>
                                             </div>
                                             <div class="col-sm-4 col-lg-2 col-md-3 m-2">
-                                                <div class="smallColor">السعر : 1200</div>
+                                                <div class="smallColor">السعر : {{$mobile->price}}</div>
                                             </div>
                                         </div>
                                     </div> 
                                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                         <div class="m-4">
                                             <ul class="list-unstyled m-3">
-                                                <li>
-                                                    <ul>
-                                                        <li class="m-2">ترخيص تامين لشهر 3/2022</li>
-                                                        <li class="m-2">ماطور جير 100‎%‎</li>
-                                                        <li class="m-2">شاشه مع حساسات</li>
-                                                        <li class="m-2">جنط 15 مسجل</li>
-                                                        <li class="m-2">غرفه نضيفه</li>
-                                                    </ul>
-                                                </li>
+                                            {{$mobile->description}}
                                             </ul>
                                         </div>
                                     </div>
@@ -167,16 +158,16 @@
                                     <div class="tab-pane fade" id="seller" role="tabpanel" aria-labelledby="seller-tab">
                                         <div class="m-lg-4 row">
                                             <div class="col-sm-12 col-lg-4 col-md-3 m-2">
-                                                <div class="smallColor"> اسم المُعلن : مارتينا جرجس</div>
+                                                <div class="smallColor"> اسم المُعلن : {{$mobile->advertiser_name}}</div>
                                             </div>
                                             <div class="col-sm-12 col-lg-4 col-md-3 m-2">
-                                                <div class="smallColor"> العنوان : طولكرم - عنبتا شارع السكه</div>
+                                                <div class="smallColor"> العنوان : {{$mobile->advertiser_address}}</div>
                                             </div>
                                             <div class="col-sm-12 col-lg-4 col-md-3 m-2">
-                                                <div class="smallColor"> رقم الهاتف	 : خصوصي</div>
+                                                <div class="smallColor"> رقم الهاتف	 : {{$mobile->phone_number}}</div>
                                             </div>
                                             <div class="col-sm-12 col-lg-4 col-md-3 m-2">
-                                                <div class="smallColor"> تاريخ نشر الإعلان : 2021-11-07
+                                                <div class="smallColor"> تاريخ نشر الإعلان : {{$mobile->created_at}}
                                                 </div>
                                             </div>
                                             <div class="col-sm-12 col-lg-4 col-md-3 m-2">
@@ -193,10 +184,17 @@
                 </div>
             <div class="row mt-3">
                 <div class="col-12 text-center">
-                    <button class="btn btn-primary w-md waves-effect waves-light" type="submit">قبول
-                        الأعلان</button>
-                        <button class="btn btn-primary w-md waves-effect waves-light" type="submit">رفض
-                            الأعلان</button>
+                <form method="post" action="{{route('admin.mobiles.change.state',['action'=>$mobile->state == 'refused' ? 'allowed' : 'refused','mobile'=>$mobile->id])}}">
+                    @csrf
+                    @if($mobile->state == 'pinned')
+                                                                <button type="submit" value="allowed" class="btn btn-primary w-md waves-effect waves-light d-block" >تفعيل</button>
+                                                                <button type="submit" value="blocked" class="btn btn-primary w-md waves-effect waves-light d-block" >حظر</button>
+                                                                @else 
+                                                                <button type="submit" value="{{$mobile->state == 'blocked'? 'allowed':'blocked' }}" class="btn btn-primary w-md waves-effect waves-light" >{{$mobile->state == 'blocked' ? 'قبول' : 'رفض'}}</button>
+
+
+                                                            @endif
+                </form>    
                 </div>
             </div>
         </div>

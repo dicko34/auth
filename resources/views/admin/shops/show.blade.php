@@ -65,42 +65,20 @@
                                         </div>
 
                                         <div class="row m-2">
+                                        @foreach(explode(',',$shop->img) as $img)
                                             <div class="col-4">
-                                                <a href="{{ asset('assets/admin/images/shop.jpg') }}"
+                                                <a href="{{ asset('site/images/shops/'.$img) }}"
                                                     class="gallery-popup" style="height: 100px; width:100%">
                                                     <div class="project-item">
                                                         <div class="overlay-container">
-                                                            <img src="{{ asset('assets/admin/images/shop.jpg') }}"
+                                                            <img src="{{ asset('site/images/shops/'.$img) }}"
                                                                 alt="img" class="gallery-thumb-img m-0"
                                                                 style="height: 100px; width:100%">
                                                         </div>
                                                     </div>
                                                 </a>
                                             </div>
-                                            <div class="col-4">
-                                                <a href="{{ asset('assets/admin/images/shop.jpg') }}"
-                                                    class="gallery-popup" style="height: 100px; width:100%">
-                                                    <div class="project-item">
-                                                        <div class="overlay-container">
-                                                            <img src="{{ asset('assets/admin/images/shop.jpg') }}"
-                                                                alt="img" class="gallery-thumb-img m-0"
-                                                                style="height: 100px; width:100%">
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="col-4">
-                                                <a href="{{ asset('assets/admin/images/shop.jpg') }}"
-                                                    class="gallery-popup" style="height: 100px; width:100%">
-                                                    <div class="project-item">
-                                                        <div class="overlay-container">
-                                                            <img src="{{ asset('assets/admin/images/shop.jpg') }}"
-                                                                alt="img" class="gallery-thumb-img m-0"
-                                                                style="height: 100px; width:100%">
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
+                                            @endforeach
                                         </div>
                                     </div>
 
@@ -124,46 +102,36 @@
                         
                         <tr>
                             <td class="">العرض</td>
-                            <td class="">للبيع</td>
+                            <td class="">{{$shop->offre}}</td>
                         </tr>
                         <tr>
                             <td class="">المعروض</td>
-                            <td class="">  محل</td>
+                            <td class="">  {{$shop->displayed}}</td>
                         </tr>
                         <tr>
                             <td class="">السعر</td>
-                            <td class=""> حسب الاتفاق </td>
+                            <td class=""> {{$shop->price}}</td>
                         </tr>
                         <tr>
                             <td class="">المساحة</td>
-                            <td class=""> 124 متر مربع </td>
+                            <td class="">{{$shop->loung}}</td>
                         </tr> 
                         <tr>
                             <td class="">نبذة</td>
-                            <td class=""> ارض زتون 18 دونم في رام الله </td>
+                            <td class="">{{$shop->brief}}</td>
                         </tr>
                         <tr>
                             <td class="">المدينة</td>
-                            <td class=""> اريحا</td>
+                            <td class=""> {{$shop->city}}</td>
                         </tr>
                         <tr>
                             <td class="">العنوان</td>
-                            <td class=""> بير نبالا</td>
+                            <td class="">{{$shop->address}}</td>
                         </tr>   
                         <tr>
                             <td class="">معلومات إضافية</td>
                             <td class="">
-                                <ul class="list-unstyled m-3 text-left">
-                                    <li>
-                                        <ul>
-                                            <li class="m-2">ترخيص تامين لشهر 3/2022</li>
-                                            <li class="m-2">ماطور جير 100‎%‎</li>
-                                            <li class="m-2">شاشه مع حساسات</li>
-                                            <li class="m-2">جنط 15 مسجل</li>
-                                            <li class="m-2">غرفه نضيفه</li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                {{$shop->description}}
                             </td>
                         </tr> 
 
@@ -180,27 +148,27 @@
                     <tbody>
                         <tr>
                             <td class="">إسم المعلن</td>
-                            <td class=""> مارتينا جرجس </td>
+                            <td class=""> {{$shop->advertiser_name}}</td>
                         </tr>
                         <tr>
                             <td class="">العنوان</td>
-                            <td class=""> الخليل - شارع السلام </td>
+                            <td class="">{{$shop->address}}</td>
                         </tr>
                         <tr>
                             <td class="">رقم الهاتف</td>
-                            <td class=""> 12345678 </td>
+                            <td class="">{{$shop->phone_number}}</td>
                         </tr>
                         <tr>
                             <td class="">موبايل</td>
-                            <td class=""> 1234567 </td>
+                            <td class="">{{$shop->mobile}}</td>
                         </tr>
                         <tr>
                             <td class="">البريد الالكتروني</td>
-                            <td class=""> 1123@nnn.com </td>
+                            <td class=""> {{$shop->email}}</td>
                         </tr>
                         <tr>
                             <td class=""> تاريخ نشر الاعلان</td>
-                            <td class=""> 11-11-2022 </td>
+                            <td class=""> {{$shop->created_at}}</td>
                         </tr>
                         <tr>
                             <td class="">تاريخ انتهاء الاعلان</td>
@@ -211,10 +179,17 @@
             </div>
             <div class="row mt-3">
                 <div class="col-12 text-center">
-                    <button class="btn btn-primary w-md waves-effect waves-light" type="submit">قبول
-                        الأعلان</button>
-                        <button class="btn btn-primary w-md waves-effect waves-light" type="submit">رفض
-                            الأعلان</button>
+                <form method="post" action="{{route('admin.shops.change.state',['action'=>$shop->state == 'refused' ? 'allowed' : 'refused','shop'=>$shop->id])}}">
+                    @csrf
+                    @if($shop->state == 'pinned')
+                                                                <button type="submit" value="allowed" class="btn btn-primary w-md waves-effect waves-light d-block" >تفعيل</button>
+                                                                <button type="submit" value="blocked" class="btn btn-primary w-md waves-effect waves-light d-block" >حظر</button>
+                                                                @else 
+                                                                <button type="submit" value="{{$shop->state == 'blocked'? 'allowed':'blocked' }}" class="btn btn-primary w-md waves-effect waves-light" >{{$shop->state == 'blocked' ? 'قبول' : 'رفض'}}</button>
+
+
+                                                            @endif                            
+                </form>    
                 </div>
             </div>
         </div>

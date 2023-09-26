@@ -26,7 +26,7 @@ class CarController extends Controller
             'model_year' =>  'required|max:20',
             'car_color' =>  'required|max:20',
             'power' => 'required|max:20',
-            'passengers' =>  'required|max:50',
+            'passengers' =>  'required|max:20',
             'car_usage' => 'required|max:50',
             'drive_type' =>  'required|max:20',
             'speedmotors' =>  'required|max:20',
@@ -39,28 +39,27 @@ class CarController extends Controller
             'glass' =>  'required|max:20',
             'shown' => 'required|max:20',
             'pay_method' =>  'required|max:20',
+            'extras' =>  'required|max:500',
             'address' => 'required|max:100',
             'description' =>  'required|max:600',
             'img'=> 'required',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'advertiser_name' => [
-                'required', 'max:200'
+                New AdvertiserInfo(), 'max:20'
             ],
             'phone_number' => [
-                'required', 'max:20'
+                New AdvertiserInfo(), 'max:20'
             ],
             'mobile' => [
-                'required', 'max:20'
+                New AdvertiserInfo(), 'max:20'
             ],
             'email' =>  [
-                'required', 'max:300', 'email'
+                New AdvertiserInfo(), 'max:50','email'
             ],
             'city' => [
-                'required', 'max:20'
+                New AdvertiserInfo(), 'max:20'
             ],
-            
         ]);
-
         if($request->user()) {
             $credentilas = $request->user();
             $validate["advertiser_name"] = $credentilas->name;
@@ -68,18 +67,17 @@ class CarController extends Controller
             $validate["mobile"] = null;
             $validate["email"] = $credentilas->email;
         }
-
-        $extras = $request->input('extras', []);
+        $extras = $request->extras;
 
         // Convert the array to a comma-separated string
         $extrasString = implode(',', $extras);
 
         $validate['extras'] = $extrasString;
-        
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
             $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
-            $file_image->move(public_path('assets/site/images/cars'), $imageName); // move the new img 
+           
+            $file_image->move(public_path('assets/site/images/homes'), $imageName); // move the new img 
             array_push($validate['img'],$imageName); // store image name to db
 
         }

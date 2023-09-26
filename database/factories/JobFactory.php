@@ -22,15 +22,15 @@ class JobFactory extends Factory
             'night_work' =>  \fake()->word(),
             'permanence' =>  \fake()->word(),
             'description' =>  \fake('ar_SA')->text(),
-            'img'=> \fake()->imageUrl(360, 360),
+            'img' => basename(\fake()->image(config('app.image_path')('jobs'))),
             'city' =>  \fake()->city(),
             'address' => \fake()->address(),
-            'ad_duration_per_day' =>  \fake()->randomNumber(2,true),
+            'ad_duration_per_day' =>  \fake()->randomNumber(2, true),
+            'state' => \fake()->randomElement(['pinned', 'refused', 'allowed']),
             'advertiser_name' => \fake()->name(),
             'phone_number' =>  \fake()->e164PhoneNumber(),
             'mobile' => \fake()->e164PhoneNumber(),
             'email' =>  \fake()->email(),
-            'state' => \fake()->randomElement(['pinned','refused','allowed']),
         ];
     }
 }

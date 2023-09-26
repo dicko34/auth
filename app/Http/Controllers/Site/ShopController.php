@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class ShopController extends Controller
-{   
+{
+
     use Traits\SimilarTrait;
     public function index()
     {
@@ -15,9 +16,20 @@ class ShopController extends Controller
         return view('vendor.shopes.index',compact('shopes'));
     }
 
-    public function search()
+    public function search(Request $request)
     {
-        return view('vendor.shopes.search');
+        
+        $shopes_show =Shop::where(
+            [
+                ['city', $request->city == null ? '!=' : 'like', $request->city == null ? null :  "%$request->city%"],
+                ['displayed', $request->displayed == null ? '!=' : 'like', $request->displayed == null ? null :  "%$request->displayed%"],
+                ['offer', $request->offer == null ? '!=' : 'like', $request->offer == null ? null :  "%$request->offer%"],
+            ]
+        )->paginate(6);
+        if (count($shopes_show) < 1) {
+            $shopes_show = Shop::paginate(6);
+        }
+        return view('vendor.shopes.search', compact('shopes_show'));
     }
 
     public function  product(Request $request)
