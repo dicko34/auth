@@ -457,7 +457,7 @@
                         </div>
                     </div>
                     <div class="col-md-12 text-center mt-1">
-                        <b style="color: #ff9800 ;font-size: 20px;" class="text-dark">{{$mobile->advertiser_name}}</b>
+                        <b style="color: #ff9800 ;font-size: 20px;" class="text-dark">{{$shop->advertiser_name}}</b>
                     </div>
                     <div class="col-md-12 text-center mt-3">
                         <table class="table table-striped table-sm">

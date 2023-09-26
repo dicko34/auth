@@ -17,16 +17,21 @@ class MobilesController extends Controller
 
     public function search(Request $request)
     {
-        $mobiles = Mobile::paginate(6);
+        $price_min = (int)  Mobile::min('price');
+        $price_max = (int)  Mobile::max('price');
         $mobiles_show = Mobile::where(
             [
-                ['device_status',$request->device_status == 'الكل'? '!=': '='  ,$request->device_status == 'الكل' ? null : $request->device_status ],
+                ['model',$request->model == 'null'? '!=': 'like'  ,$request->model == 'null' ? null : "%$request->model%" ],
+                ['reset_model',$request->reset_model == 'null'? '!=': 'like'  ,$request->reset_model == 'null' ? null : "%$request->reset_model%" ],
+                ['device_status',$request->device_status == 'null'? '!=': 'like'  ,$request->device_status == 'null' ? null : "%$request->device_status%" ],
+                ['city',$request->city == 'null'? '!=': 'like'  ,$request->city == 'null' ? null : "%$request->city%" ],
            ]
-        )->whereBetween('price',[(int) $request->price_min,(int) $request->price_max])->get();
+           
+        )->whereBetween('price',[(int) $request->price_min > 0 ? $request->price_min: $price_min ,(int) $request->price_max > 0 ? (int) $request->price_max :$price_max])->paginate(6);
         if (count($mobiles_show) < 1) {
             $mobiles_show =  Mobile::paginate(6);
         }
-        return  view('vendor.mobiles.search',compact('mobiles','mobile','mobile'));
+        return  view('vendor.mobiles.search',compact('mobiles_show'));
     }
 
     public function product(Request $request)

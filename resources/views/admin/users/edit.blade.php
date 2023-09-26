@@ -1,8 +1,8 @@
 @extends("layouts.admin")
 @section("pageTitle", "Koala Web Libraries")
 @section('styleChart')
-    <link href="{{asset("admin/libs/select2/css/select2.min.css")}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset("admin/libs/summernote/summernote-bs4.min.css")}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset("assets/admin/libs/select2/css/select2.min.css")}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset("assets/admin/libs/summernote/summernote-bs4.min.css")}}" rel="stylesheet" type="text/css"/>
 @endsection
 @section("content")
 <div class="row">
@@ -149,8 +149,8 @@ var vars = {{Illuminate\Support\Js::from($user)}};
 @endsection
 
 @section("script")
-<script src="{{asset("admin/libs/select2/js/select2.min.js")}}"></script>
-<script src="{{asset("admin/libs/summernote/summernote-bs4.min.js")}}"></script>
-<script src="{{asset("admin/js/pages/email-summernote.init.js")}}"></script>
-<script src="{{asset("admin/js/app.js")}}"></script>
+<script src="{{asset("assets/admin/libs/select2/js/select2.min.js")}}"></script>
+<script src="{{asset("assets/admin/libs/summernote/summernote-bs4.min.js")}}"></script>
+<script src="{{asset("assets/admin/js/pages/email-summernote.init.js")}}"></script>
+<script src="{{asset("assets/admin/js/app.js")}}"></script>
 @endsection 

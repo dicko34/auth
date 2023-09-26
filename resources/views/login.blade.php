@@ -6,19 +6,19 @@
     <title>e-wallet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('assets/admin/images/logo.png')}}">
+    <link rel="shortcut icon" href="{{asset("assets/admin/images/logo.png')}}">
 
-    <link href="{{asset('assets/admin/libs/dropzone/min/dropzone.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset("assets/admin/libs/dropzone/min/dropzone.min.css')}}" rel="stylesheet" type="text/css" />
 
     <!-- Bootstrap Css -->
-    <link href="{{asset('assets/admin/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css"/>
+    <link href="{{asset("assets/admin/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css"/>
     <!-- Icons Css -->
-    <link href="{{asset('assets/admin/css/icons.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset("assets/admin/css/icons.min.css')}}" rel="stylesheet" type="text/css"/>
     <!-- App Css-->
     @yield("style")
-    <link href="{{asset('assets/admin/css/app-rtl.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{asset('assets/admin/css/redo.css')}}" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="{{asset('assets/site/css/teacher.css')}}">
+    <link href="{{asset("assets/admin/css/app-rtl.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset("assets/admin/css/redo.css')}}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="{{asset("site/css/teacher.css')}}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
@@ -46,7 +46,7 @@
                                 <div class="mb-3">
                                     <h2 class="mb-3">
                                         SMLE SECRETS
-                                        {{-- <a href="index.html"><img src="{{asset('assets/admin/images/logo.png')}}" height="40" alt="logo"></a> --}}
+                                        {{-- <a href="index.html"><img src="{{asset("assets/admin/images/logo.png')}}" height="40" alt="logo"></a> --}}
                                     </h2>
                                 </div>
                             </div>
@@ -87,12 +87,12 @@
     </div>
 
     <!-- JAVASCRIPT -->
-    <script src="{{asset('assets/admin/libs/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('assets/admin/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('assets/admin/libs/metismenu/metisMenu.min.js')}}"></script>
-    <script src="{{asset('assets/admin/libs/simplebar/simplebar.min.js')}}"></script>
-    <script src="{{asset('assets/admin/libs/node-waves/waves.min.js')}}"></script>
-    <script src="{{asset('assets/admin/js/app.js')}}"></script>
+    <script src="{{asset("assets/admin/libs/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset("assets/admin/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset("assets/admin/libs/metismenu/metisMenu.min.js')}}"></script>
+    <script src="{{asset("assets/admin/libs/simplebar/simplebar.min.js')}}"></script>
+    <script src="{{asset("assets/admin/libs/node-waves/waves.min.js')}}"></script>
+    <script src="{{asset("assets/admin/js/app.js')}}"></script>
 
 </body>
 </html>

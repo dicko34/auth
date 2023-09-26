@@ -234,12 +234,6 @@
                                                  display: inline;
                                                  empty-cells: show;
                                                  float: none;
-                                                 font: normal;
-                                                 font-family: inherit;
-                                                 font-size: medium;
-                                                 font-style: normal;
-                                                 font-variant: normal;
-                                                 font-weight: normal;
                                                  height: auto;
                                                  hyphens: none;
                                                  left: auto;
@@ -314,17 +308,19 @@
                             <div class="d-none d-lg-block">
                                 <ul>
                                     <pre style="margin: 0">{{ $car->description }}</pre>
+                                    اضافات: <br>
                                     @foreach ($extras as $ext)
                                         <li>{{ $ext }}</li>
                                     @endforeach
                                 </ul>
                             </div>
+
                             <div class="d-block d-lg-none">
-                                <table class="table ">
-                                    <tbody style="font-weight:500;">
+                                <table class="table px-1">
+                                    <tbody style="font-weight:500;font-family:'Tajawal' !important">
                                         <tr>
                                             <td>
-                                                <li style="display: list-item !important; ">{{ $car->model }}</li>
+                                                <pre style="font-weight:500;font-family:'Tajawal' !important">{{ $car->description }}</pre>
                                             </td>
                                         </tr>
                                         <tr>
@@ -366,6 +362,7 @@
                                     </tbody>
                                 </table>
                             </div>
+                            
                         </div>
 
                         <div class="w-100 px-2 bg-primary">
@@ -377,16 +374,16 @@
                             <table class="table ">
                                 <tbody style="font-weight:500;">
                                     <tr>
-                                        <td> عدد الركاب </td>
+                                        <td class=""> عدد الركاب </td>
                                         <td>{{ $car->passengers }}</td>
                                     </tr>
                                     <tr>
-                                        <td>قوه المحرك </td>
+                                        <td class="ps-0">قوه المحرك </td>
                                         <td> {{ $car->speedmotors }} </td>
                                     </tr>
                                     <tr>
                                         <td> تصنيف</td>
-                                        <td> مركبات خاصه</td>
+                                        <td> {{$car->drive_type}} </td>
                                     </tr>
                                     <tr>
                                         <td> اصل</td>

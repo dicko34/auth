@@ -9,6 +9,7 @@
     @yield('styleChart')
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset("assets/admin/images/icon.png")}}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Bootstrap Css -->
     <link href="{{asset("assets/admin/libs/magnific-popup/magnific-popup.css")}}" id="bootstrap-style" rel="stylesheet"
         type="text/css" />
@@ -371,6 +372,29 @@
 
     <script src="{{asset("assets/admin/js/app.js")}}"></script>
     <script src="{{asset("js/action.js")}}"></script>
+    <script>
+    $(document).ready(function() {
+        $('.search-input').on('keypress', function(e) {
+            if (e.which == 13) {
+                $.ajax({
+                    type: "POST",
+                    data: {search :  $(this).val()},
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url: "{{ route('search') }}",
+                    success: function(data) {
+                        console.log("dd");
+                        console.log(data);
+                    },
+                    error: function(data) {
+                        console.log(data);
+                    }
+                });
+            }
+        });
+    });
+</script>
 </body>
 
 </html>

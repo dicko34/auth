@@ -32,7 +32,7 @@ return new class extends Migration
             $table->string('img');
             $table->string('advertiser_name');
             $table->string('phone_number');
-            $table->string('mobile')->nullable();
+            $table->string('mobile');
             $table->string('email');
             $table->enum('state',['pinned','refused','allowed']);
             $table->timestamps();

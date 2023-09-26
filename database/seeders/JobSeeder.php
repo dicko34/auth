@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Job;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class JobSeeder extends Seeder
 {
@@ -14,7 +13,7 @@ class JobSeeder extends Seeder
     public function run(): void
     {
         Job::factory()
-        ->count(50)
+        ->count(5)
         ->create();
     }
 }
