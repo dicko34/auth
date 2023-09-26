@@ -1,7 +1,7 @@
 @extends("layouts.admin")
 @section("pageTitle", "Koala Web Libraries")
 @section('styleChart')
-    <link href="{{asset("admin/libs/c3/c3.min.css1")}}" id="bootstrap-style" rel="stylesheet" type="text/css"/>
+    <link href="{{asset("assets/admin/libs/c3/c3.min.css1")}}" id="bootstrap-style" rel="stylesheet" type="text/css"/>
 @endsection
 @section("content")
 @php

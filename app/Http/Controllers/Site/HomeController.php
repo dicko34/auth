@@ -23,12 +23,14 @@ class HomeController extends Controller
 
         $homes_show = Home::where(
             [
-                ['city', json_encode($request->city) == 'الكل' ? '!=' : '=', json_encode($request->city) == 'الكل' ? null :json_encode( $request->city)],
-                ['address', json_encode($request->address) == 'الكل' ? '!=' : '=', json_encode($request->address) == 'الكل' ? null : json_encode($request->address)],
+                ['city', $request->city == null ? '!=' : 'like', $request->city == null ? null : "%$request->city"],
+                ['home_type', $request->home_type == null ? '!=' : 'like', $request->home_type == null ? null :  "%$request->home_type%"],
+                ['rooms_number', $request->rooms_number == null ? '!=' : 'like', $request->rooms_number == null ? null : "%$request->rooms_number%"],
+                ['status', $request->status == null ? '!=' : 'like', $request->status == null ? null : "%$request->status%"],
+                ['show', $request->show == null ? '!=' : 'like', $request->show == null ? null : "%$request->show%"],
             ]
         )->paginate(6);
         if (count($homes_show) < 1) {
-            dd($request, $homes_show);
             $homes_show =  Home::paginate(6);
         }
         return view('vendor.homes.search', compact('homes_show', 'homes'));

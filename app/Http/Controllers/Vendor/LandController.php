@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Vendor;
 use App\Models\Land;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Rules\AdvertiserInfo;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 
@@ -24,18 +25,29 @@ class LandController extends Controller
             'area' =>  'required|max:30',
             'price' =>  'required|max:20',
             'located_on' =>  'required|max:30',
-            'features' =>  'required|max:200',
+            'features' =>  'required',
+            'features.*' =>  'required|max:200',
             'surrounded_by' =>  'required|max:50',
-            'description' =>  'required|max:500',
+            'description' =>  'required|max:1500',
             'img'=> 'required',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'city' => 'required|max:30',
             'ad_duration_per_day' =>  'required|max:20',
-            'address' => 'required|max:100',            
-            'advertiser_name' => 'required|max:30',
-            'phone_number' =>  'required|max:20',
-            'mobile' => 'required|max:20',
-            'email' =>  'required|email',
+            'advertiser_name' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'phone_number' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'mobile' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'email' =>  [
+                New AdvertiserInfo(), 'max:50','email'
+            ],
+            'city' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
         ]);
         if($request->user()) {
             $credentilas = $request->user();
@@ -44,13 +56,20 @@ class LandController extends Controller
             $validate["mobile"] = null;
             $validate["email"] = $credentilas->email;
         }
-        $validate['img'] = [];
+        $features = $request->features;
+
+        // Convert the array to a comma-separated string
+        $featuresString = implode(',', $features);
+
+        $validate['features'] = $featuresString;
+    
         foreach($request->file('img') as $file_image ) {
             $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
-            $file_image->move(public_path('assets/site/images/lands'), $imageName); // move the new img 
+            $file_image->move(config('app.image_path')('lands'), $imageName); // move the new img 
             array_push($validate['img'],$imageName); // store image name to db
         }
         $validate['img'] = implode(',',$validate['img']);
+        
         $validate['state'] = 'pinned';
         Land::create($validate);
         return redirect()->route('land.index');

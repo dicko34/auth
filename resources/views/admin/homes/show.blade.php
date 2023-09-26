@@ -68,11 +68,11 @@
                                         <div class="row m-2">
                                             @foreach(explode(',',$home->img) as $img)
                                             <div class="col-4">
-                                                <a href="{{ asset('assets/site/images/homes/'.$img) }}"
+                                                <a href="{{ asset("site/images/homes/'.$img) }}"
                                                     class="gallery-popup" style="height: 100px; width:100%">
                                                     <div class="project-item">
                                                         <div class="overlay-container">
-                                                            <img src="{{ asset('assets/site/images/homes/'.$img) }}"
+                                                            <img src="{{ asset("site/images/homes/'.$img) }}"
                                                                 alt="img" class="gallery-thumb-img m-0"
                                                                 style="height: 100px; width:100%">
                                                         </div>

@@ -14,27 +14,30 @@ class CarController extends Controller
     use Traits\SimilarTrait;
     public function index()
     {
+        $carCompanies = CarCompanies::all();
         $cars = Cars::paginate(6);
-        return view('vendor.cars.index', compact('cars'));
+        return view('vendor.cars.index', compact('cars', 'carCompanies'));
     }
 
     public function search(Request $request)
     {
+
+        $carCompanies = CarCompanies::all();
         $cars = Cars::paginate(6);
         $cars_show = Cars::where(
             [
-                ['company', $request->company == 'الكل' ? '!=' : '=', $request->company == 'الكل' ? null : $request->company],
-                ['model', $request->model == 'الكل' ? '!=' : '=', $request->model == 'الكل' ? null : $request->model],
-                ['city', $request->city == 'الكل' ? '!=' : '=', $request->city == 'الكل' ? null : $request->city],
-                ['fuel_type', $request->fuel_type == 'الكل' ? '!=' : '=', $request->fuel_type == 'الكل' ? null : $request->fuel_type],
-                ['lime_type', $request->lime_type == 'الكل' ? '!=' : '=', $request->lime_type == 'الكل' ? null : $request->lime_type],
-                ['driving_license', $request->driving_license == 'الكل' ? '!=' : '=', $request->driving_license == 'الكل' ? null : $request->driving_license],
+               ['company', $request->company == "null" ? '!=' : 'like', $request->company == "null" ? null : "%$request->company%"],
+               ['model', $request->model == "null" ? '!=' : 'like', $request->model == "null" ? null : "%$request->model%"],
+                ['city', $request->city == "null" ? '!=' : 'like', $request->city == "null" ? null : "%$request->city%"],
+                ['fuel_type', $request->fuel_type == "null" ? '!=' : 'like', $request->fuel_type == "null" ? null :"%$request->fuel_type%"],
+                ['lime_type', $request->lime_type == "null" ? '!=' : 'like', $request->lime_type == "null" ? null : "%$request->lime_type%"],
+                ['driving_license', $request->driving_license == "null" ? '!=' : 'like', $request->driving_license == "null" ? null : "%$request->driving_license%"],
             ]
-        )->whereBetween('price', [(int) $request->price_min, (int) $request->price_max])->paginate(6);
+        )->paginate(6);
         if (count($cars_show) < 1) {
-            $cars =  Cars::paginate(6);
+            $cars_show =  Cars::paginate(6);
         }
-        return view('vendor.cars.search', compact('cars_show', 'cars'));
+        return view('vendor.cars.search', compact('cars_show', 'cars', 'carCompanies'));
     }
     public function getCarModels($carCompany)
     {
@@ -54,8 +57,6 @@ class CarController extends Controller
     }
     public function product(Request $request)
     {
-
-
         $cars = Cars::all();
         //$semes = \similar_text()
         $car = Cars::find($request->car);
