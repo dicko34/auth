@@ -54,7 +54,7 @@ $general = $generals[request()->general -1];
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-9" style="padding: 0;height: 110px;">
                         <div class="media h-100" style="width: 100%;">
                             <div style="position: relative" class="h-100">
-                                <img class="first-img img-fluid" src="{{asset('assets/site/images/general/'.explode(',',$general->img)[0])}}"
+                                <img class="first-img img-fluid" src="{{asset('assets/site/images/generals/'.explode(',',$general->img)[0])}}"
                                     alt="{{$general->address}} - {{$general->category}}" title="{{$general->address}} - {{$general->category}}"
                                     style="max-width:150px;height:100%">
                             </div>

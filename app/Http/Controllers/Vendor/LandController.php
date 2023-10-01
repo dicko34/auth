@@ -29,6 +29,7 @@ class LandController extends Controller
             'features.*' =>  'required|max:200',
             'surrounded_by' =>  'required|max:50',
             'description' =>  'required|max:1500',
+            'address' => 'required|max:100',
             'img'=> 'required',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'city' => 'required|max:30',

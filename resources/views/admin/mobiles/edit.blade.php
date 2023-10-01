@@ -338,8 +338,8 @@
                                     <div class="form-group row">
                                         <label class="col-sm-4 col-form-label">العنوان</label>
                                         <div class="col-sm-8">
-                                        <input name="advertiser_address" value="{{$mobile->advertiser_address}}" type="text" class="form-control" placeholder="اسم الشارع او المنطقة">
-                                            @error('advertiser_address')
+                                        <input name="address" value="{{$mobile->address}}" type="text" class="form-control" placeholder="اسم الشارع او المنطقة">
+                                            @error('address')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                             {{$message}}
                                             </span>

@@ -138,16 +138,16 @@
             @foreach ($generals as $general)
             <div class="col-6 col-xl-2 p-1">
                 <div class="card annonce-item" style="border: 1px solid;border-color: #0000002b;border-radius: 5px;"">
-                            <a href=" {{  asset('assets/site/images/general/' . explode(',', $general->img)[0])}}" class="gallery-popup"
+                            <a href=" {{  asset('assets/site/images/generals/' . explode(',', $general->img)[0])}}" class="gallery-popup"
                     style="height: 160px; width:100%">
                     <div class="project-item">
                         <div class="overlay-container">
-                            <img src="{{ asset('assets/site/images/general/' . explode(',', $general->img)[0]) }}" alt="img" class=""
+                            <img src="{{ asset('assets/site/images/generals/' . explode(',', $general->img)[0]) }}" alt="img" class=""
                                 style="height: 160px; width:100%">
                             <div class="project-item-overlay text-right">
                                 <h4>{{$general->address}} </h4>
                                 <p>
-                                    <img src="{{ asset('assets/site/images/general/' . explode(',', $general->img)[0]) }}" alt="user"
+                                    <img src="{{ asset('assets/site/images/generals/' . explode(',', $general->img)[0]) }}" alt="user"
                                         class="avatar-xs rounded-circle">
                                     <span class="ml-2">{{$general->advertiser_name}}</span>
                                 </p>

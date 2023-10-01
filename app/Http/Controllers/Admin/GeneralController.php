@@ -74,7 +74,7 @@ class GeneralController extends Controller
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
             $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
-            $file_image->move(config('app.image_path')('general'), $imageName); // move the new img 
+            $file_image->move(config('app.image_path')('generals'), $imageName); // move the new img 
             array_push($validate['img'],$imageName); // store image name to db
         }
         $validate['img'] = implode(',',$validate['img']);
@@ -144,11 +144,11 @@ class GeneralController extends Controller
             $imgs = $request->file('img');
             $validate['img'] = [];
             foreach($uploaded_imgs as $img_path ) {
-                \unlink(config('app.image_path')('general').'/'.$img_path); 
+                \unlink(config('app.image_path')('generals').'/'.$img_path); 
             }
             foreach($imgs as $file_image ) {
                 $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
-                $file_image->move(config('app.image_path')('general'), $imageName); // move the new img 
+                $file_image->move(config('app.image_path')('generals'), $imageName); // move the new img 
                 array_push($validate['img'],$imageName); // store image name to db
             }
             $validate['img'] = implode(',',$validate['img']);

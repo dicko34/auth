@@ -286,8 +286,8 @@
                                     <tr>
                                         <td class="">العنوان</td>
                                         <td class="">
-                                            <input value="{{$shop->advertiser_address}}" name="advertiser_address" type="text" class="" placeholder="اسم الشارع او المنطقة">
-                                            @error('advertiser_address')
+                                            <input value="{{$shop->address}}" name="address" type="text" class="" placeholder="اسم الشارع او المنطقة">
+                                            @error('address')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                                 {{$message}}
                                             </span>

@@ -188,7 +188,7 @@
                     <div class="categories bg-white h-100 px-2 pt-1 pb-1 cat-itm mx-auto main-cat  main-section">
                         <div class="categories-cont d-inline-flex">
                             <a type=""href="/general" class="d-inline-block pt-1 w-100 h-100 text-center text-dark mx-1">
-                                <img src="{{ asset("assets/admin/images/general-ads.jpg") }}" alt="" width="100%"
+                                <img src="{{ asset("assets/admin/images/generals-ads.jpg") }}" alt="" width="100%"
                                     height="90%"><br>
                                 <span class="category-nm d-inline-block">عامة</span>
                             </a>
