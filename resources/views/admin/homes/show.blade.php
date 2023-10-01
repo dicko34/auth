@@ -53,9 +53,9 @@
                                                 شقة للبيع
                                             </h2>
                                             <h5 class="smallColor mt-3">
-                                            {{$car->price}} شيكل
+                                            {{$home->price}} شيكل
                                             </h5>
-                                            <h5 class="maincolor">{{$land->address}} - {{$land->street}} - {{$land->gov}}  </h5>
+                                            <h5 class="maincolor">{{$home->address}} - {{$home->street}} - {{$home->gov}}  </h5>
                                         </div>
                                         <div>
                                             <div class="apsc-icons-wrapper clearfix apsc-theme-4">
@@ -68,11 +68,11 @@
                                         <div class="row m-2">
                                             @foreach(explode(',',$home->img) as $img)
                                             <div class="col-4">
-                                                <a href="{{ asset('site/images/homes/'.$img) }}"
+                                                <a href="{{ asset('assets/site/images/homes/'.$img) }}"
                                                     class="gallery-popup" style="height: 100px; width:100%">
                                                     <div class="project-item">
                                                         <div class="overlay-container">
-                                                            <img src="{{ asset('site/images/homes/'.$img) }}"
+                                                            <img src="{{ asset('assets/site/images/homes/'.$img) }}"
                                                                 alt="img" class="gallery-thumb-img m-0"
                                                                 style="height: 100px; width:100%">
                                                         </div>
@@ -118,7 +118,7 @@
                         </tr>
                         <tr>
                             <td class="">مساحة الارض</td>
-                            <td class=""> {{$home->land_area}}</td>
+                            <td class=""> {{$home->area}}</td>
                         </tr>
                         <tr>
                             <td class="">عدد الغرف</td>
