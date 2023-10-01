@@ -52,23 +52,36 @@ class landController extends Controller
             'area' =>  'required|max:30',
             'price' =>  'required|max:20',
             'located_on' =>  'required|max:30',
-            'features' =>  'required|max:50',
+            'features' =>  'required',
+            'features.*' =>  'required|max:200',
             'surrounded_by' =>  'required|max:50',
-            'description' =>  'required|max:500',
+            'description' =>  'required|max:1500',
             'img'=> 'required',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'gov' =>  'required|max:20',
             'city' => 'required|max:30',
-            'street' =>  'required|max:20',
             'ad_duration_per_day' =>  'required|max:20',
-            'address' => 'required|max:100',            
-            'advertiser_name' => 'required|max:30',
-            'phone_number' =>  'required|max:20',
-            'mobile' => 'required|max:20',
-            'email' =>  'required|email',
-            'advertiser_city' =>  'required|max:20',
-            'advertiser_address' => 'required|max:100'
+            'advertiser_name' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'phone_number' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'mobile' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
+            'email' =>  [
+                New AdvertiserInfo(), 'max:50','email'
+            ],
+            'city' => [
+                New AdvertiserInfo(), 'max:20'
+            ],
         ]);
+        $features = $request->features;
+
+        // Convert the array to a comma-separated string
+        $featuresString = implode(',', $features);
+
+        $validate['features'] = $featuresString;
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
             $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
@@ -123,8 +136,8 @@ class landController extends Controller
             'features.*' =>  'required|max:200',
             'surrounded_by' =>  'required|max:50',
             'description' =>  'required|max:1500',
-            'img'=> 'required',
-            'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'img'=> 'nullable',
+            'img.*'=> 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
             'city' => 'required|max:30',
             'ad_duration_per_day' =>  'required|max:20',
             'address' => 'required|max:100',            
@@ -144,6 +157,12 @@ class landController extends Controller
                 New AdvertiserInfo(), 'max:20'
             ],
         ]);
+        $features = $request->features;
+
+        // Convert the array to a comma-separated string
+        $featuresString = implode(',', $features);
+
+        $validate['features'] = $featuresString;
         if(isset($validate['img']) && !empty( $validate['img'])) {
             $imgs = $request->file('img');
             $validate['img'] = [];
