@@ -152,9 +152,9 @@
                             <tbody>
                                 @foreach ($homes as $home)
                                 <tr>
-                                    <td>{{$home->home_type}} </td>
-                                    <td>{{$home->show}} </td>
-                                    <td>{{$home->city}} </td>
+                                    <td><a href="{{route('home.product', ['home' => $home->id])}}">{{$home->home_type}} </td>
+                                    <td><a href="{{route('home.product', ['home' => $home->id])}}">{{$home->show}} </td>
+                                    <td><a href="{{route('home.product', ['home' => $home->id])}}">{{$home->city}} </td>
                                 </tr>
                                 @endforeach
                                 @if(count($homes) == NULL)

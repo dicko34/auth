@@ -163,6 +163,8 @@
                 @foreach ($mobiles as $mobile) 
                 <div class="col-6 col-xl-2 p-1 ">
                     <div class="annonce-item" style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
+                    <button style="border: none; background: none;"class="p-0 m-0"
+                            onclick="window.location.href = '{{route('mobile.product', ['mobile' => $mobile->id])}}'">
                         <a href="{{ asset('assets/site/images/mobiles/' . explode(',', $mobile->img)[0]) }}" class="gallery-popup"
                             style="height: 160px; width:100%">
                             <div class="project-item">
@@ -194,6 +196,7 @@
             </div>
 
             @endforeach
+        </button>
         </div>
     </div>
     {{$mobiles->links('vendor.paginate')}}

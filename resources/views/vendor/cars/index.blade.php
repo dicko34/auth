@@ -174,48 +174,50 @@
                         </a>
                     </div>
                 </div>
-                <div class="card-body px-1 mt-3">
+                <div class="row px-1" style="
+            margin-left: 00px;
+            margin-right: 0px;">
 
-
-
-                    <div class="row px-0 m-0">
-
-                    @foreach ($cars as $car)
-                                <div class="col-6 col-lg-4 p-0 mx-0">
-                                    <div class="cardtoty m-sm-1 m-0 p-1">
-                                        <a href="{{ asset('assets/site/images/cars/' . $car->img) }}"
-                                            class="gallery-popup" style="height: 130px; width:100%">
-                                            <div class="project-item">
-                                                <div class="overlay-container">
-                                                    <img src="{{ asset('assets/site/images/cars/' . explode(',', $car->img)[0]) }}"
-                                                        alt="img" class="gallery-thumb-img m-0"
-                                                        style="height: 130px; width:100%">
-                                                    <div class="project-item-overlay text-right">
-                                                        <h4>{{$car->company}} {{$car->model}}</h4>
-                                                        <p>
-                                                            <img src="{{ asset('assets/site/images/cars/' . explode(',', $car->img)[0]) }}"
-                                                                alt="user" class="avatar-xs rounded-circle">
-                                                            <span class="ml-2">{{ $car->advertiser_name }}</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <div class="mt-2 mb-2">
-                                            <h4 class="" style="color:#820120">{{$car->company}} {{$car->model}}</h4>
-                                            <p class="card-text">{{ $car->city }} {{ $car->address }} للبيع في
-                                            {{$car->company}} {{$car->model}} سيارة</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
+            @foreach ($cars as $car)
+            <div class="col-6 col-xl-2 p-1">
+                <div class="card annonce-item" style="border: 1px solid;border-color: #0000002b;border-radius: 5px;height:230px">
+                    <button style="border: none; background: none;"class="p-0 m-0"
+                            onclick="window.location.href = '{{route('car.product', ['car' => $car->id])}}'">
+                            <a href=" {{  asset('assets/site/images/cars/' . explode(',', $car->img)[0])}}" class="gallery-popup"
+                    style="height: 160px; width:100%">
+                    <div class="project-item">
+                        <div class="overlay-container">
+                            <img src="{{ asset('assets/site/images/cars/' . explode(',', $car->img)[0]) }}" alt="img" class=""
+                                style="height: 160px; width:100%">
+                            <div class="project-item-overlay text-right">
+                                <h4>{{$car->company . ($car->model ? $car->model : $reset_model)}}</h4>
+                                <p>
+                                    <img src="{{ asset('assets/site/images/cars/' . explode(',', $car->img)[0]) }}" alt="user"
+                                        class="avatar-xs rounded-circle">
+                                    <span class="ml-2">{{$car->advertiser_name}}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title"><h4>{{$car->company . ($car->model ? $car->model : $reset_model)}}</h4></h4>
+                        <p class="card-text">
+                            {{ $car->city }} {{ $car->address }} للبيع في
+                            {{$car->company . ($car->model ? $car->model : $reset_model)}} اعلان
+                        </p>
+                    </div>
+                    </button>
                 </div>
-            </div>
-            {{ $cars->links('vendor.paginate') }}
         </div>
+        @endforeach
+
     </div>
+    {{ $cars->links('vendor.paginate') }}
 </div>
 </div>
+</div>
+
 <style>
 h1,
 h2,

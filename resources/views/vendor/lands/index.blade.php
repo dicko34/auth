@@ -98,9 +98,9 @@
                                 
                                     @foreach ($lands as $land)
                                     <tr>
-                                        <td>{{$land->brief}} </td>
-                                        <td>{{$land->area}} </td>
-                                        <td>{{$land->city}} </td>
+                                        <td><a href="{{route('land.product', ['land' => $land->id])}}">{{$land->brief}} </td>
+                                        <td><a href="{{route('land.product', ['land' => $land->id])}}">{{$land->area}} </td>
+                                        <td><a href="{{route('land.product', ['land' => $land->id])}}">{{$land->city}} </td>
                                     </tr>
                                     @endforeach
                                 

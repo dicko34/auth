@@ -167,9 +167,9 @@
                                             <tbody>
                                                 @foreach ($jobs as $job)
                                                 <tr>
-                                                    <td>{{$job->advertiser_name}} </td>
-                                                    <td style="vertical-align: middle;">{{$job->specialization}} </td>
-                                                    <td style="vertical-align: middle;">{{$job->city}} </td>
+                                                    <td><a href="{{route('job.product', ['job' => $job->id])}}">{{$job->advertiser_name}} </td>
+                                                    <td style="vertical-align: middle;"><a href="{{route('job.product', ['job' => $job->id])}}">{{$job->specialization}} </td>
+                                                    <td style="vertical-align: middle;"><a href="{{route('job.product', ['job' => $job->id])}}">{{$job->city}} </td>
                                                 </tr>
                                                 @endforeach           
                                             </tbody>

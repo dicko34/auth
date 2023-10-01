@@ -32,28 +32,31 @@
 
                 @foreach($generals as $general)
                 <div class="col-6 col-xl-2 p-1">
-                    <div class="card annonce-item" style="border: 1px solid;border-color: #0000002b;border-radius: 5px;"">
-                            <a href=" {{asset('assets/site/images/generals/'.$general->img)}}" class="gallery-popup"
-                        style="height: 160px; width:100%">
-                        <div class="project-item">
-                            <div class="overlay-container">
-                                <img src="{{asset('assets/site/images/generals/'.$general->img)}}" alt="img" class=""
-                                    style="height: 160px; width:100%">
-                                <div class="project-item-overlay text-right">
-                                    <h4>{{$general->address}}</h4>
-                                    <p>
-                                        <img src="{{asset('assets/site/images/generals/'.$general->img)}}" alt="user"
-                                            class="avatar-xs rounded-circle">
-                                        <span class="ml-2">{{$general->advertiser_name}} </span>
-                                    </p>
+                    <div class="card annonce-item"
+                        style="border: 1px solid;border-color: #0000002b;border-radius: 5px;height: 230px;">
+                        <button style="border: none; background: none;"class="p-0 m-0"
+                            onclick="window.location.href = '/general/product/{{$general->id}}'">
+                            <a href=" {{ asset('assets/site/images/general/' . explode(',', $general->img)[0])}}"
+                                class="gallery-popup" style="height: 160px; width:100%">
+                                <div class="project-item">
+                                    <div class="overlay-container">
+                                        <img src="{{ asset('assets/site/images/general/' . explode(',', $general->img)[0])}}"
+                                            alt="img" class="" style="height: 160px; width:100%">
+                                        <div class="project-item-overlay text-right">
+                                            <h4>{{$general->address}}</h4>
+                                            <p>
+                                                <img src="{{ asset('assets/site/images/general/' . explode(',', $general->img)[0])}}"
+                                                    alt="user" class="avatar-xs rounded-circle">
+                                                <span class="ml-2">{{$general->advertiser_name}} </span>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
+                            </a>
+                            <div class="card-body p-0">
+                                <h4 class="card-title"> {{$general->address}}</h4>
+                                <p class="card-text">{{$general->description}}</p>
                             </div>
-                        </div>
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title"> {{$general->address}}</h4>
-                            <p class="card-text">{{$general->description}}</p>
-                        </div>
                     </div>
                 </div>
                 @endforeach
@@ -65,11 +68,12 @@
                     </button>
                 </div>
                 @elseif (count($generals) == 0)
-                    <h6 class="text-center pt-2 pb-2">لا توجد اعلانات في هذه الفئة</h6>
+                <h6 class="text-center pt-2 pb-2">لا توجد اعلانات في هذه الفئة</h6>
                 @endif
             </div>
         </div>
     </div>
+    </button>
 </div>
 
 <div class="row main-section">
@@ -97,36 +101,40 @@
 
 
             <div class="row">
-
                 @foreach ($cars as $car)
                 <div class="col-6 col-xl-2 p-1 ">
-                    <div class="annonce-item" style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
-                        <a href="{{asset('/admin/images/'.$car->img)  }}" class="gallery-popup"
-                            style="height: 160px; width:100%">
-                            <div class="project-item">
-                                <div class="overlay-container">
-                                    <img src="{{ asset('/admin/images/car.jpeg') }}" alt="img"
-                                        style="height: 160px; width:100%">
-                                    <div class="project-item-overlay text-right">
-                                        <h2>{{$car->company. $car->model}}</h2>
-                                        <p>
-                                            <img src="{{ asset('/admin/images/car.jpeg') }}" alt="user"
-                                                class="avatar-xs rounded-circle">
-                                            <span class="ml-2">{{$car->advertiser_name}}</span>
-                                        </p>
+                    <div class="annonce-item" style="border: 1px solid #0000002b;border-radius: 5px;">
+                        <button style="border: none; background: none;"class="p-0 m-0"
+                            onclick="window.location.href = '/car/product/{{$car->id}}'">
+                            <a href="{{ asset('assets/site/images/cars/' . explode(',', $car->img)[0]) }}"
+                                class="gallery-popup" style="height: 160px; width:100%">
+                                <div class="project-item">
+                                    <div class="overlay-container">
+                                        <img src="{{ asset('assets/site/images/cars/' . explode(',', $car->img)[0])  }}"
+                                            alt="img" style="height: 160px; width:100%">
+                                        <div class="project-item-overlay text-right">
+                                            <h2>{{$car->company. $car->model}}</h2>
+                                            <p>
+                                                <img src="{{ asset('assets/site/images/cars/' . explode(',', $car->img)[0])  }}"
+                                                    alt="user" class="avatar-xs rounded-circle">
+                                                <span class="ml-2">{{$car->advertiser_name}}</span>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
+                            </a>
+
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    {{ $car->company . ' ' . ($car->model ? $car->model : 'reset_model') }}</h4>
+                                <p class="card-text">
+                                    {{$car->description}}
+                                </p>
                             </div>
-                        </a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                {{ $car->company . ' ' . ($car->model ? $car->model : 'reset_model') }}</h4>
-                            <p class="card-text">
-                                {{$car->description}}
-                            </p>
-                        </div>
+                        </button>
                     </div>
                 </div>
+
                 @endforeach
                 @if(count($cars) > 6)
                 <div class="mx-auto" style="width:150px;">
@@ -143,47 +151,41 @@
 
 <div class="row main-section">
     <div class="w-100">
-        <div class="card-header m-0 p-0 w-100 d-inline-flex" style="height:60px;background:#262726 ;">
+        <div class="card-header m-0 p-0 w-100 d-inline-flex" style="height: 60px; background:#262726;">
 
-            <div class="h-100 text-white px-2" style="width:65%">
+            <div class="h-100 text-white px-2" style="width: 65%;">
                 <a href="{{route('home.index')}}" class="text-white">
                     <h3><i class="mdi mdi-home mr-2"></i> شقق </h3>
                 </a>
             </div>
 
-
-            <div class="h-100 mr-1 pt-1" style="width:34%;">
+            <div class="h-100 mr-1 pt-1" style="width: 34%;">
                 <a href="{{route('home.add')}}" class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
-                    style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
-
-                    <i class="fa fa-plus-circle "></i>اضف اعلان جديد
-
+                    style="height: 33px; font-size: 11px; line-height: 28px; max-width: 100px; float: left !important;">
+                    <i class="fa fa-plus-circle"></i>اضف اعلان جديد
                 </a>
             </div>
         </div>
         <div class="body-card m-3">
             <div class="row">
-
-
-
                 <table class="table table-striped table-bordered">
-
                     <tbody>
                         @foreach ($homes as $home)
-                        <tr>
-                            <td>{{$home->home_type}}</td>
-                            <td><a style="color:#000;" href="https://www.example.com/job/1.html"> {{$home->show}}</a>
-                            </td>
-                            <td>{{$home->city}} </td>
-                        </tr>
+
+                                <tr>
+                                    <td><a href="home/product/{{$home->id}}">{{$home->home_type}}</td>
+                                    <td><a href="home/product/{{$home->id}}">{{$home->show}}</a></td>
+                                    <td><a href="home/product/{{$home->id}}">{{$home->city}} </td>
+                                </tr>
+                           
                         @endforeach
                     </tbody>
                 </table>
-
                 @if(count($homes) > 6)
-                <div class="mx-auto" style="width:150px;">
-                    <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
-                        style="height:33px;font-size: 11px;line-height:33px;">
+                <div class="mx-auto" style="width: 150px;">
+                    <button onclick="window.location.href = '/browse-more-homes'"
+                        class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
+                        style="height: 33px; font-size: 11px; line-height: 33px; border: none;">
                         تصفح المزيد
                     </button>
                 </div>
@@ -221,11 +223,13 @@
 
                     <tbody>
                         @foreach ($shops as $shop)
-                        <tr>
-                            <td>{{$shop->brief}}</td>
-                            <td>{{$shop->offer}}</td>
-                            <td>{{$shop->city}}</td>
-                        </tr>
+                        
+                            <tr>
+                                <td><a href="shop/product/{{$shop->id}}">{{$shop->brief}}</td>
+                                <td><a href="shop/product/{{$shop->id}}">{{$shop->offer}}</td>
+                                <td><a href="shop/product/{{$shop->id}}">{{$shop->city}}</td>
+                            </tr>
+                        </a>
                         @endforeach
                     </tbody>
                 </table>
@@ -272,9 +276,9 @@
                         @foreach ($lands as $land)
                         <div class="col-6 col-xl-2 p-1">
                             <tr>
-                                <td>{{$land->brief}}</td>
-                                <td>{{$land->area}}</td>
-                                <td>{{$land->city}}</td>
+                                <td><a href="land/product/{{$land->id}}">{{$land->brief}}</td>
+                                <td><a href="land/product/{{$land->id}}">{{$land->area}}</td>
+                                <td><a href="land/product/{{$land->id}}">{{$land->city}}</td>
                             </tr>
                             @endforeach
                     </tbody>
@@ -322,9 +326,9 @@
                     <tbody>
                         @foreach ($jobs as $job)
                         <tr>
-                            <td>{{$job->advertiser_name}} </td>
-                            <td style="vertical-align: middle;">{{$job->specialization}} </td>
-                            <td style="vertical-align: middle;">{{$job->city}} </td>
+                            <td><a href="job/product/{{$job->id}}">{{$job->advertiser_name}} </td>
+                            <td style="vertical-align: middle;"><a href="job/product/{{$job->id}}">{{$job->specialization}} </td>
+                            <td style="vertical-align: middle;"><a href="job/product/{{$job->id}}">{{$job->city}} </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -368,18 +372,21 @@
 
                 @foreach ($mobiles as $mobile)
                 <div class="col-6 col-xl-2 p-1">
-                    <div class="annonce-item" style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
-                        <a href="{{ asset('/admin/images/'.$mobile->img) }}" class="gallery-popup"
-                            style="height: 160px; width:100%">
+                <button style="border: none; background: none;"class="p-0 m-0"
+                            onclick="window.location.href = '/general/product/{{$general->id}}'">
+                    <div class="annonce-item" style="border: 1px solid;border-color: #0000002b;border-radius: 5px;height: 230px;">
+                        
+                    <a href="{{ asset('assets/site/images/mobiles/' . explode(',', $mobile->img)[0]) }}"
+                            class="gallery-popup" style="height: 160px; width:100%">
                             <div class="project-item">
                                 <div class="overlay-container">
-                                    <img src="{{ asset('/admin/images/'.$mobile->img) }}" alt="img" class=""
-                                        style="height: 160px; width:100%">
+                                    <img src="{{  asset('assets/site/images/mobiles/' . explode(',', $mobile->img)[0])  }}"
+                                        alt="img" class="" style="height: 160px; width:100%">
                                     <div class="project-item-overlay text-right">
                                         <h4>الاجهزة الذكية</h4>
                                         <p>
-                                            <img src="{{ asset('/admin/images/'.$mobile->img) }}" alt="user"
-                                                class="avatar-xs rounded-circle">
+                                            <img src="{{ asset('assets/site/images/mobiles/' . explode(',', $mobile->img)[0])}}"
+                                                alt="user" class="avatar-xs rounded-circle">
                                             <span class="ml-2">{{$mobile->advertiser_name}}</span>
                                         </p>
                                     </div>
@@ -387,7 +394,7 @@
                             </div>
                         </a>
                         <div class="card-body">
-                            <h4 class="card-title">{{$car->model ? $car->model : 'reset_model'}}</h4>
+                            <h4 class="card-title">{{$mobile->model}}</h4>
                             <p class="card-text">{{$mobile->description}}</p>
                         </div>
                     </div>
@@ -403,6 +410,7 @@
                 @endif
             </div>
         </div>
+        </button>
     </div>
 </div>
 
@@ -449,6 +457,13 @@ p {
 table tr {
     height: 48px !important;
     font-size: 15px;
+}
+
+.card-body {
+    max-height: 230px; /* Adjust the max height as needed */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
 }
 
 @media (max-width:560px) {

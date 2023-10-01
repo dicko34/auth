@@ -567,7 +567,7 @@
                                             <img src="{{ asset('assets/site/images/jobs/' . explode(',', $job_similar['img'])[0]) }}"
                                                 alt="img" style="height: 160px; width:100%">
                                             <div class="project-item-overlay text-right">
-                                                <h2>وظيفة</h2>
+                                                <h2>{{$job_similar['specialization']}}</h2>
                                                 <p>
                                                     <img src="{{ asset('assets/site/images/jobs/' . explode(',', $job_similar['img'])[0]) }}"
                                                         alt="user" class="avatar-xs rounded-circle">
@@ -578,7 +578,7 @@
                                     </div>
                                 </a>
                                 <div class="card-body">
-                                    <h4 class="card-title">وظيفة</h4>
+                                    <h4 class="card-title">{{$job_similar['specialization']}}</h4>
                                 </div>
                             </div> 
                         </div>

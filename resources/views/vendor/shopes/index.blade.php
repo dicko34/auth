@@ -115,9 +115,9 @@
                         <tbody >
                             @foreach ($shopes as $shop)
                             <tr class="bg-white">
-                                <td>{{$shop->brief}} </td>
-                                <td>{{$shop->offer}}</td>
-                                <td>{{$shop->city}}</td>
+                                <td><a href="{{route('shop.product', ['shop' => $shop->id])}}">{{$shop->brief}} </td>
+                                <td><a href="{{route('shop.product', ['shop' => $shop->id])}}">{{$shop->offer}}</td>
+                                <td><a href="{{route('shop.product', ['shop' => $shop->id])}}">{{$shop->city}}</td>
                             </tr>
                             @endforeach
                         </tbody>

@@ -138,7 +138,9 @@
             @foreach ($generals as $general)
             <div class="col-6 col-xl-2 p-1">
                 <div class="card annonce-item" style="border: 1px solid;border-color: #0000002b;border-radius: 5px;"">
-                            <a href=" {{  asset('assets/site/images/general/' . explode(',', $general->img)[0])}}" class="gallery-popup"
+                <button style="border: none; background: none;"class="p-0 m-0"
+                    onclick="window.location.href = '{{route('general.product', ['general' => $general->id])}}'">          
+                <a href=" {{  asset('assets/site/images/general/' . explode(',', $general->img)[0])}}" class="gallery-popup"
                     style="height: 160px; width:100%">
                     <div class="project-item">
                         <div class="overlay-container">
@@ -163,6 +165,7 @@
                         </p>
                     </div>
                 </div>
+            </button>
         </div>
         @endforeach
 
