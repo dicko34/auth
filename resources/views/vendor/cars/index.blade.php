@@ -38,7 +38,7 @@
                                 <div class="col-12 m-0 p-0">
                                     <select name="model" class="form-control form-control model-type-car" id="carModel"
                                         required="">
-                                        <option  value="null" selected disabled> الموديل</option>
+                                        <option value=""selected disabled> الموديل</option>
                                     </select>
                                 </div>
                             </div>
@@ -48,7 +48,7 @@
                             <div class="form-group row">
                                 <div class="col-12 m-0 p-0">
                                     <select name="city"class="form-control">
-                                        <option selected="" disabeled=""  value="null">المحافظة</option>
+                                        <option selected="" disabeled="">المحافظة</option>
                                         <option value="رام الله والبيرة">رام الله والبيرة</option>
                                         <option value="القدس">القدس</option>
                                         <option value="قطاع غزة">قطاع غزة</option>
@@ -89,7 +89,7 @@
                             <div class="form-group row">
                                 <div class="col-12 m-0 p-0">
                                     <select name="lime_type" class="form-control">
-                                        <option selected="" value="null" disabeled="">نوع الجير</option>
+                                        <option selected="" disabeled="">نوع الجير</option>
                                         <option value="عادي">عادي</option>
                                         <option value="اوتوماتيك">اوتوماتيك</option>
                                         <option value=" نصف اوتوماتيك">نصف اوتوماتيك</option>
@@ -102,7 +102,7 @@
                             <div class="form-group row">
                                 <div class="col-12 m-0 p-0">
                                     <select name="fuel_type" class="form-control">
-                                        <option selected="" disabeled=""  value="null">نوع الوقود</option>
+                                        <option selected="" disabeled="">نوع الوقود</option>
                                         <option value="بنزين">بنزين</option>
                                         <option value="هايبرد">هايبرد</option>
                                         <option value="سولار">سولار </option>
@@ -116,7 +116,7 @@
                             <div class="form-group row">
                                 <div class="col-12 m-0 p-0">
                                     <select name="driving_license" class="form-control">
-                                        <option selected disabeled  value="null">الرخصة</option>
+                                        <option selected disabeled>الرخصة</option>
                                         <option value="فلسطينية">فلسطينية</option>
                                         <option value="نمرة صفرة">نمرة صفرة</option>
                                     </select>

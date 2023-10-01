@@ -24,7 +24,7 @@
                         <td>
                             <div class="input-group input-group-sm">
 
-                                <select name="company" class="form-select form-select-sm model-type-car" id="carCompany"
+                                <select name="company" class="form-control model-type-car" id="carCompany"
                                     required="">
                                     <option value=""selected disabled> الشركات</option>
                                         @foreach ($carCompanies as $carCompany)
@@ -32,8 +32,8 @@
                                         @endforeach
                                 </select>
 
-                                <select name="model" class="form-select form-select-sm model-type-car" id="carModel"
-                                    required="">
+                                <select name="model" class="form-control model-type-car" id="carModel"
+                                    >
                                     <option value=""selected disabled> الموديل</option>
                                 </select>
                                 <span class="input-group-text d-flex d-lg-none text-center" data-bs-toggle="tooltip"

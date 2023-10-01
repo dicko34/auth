@@ -117,10 +117,11 @@
                     <tr>
                         <td>مميزات <span class="text-danger" style="font-weight: 700;">*</span></td>
                         <td>
+                            <input type="hidden" name="features[]" id="features">
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                        name="features[]"
+                                        name="features[]" onclick="checkedIf(event)"
                                         value="تصلها كهرباء">
                                     <label class="form-check-label" for="property[It_gets_electricity]"> تصلها
                                         كهرباء</label>
@@ -129,14 +130,14 @@
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                        name="features[]" value="تصلها مياه">
+                                        name="features[]" onclick="checkedIf(event)" value="تصلها مياه">
                                     <label class="form-check-label" for="property[It_gets_water]"> تصلها مياه</label>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                        name="features[]" value="صالحة للزراعة">
+                                        name="features[]" onclick="checkedIf(event)" value="صالحة للزراعة">
                                     <label class="form-check-label" for="property[arable]"> صالحة للزراعة</label>
                                 </div>
                             </div>
@@ -144,7 +145,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input" 
                                         type="checkbox" name="features[]"
-                                        value="صالحة للبناء">
+                                        onclick="checkedIf(event)" value="صالحة للبناء">
                                     <label class="form-check-label" for="property[commercial_construction]"> صالحة للبناء
                                         التجاري</label>
                                 </div>
@@ -152,7 +153,7 @@
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
                                     <input class="form-check-input"  type="checkbox"
-                                        name="features[]"
+                                        name="features[]" onclick="checkedIf(event)"
                                         value="صالحة للبناء السكن">
                                     <label class="form-check-label" for="property[building_housing]"> صالحة للبناء
                                         السكن</label>

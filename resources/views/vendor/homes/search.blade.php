@@ -21,8 +21,8 @@
                             <div class="col-12 col-sm-4">
                                 <div class="form-group row">
                                     <div class="col-12 m-0 p-0">
-                                        <select name="city" class="form-control">
-                                            <option selected="" disabeled="" value="">المحافظة</option>
+                                        <select class="form-control">
+                                            <option selected="" disabeled="">المحافظة</option>
                                             <option value="رام الله والبيرة">رام الله والبيرة</option>
                                             <option value="القدس">القدس</option>
                                             <option value="قطاع غزة">قطاع غزة</option>
@@ -52,7 +52,7 @@
                             <div class="col-4">
                                 <div class="form-group row">
                                     <div class="col-12 m-0 p-0">
-                                        <select name="home_type" class="form-control" type="text">
+                                        <select name="house_type" class="form-control" type="text">
                                             <option value="" selected disabled> العقار</option>
                                             <option value="شقه">شقه</option>
                                             <option value="منزل منفصل">منزل منفصل</option>
@@ -66,7 +66,7 @@
                             <div class="col-4">
                                 <div class="form-group row">
                                     <div class="col-12 m-0 p-0">
-                                        <select name="rooms_number" class="form-control" type="text">
+                                        <select name="rooms" class="form-control" type="text">
                                             <option value="" selected disabled> الغرف</option>
                                             <option value="1">غرفة واحدة - ستوديو</option>
                                             <option value="2">غرفتين</option>
@@ -82,7 +82,7 @@
                             <div class="col-4">
                                 <div class="form-group row">
                                     <div class="col-12 m-0 p-0">
-                                        <select name="status" class="form-control" type="text">
+                                        <select name="house_status" class="form-control" type="text">
                                             <option value="" selected disabled> الحالة </option>
                                             <option value="مفروشه">مفروشة</option>
                                             <option value="غير مفروشه">غير مفروشة</option>
@@ -97,7 +97,7 @@
                             <div class="col-12">
                                 <div class="form-group row">
                                     <div class="col-12 m-0 p-0">
-                                        <select name="show" class="form-control">
+                                        <select class="form-control">
                                             <option selected disabled>العروض</option>
                                             <option>لل للبيع</option>
                                             <option>للايجار</option>
@@ -150,7 +150,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($homes_show as $home)
+                                @foreach ($homes as $home)
                                 <tr>
                                     <td>{{$home->home_type}} </td>
                                     <td>{{$home->show}} </td>
@@ -176,7 +176,7 @@
 
 
                         <div class="col-12">
-                        {{ $homes_show->links('vendor.paginate') }}
+                        {{ $homes->links('vendor.paginate') }}
                         </div>
                     </div>
                 </div>

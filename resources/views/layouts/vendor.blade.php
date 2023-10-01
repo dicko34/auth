@@ -9,7 +9,6 @@
     @yield('styleChart')
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset("assets/admin/images/icon.png")}}">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Bootstrap Css -->
     <link href="{{asset("assets/admin/libs/magnific-popup/magnific-popup.css")}}" id="bootstrap-style" rel="stylesheet"
         type="text/css" />
@@ -20,6 +19,7 @@
     <!-- App Css-->
     @yield("style")
     <link href="{{asset("assets/admin/css/app-rtl.css")}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset("css/app.scss") }}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,6 +60,7 @@
     }
     </style>
 </head>
+
 <body data-topbar="dark" data-layout="horizontal">
 
     <!-- Loader -->
@@ -143,27 +144,16 @@
                             اتصل بنا
                         </a>
                     </div>
-                    @guest
+
                     <div class="dropdown d-inline-block ">
                         <a href="{{ route('login') }}" class="btn header-item  waves-effect mt-3">
                             <i class="fa fa-sign-in-alt"></i>
                             دخول
                         </a>
                     </div>
-                    @endguest
 
-                    @if(Auth::guard()->check())
-                    <div class="dropdown d-inline-block ">
-                        <form method="POST" action="{{ route('logout') }}" >
-                            @csrf
-                            <button  class="btn header-item  waves-effect mt-3">
-                            <i class="fa fa-sign-in-alt"></i>
-                            تسجيل الخروج
-                            </button>
-                        </form>
-                        
-                    </div>
-                    @endif
+
+
                 </div>
             </div>
 
@@ -371,30 +361,7 @@
     <script src="{{asset("assets/admin/js/pages/gallery.init.js")}}"></script>
 
     <script src="{{asset("assets/admin/js/app.js")}}"></script>
-    <script src="{{asset("js/action.js")}}"></script>
-    <script>
-    $(document).ready(function() {
-        $('.search-input').on('keypress', function(e) {
-            if (e.which == 13) {
-                $.ajax({
-                    type: "POST",
-                    data: {search :  $(this).val()},
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    url: "{{ route('search') }}",
-                    success: function(data) {
-                        console.log("dd");
-                        console.log(data);
-                    },
-                    error: function(data) {
-                        console.log(data);
-                    }
-                });
-            }
-        });
-    });
-</script>
+
 </body>
 
 </html>

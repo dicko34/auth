@@ -21,7 +21,7 @@
                             <div class="col-12 col-sm-4">
                                 <div class="form-group row">
                                     <div class="col-12">
-                                        <select class="form-control" name="city">
+                                        <select class="form-control">
                                             <option selected="" disabeled="">المحافظة</option>
                                             <option value="رام الله والبيرة">رام الله والبيرة</option>
                                             <option value="القدس">القدس</option>
@@ -62,26 +62,26 @@
                 <div class="card-header m-0 p-0 w-100 d-inline-flex" style="height:60px;background:#262726 ;">
 
                     <div class="h-100 text-white px-2" style="width:65%">
-                        <a href="/lands" class="text-white">
+                        <a href="/general" class="text-white">
                             <h3><i class="mdi mdi-car-side mr-2"></i> اراضي </h3>
                         </a>
                     </div>
 
 
                     <div class="h-100 mr-1 pt-1" style="width:34%;">
-                        <button class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
+                        <a href="{{route('land.add')}}" class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
                             style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
-                        <a href="/land/add"></a>
+
                             <i class="fa fa-plus-circle "></i>اضف اعلان جديد
 
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-lg-6">
                         <table class="table table-striped table-bordered">
                             <thead class="bg-blue text-white">
-                                @if (count($lands_show) == NULL)
+                                @if (count($lands) == NULL)
                                     <h6 class="text-center pt-5 pb-5 mt-5 mb-5">
                                         لا يوجد اعلانات حاليا <br>
                                         <a class="text-primary"href="{{route('home')}}">عودة</a>
@@ -96,7 +96,7 @@
                             </thead>
                             <tbody>
                                 
-                                    @foreach ($lands_show as $land)
+                                    @foreach ($lands as $land)
                                     <tr>
                                         <td>{{$land->brief}} </td>
                                         <td>{{$land->area}} </td>
@@ -109,7 +109,7 @@
 
 
                     </div>
-                    {{$lands_show->links('vendor.paginate')}}
+                    {{$lands->links('vendor.paginate')}}
                 </div>
             </div>
         </div>

@@ -156,10 +156,11 @@
                     <tr>
                         <td>مميزات </td>
                         <td>
+                            <input type="hidden" id="extras" name="extras">
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox"
-                                        name="extras[]" value="يوجد مصعد">
+                                        name="extras[]" onclick="checkedIf(event)" value="يوجد مصعد">
                                     <label class="form-check-label" for="property[electronic_elevator]"> يوجد مصعد
                                         الكتروني
                                     </label>
@@ -176,7 +177,7 @@
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-check">
                                     <input class="form-check-input" id="property[central_heating]" type="checkbox"
-                                        name="extras[]" value="يوجد تدفئة">
+                                        name="extras[]" onclick="checkedIf(event)" value="يوجد تدفئة">
                                     <label class="form-check-label" for="property[central_heating]"> يوجد تدفئة
                                         مركزية</label>
                                 </div>

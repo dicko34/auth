@@ -8,13 +8,13 @@
     <div class="card w-100">
         <div class="body-card m-2">
             <form method="POST" action="{{route('mobiles.search')}}">
-                @csrf
+                <input type="hidden" name="_token" value="77oiXIoX8qobY8K1FEqLOmNWutRIb9lTHcvckJwD">
                 <div class="row m-1">
                     <div class="col-4 col-sm-4">
                         <div class="form-group row">
                             <div class="col-12 m-0 p-0">
-                            <select name="model" class="form-control  model-type-car">
-                                    <option selected="" disabeled="" value="">Model</option>
+                            <select name="model" class="form-control  model-type-car" id="carCompany"
+                                    required="">
                                     <option value="Alcatel">Alcatel</option>
                                     <option value="Apple">Apple</option>
                                     <option value="Asus">Asus</option>
@@ -54,7 +54,7 @@
                     <div class="col-4 col-sm-4">
                         <div class="form-group row">
                             <div class="col-12 m-0 p-0">
-                                <input class="form-control"type="text" name="reset_model"placeholder="الموديل">
+                                <input class="form-control"type="text" name="model"placeholder="الموديل">
                             </div>
                         </div>
                     </div>
@@ -62,8 +62,8 @@
                     <div class="col-4 col-sm-4">
                         <div class="form-group row">
                             <div class="col-12 m-0 p-0">
-                                <select class="form-control" name="device_status">
-                                    <option selected="" disabeled="" value="">الحالة</option>
+                                <select class="form-control">
+                                    <option selected="" disabeled="">الحالة</option>
                                     <option value="جديد">جديد</option>
                                     <option value="مستعمل"> مستعمل</option>
                                 </select>
@@ -74,8 +74,8 @@
                     <div class="col-12 col-sm-4">
                         <div class="form-group row">
                             <div class="col-12 m-0 p-0">
-                                <select class="form-control" name="city">
-                                    <option selected="" disabeled="" value="">المحافظة</option>
+                                <select class="form-control">
+                                    <option selected="" disabeled="">المحافظة</option>
                                     <option value="رام الله والبيرة">رام الله والبيرة</option>
                                     <option value="القدس">القدس</option>
                                     <option value="قطاع غزة">قطاع غزة</option>
@@ -98,10 +98,17 @@
                     </div>
 
                     <!-- Repeat the structure for the remaining form groups -->
+
+
+
+
+
+                    
+
                     <div class="col-6 col-sm-4">
                         <div class="form-group row">
                             <div class="col-12 m-0 p-0">
-                                <input class="form-control input-form-group" name="price_min" type="text" placeholder="اقل سعر">
+                                <input class="form-control input-form-group" type="text" placeholder="اقل سعر">
                             </div>
                         </div>
                     </div>
@@ -109,7 +116,7 @@
                     <div class="col-6 col-sm-4">
                         <div class="form-group row">
                             <div class="col-12 m-0 p-0">
-                                <input class="form-control input-form-group" name="price_max" type="text" placeholder="اعلى سعر">
+                                <input class="form-control input-form-group" type="text" placeholder="اعلى سعر">
                             </div>
                         </div>
                     </div>
@@ -132,14 +139,14 @@
         <div class="card-header m-0 p-0 w-100 d-inline-flex" style="height:60px;background:#262726 ;">
 
             <div class="h-100 text-white px-2" style="width:65%">
-                <a href="/mobiles" class="text-white">
+                <a href="/general" class="text-white">
                     <h3><i class="mbri-mobile2 mr-2"></i> الاجهزة الذكية </h3>
                 </a>
             </div>
 
 
             <div class="h-100 mr-1 pt-1" style="width:34%;">
-                <a href="{{route('mobile.add')}}" class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
+                <a href="{{route('land.add')}}" class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
                     style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
 
                     <i class="fa fa-plus-circle "></i>اضف اعلان جديد
@@ -153,21 +160,21 @@
 
             <div class="row">
 
-                @foreach ($mobiles_show as $mobile) 
+                @foreach ($mobiles as $mobile) 
                 <div class="col-6 col-xl-2 p-1 ">
                     <div class="annonce-item" style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
-                        <a href="{{ asset('assets/site/images/mobile/' . explode(',', $mobile->img)[0]) }}" class="gallery-popup"
+                        <a href="{{ asset('/admin/images/ $mobiles') }}" class="gallery-popup"
                             style="height: 160px; width:100%">
                             <div class="project-item">
                                 <div class="overlay-container">
-                                    <img src="{{ asset('assets/site/images/mobile/' . explode(',', $mobile->img)[0]) }}" alt="img" class=""
+                                    <img src="{{ asset('/admin/images/mobile.jpg') }}" alt="img" class=""
                                         style="height: 160px; width:100%">
                                     <div class="project-item-overlay text-right">
                                         <h4>
                                              هاتف {{$mobile->model}} {{$mobile->reset_model}}
                                         </h4>
                                         <p>
-                                            <img src="{{ asset('assets/site/images/mobile/' . explode(',', $mobile->img)[0]) }}" alt="user"
+                                            <img src="{{ asset('/admin/images/mobile.jpg') }}" alt="user"
                                                 class="avatar-xs rounded-circle">
                                             <span class="ml-2">{{$mobile->advertiser_name}} </span>
                                         </p>
@@ -189,7 +196,7 @@
             @endforeach
         </div>
     </div>
-    {{$mobiles_show->links('vendor.paginate')}}
+    {{$mobiles->links('vendor.paginate')}}
 </div>
 </div>
 </div>

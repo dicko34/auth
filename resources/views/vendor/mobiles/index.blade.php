@@ -4,25 +4,16 @@
 <link href="{{ asset('assets/admin/libs/c3/c3.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
-    <div class="row">
-        <div class="card w-100">
-            <div class="body-card m-5">
-                <div class="row">
-                    <h3 class="mb-4 m-auto"><i class="mbri-mobile2 mr-2"></i> اعلانات الأجهزة الذكية - موبايل </h3>
-                </div>
-                <form method="POST" action="{{ route("mobiles.search") }}">
-                        @csrf
-                        @if ($errors->any())
-                        @foreach ($errors->all() as $error)
-                        <div>{{$error}}</div>
-                        @endforeach
-                        @endif
-                        <div class="row m-1">
-                            <div class="col-4">
-                                <div class="form-group row">
-                                    <label class="col-sm-4 col-form-label">جميع الشركات</label>
-                                    <div class="col-12 m-0 p-0">
-                                    <select name="model" class="form-control  model-type-car" id="carCompany"
+<div class="row">
+    <div class="card w-100">
+        <div class="body-card m-2">
+            <form method="POST" action="{{route('mobiles.search')}}">
+                <input type="hidden" name="_token" value="77oiXIoX8qobY8K1FEqLOmNWutRIb9lTHcvckJwD">
+                <div class="row m-1">
+                    <div class="col-4 col-sm-4">
+                        <div class="form-group row">
+                            <div class="col-12 m-0 p-0">
+                            <select name="model" class="form-control  model-type-car" id="carCompany"
                                     required="">
                                     <option value="Alcatel">Alcatel</option>
                                     <option value="Apple">Apple</option>
@@ -57,76 +48,13 @@
                             </div>
                         </div>
                     </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="form-group row">
-                                    <label class="col-sm-4 col-form-label">الحالة</label>
-                                    <div class="col-12 m-0 p-0">
-                                        <select name="device_status" class="form-control">
-                                            <option selected="" disabeled="">الحالة</option>
-                                            <option value="جديد">جديد</option>
-                                            <option value="مستعمل"> مستعمل</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="form-group row">
-                                    <label class="col-sm-4 col-form-label">المحافظة</label>
-                                    <div class="col-12 m-0 p-0">
-                                    <select class="form-control">
-                                        <option selected="" disabeled="">المحافظة</option>
-                                        <option value="رام الله والبيرة">رام الله والبيرة</option>
-                                        <option value="القدس">القدس</option>
-                                        <option value="قطاع غزة">قطاع غزة</option>
-                                        <option value="الخليل">الخليل</option>
-                                        <option value="بيت لحم">بيت لحم</option>
-                                        <option value="أريحا">أريحا</option>
-                                        <option value="سلفيت وبديا">سلفيت وبديا</option>
-                                        <option value="روابي">روابي</option>
-                                        <option value="طوباس">طوباس</option>
-                                        <option value="قلقيلية">قلقيلية</option>
-                                        <option value="طولكرم">طولكرم</option>
-                                        <option value="جنين">جنين</option>
-                                        <option value="نابلس">نابلس</option>
-                                        <option value="جميع الاماكن">جميع الاماكن</option>
-                                        <option value="مناطق الداخل">مناطق الداخل</option>
-
-                                    </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="form-group row">
-                                    <label class="col-sm-4 col-form-label">السعر من</label>
-                                    <div class="col-12 m-0 p-0">
-                                        <input class="form-control input-form-group" type="text" placeholder="اقل سعر">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="form-group row">
-                                    <label class="col-sm-4 col-form-label">السعر الي</label>
-                                    <div class="col-12 m-0 p-0">
-                                        <input class="form-control input-form-group" type="text" placeholder="اعلى سعر">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Repeat the structure for other form groups -->
 
                     <div class="col-4 col-sm-4">
                         <div class="form-group row">
                             <div class="col-12 m-0 p-0">
-                                <input class="form-control"type="text" name="reset_model"placeholder="الموديل">
+                                <input class="form-control"type="text" name="model"placeholder="الموديل">
                             </div>
                         </div>
                     </div>
@@ -134,8 +62,8 @@
                     <div class="col-4 col-sm-4">
                         <div class="form-group row">
                             <div class="col-12 m-0 p-0">
-                                <select class="form-control" name="device_status">
-                                    <option selected="" disabeled="" value="">الحالة</option>
+                                <select class="form-control">
+                                    <option selected="" disabeled="">الحالة</option>
                                     <option value="جديد">جديد</option>
                                     <option value="مستعمل"> مستعمل</option>
                                 </select>
@@ -146,8 +74,8 @@
                     <div class="col-12 col-sm-4">
                         <div class="form-group row">
                             <div class="col-12 m-0 p-0">
-                                <select class="form-control" name="city">
-                                    <option selected="" disabeled="" value="">المحافظة</option>
+                                <select class="form-control">
+                                    <option selected="" disabeled="">المحافظة</option>
                                     <option value="رام الله والبيرة">رام الله والبيرة</option>
                                     <option value="القدس">القدس</option>
                                     <option value="قطاع غزة">قطاع غزة</option>
@@ -180,7 +108,7 @@
                     <div class="col-6 col-sm-4">
                         <div class="form-group row">
                             <div class="col-12 m-0 p-0">
-                                <input class="form-control input-form-group" name="price_min" type="text" placeholder="اقل سعر">
+                                <input class="form-control input-form-group" type="text" placeholder="اقل سعر">
                             </div>
                         </div>
                     </div>
@@ -188,7 +116,7 @@
                     <div class="col-6 col-sm-4">
                         <div class="form-group row">
                             <div class="col-12 m-0 p-0">
-                                <input class="form-control input-form-group" name="price_max" type="text" placeholder="اعلى سعر">
+                                <input class="form-control input-form-group" type="text" placeholder="اعلى سعر">
                             </div>
                         </div>
                     </div>
@@ -200,61 +128,7 @@
                     </div>
                 </div>
 
-                @foreach($mobiles as $mobile)
-                        <div class="col-md-6 col-lg-6 col-xl-3">
-                            <div class="card">
-                                <a href="{{ asset('assets/site/images/mobiles/'.explode(',',$mobile->img)[0]) }}" class="gallery-popup"
-                                    style="height: 230px; width:100%">
-                                    <div class="project-item">
-                                        <div class="overlay-container">
-                                            <img src="{{ asset('assets/site/images/mobiles/'.explode(',',$mobile->img)[0]) }}" alt="img"
-                                                class="gallery-thumb-img m-0" style="height: 230px; width:100%">
-                                            <div class="project-item-overlay text-right">
-                                                <h4>هاتف {{$mobile->model}} 
-                                                    @if(!empty($mobile->reset_model))
-                                                        {{$mobile->reset_model}}
-                                                    @endif
-                                                </h4>
-                                                <p>
-                                                    <img src="{{ asset('assets/site/images/mobiles/'.explode(',',$mobile->img)[0]) }}" alt="user"
-                                                        class="avatar-xs rounded-circle">
-                                                    <span class="ml-2">{{$mobile->advertiser_name}}</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="{{ ('mobile/product/'.$mobile->id) }}">
-                                        موبايل
-                                        </a>
-                                    </h4>
-                                    <p class="card-text">
-                                        {{$mobile->company}}  - {{$mobile->device_status}} - {{$mobile->reset_model}}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-
-                </div>
-                <nav aria-label="..." class="w-25 m-auto">
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Previous</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active">
-                            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            </form>
         </div>
     </div>
 </div>
@@ -265,7 +139,7 @@
         <div class="card-header m-0 p-0 w-100 d-inline-flex" style="height:60px;background:#262726 ;">
 
             <div class="h-100 text-white px-2" style="width:65%">
-                <a href="/mobiles" class="text-white">
+                <a href="/general" class="text-white">
                     <h3><i class="mbri-mobile2 mr-2"></i> الاجهزة الذكية </h3>
                 </a>
             </div>
@@ -289,11 +163,11 @@
                 @foreach ($mobiles as $mobile) 
                 <div class="col-6 col-xl-2 p-1 ">
                     <div class="annonce-item" style="border: 1px solid;border-color: #0000002b;border-radius: 5px;">
-                        <a href="{{ asset('assets/site/images/mobile/' . explode(',', $mobile->img)[0]) }}" class="gallery-popup"
+                        <a href="{{ asset('assets/site/images/mobiles/' . explode(',', $mobile->img)[0]) }}" class="gallery-popup"
                             style="height: 160px; width:100%">
                             <div class="project-item">
                                 <div class="overlay-container">
-                                    <img src="{{ asset('assets/site/images/mobile/' . explode(',', $mobile->img)[0]) }}" alt="img" class=""
+                                    <img src="{{ asset('assets/site/images/mobiles/' . explode(',', $mobile->img)[0]) }}" alt="img" class=""
                                         style="height: 160px; width:100%">
                                     <div class="project-item-overlay text-right">
                                         <h4>

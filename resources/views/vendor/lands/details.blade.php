@@ -45,7 +45,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-9" style="padding: 0;height: 110px;">
                         <div class="media h-100" style="width: 100%;">
                             <div style="position: relative" class="h-100">
-                                <img class="first-img img-fluid" src="{{ asset('assets/site/images/lands/' . explode(',', $land_similar['img'])[0]) }}"
+                                <img class="first-img img-fluid" src="{{ asset('assets/site/images/lands/' . explode(',', $land['img'])[0]) }}"
                                     alt="سيات | SEAT ابيزا 2009" title="سيات | SEAT ابيزا 2009"
                                     style="max-width:150px;height:100%">
                             </div>
@@ -54,7 +54,7 @@
                                         class="fas  fa-map-marker-alt" style="    font-size: small;"></i> {{ $land->address }} {{ $land->city }}</span>
                                 <h5 class="mt-2 title" style="    font-size: 1.1rem;font-family:Tajawal">{{$land->brief}}
                                     للبيع</h5>
-                                <li class="old-price not-cut d-block d-lg-none">سعر غير محدد</li>
+                                <li class="old-price not-cut d-block d-lg-none"> {{$land->price}} شيكل </li>
                             </div>
                         </div>
                     </div>
@@ -63,8 +63,8 @@
 
                             <div class="">
                                 <ul>
-                                    <li class="old-price not-cut d-none d-lg-block" style="font-size: 20px;">سعر غير
-                                        محدد</li>
+                                    <li class="old-price not-cut d-none d-lg-block" style="font-size: 20px;"> {{$land->price}} شيكل 
+                                        </li>
                                 </ul>
                             </div>
                         </div>
@@ -112,20 +112,17 @@
                                     <td>{{ $land->address }} {{ $land->city }}</td>
                                 </tr>
                                 <tr>
-                                    <td>المميزات</td>
-                                    <td>
-                                        {{str_replace(',',' | ',$land->features)}}
+                                    <td>:المميزات
+                                    <ul>
+                                    @foreach (explode(',' , $land->features) as $feature)
+                                                    <li>{{ $feature }}</li>
+                                    @endforeach
+                                    </ul>
+                                    
                                     </td>
                                         
                                 </tr>
-                                <tr>
-                                    <td>معلومات اضافية</td>
-                                    <td>
-                                        <pre>
-                                            {{ $land->descrption }}
-                                        </pre>
-                                    </td>
-                                </tr>
+                                
                             </tbody>
                         </table>
                     </div>
@@ -160,12 +157,14 @@
                     <br>
 
                     <div class="w-100 px-2 bg-primary">
-                        <h5 class="text-white ml-2 font-weight-bold text-center"style="font-family:Tajawal;line-height:48px;">وصف العقار</h5>
+                        <h5 class="text-white ml-2 font-weight-bold text-center"style="font-family:'Tajawal';line-height:48px;">وصف العقار</h5>
                     </div>
                     
                     <br>
-                    <div style="    padding: 20px;
-                                                 all: none;
+                    <div style="    
+                                                padding: 20px;
+                                                
+                                                all: none;
                                                  animation: none;
                                                  animation-delay: 0;
                                                  animation-direction: normal;
@@ -236,16 +235,9 @@
                                                  counter-increment: none;
                                                  counter-reset: none;
                                                  cursor: auto;
-
                                                  display: inline;
                                                  empty-cells: show;
                                                  float: none;
-                                                 font: normal;
-                                                 font-family: inherit;
-                                                 font-size: medium;
-                                                 font-style: normal;
-                                                 font-variant: normal;
-                                                 font-weight: normal;
                                                  height: auto;
                                                  hyphens: none;
                                                  left: auto;
@@ -316,6 +308,7 @@
                                                  all: initial;
                                                  all: unset;
                                                  direction: auto;
+                                                 font-family:'Tajawal'; 
                                              ">
                         <div class="d-none d-lg-block">
                             <ul>
@@ -328,74 +321,10 @@
                                 <tbody style="font-weight:500">
                                     <tr>
                                         <td>
-                                            <li style="display: list-item !important;">لمن يبحث عن الهدوء والتميز </li>
+                                            <pre>{{$land->description}}</pre>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <li style="display: list-item !important;">منزل عظم مستقل للبيع والتواصل مع
-                                                المالك مباشرة بدون وسطاء </li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li style="display: list-item !important;">الموقع .. جنوب بيت لحم </li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li style="display: list-item !important;">تبعد عن حاجز مزموريا 15 دقيقة
-                                            </li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li style="display: list-item !important;">المواصفات : </li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li style="display: list-item !important;"> مساحة الأرض 550 متر </li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li style="display: list-item !important;">منطقة B طابو سلطة صادر </li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li style="display: list-item !important;">على قمة جبل . وعلى شارع مباشرة .
-                                                إطلالة مميزة جدا وهادئة </li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li style="display: list-item !important;"> جميع الخدمات .. كهرباء ... ماء
-                                                .. شارع </li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li style="display: list-item !important;"> بإشراف هندسي متكامل مع تصوير
-                                                جميع مراحل البناء من البداية وحتى النهاية </li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li style="display: list-item !important;">للمعنيين فقط الاتصال على </li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li style="display: list-item !important;">0568233968 </li>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <li style="display: list-item !important;">0597949736 الواتس</li>
-                                        </td>
-                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -410,8 +339,8 @@
                     </div>
                     <br>
                     <div class=" border-md-top border-right d-block d-lg-none d-xl-none pt-2">
-                        <div class="row " style="min-height: 83px;margin-right: 0px;margin-left: 0px;">
-                            <div class="col text-center">
+                        <div class="row w-100 mx-0" style="min-height: 83px;margin-right: 0px;margin-left: 0px;">
+                            <div class="col text-center px-0 mx-0">
                                 <div class="w-100 px-2 bg-primary">
                                 <h5 class="text-white ml-2 font-weight-bold text-center"
                                     style="font-family:Tajawal;line-height:48px;text-align:center;">معلومات المعلن</h5>
@@ -483,10 +412,12 @@
         </div>
     </div>
     <div class="w-100 px-1">
-        <h5>اعلانات مشابهة</h5>
+        <h5>اعلانات مشابهة {{count($similar)}}</h5>
+        @if (count($similar) > 0)
         <div class="row">
             @foreach ($similar as $land_similar)
 
+            
             <div class="col-6 col-xl-2 p-1 ">
                 
                  <div
@@ -514,9 +445,13 @@
                 </div> 
             </div>
     @endforeach
+    @endif
     </div>
 </div>
 <style>
+    * {
+        font-family:'Tajawal' !important;
+    }
 ul , table li{
     list-style-type: none !important;
 }

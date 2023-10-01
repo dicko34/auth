@@ -16,7 +16,7 @@
                             <div class="col-6 col-sm-4">
                                 <div class="form-group row">
                                     <div class="col-12 m-0 p-0">
-                                        <select name="specialization" class="form-control">
+                                        <select name="category" class="form-control">
                                             <option value="" selected="" class="d-none">التخصص</option>
                                             <option value="تصميم الأزياء و الخياطة">تصميم الأزياء و الخياطة</option>
                                             <option value="مدرس\ة">مدرس\ة</option>
@@ -72,8 +72,8 @@
                             <div class="col-6 col-sm-4">
                                 <div class="form-group row">
                                     <div class="col-12 m-0 p-0">
-                                        <select name="permanence" class="form-control">
-                                            <option value="" selected disabeled> الدوام</option>
+                                        <select name="" class="form-control">
+                                            <option selected disabeled> الدوام</option>
                                             <option value="كلي">كلي</option>
                                             <option value="جزئي">جزئي</option>
                                             <option value="دوام ليلي">دوام ليلي</option>
@@ -85,8 +85,8 @@
                             <div class="col-12 col-sm-4">
                                 <div class="form-group row">
                                     <div class="col-12 m-0 p-0">
-                                        <select class="form-control" name="city">
-                                            <option selected="" disabeled="" value="">المحافظة</option>
+                                        <select class="form-control">
+                                            <option selected="" disabeled="">المحافظة</option>
                                             <option value="رام الله والبيرة">رام الله والبيرة</option>
                                             <option value="القدس">القدس</option>
                                             <option value="قطاع غزة">قطاع غزة</option>
@@ -152,12 +152,12 @@
                                         <table class="table table-striped table-bordered">
                                             <thead class="bg-blue text-white">
                                                 <tr class="bg-primary">
-                                                @if (count($jobs_show) == NULL)
+                                                @if (count($jobs) == NULL)
                                                     <h6 class="text-center pt-5 pb-5 mt-5 mb-5">
                                                     لا يوجد اعلانات حاليا<br>
                                                     <a href="{{route('home')}} ">عودة</a>
                                                     </h6>                         
-                                                @elseif (count($jobs_show) > 0)  
+                                                @elseif (count($jobs) > 0)  
                                                     <th style="font-family: 'Tajawal';">الشركة</th>
                                                     <th style="font-family:'Tajawal';">التخصص</th>
                                                     <th style="font-family:'Tajawal';">المدينه</th>
@@ -165,7 +165,7 @@
                                                 @endif
                                             </thead>
                                             <tbody>
-                                                @foreach ($jobs_show as $job)
+                                                @foreach ($jobs as $job)
                                                 <tr>
                                                     <td>{{$job->advertiser_name}} </td>
                                                     <td style="vertical-align: middle;">{{$job->specialization}} </td>
@@ -182,7 +182,7 @@
 
 
                                         <div class="col-12">
-                                        {{ $jobs_show->links('vendor.paginate') }}
+                                        {{ $jobs->links('vendor.paginate') }}
                                         </div>
                                     </div>
                                 </div>

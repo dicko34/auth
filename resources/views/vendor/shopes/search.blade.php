@@ -21,8 +21,8 @@
                             <div class="col-12 col-sm-4">
                                 <div class="form-group row">
                                     <div class="col-4 m-0 p-0">
-                                        <select name="city" class="form-control">
-                                            <option selected="" disabeled="" value="">المحافظة</option>
+                                        <select class="form-control">
+                                            <option selected="" disabeled="">المحافظة</option>
                                             <option value="رام الله والبيرة">رام الله والبيرة</option>
                                             <option value="القدس">القدس</option>
                                             <option value="قطاع غزة">قطاع غزة</option>
@@ -43,8 +43,8 @@
                                     </div>
 
                                     <div class="col-sm-4 col-4  m-0 p-0">
-                                        <select class="form-control" name="displayed">
-                                            <option selected disabeled value="" > المعروض</option>
+                                        <select class="form-control">
+                                            <option selected disabeled> المعروض</option>
                                             <option value="محل">محل</option>
                                             <option value="مكتب">مكتب</option>
                                             <option value="مخزن">مخزن</option>
@@ -52,7 +52,7 @@
                                     </div>
 
                                     <div class="col-sm-4 col-4  m-0 p-0">
-                                        <select class="form-control" name="offer">
+                                        <select class="form-control">
                                             <option selected disabeled> العقد</option>
                                             <option value="للبيع">للبيع</option>
                                             <option value="للايجار">للايجار</option>
@@ -99,7 +99,7 @@
                 <div class="col-lg-6 col-sm-12 mx-0 px-0">
                     <table class="table table-striped table-bordered">
                         <thead class="bg-blue text-white">
-                        @if (count($shopes_show) == 0)
+                        @if (count($shopes) == 0)
                                 <h6 class="text-center pt-5 pb-5 mt-5 mb-5">
                                     لا يوجد اعلانات حاليا <br>
                                     <a class="text-primary"href="{{route('home')}}">عودة</a>
@@ -113,7 +113,7 @@
                             @endif
                         </thead>
                         <tbody >
-                            @foreach ($shopes_show as $shop)
+                            @foreach ($shopes as $shop)
                             <tr class="bg-white">
                                 <td>{{$shop->brief}} </td>
                                 <td>{{$shop->offer}}</td>
@@ -128,7 +128,7 @@
 
 
                 </div>
-                {{$shopes_show->links('vendor.paginate')}}
+                {{$shopes->links('vendor.paginate')}}
             </div>
         </div>
     </div>

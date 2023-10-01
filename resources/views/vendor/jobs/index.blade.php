@@ -16,7 +16,7 @@
                             <div class="col-6 col-sm-4">
                                 <div class="form-group row">
                                     <div class="col-12 m-0 p-0">
-                                        <select name="specialization" class="form-control">
+                                        <select name="category" class="form-control">
                                             <option value="" selected="" class="d-none">التخصص</option>
                                             <option value="تصميم الأزياء و الخياطة">تصميم الأزياء و الخياطة</option>
                                             <option value="مدرس\ة">مدرس\ة</option>
@@ -72,8 +72,8 @@
                             <div class="col-6 col-sm-4">
                                 <div class="form-group row">
                                     <div class="col-12 m-0 p-0">
-                                        <select name="permanence" class="form-control">
-                                            <option value="" selected disabeled> الدوام</option>
+                                        <select name="" class="form-control">
+                                            <option selected disabeled> الدوام</option>
                                             <option value="كلي">كلي</option>
                                             <option value="جزئي">جزئي</option>
                                             <option value="دوام ليلي">دوام ليلي</option>
@@ -85,8 +85,8 @@
                             <div class="col-12 col-sm-4">
                                 <div class="form-group row">
                                     <div class="col-12 m-0 p-0">
-                                        <select class="form-control" name="city">
-                                            <option selected="" disabeled="" value="">المحافظة</option>
+                                        <select class="form-control">
+                                            <option selected="" disabeled="">المحافظة</option>
                                             <option value="رام الله والبيرة">رام الله والبيرة</option>
                                             <option value="القدس">القدس</option>
                                             <option value="قطاع غزة">قطاع غزة</option>
@@ -134,16 +134,11 @@
                                 <div class="card-header m-0 p-0 w-100 d-inline-flex"
                                     style="height:60px;background:#262726;">
 
-    <div class="row">
-        <div class="card w-100">
-            <div class="body-card m-5">
-                <div class="row">
-                    <h3 class="mb-4 col-6 btn btn-primary w-md waves-effect waves-light"><i class="fas fa-address-book mr-2"></i> اعلانات التوظيف </h3>
-                    <div class="col-6 text-right">
-                        <a class="btn btn-primary w-md waves-effect waves-light w-100" href="{{ route("jobs.add") }}">أضافة أعلان هنا</a>
-                    </div>
-                </div>
-                <div class="row">
+                                    <div class="h-100 text-white px-2" style="width:65%">
+                                        <a href="/homes" class="text-white">
+                                            <h3><i class="fas fa-user-friends mr-2"></i> توظيف </h3>
+                                        </a>
+                                    </div>
 
                                     <div class="h-100 mr-1 pt-1" style="width:34%;">
                                         <a href="{{route('job.add')}}" class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"

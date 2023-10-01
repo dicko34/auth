@@ -22,7 +22,8 @@
                         <td>التخصص<span class="text-danger" style="">*</span></td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <select name="specialization" class="form-control" required="">
+                                <select name="specialization" class="form-control">
+                                    <option value="" selected="" class="d-none">التخصص</option>
                                     <option value="تصميم الأزياء و الخياطة">تصميم الأزياء و الخياطة</option>
                                     <option value="مدرس\ة">مدرس\ة</option>
                                     <option value="تكنولوجيا المعلومات">تكنولوجيا المعلومات</option>
@@ -67,52 +68,7 @@
                                     <option value="عامل بناء">عامل بناء</option>
                                     <option value="تجميل">تجميل</option>
                                     <option value="فني ميكانيك وكهربائي سيارات">فني ميكانيك وكهربائي سيارات</option>
-                                    <option value="كيمياء">كيمياء</option>
-                                    <option value="مدرب/ة رياضة">مدرب/ة رياضة</option>
-                                    <option value="مصور/ة">مصور/ة</option>
-                                    <option value="منقذ/ة">منقذ/ة</option>
-                                    <option value="مزارع/ة">مزارع/ة</option>
-                                    <option value="فني تكييف">فني تكييف</option>
-                                    <option value="عامل/ة نظافة">عامل/ة نظافة</option>
-                                    <option value="علاج طبيعي">علاج طبيعي</option>
-                                    <option value="فني ألمنيوم">فني ألمنيوم</option>
-                                    <option value="فني كهرباء">فني كهرباء</option>
-                                    <option value="فني مصاعد">فني مصاعد</option>
-                                    <option value="طباخ/ة">طباخ/ة</option>
-                                    <option value="عامل/ة">عامل/ة</option>
-                                    <option value="نجارة وصناعة الاثاث">نجارة وصناعة الاثاث</option>
-                                    <option value="مسؤول برنامج">مسؤول برنامج</option>
-                                    <option value="مشرف\ة">مشرف\ة</option>
-                                    <option value="مندوب\ة مبيعات">مندوب\ة مبيعات</option>
-                                    <option value="جزار">جزار</option>
-                                    <option value="تنجيد كنب">تنجيد كنب</option>
-                                    <option value="فني صيانة">فني صيانة</option>
-                                    <option value="سفرجي\ة">سفرجي\ة</option>
-                                    <option value="عدة تخصصات">عدة تخصصات</option>
-                                    <option value="موظف\ة استقبال">موظف\ة استقبال</option>
-                                    <option value="معلم شاورما">معلم شاورما</option>
-                                    <option value="معلم مشاوي">معلم مشاوي</option>
-                                    <option value="جرافيكس">جرافيكس</option>
-                                    <option value="باحث">باحث</option>
-                                    <option value="موظف/ة">موظف/ة</option>
-                                    <option value="كاشير">كاشير</option>
-                                    <option value="مدبرة منزل">مدبرة منزل</option>
-                                    <option value="فني الكترونيات">فني الكترونيات</option>
-                                    <option value="مبرمج/ة">مبرمج/ة</option>
-                                    <option value="ادخال بيانات">ادخال بيانات</option>
-                                    <option value="فني كاميرات">فني كاميرات</option>
-                                    <option value="تجليس و دهان سيارات">تجليس و دهان سيارات</option>
-                                    <option value="موظف\ة باريستا">موظف\ة باريستا</option>
-                                    <option value="مدرب\ة">مدرب\ة</option>
-                                    <option value="فني اتصالات">فني اتصالات</option>
-                                    <option value="مساعد\ة ادارية">مساعد\ة ادارية</option>
-                                    <option value="تربية خاصة">تربية خاصة</option>
-                                    <option value="فني طباعة">فني طباعة</option>
-                                    <option value="اخرى">اخرى</option>
-                                    <option value="أمين صندوق">أمين صندوق</option>
-                                    <option value="مروج/ة">مروج/ة</option>
                                 </select>
-
                             </div>
                         </td>
                     </tr>

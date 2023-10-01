@@ -22,7 +22,7 @@
                                 <div class="col-12 m-0 p-0">
                                 <select name="company"  class="form-control form-control model-type-car" id="carCompany"
                                     required="">
-                                    <option value="null" selected disabled> الشركات</option>
+                                    <option value=""selected disabled> الشركات</option>
                                         @foreach ($carCompanies as $carCompany)
                                             <option value="{{ $carCompany->name}}">{{ $carCompany->name }}</option>
                                         @endforeach
@@ -38,7 +38,7 @@
                                 <div class="col-12 m-0 p-0">
                                     <select name="model" class="form-control form-control model-type-car" id="carModel"
                                         required="">
-                                        <option  value="null" selected disabled> الموديل</option>
+                                        <option value=""selected disabled> الموديل</option>
                                     </select>
                                 </div>
                             </div>
@@ -48,7 +48,7 @@
                             <div class="form-group row">
                                 <div class="col-12 m-0 p-0">
                                     <select name="city"class="form-control">
-                                        <option selected="" disabeled=""  value="null">المحافظة</option>
+                                        <option selected="" disabeled="">المحافظة</option>
                                         <option value="رام الله والبيرة">رام الله والبيرة</option>
                                         <option value="القدس">القدس</option>
                                         <option value="قطاع غزة">قطاع غزة</option>
@@ -89,7 +89,7 @@
                             <div class="form-group row">
                                 <div class="col-12 m-0 p-0">
                                     <select name="lime_type" class="form-control">
-                                        <option selected="" value="null" disabeled="">نوع الجير</option>
+                                        <option selected="" disabeled="">نوع الجير</option>
                                         <option value="عادي">عادي</option>
                                         <option value="اوتوماتيك">اوتوماتيك</option>
                                         <option value=" نصف اوتوماتيك">نصف اوتوماتيك</option>
@@ -102,7 +102,7 @@
                             <div class="form-group row">
                                 <div class="col-12 m-0 p-0">
                                     <select name="fuel_type" class="form-control">
-                                        <option selected="" disabeled=""  value="null">نوع الوقود</option>
+                                        <option selected="" disabeled="">نوع الوقود</option>
                                         <option value="بنزين">بنزين</option>
                                         <option value="هايبرد">هايبرد</option>
                                         <option value="سولار">سولار </option>
@@ -116,7 +116,7 @@
                             <div class="form-group row">
                                 <div class="col-12 m-0 p-0">
                                     <select name="driving_license" class="form-control">
-                                        <option selected disabeled  value="null">الرخصة</option>
+                                        <option selected disabeled>الرخصة</option>
                                         <option value="فلسطينية">فلسطينية</option>
                                         <option value="نمرة صفرة">نمرة صفرة</option>
                                     </select>
@@ -174,20 +174,20 @@
                         </a>
                     </div>
                 </div>
-                <div class="card-body px-1 mt-3">
+                <div class="body-card m-3">
 
 
 
-                    <div class="row px-0 m-0">
+                    <div class="row px-1 m-0">
 
-                    @foreach ($cars as $car)
-                                <div class="col-6 col-lg-4 p-0 mx-0">
+                    @foreach(isset($cars_show) ? $cars_show : $cars as $car)
+                                <div class="col-12 p-0">
                                     <div class="cardtoty m-sm-1 m-0 p-1">
-                                        <a href="{{ asset('assets/site/images/cars/' . $car->img) }}"
+                                        <a href="{{ asset('jjassets/site/images/cars/' . $car->img) }}"
                                             class="gallery-popup" style="height: 130px; width:100%">
                                             <div class="project-item">
                                                 <div class="overlay-container">
-                                                    <img src="{{ asset('assets/site/images/cars/' . explode(',', $car->img)[0]) }}"
+                                                    <img src="{{ asset('kkassets/site/images/cars/' . explode(',', $car->img)[0]) }}"
                                                         alt="img" class="gallery-thumb-img m-0"
                                                         style="height: 130px; width:100%">
                                                     <div class="project-item-overlay text-right">
@@ -208,14 +208,24 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
+                    @endforeach
+                    @if (count($cars_show) == NULL)
+                         <h6 class="w-100 mt-5 mb-5 pt-5 pb-5"style="text-align:center">
+                         لا توجد نتائج بهذه الخصائص
+                         <br><br>
+                         <a href="{{route('car.index')}}">عودة</a>
+                        </h6>
+                         
+
+                    @endif
                 </div>
             </div>
-            {{ $cars_show->links('vendor.paginate') }}
+            {{ $cars->links('vendor.paginate') }}
         </div>
     </div>
 </div>
 </div>
+
 <style>
 h1,
 h2,

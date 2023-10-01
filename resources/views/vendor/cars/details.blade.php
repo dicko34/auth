@@ -325,38 +325,15 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <li style="display: list-item !important; ">{{ $car->lime_type }}</li>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <li style="display: list-item !important; ">{{ $car->origin }}</li>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <li style="display: list-item !important; ">{{ $car->model_year }}</li>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <li style="display: list-item !important; ">{{ $car->fuel_type }}</li>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <li style="display: list-item !important; ">{{ $car->glass }}
-                                                </li>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <li style="display: list-item !important; ">{{ $car->shown }} </li>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <li style="display: list-item !important; ">{{ $car->speedmotors }}</li>
+                                                اضافات:
+                                                <ul>
+                                                    @foreach ($extras as $ext)
+                                                        <li>{{ $ext }}</li>
+                                                    @endforeach
+                                                    @if(count($extras) == NULL)
+                                                         <li>لا توجد معلومات</li>
+                                                    @endif
+                                                </ul>
                                             </td>
                                         </tr>
                                     </tbody>
