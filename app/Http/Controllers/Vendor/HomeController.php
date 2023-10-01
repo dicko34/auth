@@ -76,7 +76,7 @@ class HomeController extends Controller
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
             $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
-            $file_image->move(config('app.image_path')('general'), $imageName); // move the new img 
+            $file_image->move(config('app.image_path')('homes'), $imageName); // move the new img 
             array_push($validate['img'],$imageName); // store image name to db
         }
         $validate['img'] = implode(',',$validate['img']);
