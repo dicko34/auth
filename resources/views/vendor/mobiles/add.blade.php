@@ -22,7 +22,7 @@
                         <td>موديل <span class="text-danger" style="">*</span></td>
                         <td>
                             <div class="input-group input-group-sm">
-                                <select name="model" class="form-control  model-type-car" id="carCompany"
+                                <select name="model" class="form-control  model-type-car" id="model"
                                     required="">
                                     <option value="Alcatel">Alcatel</option>
                                     <option value="Apple">Apple</option>
