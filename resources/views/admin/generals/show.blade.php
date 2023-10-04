@@ -61,7 +61,7 @@
                                         <div class="carousel-inner w-100 m-auto">
                                             @foreach(explode(',',$general->img) as $key => $img)
                                             <div class="carousel-item {{$key == 0 ? 'active' : ''}}">
-                                                <img src="{{ asset('assets/site/images/general/'.$img) }}" height="350"
+                                                <img src="{{ asset('assets/site/images/generals/'.$img) }}" height="350"
                                                     class="d-block w-100" alt="...">
                                             </div>
                                             @endforeach
@@ -141,7 +141,7 @@
                                                 <div class="smallColor">{{$general->advertiser_name}} : اسم المُعلن </div>
                                             </div>
                                             <div class="col-sm-12 col-lg-4 col-md-3 m-2">
-                                                <div class="smallColor">{{$general->advertiser_address}} : العنوان </div>
+                                                <div class="smallColor">{{$general->address}} : العنوان </div>
                                             </div>
                                             <div class="col-sm-12 col-lg-4 col-md-3 m-2">
                                                 <div class="smallColor"> {{$general->phone_number}} : رقم الهاتف</div>
@@ -187,7 +187,7 @@
                         </tr>
                         <tr>
                             <td class="">العنوان</td>
-                            <td class=""> {{$general->advertiser_address}}</td>
+                            <td class=""> {{$general->address}}</td>
                         </tr>   
                         <tr>
                             <td class="">معلومات إضافية</td>

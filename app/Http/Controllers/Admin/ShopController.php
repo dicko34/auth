@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Rules\AdvertiserInfo;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
 
 class ShopController extends Controller
 {
@@ -74,7 +73,6 @@ class ShopController extends Controller
                 New AdvertiserInfo(), 'max:20'
             ],
         ]);
-        //
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
             $imageName =  Str::of(Carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
@@ -127,8 +125,8 @@ class ShopController extends Controller
             'area' =>  'required|max:20',
             'price' =>  'required|max:20',
             'description' =>  'required|max:500',
-            'img'=> 'required',
-            'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'img'=> 'nullable',
+            'img.*'=> 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
             'ad_duration_per_day' =>  'required|max:20',
             'address' => 'required|max:100',            
             'advertiser_name' => [

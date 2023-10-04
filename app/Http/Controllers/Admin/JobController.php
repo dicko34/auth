@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Rules\AdvertiserInfo;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
 
 class jobController extends Controller
 {
@@ -77,7 +76,7 @@ class jobController extends Controller
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
             $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
-            $file_image->move(public_path('assets/site/images/jobs'), $imageName); // move the new img 
+            $file_image->move(config('app.image_path')('jobs'), $imageName); // move the new img 
             array_push($validate['img'],$imageName); // store image name to db
         }
         $validate['img'] = implode(',',$validate['img']);
@@ -149,11 +148,11 @@ class jobController extends Controller
             $imgs = $request->file('img');
             $validate['img'] = [];
             foreach($uploaded_imgs as $img_path ) {
-                \unlink(public_path('assets/site/images/jobs').'/'.$img_path); 
+                \unlink(config('app.image_path')('jobs').'/'.$img_path); 
             }
             foreach($imgs as $file_image ) {
                 $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
-                $file_image->move(public_path('assets/site/images/jobs'), $imageName); // move the new img 
+                $file_image->move(config('app.image_path')('jobs'), $imageName); // move the new img 
                 array_push($validate['img'],$imageName); // store image name to db
                // dd($imageName);
             }

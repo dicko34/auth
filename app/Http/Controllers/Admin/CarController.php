@@ -7,10 +7,7 @@ use App\Models\CarCompanies;
 use Illuminate\Http\Request;
 use App\Rules\AdvertiserInfo;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
-
 class CarController extends Controller
 {
     /**
@@ -100,7 +97,7 @@ class CarController extends Controller
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
             $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
-            $file_image->move(public_path('assets/site/images/cars'), $imageName); // move the new img 
+            $file_image->move(config('app.image_path')('cars'), $imageName); // move the new img 
             array_push($validate['img'],$imageName); // store image name to db
         }
         $validate['img'] = implode(',',$validate['img']);
@@ -196,11 +193,11 @@ class CarController extends Controller
             $imgs = $request->file('img');
             $validate['img'] = [];
             foreach($uploaded_imgs as $img_path ) {
-                \unlink(public_path('assets/site/images/cars').'/'.$img_path); 
+                \unlink(config('app.image_path')('cars').'/'.$img_path); 
             }
             foreach($imgs as $file_image ) {
                 $imageName =  Str::of(carbon::now()->millisecond().$request->id)->pipe('md5').$file_image->getClientOriginalName();
-                $file_image->move(public_path('assets/site/images/cars'), $imageName); // move the new img 
+                $file_image->move(config('app.image_path')('cars'), $imageName); // move the new img 
                 array_push($validate['img'],$imageName); // store image name to db
             }
             $validate['img'] = implode(',',$validate['img']);

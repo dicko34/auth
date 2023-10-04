@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Rules\AdvertiserInfo;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
 
 class MobileController extends Controller
 {

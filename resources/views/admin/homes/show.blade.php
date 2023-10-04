@@ -53,9 +53,9 @@
                                                 شقة للبيع
                                             </h2>
                                             <h5 class="smallColor mt-3">
-                                            {{$car->price}} شيكل
+                                            {{$home->price}} شيكل
                                             </h5>
-                                            <h5 class="maincolor">{{$land->address}} - {{$land->street}} - {{$land->gov}}  </h5>
+                                            <h5 class="maincolor">{{$home->address}} - {{$home->street}} - {{$home->gov}}  </h5>
                                         </div>
                                         <div>
                                             <div class="apsc-icons-wrapper clearfix apsc-theme-4">
@@ -118,7 +118,7 @@
                         </tr>
                         <tr>
                             <td class="">مساحة الارض</td>
-                            <td class=""> {{$home->land_area}}</td>
+                            <td class=""> {{$home->area}}</td>
                         </tr>
                         <tr>
                             <td class="">عدد الغرف</td>

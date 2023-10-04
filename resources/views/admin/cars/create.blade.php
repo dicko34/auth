@@ -554,7 +554,7 @@
                             <div class="row mt-3">
                                 <div class="col-12 text-center">
                                     <button class="btn btn-primary w-md waves-effect waves-light" type="submit"
-                                        onclick="setExetras()">أضف
+                                        >أضف
                                         الأعلان</button>
                                 </div>
                             </div>
