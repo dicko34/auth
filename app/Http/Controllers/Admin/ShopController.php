@@ -48,20 +48,16 @@ class ShopController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'device_status' =>  'required|max:30',
-            'model' =>  'required|max:20',
-            'reset_model' =>  'required|max:30',
-            'slides_number' =>  'required|max:20',
-            'screen_size' =>  'required|max:30',
-            'cameras' =>  'required|max:30',
-            'memory' =>  'required|max:20',
-            'storage' =>  'required|max:30',
-            'price' =>  'required|max:30',
+            'offer' =>  'required|max:30',
+            'displayed' =>  'required|max:30',
+            'brief' =>  'required|max:20',
+            'area' =>  'required|max:20',
+            'price' =>  'required|max:20',
             'description' =>  'required|max:500',
-            'address' => 'required|max:100',
-            'img'=> 'nullable',
+            'img'=> 'required',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'ad_duration_per_day' =>  'required|max:20',
+            'address' => 'required|max:100',            
             'advertiser_name' => [
                 New AdvertiserInfo(), 'max:20'
             ],
@@ -125,20 +121,16 @@ class ShopController extends Controller
     {
         $uploaded_imgs = explode(',',$shop->img);
         $validate = $request->validate([
-            'device_status' =>  'required|max:30',
-            'model' =>  'required|max:20',
-            'reset_model' =>  'required|max:30',
-            'slides_number' =>  'required|max:20',
-            'screen_size' =>  'required|max:30',
-            'cameras' =>  'required|max:30',
-            'memory' =>  'required|max:20',
-            'storage' =>  'required|max:30',
-            'price' =>  'required|max:30',
+            'offer' =>  'required|max:30',
+            'displayed' =>  'required|max:30',
+            'brief' =>  'required|max:20',
+            'area' =>  'required|max:20',
+            'price' =>  'required|max:20',
             'description' =>  'required|max:500',
-            'address' => 'required|max:100',
-            'img'=> 'nullable',
+            'img'=> 'required',
             'img.*'=> 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'ad_duration_per_day' =>  'required|max:20',
+            'address' => 'required|max:100',            
             'advertiser_name' => [
                 New AdvertiserInfo(), 'max:20'
             ],
