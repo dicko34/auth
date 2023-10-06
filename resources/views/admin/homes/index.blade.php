@@ -47,7 +47,7 @@
                             @foreach($homes as $home) 
                                 <tr> 
                                     <td>
-                                        سياره للبيع
+                                         {{$home->home_type .' '. $home->show}}
                                     </td>
                                     <td>
                                         {{$home->advertiser_name}}

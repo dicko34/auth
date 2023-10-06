@@ -161,7 +161,7 @@
                                                 <div class="smallColor"> اسم المُعلن : {{$mobile->advertiser_name}}</div>
                                             </div>
                                             <div class="col-sm-12 col-lg-4 col-md-3 m-2">
-                                                <div class="smallColor"> العنوان : {{$mobile->advertiser_address}}</div>
+                                                <div class="smallColor"> العنوان : {{$mobile->address}}</div>
                                             </div>
                                             <div class="col-sm-12 col-lg-4 col-md-3 m-2">
                                                 <div class="smallColor"> رقم الهاتف	 : {{$mobile->phone_number}}</div>

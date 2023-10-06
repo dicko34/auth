@@ -47,7 +47,7 @@
                             @foreach($jobs as $job) 
                                 <tr> 
                                     <td>
-                                        سياره للبيع
+                                         {{$job->specialization}}
                                     </td>
                                     <td>
                                         {{$job->advertiser_name}}

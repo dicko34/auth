@@ -47,7 +47,7 @@
                             @foreach($mobiles as $mobile) 
                                 <tr> 
                                     <td>
-                                        محلات للبيع
+                                         {{$mobile->model.' '.$mobile->reset_model}}
                                     </td>
                                     <td>
                                         {{$mobile->advertiser_name}}

@@ -145,7 +145,7 @@
                         </tr>
                         <tr>
                             <td class="">العنوان</td>
-                            <td class="">{{$job->advertiser_address}}</td>
+                            <td class="">{{$job->address}}</td>
                         </tr>
                         <tr>
                             <td class="">رقم الهاتف</td>

@@ -47,7 +47,7 @@
                             @foreach($lands as $land) 
                                 <tr> 
                                     <td>
-                                        محلات للبيع
+                                         {{$land->brief}}
                                     </td>
                                     <td>
                                         {{$land->advertiser_name}}

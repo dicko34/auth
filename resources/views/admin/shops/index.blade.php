@@ -47,7 +47,7 @@
                             @foreach($shops as $shop) 
                                 <tr> 
                                     <td>
-                                        محلات للبيع
+                                         {{$shop->brief.' '.$shop->offer}}
                                     </td>
                                     <td>
                                         {{$shop->advertiser_name}}

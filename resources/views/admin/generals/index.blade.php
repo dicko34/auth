@@ -46,7 +46,7 @@
                             @foreach($generals as $general) 
                                 <tr> 
                                     <td>
-                                        محلات للبيع
+                                         {{$general->address}}
                                     </td>
                                     <td>
                                         {{$general->advertiser_name}}

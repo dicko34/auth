@@ -60,16 +60,18 @@
                                     <tr>
                                         <td class="">العرض</td>
                                         <td class="">
-                                            <input value="للبيع" type="radio" id="switch21" name="offer" />
-                                            <label for="switch21">للبيع</label>
+                                                <input value="للبيع" type="radio" id="switch21" name="offre" />
+                                                <label for="switch21">للبيع</label>
+                                               
+                                                <input  value="للإيجار" type="radio" id="switch22" name="offre" />
+                                                <label for="switch22">للإيجار</label>
 
-                                            <input value="للايجار" type="radio" id="switch22" name="offer" />
-                                            <label for="switch22">للايجار</label>
-
-                                            @error('offer')
-                                                <span class="invalid-feedback" style="display: block;" role="alert">
-                                                    {{ $message }}
-                                                </span>
+                                                <input value="ضمان أو خلو" type="radio" id="switch23" name="offre" />
+                                                <label for="switch23">ضمان أو خلو</label>
+                                                @error('offre')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            {{$message}}
+                                            </span>
                                             @enderror
                                             </td>
                                     </tr>
@@ -105,8 +107,8 @@
                                     <tr>
                                         <td class="">المساحة</td>
                                         <td class="">
-                                            <input name="area" value="{{$shop->area}}" type="text" placeholder="مساحة المحل او المكتب او المخزن">
-                                            @error('area')
+                                            <input name="loung" value="{{$shop->loung}}" type="text" placeholder="مساحة المحل او المكتب او المخزن">
+                                            @error('loung')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                                 {{$message}}
                                             </span>
@@ -148,6 +150,41 @@
                                         </td>
                                     </tr>
                                     <tr>
+                                        <td class=""> المحافظة</td>
+                                        <td>
+                                            <select name="gov">
+                                                <option>اريحا</option>
+                                                <option>Large select</option>
+                                                <option>Small select</option>
+                                            </select>
+                                            @error('gov')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                                {{$message}}
+                                            </span>
+                                            @enderror
+                                            <select name="city">
+                                                <option> المدينة</option>
+                                                <option>Large select</option>
+                                                <option>Small select</option>
+                                            </select>
+                                            @error('city')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                                {{$message}}
+                                            </span>
+                                            @enderror
+                                            <select name="street">
+                                                <option> الشارع</option>
+                                                <option>Large select</option>
+                                                <option>Small select</option>
+                                            </select>
+                                            @error('street')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                                {{$message}}
+                                            </span>
+                                            @enderror
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td class=""> العنوان</td>
                                         <td>
                                             <input name="address" value="{{$shop->address}}" type="text" placeholder="اسم المنطقة أو الشارع">
@@ -163,85 +200,14 @@
                                         <td class="">مدة الاعلان باليوم</td>
                                         <td class="">
                                             <select name="ad_duration_per_day">
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                                <option value="24">24</option>
-                                                <option value="25">25</option>
-                                                <option value="26">26</option>
-                                                <option value="27">27</option>
-                                                <option value="28">28</option>
-                                                <option value="29">29</option>
-                                                <option value="30">30</option>
-                                                <option value="31">31</option>
-                                                <option value="32">32</option>
-                                                <option value="33">33</option>
-                                                <option value="34">34</option>
-                                                <option value="35">35</option>
-                                                <option value="36">36</option>
-                                                <option value="37">37</option>
-                                                <option value="38">38</option>
-                                                <option value="39">39</option>
-                                                <option value="40">40</option>
-                                                <option value="41">41</option>
-                                                <option value="42">42</option>
-                                                <option value="43">43</option>
-                                                <option value="44">44</option>
-                                                <option value="45">45</option>
-                                                <option value="46">46</option>
-                                                <option value="47">47</option>
-                                                <option value="48">48</option>
-                                                <option value="49">49</option>
-                                                <option value="50">50</option>
-                                                <option value="51">51</option>
-                                                <option value="52">52</option>
-                                                <option value="53">53</option>
-                                                <option value="54">54</option>
-                                                <option value="55">55</option>
-                                                <option value="56">56</option>
-                                                <option value="57">57</option>
-                                                <option value="58">58</option>
-                                                <option value="59">59</option>
-                                                <option value="60">60</option>
+                                                <option>30</option>
+                                                <option>Large select</option>
+                                                <option>Small select</option>
                                             </select>
                                             @error('ad_duration_per_day')
-                                                <span class="invalid-feedback" style="display: block;" role="alert">
-                                                    {{ $message }}
-                                                </span>
-                                            @enderror
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="">المدينة</td>
-                                        <td class="">
-                                            <select name="city">
-                                                <option value="رام الله والبيرة">رام الله والبيرة</option>
-                                                <option value="القدس">القدس</option>
-                                                <option value="قطاع غزة">قطاع غزة</option>
-                                                <option value="الخليل">الخليل</option>
-                                                <option value="بيت لحم">بيت لحم</option>
-                                                <option value="أريحا">أريحا</option>
-                                                <option value="سلفيت وبديا">سلفيت وبديا</option>
-                                                <option value="روابي">روابي</option>
-                                                <option value="طوباس">طوباس</option>
-                                                <option value="قلقيلية">قلقيلية</option>
-                                                <option value="طولكرم">طولكرم</option>
-                                                <option value="جنين">جنين</option>
-                                                <option value="نابلس">نابلس</option>
-                                                <option value="جميع الاماكن">جميع الاماكن</option>
-                                                <option value="مناطق الداخل">مناطق الداخل</option>
-                                            </select>
-                                            @error('city')
-                                                <span class="invalid-feedback" style="display: block;" role="alert">
-                                                    {{ $message }}
-                                                </span>
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                                {{$message}}
+                                            </span>
                                             @enderror
                                         </td>
                                     </tr>
@@ -302,6 +268,32 @@
                                             @enderror
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td class=""> المدينة</td>
+                                        <td class="">
+                                            <select name="advertiser_city">
+                                                <option>اريحا</option>
+                                                <option>Large select</option>
+                                                <option>Small select</option>
+                                                @error('advertiser_city')
+                                                <span class="invalid-feedback" style="display: block;" role="alert">
+                                                    {{$message}}
+                                                </span>
+                                                @enderror
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="">العنوان</td>
+                                        <td class="">
+                                            <input value="{{$shop->address}}" name="address" type="text" class="" placeholder="اسم الشارع او المنطقة">
+                                            @error('address')
+                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                                {{$message}}
+                                            </span>
+                                            @enderror
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -324,6 +316,8 @@
     console.log(vars);
     let selectTarget = (id) => {
         let com = document.querySelectorAll(`select[name="${id}"] option`);
+
+        console.log(com);
         for (const el of com) {
             (el.innerHTML == vars[id]) ? el.selected = true: '';
         }
@@ -333,13 +327,29 @@
         // console.log(com);
         let j = [];
         for (const el of com) {
-            console.log(el,vars[id]);
-            await (el.value == vars[id]) ? el.checked = true: '';
+            j = vars[id].split(',').filter((e) => el.value == e)
+            console.log(j);
+            await (el.value == j) ? el.checked = true: '';
         }
     }
-    checkTarget('offer')
+    let checkedEl = [];
+    let setExetras = () => {
+        document.getElementById('extras_h').value = checkedEl;
+    }
+    let checkedIf = (e) => {
+        if (checkedEl.includes(e.target.value)) {
+            checkedEl.splice(checkedEl.indexOf(e.target.value), 1)
+        } else {
+            checkedEl.push(e.target.value)
+        }
+
+    }
+    checkTarget('offre')
     checkTarget('displayed')
+    selectTarget('gov')
     selectTarget('city')
+    selectTarget('street')
+    selectTarget('advretiser_city')
     selectTarget('ad_duration_per_day')
 </script>
 @endsection
