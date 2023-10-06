@@ -18,7 +18,7 @@
     @yield("style")
     <link href="{{asset('assets/admin/css/app-rtl.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('assets/admin/css/redo.css')}}" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="{{asset('assets/site/css/teacher.css')}}">
+    <link rel="stylesheet" href="{{asset('site/css/teacher.css')}}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>

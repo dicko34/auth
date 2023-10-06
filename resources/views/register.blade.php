@@ -8,7 +8,7 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset("assets/admin/images/logo.png")}}">
 
-    <link href="{{asset('assets/admin/libs/dropzone/min/dropzone.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset("assets/admin/libs/dropzone/min/dropzone.min.css')}}" rel="stylesheet" type="text/css" />
 
     <!-- Bootstrap Css -->
     <link href="{{asset("assets/admin/css/bootstrap.min.css")}}" id="bootstrap-style" rel="stylesheet" type="text/css"/>
@@ -18,7 +18,7 @@
     @yield("style")
     <link href="{{asset("assets/admin/css/app-rtl.css")}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset("assets/admin/css/redo.css")}}" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="{{asset('assets/site/css/teacher.css')}}">
+    <link rel="stylesheet" href="{{asset("site/css/teacher.css')}}">
 
 </head>
 <body>
