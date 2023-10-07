@@ -591,6 +591,34 @@
                                             @enderror
                                         </td>
                                     </tr>
+
+                                    <tr>
+                                        <td class="">المدينة</td>
+                                        <td class="">
+                                            <select name="city">
+                                                <option value="رام الله والبيرة">رام الله والبيرة</option>
+                                                <option value="القدس">القدس</option>
+                                                <option value="قطاع غزة">قطاع غزة</option>
+                                                <option value="الخليل">الخليل</option>
+                                                <option value="بيت لحم">بيت لحم</option>
+                                                <option value="أريحا">أريحا</option>
+                                                <option value="سلفيت وبديا">سلفيت وبديا</option>
+                                                <option value="روابي">روابي</option>
+                                                <option value="طوباس">طوباس</option>
+                                                <option value="قلقيلية">قلقيلية</option>
+                                                <option value="طولكرم">طولكرم</option>
+                                                <option value="جنين">جنين</option>
+                                                <option value="نابلس">نابلس</option>
+                                                <option value="جميع الاماكن">جميع الاماكن</option>
+                                                <option value="مناطق الداخل">مناطق الداخل</option>
+                                            </select>
+                                            @error('city')
+                                                <span class="invalid-feedback" style="display: block;" role="alert">
+                                                    {{ $message }}
+                                                </span>
+                                            @enderror
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -669,11 +697,11 @@
     let selectTarget = (id) => {
         let com = document.querySelectorAll(`#${id} option`);
         for (const el of com) {
-            (el.innerHTML == vars[id]) ? el.selected = true: '';
+            (el.value == vars[id]) ? el.selected = true: '';
         }
     }
     async function  checkTarget (id)  {
-        let com = document.querySelectorAll(`#${id} input`);
+        let com =  document.querySelectorAll(`select[name="${id}"] option`);
         let j = [];
         
         for (const el of com) {

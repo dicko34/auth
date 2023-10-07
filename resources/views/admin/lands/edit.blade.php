@@ -371,7 +371,7 @@
         let selectTarget = (id) => {
             let com = document.querySelectorAll(`select[name="${id}"] option`);
             for (const el of com) {
-                (el.innerHTML == vars[id]) ? el.selected = true: '';
+                (el.value == vars[id]) ? el.selected = true: '';
             }
         }
         async function checkTarget(id) {
@@ -380,7 +380,6 @@
             let j = [];
             for (const el of com) {
                 j = vars[id].split(',').filter((e) => el.value == e)
-                console.log(j);
                 await (el.value == j) ? el.checked = true: '';
             }
         }
