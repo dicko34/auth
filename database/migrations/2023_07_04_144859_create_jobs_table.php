@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('night_work');
             $table->string('permanence');
             $table->longText('description');
-            $table->string('img');
+            $table->longText('img');
             $table->string('ad_duration_per_day');
             $table->string('city');
             $table->string('address');

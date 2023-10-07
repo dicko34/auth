@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('city');
             $table->longText('description');
-            $table->string('img');
+            $table->longText('img');
             $table->string('advertiser_name');
             $table->string('phone_number');
             $table->string('mobile')->nullable();

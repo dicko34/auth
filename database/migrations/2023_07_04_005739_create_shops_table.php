@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('area');
             $table->bigInteger('price');
             $table->longText('description');
-            $table->string('img');
+            $table->longText('img');
             $table->string('city');
             $table->string('address');
             $table->string('ad_duration_per_day');
