@@ -495,7 +495,6 @@
                                     <tr>
                                         <td class="">إضافات</td>
                                         <td class="" id="extras">
-                                            <input type="hidden" id="extras_h" name="extras">
                                             <input id="property[6]" name="extras[]" type="checkbox"
                                             value="إغلاق مركزي">
                                         <label for="property[6]"> إغلاق مركزي</label>
@@ -695,16 +694,18 @@
 <script>
     var vars = {{Illuminate\Support\Js::from($car)}};
     let selectTarget = (id) => {
-        let com = document.querySelectorAll(`#${id} option`);
+        let com = document.querySelectorAll(`select[name="${id}"] option`);
         for (const el of com) {
             (el.value == vars[id]) ? el.selected = true: '';
         }
     }
     async function  checkTarget (id)  {
-        let com =  document.querySelectorAll(`select[name="${id}"] option`);
+        let com = document.querySelectorAll(`#${id} input`);
         let j = [];
-        
+        console.log(com);
+        console.log(vars);
         for (const el of com) {
+            console.log(vars[id]);
             j = vars[id].split(',').filter((e) => el.value == e)
             await  (el.value == j) ? el.checked = true: '';
         }
