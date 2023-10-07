@@ -87,7 +87,12 @@ class CarController extends Controller
             'city' => [
                 New AdvertiserInfo(), 'max:20'
             ],
-        ]);
+        ], [
+            'img.required' => 'The image field is required.',
+            'img.*.required' => 'Please select an image.',
+            'img.*.image' => 'Please select a valid image file.',
+            'img.*.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
+        ],);
         $extras = $request->extras;
 
         // Convert the array to a comma-separated string
@@ -182,6 +187,11 @@ class CarController extends Controller
             'city' => [
                 New AdvertiserInfo(), 'max:20'
             ],
+        ], [
+            'img.required' => 'The image field is required.',
+            'img.*.required' => 'Please select an image.',
+            'img.*.image' => 'Please select a valid image file.',
+            'img.*.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
         ]);
         $extras = $request->extras;
 

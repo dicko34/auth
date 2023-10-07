@@ -17,14 +17,13 @@ return new class extends Migration
             $table->string('category');
             $table->bigInteger('price');
             $table->longText('description');
-            $table->string('img');
+            $table->longText('img');
             $table->string('ad_duration_per_day');
             $table->string('city');
             $table->string('advertiser_name');
             $table->string('phone_number');
             $table->string('mobile');
             $table->string('email');
-            // $table->string('advertiser_address');
             $table->enum('state',['pinned','refused','allowed']);
             $table->timestamps();
         });

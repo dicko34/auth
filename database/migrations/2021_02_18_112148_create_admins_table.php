@@ -20,7 +20,7 @@ class CreateAdminsTable extends Migration
             $table->string('email')->unique();
             $table->string('phone');
             $table->string('password');
-            $table->string('img');
+            $table->longText('img');
             $table->rememberToken();
             $table->timestamps();
         });

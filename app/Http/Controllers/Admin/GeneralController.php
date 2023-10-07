@@ -70,6 +70,11 @@ class GeneralController extends Controller
             'city' => [
                 New AdvertiserInfo(), 'max:20'
             ],
+        ], [
+            'img.required' => 'The image field is required.',
+            'img.*.required' => 'Please select an image.',
+            'img.*.image' => 'Please select a valid image file.',
+            'img.*.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
         ]);
         $validate['img'] = [];
         foreach($request->file('img') as $file_image ) {
@@ -139,6 +144,11 @@ class GeneralController extends Controller
             'city' => [
                 New AdvertiserInfo(), 'max:20'
             ],
+        ], [
+            'img.required' => 'The image field is required.',
+            'img.*.required' => 'Please select an image.',
+            'img.*.image' => 'Please select a valid image file.',
+            'img.*.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
         ]);
         if(isset($validate['img']) && !empty( $validate['img'])) {
             $imgs = $request->file('img');

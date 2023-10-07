@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->enum('state',['pinned','allowed','blocked']);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('img');
+            $table->longText('img');
             $table->rememberToken();
             $table->timestamps();
         });

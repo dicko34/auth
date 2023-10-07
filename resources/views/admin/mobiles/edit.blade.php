@@ -368,6 +368,9 @@ var vars = {{Illuminate\Support\Js::from($mobile)}};
 
         for (const el of com) {
             (el.innerHTML == vars[id]) ? el.selected = true: '';
+            for (const el of com) {
+                (el.value == vars[id]) ? el.selected = true: '';
+            }
         }
     }
     selectTarget('device_status')

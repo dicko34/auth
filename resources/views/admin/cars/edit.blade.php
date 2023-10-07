@@ -495,7 +495,6 @@
                                     <tr>
                                         <td class="">إضافات</td>
                                         <td class="" id="extras">
-                                            <input type="hidden" id="extras_h" name="extras">
                                             <input id="property[6]" name="extras[]" type="checkbox"
                                             value="إغلاق مركزي">
                                         <label for="property[6]"> إغلاق مركزي</label>
@@ -591,6 +590,34 @@
                                             @enderror
                                         </td>
                                     </tr>
+
+                                    <tr>
+                                        <td class="">المدينة</td>
+                                        <td class="">
+                                            <select name="city">
+                                                <option value="رام الله والبيرة">رام الله والبيرة</option>
+                                                <option value="القدس">القدس</option>
+                                                <option value="قطاع غزة">قطاع غزة</option>
+                                                <option value="الخليل">الخليل</option>
+                                                <option value="بيت لحم">بيت لحم</option>
+                                                <option value="أريحا">أريحا</option>
+                                                <option value="سلفيت وبديا">سلفيت وبديا</option>
+                                                <option value="روابي">روابي</option>
+                                                <option value="طوباس">طوباس</option>
+                                                <option value="قلقيلية">قلقيلية</option>
+                                                <option value="طولكرم">طولكرم</option>
+                                                <option value="جنين">جنين</option>
+                                                <option value="نابلس">نابلس</option>
+                                                <option value="جميع الاماكن">جميع الاماكن</option>
+                                                <option value="مناطق الداخل">مناطق الداخل</option>
+                                            </select>
+                                            @error('city')
+                                                <span class="invalid-feedback" style="display: block;" role="alert">
+                                                    {{ $message }}
+                                                </span>
+                                            @enderror
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -667,16 +694,18 @@
 <script>
     var vars = {{Illuminate\Support\Js::from($car)}};
     let selectTarget = (id) => {
-        let com = document.querySelectorAll(`#${id} option`);
+        let com = document.querySelectorAll(`select[name="${id}"] option`);
         for (const el of com) {
-            (el.innerHTML == vars[id]) ? el.selected = true: '';
+            (el.value == vars[id]) ? el.selected = true: '';
         }
     }
     async function  checkTarget (id)  {
         let com = document.querySelectorAll(`#${id} input`);
         let j = [];
-        
+        console.log(com);
+        console.log(vars);
         for (const el of com) {
+            console.log(vars[id]);
             j = vars[id].split(',').filter((e) => el.value == e)
             await  (el.value == j) ? el.checked = true: '';
         }

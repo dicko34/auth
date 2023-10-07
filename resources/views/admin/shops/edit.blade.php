@@ -319,7 +319,7 @@
 
         console.log(com);
         for (const el of com) {
-            (el.innerHTML == vars[id]) ? el.selected = true: '';
+            (el.value == vars[id]) ? el.selected = true: '';
         }
     }
     async function checkTarget(id) {

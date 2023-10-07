@@ -32,11 +32,11 @@ return new class extends Migration
             $table->enum('fuel_type', ['هايبرد','بنزين','سولار','كهرباء']);
             $table->enum('lime_type',['عادي','اوتوماتيك','نصف اوتوماتيك']);
             $table->enum('glass',['يدوي','الكتروني']);
-            $table->enum('shown',['للبيع','للبدل فقط','للبيع و البدل','للايجار']);
+            $table->enum('shown',['للبيع','للبدل','للبيع و البدل','للايجار']);
             $table->enum('pay_method',['نقدا فقط ','إمكانيه التقسيط']);
             $table->text('extras');
             $table->longText('description');
-            $table->string('img');
+            $table->longText('img');
             $table->string('advertiser_name');
              $table->string('phone_number');
             $table->string('mobile');
