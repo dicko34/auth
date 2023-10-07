@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <title>@yield("title", "Ejada")</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('styleChart')
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset("assets/admin/images/icon.png")}}">
@@ -101,7 +102,7 @@
                 <!-- Search input -->
                 <div class="search-wrap" id="search-wrap">
                     <div class="search-bar">
-                        <input class="search-input form-control" placeholder="Search" />
+                        <input class="search-input form-control" name="search" placeholder="Search" />
                         <a href="#" class="close-search toggle-search" data-target="#search-wrap">
                             <i class="mdi mdi-close-circle"></i>
                         </a>
@@ -361,7 +362,30 @@
     <script src="{{asset("assets/admin/js/pages/gallery.init.js")}}"></script>
 
     <script src="{{asset("assets/admin/js/app.js")}}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.search-input').on('keypress', function(e) {
+                if (e.which == 13) {
+                    $.ajax({
+                        type: "POST",
+                        data: {search :  $(this).val()},
 
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        url: "{{ route('search') }}",
+                        success: function(data) {
+                            console.log(data);
+                        },
+                        error: function(data) {
+                            console.log(data);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
