@@ -45,7 +45,8 @@
                             @foreach($cars as $car) 
                                 <tr> 
                                     <td>
-                                         {{$car->company . ($car->model ? $car->model : $reset_model)}}
+                                         {{ $car->company . ($car->model ? ' ' . $car->model : ' ' . $car->reset_model) }}
+
                                     </td>
                                     <td>
                                         {{$car->advertiser_name}}

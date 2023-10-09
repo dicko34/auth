@@ -190,7 +190,8 @@
                             <img src="{{ asset('assets/site/images/cars/' . explode(',', $car->img)[0]) }}" alt="img" class=""
                                 style="height: 160px; width:100%">
                             <div class="project-item-overlay text-right">
-                                <h4>{{$car->company . ($car->model ? $car->model : $reset_model)}}</h4>
+                                <h4>{{ $car->company . ($car->model ? ' ' . $car->model : ' ' . $car->reset_model) }}
+</h4>
                                 <p>
                                     <img src="{{ asset('assets/site/images/cars/' . explode(',', $car->img)[0]) }}" alt="user"
                                         class="avatar-xs rounded-circle">
@@ -201,10 +202,12 @@
                     </div>
                     </a>
                     <div class="card-body">
-                        <h4 class="card-title"><h4>{{$car->company . ($car->model ? $car->model : $reset_model)}}</h4></h4>
+                        <h4 class="card-title"><h4>{{ $car->company . ($car->model ? ' ' . $car->model : ' ' . $car->reset_model) }}
+</h4></h4>
                         <p class="card-text">
                             {{ $car->city }} {{ $car->address }} للبيع في
-                            {{$car->company . ($car->model ? $car->model : $reset_model)}} اعلان
+                            {{ $car->company . ($car->model ? ' ' . $car->model : ' ' . $car->reset_model) }}
+ اعلان
                         </p>
                     </div>
                     </button>
