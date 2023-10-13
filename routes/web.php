@@ -46,6 +46,8 @@ Route::group([
 
     Route::post('shopes', 'ShopController@store')->name('shopes.store');
 
+    Route::post('guides', 'GuideController@store')->name('guides.store');
+
     Route::resource('contacts', 'ContactController');
 })->middleware('verified');
 
@@ -101,4 +103,9 @@ Route::get('/shopes', 'Site\ShopController@index')->name('shop.index');
 Route::any('/shopes/search', 'Site\ShopController@search')->name('shopes.search');
 Route::get('/shop/product/{shop}', 'Site\ShopController@product')->name('shop.product');
 Route::get('/shop/add', 'Site\ShopController@add')->name('shop.add');
+
+Route::get('/guides', 'Site\GuideController@index')->name('guide.index');
+Route::any('/guides/search', 'Site\GuideController@search')->name('guides.search');
+Route::get('/guide/product/{guide}', 'Site\GuideController@product')->name('guide.product');
+Route::get('/guide/add', 'Site\GuideController@add')->name('guide.add');
 Auth::routes(['verify' => true]);

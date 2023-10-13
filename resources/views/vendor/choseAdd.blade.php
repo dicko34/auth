@@ -40,6 +40,9 @@
                     <div class="col-sm-12 text-center m-3">
                         <a href="{{ route('general.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف اعلان عام</a>
                     </div>
+                    <div class="col-sm-12 text-center m-3">
+                        <a href="{{ route('guide.add') }}" class="btn btn-outline-primary waves-effect waves-light w-50 m-auto"> أضف دليل</a>
+                    </div>
                 </div>
             </div>
         </div>
