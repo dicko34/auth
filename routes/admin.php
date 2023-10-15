@@ -59,6 +59,10 @@ Route::prefix('admin')->group(function(){
         Route::resource('generals', 'GeneralController');
         Route::get('general/new', 'GeneralController@new')->name('generals.new');
 
+        Route::post('guides/{guide}','GuideController@changeState')->name('guides.change.state');
+        Route::resource('guides', 'GuideController');
+        Route::get('guide/new', 'GuideController@new')->name('guides.new');
+
         Route::resource('contacts', 'ContactController');
 
     });

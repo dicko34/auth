@@ -113,7 +113,7 @@
                                         <img src="{{ asset('assets/site/images/cars/' . explode(',', $car->img)[0])  }}"
                                             alt="img" style="height: 160px; width:100%">
                                         <div class="project-item-overlay text-right">
-                                            <h2>{{$car->company. $car->model}}</h2>
+                                            <h2>{{$car->company . ($car->model ? ' ' . $car->model : ' ' . $car->reset_model)}}</h2>
                                             <p>
                                                 <img src="{{ asset('assets/site/images/cars/' . explode(',', $car->img)[0])  }}"
                                                     alt="user" class="avatar-xs rounded-circle">
@@ -126,7 +126,7 @@
 
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    {{ $car->company . ' ' . ($car->model ? $car->model : 'reset_model') }}</h4>
+                                    {{ $car->company . ($car->model ? ' ' . $car->model : ' ' . $car->reset_model) }}</h4>
                                 <p class="card-text">
                                     {{$car->description}}
                                 </p>
@@ -347,25 +347,24 @@
     </div>
 </div>
 
-
 <div class="row main-section">
     <div class="w-100">
         <div class="card-header m-0 p-0 w-100 d-inline-flex" style="height:60px;background:#262726 ;">
 
-            <div class="card-header m-0 p-0 w-100 d-inline-flex" style="height:60px;background:#262726;">
+            <div class="h-100 text-white px-2" style="width:65%">
+                <a href="{{route('guide.index')}}" class="text-white">
+                    <h3><i class="fa-solid fa-briefcase"></i>الدليل </h3>
+                </a>
+            </div>
 
-                <div class="h-100 text-white px-2" style="width:65%">
-                    <a href="/jobs" class="text-white">
-                        <h3><i class="fa-solid fa-briefcase"></i> الدليل </h3>
-                    </a>
-                </div>
 
-                <div class="h-100 mr-1 pt-1" style="width:34%;">
-                    <a href="{{route('job.add')}}" class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
-                        style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
-                        <i class="fa fa-plus-circle "></i>اضف اعلان جديد
-                    </a>
-                </div>
+            <div class="h-100 mr-1 pt-1" style="width:34%;">
+                <a href="{{route('guide.add')}}" class="w-100 mx-auto btn mt-2 pt-1 px-1 btn-primary text-white"
+                    style="height:33px;font-size: 11px;line-height:28px;max-width:100px;float:left !important;">
+
+                    <i class="fa fa-plus-circle "></i>اضف اعلان جديد
+
+                </a>
             </div>
         </div>
         <div class="body-card m-3">
@@ -374,36 +373,28 @@
             <div class="row">
 
 
-                <div class="row mt-3">
-                    <div class="col-lg-6">
-                        <table class="table table-striped table-bordered">
-                            <tbody>
-                            @foreach ($guides as $guide)
-                                <tr>
-                                    <td><a href="{{route('guide.product', ['guide' => $guide->id])}}">{{$guide->title}}
-                                    </td>
-                                    <td style="vertical-align: middle;"><a
-                                            href="{{route('guide.product', ['guide' => $guide->id])}}">{{$guide->city}}
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                        </table>
-                        @if(count($guides) > 6)
-                        <div class="mx-auto" style="width:150px;">
-                            <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
-                                style="height:33px;font-size: 11px;line-height:33px;">
-                                تصفح المزيد
-                            </button>
-                        </div>
-                        @endif
-                    </div>
+                <table class="table table-striped table-bordered">
+                    <tbody>
+                        @foreach ($guides as $guide)
+                        <tr>
+                            <td><a href="guides/product/{{$guide->id}}">{{$guide->title}} </td>
+                            <td style="vertical-align: middle;"><a href="guide/product/{{$guide->id}}">{{$guide->city}} </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                @if(count($guides) > 6)
+                <div class="mx-auto" style="width:150px;">
+                    <button class="w-100 mx-auto btn mt-2 p-0 px-1 btn-primary text-white"
+                        style="height:33px;font-size: 11px;line-height:33px;">
+                        تصفح المزيد
+                    </button>
                 </div>
+                @endif
             </div>
         </div>
-
-
+    </div>
+</div>
         <div class="row main-section">
             <div class="w-100">
                 <div class="card-header m-0 p-0 w-100 d-inline-flex" style="height:60px;background:#262726 ;">

@@ -9,6 +9,7 @@ use App\Models\Job;
 use App\Models\Land;
 use App\Models\Mobile;
 use App\Models\Shop;
+use App\Models\Guide;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -30,7 +31,8 @@ class HomeController extends Controller
         $lands =  collect(DB::select("select * from lands where state = 'allowed' LIMIT 6"));
         $mobiles =  collect(DB::select("select * from mobiles where state = 'allowed' LIMIT 6"));
         $shops =  collect(DB::select("select * from shops where state = 'allowed' LIMIT 6"));
-        return view('vendor.home', \compact('cars', 'generals', 'homes', 'jobs', 'lands', 'mobiles', 'shops'));
+        $guides =  collect(DB::select("select * from guides where state = 'allowed' LIMIT 6"));
+        return view('vendor.home', \compact('cars', 'generals', 'homes', 'jobs', 'lands', 'mobiles', 'shops' , 'guides' ));
     }
 
      /**
@@ -48,6 +50,7 @@ class HomeController extends Controller
             $land = Land::whereLike(['brief','area','located_on','city','address'],$request->search)->get();
             $mobile = Mobile::whereLike(['device_status','model','reset_model','city','address'],$request->search)->get();
             $shop = Shop::whereLike(['offer','displayed','brief','city','address'],$request->search)->get();
+            $guides = Guide::whereLike(['title','city','address','description',],$request->search)->get();
             $results = json_encode(array_merge(json_decode($car, true),json_decode($general, true),json_decode($home, true),json_decode($job, true),json_decode($land, true),json_decode($mobile, true),json_decode($shop, true)));
 
 

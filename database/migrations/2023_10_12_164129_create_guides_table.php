@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->longText('description');
-            $table->longText('img');
+            $table->longText('img')->nullable();
             $table->string('ad_duration_per_day');
             $table->string('city');
             $table->string('advertiser_name');

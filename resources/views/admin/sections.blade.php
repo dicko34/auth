@@ -105,6 +105,17 @@
         </li> 
 
         <li>
+            <a href="javascript: void(0);" class="has-arrow">
+            <i class="fa-solid fa-briefcase"></i>
+                <span> الدليل </span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+                <li><a href="{{ Route('admin.guides.index') }}">عرض الكل</a></li>
+                <li><a href="{{ Route('admin.guides.create') }}">اضافة دليل جديد</a></li>
+            </ul>
+        </li>
+
+        <li>
             <a href="{{ Route('admin.contacts.index') }}">
                 <i class="fa fa-envelope"></i>
                 <span> رسائل التواصل </span>
